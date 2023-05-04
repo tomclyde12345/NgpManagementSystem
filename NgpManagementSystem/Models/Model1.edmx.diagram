@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="058440bc80434cc886059a70de00823d" Name="Diagram1" >
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_contract" Width="1.5" PointX="10.5" PointY="14.375" />
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_contractor" Width="1.5" PointX="8.25" PointY="16.125" />
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_dropdown" Width="1.5" PointX="8.25" PointY="12.25" />
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_history" Width="1.5" PointX="10.5" PointY="21.5" />
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_payment" Width="1.5" PointX="12.75" PointY="16.5" />
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_projects" Width="1.5" PointX="5.25" PointY="15.625" />
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_sched" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpBarangay" Width="1.5" PointX="3" PointY="23.5" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpMunicipality" Width="1.5" PointX="0.75" PointY="9" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpRole" Width="1.5" PointX="0.75" PointY="1.5" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpUpload" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpUser" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpYear" Width="1.5" PointX="4.75" PointY="4.75" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_contract_ngp_contractor" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_contract_ngp_dropdown" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_contract_NgpBarangay" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_contract_NgpMunicipality" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_payment_ngp_contract" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_contractor_NgpBarangay" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_contractor_NgpMunicipality" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_history_ngp_contractor" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_projects_ngp_dropdown" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_projects_NgpBarangay" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_projects_NgpMunicipality" />
+        <AssociationConnector Association="NgpdbmsModel.FK_NgpBarangay_NgpMunicipality" />
+        <AssociationConnector Association="NgpdbmsModel.FK_NgpUser_NgpRole" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
