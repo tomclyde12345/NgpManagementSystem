@@ -1,6 +1,6 @@
 ﻿
 function Account() {
-   
+   //SERVER SIDE DATATABLE SHOW DATA FOR USER
     $("#usertable").DataTable({
         "ajax": {
             "url": "/Account/GetUserDatatable",
@@ -30,17 +30,36 @@ function Account() {
                 "data": "RoleID", "name": "RoleID",
             },
             {
+                "data": null,
+                'render': function (data, type, full, meta) {
+                    return '<button  class=\'btn btn-success btn-sm d-block  edit \' data-id = ' + data.Id + ' > Edit <span class="fa fa-edit f-20" >  </span></button>'
+                        +
+                        '<button  class=\'btn btn-danger deleteaccount d-block btn-sm\' data-id = ' + data.Id + ' > Delete<span class="fa fa-trash f-20" >  </span></button>' 
+                        
+
+                }
+            },
+            {
+                "data": null,
+                'render': function (data, type, full, meta) {
+                    return '<button  class=\'btn btn-info  photo d-block btn-sm\' data-id = ' + data.Id + ' > Change Profile <span class="fa fa-image f-20" >  </span></button>' + '<button  class=\'btn btn-primary btn-sm  resetpass \' data-id = ' + data.Id + ' > Reset Password <span class="fa fa-key f-20" >  </span></button>'
+
+                }
+            },
+            {
                 "data": "RoleID", "name": "RoleID",
                 "render": function (data, type, row) {
                     if (data == "NgpAdmin") {
 
-                        return '<span  class=" badge bg-success text-white" style="font-size:12px;" >Admin</span>'
+                        return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >Admin</span>'
                     }
 
-                    return '<span  class=" badge bg-primary text-white" style="font-size:12px;" >User</span>'
+                    return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >User</span>'
 
                 },
             },
+           
+
            
            
         ],
@@ -56,5 +75,369 @@ function Account() {
         }
 
 
+    });
+
+
+
+    //GET DATA FOR ROLE DYNAMIC FOR CREATE ACCOUNT
+    $.ajax({
+        type: 'GET',
+        url: '/api/roledata/get',
+        success: function (data) {
+            $.each(data, function (index, value) {
+                $('select[name=roleId]').append('<option value="' + value.id + '">' + value.roleName + '</option>');
+            })
+        }
+    });
+    //GET DATA FOR ROLE DYNAMIC  FOR EDIT ACCOUNT
+    $.ajax({
+        type: 'GET',
+        url: '/api/roledata/get',
+        success: function (data) {
+            $.each(data, function (index, value) {
+                $('select[name=roleID]').append('<option value="' + value.id + '">' + value.roleName + '</option>');
+            })
+        }
+    });
+
+    //GET DATA ONLY FOR EDIT ACCOUNT GET METHOD 
+    $('#usertable').on('click', '.edit', function () {
+        var id = $(this).attr('data-id');
+        var url = '/api/editaccount/geteditaccount/' + id;
+        /*    toastr.success(id);*/
+
+
+        $.ajax({
+            type: 'GET',
+            url: url,
+            success: function (data) {
+                $('#editAccountModal').modal('show');
+                $('#editaccount').find('input[name="id"]').val(data.id);
+                $('#editaccount').find('input[name="name"]').val(data.name);
+                $('#editaccount').find('input[name="userName"]').val(data.userName);
+                $('#editaccount').find('input[name="email"]').val(data.email);
+                $('#editaccount').find('select[name="roleID"]').val(data.roleID);
+
+            }
+        })
+       
+      
+    });
+
+
+    //GET DATA CHANGE IMAGE
+    $('#usertable').on('click', '.photo', function () {
+        var id = $(this).attr('data-id');
+        var url = '/api/editaccount/geteditaccount/' + id;
+
+        $.ajax({
+            type: 'GET',
+            url: url,
+            success: function (data) {
+                $("#changePhotoModal").modal('show');
+                $('#changephoto').find('input[name="id"]').val(data.id);
+                $('#changephoto').find('input[name="name"]').val(data.name);
+                console.log(data.id)
+
+            }
+        });
+
+        var url2 = '/api/account/getpics/' + id;
+
+        $.ajax({
+            type: 'GET',
+            url: url2,
+
+            success: function (data) {
+                $('#changephoto').find('input[name="id"]').val(data.id);
+                $("#imageshow").empty();
+                $("#imageshow").append("<img style='width:155px;height:155px; border-radius: 92px; overflow:hidden' src='" + data.filePath + "' />");
+            }
+        });
+
+    });
+
+
+
+
+    /// GET DATA FOR DELETE ACCOUNT  IN ACCOUNT TABLE
+
+    $('#usertable').on('click', '.deleteaccount', function () {
+        var id = $(this).attr('data-id');
+        var url = '/api/accountdelete/getaccountdelete/' + id;
+        $("#DeleteAccountId").val(id);
+        $("#deleteAccountModal").modal('show');
+
+
+
+
+    });
+
+    //  //GET DATA ONLY FOR  RESET PASSWORD
+    $('#usertable').on('click', '.resetpass', function () {
+        var id = $(this).attr('data-id');
+        var url = '/api/editaccount/geteditaccount/' + id;
+        /*    toastr.success(id);*/
+        $.ajax({
+            type: 'GET',
+            url: url,
+            success: function (data) {
+                $('#resetpassModal').modal('show');
+                $('#resetpassword').find('input[name="id"]').val(data.id);
+                $('#resetpassword').find('input[name="userName"]').val(data.userName);
+                $('#resetpassword').find('input[name="password"]').val('');
+                $('#resetpassword').find('input[name="name"]').val(data.name);
+                $('#resetpassword').find('input[name="email"]').val(data.email);
+                $('#resetpassword').find('input[name="roleID"]').val(data.roleID);
+
+            }
+        })
+    });
+
+
+
+
+
+
+
+    // SAVING CREATE ACCOUNT WITH PICTURE
+    $("#createaccount").validate({
+        rules: {
+            Name: {
+                required: true,
+            },
+            Email: {
+                required: true,
+            },
+            UserName: {
+                required: true,
+            },
+            Password: {
+                required: true,
+                regex: ("(?=.*?[0-9])(?=.*?[A-Z])(?=.*?[#?!@$%^&*\\-_]).{8,}$")
+            },
+            roleId: {
+                required: true,
+
+            },
+
+
+        },
+        errorClass: "validationerror",
+        messages: {
+            Name: {
+                required: "Please Input a Name",
+            },
+            Email: {
+                required: "Please Input a Email",
+            },
+            UserName: {
+                required: "Please Input a Username",
+            },
+            Password: {
+                required: "Please Input a Password",
+                regex: "At least 1 Uppercase,1 Lowercase,1 Special Character, 1 Numeric Character and Minimum of 8 Characters"
+            },
+            roleId: {
+                required: "Please Select a Role",
+            },
+
+
+        },
+    });
+    $("#createaccount").submit(function (e) {
+
+        e.preventDefault();
+        var formData = new FormData(this);
+        if ($("#createaccount").valid()) {
+            $('#createModal').modal('hide');
+            $.ajax({
+                type: 'POST',
+                url: '/api/addaccount/post',
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+
+                    setTimeout(function () {
+                        toastr.success("Account Successfully Created");
+                        setTimeout(function () {
+                            location.reload();
+                        }, 2000)
+                    }, 1500);
+                    $("#createModal").modal('hide');
+                },
+                error: function (response) {
+                    toastr.error("Unable to Delete Dependent in Foreign Key");
+                    //alert(result, result.DepartmentId, result.Name);
+                }
+            });
+        }
+    })
+
+
+
+    /* SAVING EDIT ACCOUNT POST METHOD*/
+    $("#editaccount").validate({
+        rules: {
+            name: {
+                required: true,
+            },
+            userName: {
+                required: true,
+            },
+            email: {
+                required: true,
+            },
+            roleID: {
+                required: true,
+            },
+
+        },
+        errorClass: "tomerror",
+        messages: {
+            name: {
+                required: "Please Enter Your Name",
+            },
+            userName: {
+                required: "Please Enter Your Username",
+            },
+            email: {
+                required: "Please Enter Your Email",
+            },
+            roleID: {
+                required: "Please Select Your RoleID",
+            },
+
+        },
+        submitHandler: function () {
+            if ($("#editaccount").valid()) {
+                var valdata = $("#editaccount").serialize();
+                $('#editAccountModal').modal('hide');
+                $.ajax({
+                    url: '/api/savingeditaccount/post/' + id,
+                    type: "POST",
+                    dataType: 'json',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: valdata,
+                });
+                setTimeout(function () {
+                    toastr.success('EDIT SUCCESSFULLY');
+                    setTimeout(function () {
+                        location.reload();
+                    }, 2000)
+                }, 1500);
+            }
+        }
+    });
+
+
+    /*  DELETE ACCOUNT POST  DELETE DATA AFTER CLICK*/ 
+    $("#btnAccounteDelete").click(function () {
+
+        // for deletion
+        var st = $("#DeleteAccountId").val();
+        //alert(dept);
+        $.ajax({
+            type: "DELETE",
+            url: "/api/accountdelete/getaccountdelete/" + st,
+            success: function (response) {
+
+                setTimeout(function () {
+                    toastr.success("Account Successfully Deleted");
+                    setTimeout(function () {
+                        location.reload();
+                    }, 2000)
+                }, 1500);
+                $("#deleteAccountModal").modal('hide');
+            },
+            error: function (response) {
+                toastr.error("Unable to Delete Dependent in Foreign Key");
+                //alert(result, result.DepartmentId, result.Name);
+            }
+        })
+
+    })
+
+    //CHANGE PROFILE PICTURE SAVING PHOTO
+    $("#changephoto").submit(function (e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        if ($("#changephoto").valid()) {
+            $('#changePhotoModal').modal('hide');
+            $.ajax({
+                type: 'POST',
+                url: '/api/changephoto',
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+
+                    setTimeout(function () {
+                        toastr.success("Profile Picture Successfully Change");
+                        setTimeout(function () {
+                            location.reload();
+                        }, 2000)
+                    }, 1500);
+                    $("#changePhotoModal").modal('hide');
+                },
+                error: function (response) {
+                    toastr.error("Unable to Delete Dependent in Foreign Key");
+                    //alert(result, result.DepartmentId, result.Name);
+                }
+
+            });
+        }
+    })
+
+
+    //RESET PASSWORD SAVING FOR USER ACCOUNT
+    $("#resetpassword").validate({
+        rules: {
+
+            userName: {
+                required: true,
+            },
+            password: {
+                required: true,
+                regex: ("(?=.*?[0-9])(?=.*?[A-Z])(?=.*?[#?!@$%^&*\\-_]).{8,}$")
+            },
+
+
+        },
+        errorClass: "validationerror",
+        messages: {
+
+            userName: {
+                required: "Please Enter Your Username",
+            },
+            password: {
+                required: "Please Input a Password",
+                regex: "At least 1 Uppercase,1 Lowercase,1 Special Character, 1 Numeric Character and Minimum of 8 Characters"
+            },
+
+
+        },
+        submitHandler: function () {
+            if ($("#resetpassword").valid()) {
+                var valdata = $("#resetpassword").serialize();
+                $('#resetpassModal').modal('hide');
+                $.ajax({
+                    url: '/api/resetpassword/postresetpassword/' + id,
+                    type: "POST",
+                    dataType: 'json',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: valdata,
+                });
+                setTimeout(function () {
+                    toastr.success('RESET PASSWORD SUCCESSFULLY');
+                    setTimeout(function () {
+                        location.reload();
+                    }, 2000)
+                }, 1500);
+            }
+        }
     });
 }

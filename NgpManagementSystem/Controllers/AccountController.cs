@@ -80,6 +80,7 @@ namespace NgpManagementSystem.Controllers
                     Email = user.Email,
                     UserName = user.UserName,
                     RoleID = user.NgpRole.RoleName,
+                   
 
                 }).ToList();
 

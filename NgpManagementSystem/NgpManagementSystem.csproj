@@ -181,6 +181,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
+    <Compile Include="DTO\RoleDTO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -238,6 +239,7 @@
     <Compile Include="Models\ngp_sched.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\UserListVM.cs" />
   </ItemGroup>
@@ -4807,6 +4809,7 @@
     <Content Include="Content\select2.min.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
+    <Content Include="DefaultImage\city-hall.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -5011,6 +5014,40 @@
     <Content Include="bin\roslyn\vbc.exe.config" />
     <Content Include="bin\roslyn\vbc.rsp" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="obj\Debug\NgpManagementSystem.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\NgpManagementSystem.dll" />
+    <Content Include="obj\Debug\NgpManagementSystem.pdb" />
+    <Content Include="obj\Debug\TempPE\Models.Model1.Context.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Models.Model1.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Models.Model1.Designer.cs.dll" />
+    <Content Include="SampleImg\638119880390372429-sms.png" />
+    <Content Include="SampleImg\638119885511103093-286751537_1672223859777219_6261452556055391677_n.jpg" />
+    <Content Include="SampleImg\638119891481785412-286751537_1672223859777219_6261452556055391677_n.jpg" />
+    <Content Include="SampleImg\638119892527759695-sms.png" />
+    <Content Include="SampleImg\638119895109585327-sms.png" />
+    <Content Include="SampleImg\638123123775679685-2866403.png" />
+    <Content Include="SampleImg\638124448538091858-2866403.png" />
+    <Content Include="SampleImg\638124490428049845-316604975_1537901736623240_8363927175242894806_n.jpg" />
+    <Content Include="SampleImg\638125161894485257-51468-3D-Digital-Art-CGI-Black-RedAbstract-Hexagon-HD.png" />
+    <Content Include="SampleImg\638125764624495039-cardo.jpg" />
+    <Content Include="SampleImg\638125767582911146-316604975_1537901736623240_8363927175242894806_n.jpg" />
+    <Content Include="SampleImg\638126561945868237-cardo.jpg" />
+    <Content Include="SampleImg\638126562160698082-316604975_1537901736623240_8363927175242894806_n.jpg" />
+    <Content Include="SampleImg\638126742084726629-cardo.jpg" />
+    <Content Include="SampleImg\638126761398767520-city-hall.png" />
+    <Content Include="SampleImg\638126976087010778-330935990_723717895999120_6144170317081791837_n.jpg" />
+    <Content Include="SampleImg\638127569545069500-city-hall.png" />
+    <Content Include="SampleImg\638134344225863947-cardo.jpg" />
+    <Content Include="SampleImg\638134347190435413-city-hall.png" />
+    <Content Include="SampleImg\638134349267463632-330935990_723717895999120_6144170317081791837_n.jpg" />
+    <Content Include="SampleImg\638134350466508306-330935990_723717895999120_6144170317081791837_n.jpg" />
+    <Content Include="SampleImg\638134351586534383-try.png" />
+    <Content Include="SampleImg\638134352924697259-330935990_723717895999120_6144170317081791837_n.jpg" />
+    <Content Include="SampleImg\638134356132609714-cardo.jpg" />
+    <Content Include="SampleImg\638134371204512396-9JC5.gif" />
+    <Content Include="SampleImg\638134371465859011-2866403.png" />
+    <Content Include="SampleImg\638134556565394953-51468-3D-Digital-Art-CGI-Black-RedAbstract-Hexagon-HD.png" />
+    <Content Include="SampleImg\city-hall.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\General.js" />
@@ -5022,6 +5059,40 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery.dataTables.js" />
     <Content Include="Scripts\jquery.dataTables.min.js" />
+    <Content Include="SampleImg\638125295856328411-" />
+    <Content Include="SampleImg\638126113699347689-" />
+    <Content Include="SampleImg\638126968933713743-" />
+    <Content Include="SampleImg\638127618348954286-" />
+    <Content Include="SampleImg\638129610600374564-" />
+    <Content Include="SampleImg\638134352271077714-2866403.webp" />
+    <Content Include="SampleImg\638134473188500844-" />
+    <Content Include="SampleImg\638134481880113381-" />
+    <Content Include="SampleImg\BodyPart_2606e52b-e495-4dca-ae30-28a2ae0e8577" />
+    <Content Include="SampleImg\BodyPart_2d571e11-28a1-49ab-80cf-31fe965a33e5" />
+    <Content Include="SampleImg\BodyPart_43df8684-5faf-48c7-ac04-4d63312342da" />
+    <Content Include="SampleImg\BodyPart_532b41e4-d271-462a-b336-9d1e55874f3d" />
+    <Content Include="SampleImg\BodyPart_5c5779e9-ac29-4c35-84ff-912c007951f9" />
+    <Content Include="SampleImg\BodyPart_62753cea-8489-4e0f-bfd1-bd35047a5154" />
+    <Content Include="SampleImg\BodyPart_71bf4bb5-194d-4797-913b-23510a2a4a61" />
+    <Content Include="SampleImg\BodyPart_78c7702b-3afb-404b-a4d1-4a62846d1015" />
+    <Content Include="SampleImg\BodyPart_8bab287a-eb6e-4386-a362-229f433387a6" />
+    <Content Include="SampleImg\BodyPart_95375e9a-b41a-4bea-b5c7-c3ab955b2d27" />
+    <Content Include="SampleImg\BodyPart_a0083af1-ce97-4f32-bd1e-ab8bedd733e4" />
+    <Content Include="SampleImg\BodyPart_a420c1bd-3bce-49fd-af78-cfa50f24a2aa" />
+    <Content Include="SampleImg\BodyPart_ad96ba3f-421d-4251-85c0-fffdf5690e12" />
+    <Content Include="SampleImg\BodyPart_b05b6d1d-2a49-4be9-bec3-96b3f5af80b3" />
+    <Content Include="SampleImg\BodyPart_b760cbf1-b898-4b4e-8fcb-48532f52af85" />
+    <Content Include="SampleImg\BodyPart_d6a13f5a-08c1-441c-bc59-917c89c60cd7" />
+    <Content Include="SampleImg\BodyPart_f6f8f60b-951e-4076-9d3c-acef19ff711d" />
+    <Content Include="SampleImg\BodyPart_fe99e08e-3193-4456-bbbf-c5b9c93e2b7b" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\Model1.csdl" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\Model1.msl" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\Model1.ssdl" />
+    <Content Include="obj\Debug\NgpManagementSystem.csproj.AssemblyReference.cache" />
+    <Content Include="obj\Debug\NgpManagementSystem.csproj.CopyComplete" />
+    <Content Include="obj\Debug\NgpManagementSystem.csproj.CoreCompileInputs.cache" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />

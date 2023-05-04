@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="/Content/assets/modules/jquery.min.js"></script> @*meed this   laging sa taas *@
+    <script src="~/Scripts/jquery-3.4.1.js"></script>  @*meed this   laging sa taas *@
     <link href="~/Content/Custom.css" rel="stylesheet" />
     <script src="~/Scripts/General.js"></script>
     <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
@@ -20,6 +20,7 @@
     <script src="~/Scripts/jquery.dataTables.min.js"></script>
     <link href="~/Content/select2.css" rel="stylesheet" />
     <link href="~/Content/select2.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/modules/prism/prism.css" rel="stylesheet" />
     <script src="~/Scripts/select2.js"></script>
     <script src="~/Scripts/select2.min.js"></script>
 
@@ -536,7 +537,7 @@
                         </div>
                     </div>
                     @RenderBody()
-                  
+
 
                 </section>
             </div>
@@ -552,7 +553,8 @@
     </div>
 
     <!-- General JS Scripts -->
-   
+  
+    <script src="~/Content/assets/modules/prism/prism.js"></script>
     <script src="/Content/assets/modules/popper.js"></script>
     <script src="/Content/assets/modules/tooltip.js"></script>
     <script src="/Content/assets/modules/bootstrap/js/bootstrap.min.js"></script>

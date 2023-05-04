@@ -13,6 +13,7 @@ namespace NgpManagementSystem.App_Start
         public MappingProfile()
         {
             Mapper.CreateMap<NgpUser, AccountDTO>().ReverseMap();
+            Mapper.CreateMap<NgpRole, RoleDTO>().ReverseMap();
         }
     }
 }
