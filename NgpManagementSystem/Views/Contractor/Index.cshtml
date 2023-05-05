@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row">
+    <div class="col-12 col-sm-12 col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h4>Contractor </h4>
+            </div>
+            <div class="card-body">
+                <ul class="nav nav-pills" id="myTab3" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active link_1" id="home-tab3" data-toggle="tab" href="#home3" role="tab" aria-controls="home" aria-selected="true">Create Contractor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link_2" id="profile-tab2" data-toggle="tab" href="#profile2" role="tab" aria-controls="profile" aria-selected="false">Tab 2</a>
+                    </li> 
+                </ul>
+                <div class="tab-content" id="myTabContent2">
+                    <div class="tab-pane fade show active" id="home3" role="tabpanel" aria-labelledby="home-tab3">
+                        <div class="row">
+                            <div class="col-12 col-md-12 col-lg-12">
+                                <div class="card"> 
+                                    <div class="card-body"> 
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group ">
+                                                    <label>contractor_name</label>
+                                                    <input type="text" class="form-control" id="contractor_name" name="contractor_name">
+                                                </div>
+
+
+                                                <div class="form-group">
+                                                    <label for="contractor_type">contractor_type</label>
+                                                    <select class="form-control" style="width:100%" name="contractor_type" id="contractor_type">
+                                                        <option value="">Please Select a contractor_type</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="address_municipality">address_municipality</label>
+                                                    <select class="form-control" style="width:100%" name="address_municipality" id="address_municipality">
+                                                        <option value="">Please Select a address_municipality</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="address_barangay">address_barangay</label>
+                                                    <select class="form-control" style="width:100%" name="address_barangay" id="address_barangay">
+                                                        <option value="">Please Select a address_barangay</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile2" role="tabpanel" aria-labelledby="profile-tab2">
+                        Sed sed metus vel lacus hendrerit tempus. Sed efficitur velit tortor, ac efficitur est lobortis quis. Nullam lacinia metus erat, sed fermentum justo rutrum ultrices. Proin quis iaculis tellus. Etiam ac vehicula eros, pharetra consectetur dui.
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
