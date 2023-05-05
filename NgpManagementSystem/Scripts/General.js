@@ -51,7 +51,7 @@ function Account() {
                 "render": function (data, type, row) {
                     if (data == "NgpAdmin") {
 
-                        return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >Admin</span>'
+                        return '<span  class=" badge bg-secondary text-black" stByle="font-size:12px;" >Admin</span>'
                     }
 
                     return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >User</span>'
@@ -433,6 +433,39 @@ function Account() {
                 });
                 setTimeout(function () {
                     toastr.success('RESET PASSWORD SUCCESSFULLY');
+                    setTimeout(function () {
+                        location.reload();
+                    }, 2000)
+                }, 1500);
+            }
+        }
+    });
+
+    //SAVINGR ROLE ADD ROLE
+    $("#createrole").validate({
+        rules: {
+            RoleName: {
+                required: true,
+            },
+        },
+        messages: {
+            RoleName: {
+                required: "Please Input a Role",
+            },
+        },
+        submitHandler: function () {
+            if ($("#createrole").valid()) {
+                var valdata = $("#createrole").serialize();
+                $('#createroleModal').modal('hide');
+                $.ajax({
+                    url: '/api/saverole/post',
+                    type: "POST",
+                    dataType: 'json',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: valdata,
+                });
+                setTimeout(function () {
+                    toastr.success('Successsfully Added a Role');
                     setTimeout(function () {
                         location.reload();
                     }, 2000)

@@ -39,13 +39,13 @@ namespace NgpManagementSystem.Controllers
                 IQueryable<NgpUser> userlist = Db.NgpUsers;
 
                 //SHOWING FILTER DATA BASE ON ROLE ID  DEPENDENT IN LOGIN ID
-                //var sess_id = (int)Session["LoginID"];
+                var sess_id = (int)Session["LoginID"];
 
-                //if ((int)Session["Role_Id"] != 1)
-                //{
-                //    userlist = userlist.Where(d =>  d.Id == sess_id);
-                //}
-                //
+                if ((int)Session["Role_Id"] != 1)
+                {
+                    userlist = userlist.Where(d => d.Id == sess_id);
+                }
+
 
 
                 int totalrows = userlist.Count();
@@ -89,7 +89,62 @@ namespace NgpManagementSystem.Controllers
 
             }
 
+        }
 
+        public ActionResult AdminNameViewinProfile() //IMAGE AND NAME VIEW IN DASHBOARD
+        {
+            if (Session["Role_Id"] == null)
+            {
+                return RedirectToAction("logout", "Account");
+            }
+
+
+            var adminnameviewinprofile = Db.NgpUsers.ToList();
+
+
+            var sess_id = (int)Session["LoginID"];
+
+            if ((int)Session["Role_Id"] == 1)
+            {
+                adminnameviewinprofile = adminnameviewinprofile.Where(d => d.Id == sess_id).ToList();
+            }
+            else
+
+             if ((int)Session["Role_Id"] != 1)
+            {
+                adminnameviewinprofile = adminnameviewinprofile.Where(d => d.Id == sess_id).ToList();
+            }
+
+
+            return PartialView(adminnameviewinprofile);
+        }
+
+        public ActionResult DisplayPicNameandRole() //DISPLAY
+        {
+            if (Session["Role_Id"] == null)
+            {
+                return RedirectToAction("logout", "Account");
+            }
+
+
+            var adminnameviewinprofile = Db.NgpUsers.ToList();
+
+
+            var sess_id = (int)Session["LoginID"];
+
+            if ((int)Session["Role_Id"] == 1)
+            {
+                adminnameviewinprofile = adminnameviewinprofile.Where(d => d.Id == sess_id).ToList();
+            }
+            else
+
+             if ((int)Session["Role_Id"] != 1)
+            {
+                adminnameviewinprofile = adminnameviewinprofile.Where(d => d.Id == sess_id).ToList();
+            }
+
+
+            return PartialView(adminnameviewinprofile);
         }
     }
 }

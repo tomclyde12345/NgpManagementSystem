@@ -299,5 +299,29 @@ namespace NgpManagementSystem.Controllers.API
 
         }
 
+
+        //CREATE/SAVING METHODS ROLE
+        [HttpPost]
+        [Route("api/saverole/post")]
+        public IHttpActionResult SaveRole(RoleDTO roleDTO)
+        {
+            var role = Mapper.Map<RoleDTO, NgpRole>(roleDTO);
+
+            if (roleDTO.Id == 0)
+            {
+
+                role.RoleName = roleDTO.RoleName;
+
+
+
+                Db.NgpRoles.Add(role);
+            }
+
+
+            Db.SaveChanges();
+
+            return Ok();
+
+        }
     }
 }

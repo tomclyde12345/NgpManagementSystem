@@ -1,0 +1,26 @@
+﻿
+
+
+@foreach (var adminnameinviewprofile in Model)
+{
+
+    if (adminnameinviewprofile.FilePath == null)
+    {
+        <div >
+            <img class="user-image" src="~/DefaultImage/city-hall.png" style="width: 45px; height: 45px; border-radius: 50%; margin: 6px 0px; " />
+            <span>@adminnameinviewprofile.Name</span>
+        </div>
+    }
+    else
+    {
+        <div class="user-menu" style="cursor: pointer;">
+            <img src="@adminnameinviewprofile.FilePath" style="width: 45px; height: 45px; border-radius: 50%; margin: 6px 0px;" />
+            <span class="text-white">@adminnameinviewprofile.Name</span>
+        </div>
+    }
+
+
+
+
+
+}

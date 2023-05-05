@@ -11,6 +11,7 @@
             </div>
             <form-group style="padding: 2% 2.5%">
                 <button class="btn btn-primary btn-sm " data-toggle="modal" data-target="#createModal">CREATE ACCOUNT <i class="fa fa-user-plus"></i></button>
+                <button class="btn btn-primary btn-sm " data-toggle="modal" data-target="#createroleModal">CREATE ROLE <i class="fa fa-plus-circle"></i></button>
             </form-group>
             <div class="card-body p-0">
                 <div class="table-responsive">
@@ -36,14 +37,62 @@
         </div>
     </div>
 </div>
+
+
+@*CREATE ROLE IN MODAL *@
+<div id="createroleModal" class="modal fade" role="dialog" data-backdrop="false">
+    <div class="modal-dialog modal-md">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header bg-success">
+                <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;"> Create Role</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="createrole">
+                  
+                    <div class="row">
+                        <div class="col-sm-12">
+
+                            <div class="form-group">
+                                <label for="name">Role Name</label>
+
+                                <input type="text" class="form-control" name="RoleName" id="RoleName" value="" />
+                            </div>
+                         
+                        </div>
+
+                    </div>
+                    <div class="text-center">
+
+                        <button class="btn btn-primary btn-sm " id="btnsubmit" type="submit">Save</button>
+                    </div>
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
 @*CREATE ACCOUNT IN MODAL *@
 <div id="createModal" class="modal fade" role="dialog" data-backdrop="false">
     <div class="modal-dialog modal-lg">
 
         <!-- Modal content-->
         <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="card-title d-flex justify-content-between modal-title" style="padding:0;">Create Account</h4>
+            <div class="modal-header bg-success">
+                <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">Create Account</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -334,7 +383,7 @@
 
                                         <input type="password" placeholder="Enter a New Password" class="form-control" name="password" id="password" value="" />
                                     </div>
-                                 
+
                                 </div>
                             </div>
 

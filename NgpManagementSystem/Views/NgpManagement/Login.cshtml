@@ -1,0 +1,93 @@
+﻿@model NgpManagementSystem.Models.NgpUser
+@{
+
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+<body>
+    <div id="app">
+        <section class="section">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+                        <div class="login-brand">
+                            <img src="/Content/assets/img/stisla-fill.svg" alt="logo" width="100" class="shadow-light rounded-circle">
+                        </div>
+
+                        <div class="card card-success">
+
+                            <div class="card-header">
+                                <div class="text-center m-4 m-sm-6">
+                                    <h4>NGP MANAGEMENT SYSTEM</h4>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-body">
+                                    @using (Html.BeginForm("Login", "NgpManagement", FormMethod.Post, new { id = "login", }))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+
+                                        <div class="form-group mb-4">
+                                            <label style="text-align:left"> UserName</label>
+                                            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", required = "required", type = "text", name = "username", id = "Username", style = "font-size:15px;" } })
+                                            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger custom-input" })
+                                        </div>
+                                        <div class="form-group mb-4">
+                                            <label> Password</label>
+
+                                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", required = "required", name = "password", type = "Password", id = "Password", style = "font-size:15px;" } })
+                                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger custom-input" })
+
+                                        </div>
+
+                                        <div class="text-left" style="font-size:12px; ">
+                                            <input type="checkbox" onclick="myFunction()"> Show Password
+                                        </div>
+                                        @Html.HiddenFor(m => m.Id)
+                                        <br />
+                                        <br />
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-success btn-lg btn-block" tabindex="4">
+                                                Login
+                                            </button>
+                                        </div>
+                                        <br />
+
+                                        <div class="custom-val" style="color:red;">
+                                            <br />
+                                            @ViewBag.Message
+                                        </div>
+
+                                    }
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="simple-footer">
+                            Copyright &copy; Ngp Management System 2023
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+</body>
+
+
+
+@*SHOW PASSWORD*@
+<script>
+function myFunction() {
+        var x = document.getElementById("Password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+}
+</script>
