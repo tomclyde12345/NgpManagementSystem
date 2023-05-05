@@ -12,3 +12,6 @@
 .validationerror {
     color: red !important;
 }
+.bg-green {
+    background-color: #28a745 !important;
+}
