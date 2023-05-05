@@ -1,4 +1,130 @@
 ﻿
+function ContractorAnimation() {
+    $('#contract_main').on('click', '.contract_next', function () {
+        console.log('kabutihan'); 
+        var a = $('#contract_main').find('input[name="contractor_name"]').val().length;
+        var b = $('#contract_main').find('select[name="contractor_type"]').val().length;
+        var c = $('#contract_main').find('select[name="address_municipality"]').val().length;
+        var d =  $('#contract_main').find('select[name="address_barangay"]').val().length;
+
+        if(a <= 0 || b <= 0 || c <= 0 || d <= 0){
+            console.log('kabutihan');
+            $('.warning-kuno').removeClass('d-none');
+            $('.warning-kuno').addClass('d-block');
+        }
+        else { 
+            
+            $('.warning-kuno').addClass('d-none');
+            $('.warning-kuno').removeClass('d-block');
+
+      
+
+        var e = $('#contract_main').find('input[name="contractor_name"]').val();
+        var f = $('#contract_main').find('select[name="contractor_type"]').val();
+        var g = $('#contract_main').find('select[name="address_municipality"]').val()
+        var h =  $('#contract_main').find('select[name="address_barangay"]').val();
+        var data = {
+            contractor_name :e ,
+            contractor_type : f,
+            address_municipality :g ,
+            address_barangay : h
+        }
+        console.log(data);
+        $.ajax({
+            type: 'POST',
+            url: '/api/contractor/post',
+            data: data, 
+            success: function (data) {
+                console.log('sucess', data);
+                if ($('#tab1_tab').hasClass('link_1')) {
+                    $('#tab1_tab').removeClass('active');
+                    $('#tab2_tab').addClass('active');
+        
+                    $('#tab1').removeClass('show');
+                    $('#tab1').removeClass('active');
+        
+                    $('#tab2').addClass('show');
+                    $('#tab2').addClass('active');
+                    toastr.success('Successfully Create taafasfa');
+
+                    $('#contract_main').find('input[name="contractor_name"]').val("");
+       $('#contract_main').find('select[name="contractor_type"]').val("");
+      $('#contract_main').find('select[name="address_municipality"]').val("");
+       $('#contract_main').find('select[name="address_barangay"]').val("");
+                }   
+                contractorTbl.ajax.reload(); 
+            }, 
+            error: function (data) {
+                toastr.error("Failed")
+            }
+        });
+        }
+      
+    });
+
+
+
+    //SERVER SIDE DATATABLE SHOW DATA FOR CONTRACTOR
+   var contractorTbl = $("#contractortable").DataTable({
+        "ajax": {
+            "url": "/Contractor/GetContractorTable",
+            "type": "POST",
+            "datatype": "json", dataSrc: "data"
+        },
+
+        "processing": "true",
+        "serverSide": "true",
+        "serverSide": "true",
+        "order": [[1, "desc"]],
+
+        "columns": [
+            {
+                "data": "contractorID", "name": "contractorID", "className": "hideThis",
+            },
+            {
+                "data": "contractor_name", "name": "contractor_name",
+            },
+            {
+                "data": "address_municipality", "name": "address_municipality",
+            },
+            {
+                "data": "address_barangay", "name": "address_barangay",
+            },
+            {
+                "data": "contractor_type", "name": "contractor_type",
+            },
+        
+
+
+        ],
+
+
+        "processing": "true",
+        "language": {
+            "processing": "processing... please wait"
+        },
+
+        "fnInitComplete": function (oSettings, json) {
+
+        }
+
+
+    });
+
+    //GET DATA FOR ROLE DYNAMIC FOR TYPE CONTRACTOR
+    $.ajax({
+        type: 'GET',
+        url: '/api/roledata/get',
+        success: function (data) {
+            $.each(data, function (index, value) {
+                $('select[name=roleId]').append('<option value="' + value.id + '">' + value.roleName + '</option>');
+            })
+        }
+    });
+
+}
+ 
+
 function Account() {
    //SERVER SIDE DATATABLE SHOW DATA FOR USER
     $("#usertable").DataTable({

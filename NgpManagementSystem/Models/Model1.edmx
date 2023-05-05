@@ -35,7 +35,7 @@
           <Key>
             <PropertyRef Name="contractorID" />
           </Key>
-          <Property Name="contractorID" Type="int" Nullable="false" />
+          <Property Name="contractorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="contractor_name" Type="nvarchar" MaxLength="100" />
           <Property Name="address_municipality" Type="int" />
           <Property Name="address_barangay" Type="int" />
@@ -499,7 +499,7 @@
           <Key>
             <PropertyRef Name="contractorID" />
           </Key>
-          <Property Name="contractorID" Type="Int32" Nullable="false" />
+          <Property Name="contractorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="contractor_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="address_municipality" Type="Int32" />
           <Property Name="address_barangay" Type="Int32" />
@@ -811,7 +811,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>

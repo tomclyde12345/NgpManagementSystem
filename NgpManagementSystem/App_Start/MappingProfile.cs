@@ -14,6 +14,7 @@ namespace NgpManagementSystem.App_Start
         {
             Mapper.CreateMap<NgpUser, AccountDTO>().ReverseMap();
             Mapper.CreateMap<NgpRole, RoleDTO>().ReverseMap();
+            Mapper.CreateMap<ngp_contractor, ContractorDTO>().ReverseMap();
         }
     }
 }
