@@ -45,7 +45,7 @@
 
         <!-- Modal content-->
         <div class="modal-content">
-            <div class="modal-header bg-success">
+            <div class="modal-header bg-green">
                 <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;"> Create Role</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -68,7 +68,7 @@
                     </div>
                     <div class="text-center">
 
-                        <button class="btn btn-primary btn-sm " id="btnsubmit" type="submit">Save</button>
+                        <button class="btn bg-green btn-sm  text-white" id="btnsubmit" type="submit">Save</button>
                     </div>
 
 
@@ -91,7 +91,7 @@
 
         <!-- Modal content-->
         <div class="modal-content">
-            <div class="modal-header bg-success">
+            <div class="modal-header bg-green">
                 <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">Create Account</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -154,7 +154,7 @@
                     </div>
                     <div class="text-center">
 
-                        <button class="btn btn-primary btn-sm " id="btnsubmit" type="submit">Save</button>
+                        <button class="btn bg-green btn-sm  text-white" id="btnsubmit" type="submit">Save</button>
                     </div>
 
 
@@ -176,8 +176,8 @@
 
 
         <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="card-title d-flex justify-content-between modal-title" style="padding:0;">Edit Account</h4>
+            <div class="modal-header bg-green">
+                <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">Edit Account</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -192,9 +192,7 @@
                     </div>
                 </div>
                 <br />
-                <div class="alert alert-success">
-                    Edit information in Account
-                </div>
+              
                 <form id="editaccount">
                     <div class=" row">
                         <div class="col-sm-6">
@@ -238,7 +236,7 @@
                     <br />
                     <div class="text-center">
 
-                        <button class="btn btn-success btn-md btn-grd-*" id="btnsubmit" type="submit">SAVE CHANGES</button>
+                        <button class="btn bg-green btn-md  text-white btn-grd-*" id="btnsubmit" type="submit">SAVE CHANGES</button>
                     </div>
                 </form>
             </div>
@@ -257,8 +255,8 @@
 <div class="modal fade" id="deleteAccountModal" role="dialog" data-backdrop="false">
     <div class="modal-dialog modal-m modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="card-title d-flex justify-content-between modal-title" style="padding:0;">Delete Account</h4>
+            <div class="modal-header bg-green">
+                <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">Delete Account</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -266,13 +264,14 @@
 
             <form id="deleteaccount">
                 <div class="modal-body">
-                    <h5 class="card-subtitle">Are you sure you want to Delete This Account ?</h5>
+                    <br />
+                    <h5 class="card-subtitle ">Are you sure you want to Delete This Account ?</h5>
                 </div>
                 <div class="modal-footer coolTZ">
                     <input type="hidden" name="DeleteAccountId" id="DeleteAccountId" />
 
                     <button type="button" class="btn btn-danger" data-dismiss="modal">CLOSE</button>
-                    <a href="#" class="btn btn-success" id="btnAccounteDelete">CONFIRM</a>
+                    <a href="#" class="btn bg-green text-white" id="btnAccounteDelete">CONFIRM</a>
                 </div>
             </form>
         </div>
@@ -287,14 +286,14 @@
         <div class="modal fade" id="changePhotoModal" data-backdrop="false">
             <div class="modal-dialog modal-m modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="card-title d-flex justify-content-between modal-title" style="padding:0;">Change Profile Image</h4>
+                    <div class="modal-header bg-green">
+                        <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">Change Profile Image</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     @*UPLOAD PICTURE*@
-
+                    <br />
                     <div id="imageshow" class="align-self-center">
 
                     </div>
@@ -321,7 +320,7 @@
                         </div>
                         <div class="text-center">
 
-                            <button class="btn btn-primary btn-sm btn-grd-* " id="btnsubmit" type="submit">SAVE</button>
+                            <button class="btn bg-green text-white btn-sm btn-grd-* " id="btnsubmit" type="submit">SAVE</button>
                         </div>
 
                         <div class="modal-footer ">
@@ -346,8 +345,8 @@
         <div class="modal fade" id="resetpassModal" data-backdrop="false">
             <div class="modal-dialog modal-m modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="card-title d-flex justify-content-between modal-title" style="padding:0;">RESET  PASSWORD</h4>
+                    <div class="modal-header bg-green">
+                        <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">RESET  PASSWORD</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -391,7 +390,7 @@
                         </div>
                         <div class="text-center">
 
-                            <button class="btn btn-primary btn-sm  btn-grd-* " id="btnsave" type="submit">SAVE</button>
+                            <button class="btn bg-green btn-sm text-white  btn-grd-* " id="btnsave" type="submit">SAVE</button>
                         </div>
                         <div class="modal-footer ">
 
