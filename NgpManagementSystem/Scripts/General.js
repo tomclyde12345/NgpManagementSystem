@@ -1,67 +1,306 @@
 ﻿
-function ContractorAnimation() {
-    $('#contract_main').on('click', '.contract_next', function () {
-        console.log('kabutihan'); 
-        var a = $('#contract_main').find('input[name="contractor_name"]').val().length;
-        var b = $('#contract_main').find('select[name="contractor_type"]').val().length;
-        var c = $('#contract_main').find('select[name="address_municipality"]').val().length;
-        var d =  $('#contract_main').find('select[name="address_barangay"]').val().length;
+function Project() {
 
-        if(a <= 0 || b <= 0 || c <= 0 || d <= 0){
-            console.log('kabutihan');
-            $('.warning-kuno').removeClass('d-none');
-            $('.warning-kuno').addClass('d-block');
+    //SERVERSIDE DATATABLE PROJECT
+    $("#projecttable").DataTable({
+        "ajax": {
+            "url": "/Project/GetProjecttable",
+            "type": "POST",
+            "datatype": "json", dataSrc: "data"
+        },
+
+        "processing": "true",
+        "serverSide": "true",
+        "serverSide": "true",
+        "order": [[1, "desc"]],
+
+        "columns": [
+
+            {
+                "data": "area", "name": "area",
+            },
+            {
+                "data": "site_code", "name": "site_code"
+            },
+            {
+                "data": "location_municipality", "name": "location_municipality"
+            },
+            {
+                "data": "location_barangay", "name": "location_barangay"
+            },
+            {
+                "data": "year_form", "name": "year_form"
+            },
+            {
+                "data": "penro", "name": "penro"
+            },
+            {
+                "data": "cenro", "name": "cenro"
+            },
+            {
+                "data": "region", "name": "region"
+            },
+
+
+        ],
+
+
+        "processing": "true",
+        "language": {
+            "processing": "processing... please wait"
+        },
+
+        "fnInitComplete": function (oSettings, json) {
+
         }
-        else { 
-            
-            $('.warning-kuno').addClass('d-none');
-            $('.warning-kuno').removeClass('d-block');
 
-      
 
-        var e = $('#contract_main').find('input[name="contractor_name"]').val();
-        var f = $('#contract_main').find('select[name="contractor_type"]').val();
-        var g = $('#contract_main').find('select[name="address_municipality"]').val()
-        var h =  $('#contract_main').find('select[name="address_barangay"]').val();
-        var data = {
-            contractor_name :e ,
-            contractor_type : f,
-            address_municipality :g ,
-            address_barangay : h
-        }
-        console.log(data);
-        $.ajax({
-            type: 'POST',
-            url: '/api/contractor/post',
-            data: data, 
-            success: function (data) {
-                console.log('sucess', data);
-                if ($('#tab1_tab').hasClass('link_1')) {
-                    $('#tab1_tab').removeClass('active');
-                    $('#tab2_tab').addClass('active');
-        
-                    $('#tab1').removeClass('show');
-                    $('#tab1').removeClass('active');
-        
-                    $('#tab2').addClass('show');
-                    $('#tab2').addClass('active');
-                    toastr.success('Successfully Create taafasfa');
-
-                    $('#contract_main').find('input[name="contractor_name"]').val("");
-       $('#contract_main').find('select[name="contractor_type"]').val("");
-      $('#contract_main').find('select[name="address_municipality"]').val("");
-       $('#contract_main').find('select[name="address_barangay"]').val("");
-                }   
-                contractorTbl.ajax.reload(); 
-            }, 
-            error: function (data) {
-                toastr.error("Failed")
-            }
-        });
-        }
-      
     });
 
+    //SAVING PROJECT CREATE
+    $("#createproject").validate({
+        rules: {
+            //contractor_name: {
+            //    required: true,
+            //},
+            //address_municipality: {
+            //    required: true,
+            //},
+            //address_barangay: {
+            //    required: true,
+            //},
+            //contractor_type: {
+            //    required: true,
+            //},
+        },
+        errorClass: "validationerror",
+        messages: {
+            //contractor_name: {
+            //    required: "Please Input a Contractor",
+            //},
+            //address_municipality: {
+            //    required: "Please Select a Municipality",
+            //},
+            //address_barangay: {
+            //    required: "Please Select a Barangay",
+            //},
+            //contractor_type: {
+            //    required: "Please Select a Type",
+            //},
+        },
+        submitHandler: function () {
+            if ($("#createproject").valid()) {
+                var valdata = $("#createproject").serialize();
+
+                $.ajax({
+                    url: '/api/project/post',
+                    type: "POST",
+                    dataType: 'json',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: valdata,
+                });
+                setTimeout(function () {
+                    toastr.success('Successsfully Added a Project');
+                    setTimeout(function () {
+                        location.reload();
+                    }, 1000)
+                }, 1000);
+            }
+        }
+    });
+
+
+
+
+
+    //GET DATA CASCADING DROPDOWN FOR SAVING PROJECT
+    $.ajax({
+        type: 'GET',
+        url: '/api/getmunicipality/municipality/get',
+        success: function (data) {
+            var html = '<option value="">Select municipalityName</option>';
+            $.each(data, function (i, item) {
+                html += '<option value="' + item.municipalityId + '">' + item.municipalityName + '</option>';
+            });
+            $('select[name=location_municipality]').html(html);
+            // render divisionsId2 select
+            // console log on select change
+            $('select[name=location_municipality]').on('change', function () {
+                var municipalityId = $('select[name=location_municipality]').val();
+
+                $.ajax({
+                    type: 'GET',
+                    url: '/api/barangaylist/get/' + municipalityId,
+                    success: function (data) {
+                        var html = '';
+                        $.each(data, function (i, item) {
+                            html += '<option value="' + item.barangayId + '">' + item.barangayName + '</option>';
+                        });
+                        console.log(data);
+                        $('select[name=location_barangay]').html(html);
+                    }
+                });
+            });
+        }
+    });
+
+}
+
+
+
+
+function ContractorAnimation() {
+
+
+
+    //GET DATA CASCADING DROPDOWN FOR SAVING CONTRACTOR
+    $.ajax({
+        type: 'GET',
+        url: '/api/getmunicipality/municipality/get',
+        success: function (data) {
+            var html = '<option value="">Select municipalityName</option>';
+            $.each(data, function (i, item) {
+                html += '<option value="' + item.municipalityId + '">' + item.municipalityName + '</option>';
+            });
+            $('select[name=address_municipality]').html(html);
+            // render divisionsId2 select
+            // console log on select change
+            $('select[name=address_municipality]').on('change', function () {
+                var municipalityId = $('select[name=address_municipality]').val();
+
+                $.ajax({
+                    type: 'GET',
+                    url: '/api/barangaylist/get/' + municipalityId,
+                    success: function (data) {
+                        var html = '';
+                        $.each(data, function (i, item) {
+                            html += '<option value="' + item.barangayId + '">' + item.barangayName + '</option>';
+                        });
+                        console.log(data);
+                        $('select[name=address_barangay]').html(html);
+                    }
+                });
+            });
+        }
+    });
+
+    //GET DATA ONLY FOR EDIT Contractor GET METHOD 
+    $('#contractortable').on('click', '.editcontractor', function () {
+        var id = $(this).attr('data-id');
+        var url = '/api/contractor/geteditcontractor/' + id;
+        /*    toastr.success(id);*/
+
+
+        $.ajax({
+            type: 'GET',
+            url: url,
+            success: function (data) {
+                $('#editcontractorModal').modal('show');
+                $('#editcontractorform').find('input[name="contractorID"]').val(data.contractorID);
+                $('#editcontractorform').find('input[name="contractor_name"]').val(data.contractor_name);
+                $('#editcontractorform').find('select[name="contractor_type"]').val(data.contractor_type);
+                $('#editcontractorform').find('select[name="address_municipality"]').val(data.address_municipality);
+                $('#editcontractorform').find('select[name="address_barangay"]').val(data.address_barangay);
+
+            }
+        })
+
+    });
+
+
+    /* SAVING EDIT CONTRACTOR POST METHOD*/
+    $("#editcontractorform").validate({
+        rules: {
+            contractor_name: {
+                required: true,
+            },
+            contractor_type: {
+                required: true,
+            },
+          
+
+        },
+        errorClass: "tomerror",
+        messages: {
+            contractor_name: {
+                required: "Please Enter Your Name",
+            },
+           
+
+        },
+        submitHandler: function () {
+            if ($("#editcontractorModal").valid()) {
+                var valdata = $("#editcontractorModal").serialize();
+                $('#editcontractorModal').modal('hide');
+                $.ajax({
+                    url: '/api/savingeditcontractor/post/' + id,
+                    type: "POST",
+                    dataType: 'json',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: valdata,
+                });
+                //setTimeout(function () {
+                //    toastr.success('EDIT SUCCESSFULLY');
+                //    setTimeout(function () {
+                //        location.reload();
+                //    }, 2000)
+                //}, 1500);
+            }
+        }
+    });
+
+
+    //SAVINGR CONTRACTOR CREATE
+    $("#contract_main").validate({
+        rules: {
+            contractor_name: {
+                required: true,
+            },
+            address_municipality: {
+                required: true,
+            },
+            address_barangay: {
+                required: true,
+            },
+            contractor_type: {
+                required: true,
+            },
+        },
+        errorClass: "validationerror",
+        messages: {
+            contractor_name: {
+                required: "Please Input a Contractor",
+            },
+            address_municipality: {
+                required: "Please Select a Municipality",
+            },
+            address_barangay: {
+                required: "Please Select a Barangay",
+            },
+            contractor_type: {
+                required: "Please Select a Type",
+            },
+        },
+        submitHandler: function () {
+            if ($("#contract_main").valid()) {
+                var valdata = $("#contract_main").serialize();
+               
+                $.ajax({
+                    url: '/api/contractor/post',
+                    type: "POST",
+                    dataType: 'json',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: valdata,
+                });
+                setTimeout(function () {
+                    toastr.success('Successsfully Added a Contractor');
+                    setTimeout(function () {
+                        location.reload();
+                    }, 1000)
+                }, 1000);
+            }
+        }
+    });
 
 
     //SERVER SIDE DATATABLE SHOW DATA FOR CONTRACTOR
@@ -92,6 +331,13 @@ function ContractorAnimation() {
             },
             {
                 "data": "contractor_type", "name": "contractor_type",
+            },
+            {
+                "data": null,
+                'render': function (data, type, full, meta) {
+                    return '<button  class=\'btn btn-success  editcontractor d-block btn-sm\' data-id = ' + data.contractorID + ' > Edit  <span class="fa fa-edit f-20" >  </span></button>' 
+
+                }
             },
         
 

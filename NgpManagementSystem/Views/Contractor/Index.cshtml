@@ -8,85 +8,88 @@
     <div class="col-12 col-sm-12 col-lg-12">
         <div class="card">
             <div class="card-header">
-                <h4>Contractor </h4>
+              
             </div>
             <div class="card-body">
                 <ul class="nav nav-pills" id="myTab3" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active link_1" id="tab1_tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="home" aria-selected="true">Create Contractor</a>
+                        <a class="nav-link active" id="home-tab3" data-toggle="tab" href="#home3" role="tab" aria-controls="home" aria-selected="true"> Contractor</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link_2" id="tab2_tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="profile" aria-selected="false">Contractor Information  </a>
-                    </li> 
+                        <a class="nav-link" id="profile-tab3" data-toggle="tab" href="#profile3" role="tab" aria-controls="profile" aria-selected="false">Project </a>
+                    </li>
+
                 </ul>
                 <div class="tab-content" id="myTabContent2">
-                    <div class="tab-pane fade show active content_1" id="tab1" role="tabpanel" aria-labelledby="tab1_tab">
-                        <div class="row">
-                            <div class="col-12 col-md-12 col-lg-12">
-                                <div class="card"> 
-                                    <div class="card-body"> 
-                                        <div class="container-fluid"> 
-                                            <div class="row">
-                                                <form id="contract_main">
-                                                    <div class="container-fluid">
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <div class="form-group ">
-                                                                    <label>Contractor Name</label>
-                                                                    <input type="text" class="form-control" id="contractor_name" name="contractor_name">
-                                                                    <p class="d-none text-red warning-kuno">Please Input a Field</p>
-                                                                </div>
+                    <div class="tab-pane fade show active" id="home3" role="tabpanel" aria-labelledby="home-tab3">  @*for Contractor tab*@
+                        <form id="contract_main">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="card-header">
+                                        <h4>Create Contractor</h4>
+                                    </div>
+                                    <div class="col-md-6">
 
-                                                                <div class="form-group">
-                                                                    <label for="contractor_type">Type</label>
-                                                                    <select class="form-control" style="width:100%" name="contractor_type" id="contractor_type">
-                                                                        <option value="">Type</option>
-                                                                        <option value="Group">Group</option>
-                                                                        <option value="Group">Individual</option>
-                                                                    </select>
-                                                                    <p class="d-none text-red warning-kuno">Please Input a Field</p>
-                                                                </div>
-                                                            </div>
+                                        <div class="form-group ">
+                                            <label>Contractor Name</label>
+                                            <input type="text" class="form-control" id="contractor_name" name="contractor_name">
+                                            <p class="d-none text-red warning-kuno">Please Input a Field</p>
+                                        </div>
 
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label for="address_municipality">Municipality</label>
-                                                                    <select class="form-control" style="width:100%" name="address_municipality" id="address_municipality">
-                                                                        <option value="">Municipality</option>
-                                                                        <option value="1">Group</option>
-                                                                        <option value="2">Individual</option>
-                                                                    </select>
-                                                                    <p class="d-none text-red warning-kuno">Please Input a Field</p>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="address_barangay">Barangay</label>
-                                                                    <select class="form-control" style="width:100%" name="address_barangay" id="address_barangay">
-                                                                        <option value="">Please Select a Barangay</option>
-                                                                        <option value="1">Group</option>
-                                                                        <option value="2">Individual</option>
-                                                                    </select>
-                                                                    <p class="d-none text-red warning-kuno">Please Input a Field</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="text-center">
-                                                            <div class="btn bg-green text-white btn-sm contract_next">
-                                                                Save
-                                                            </div>
-                                                        </div>
-                                                       
-                                                    </div>
-                                                </form>
+                                        <div class="form-group">
+                                            <label for="contractor_type">Type</label>
+                                            <select class="form-control" style="width:100%" name="contractor_type" id="contractor_type">
+                                                <option value="">Type</option>
+                                                <option value="Group">Group</option>
+                                                <option value="Individual">Individual</option>
+                                            </select>
+                                            <p class="d-none text-red warning-kuno">Please Input a Field</p>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+
+                                        <div class="form-group">
+                                            <div class=" sample">
+
+                                                <label style="color: black;">address_municipality</label>
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <select id="address_municipality" name="address_municipality" class="form-control" style="width:100%">
+                                                    <option value=" ">Not Applicable</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class=" sample">
+
+                                                    <label style="color: black;">address_barangay </label>
+                                                </div>
+                                                <select name="address_barangay" style="width:100%" class="form-control">
+                                                    <option value=" ">Not Applicable</option>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
+
+
+
+
                                 </div>
-                               
+                                <div class="text-center">
+                                    <div class="text-center">
+
+                                        <input type="submit" value="SAVE" class="btn bg-green text-white btn-sm contract_next" />
+
+                                    </div>
+
+                                </div>
+
                             </div>
-                           
-                        </div>
-                    </div> 
-                    <div class="tab-pane fade content_2" id="tab2" role="tabpanel" aria-labelledby="tab2_tab"> 
+                        </form>
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
@@ -94,7 +97,7 @@
                                         <h4>Contractor Table</h4>
 
                                     </div>
-                                    
+
                                     <div class="card-body p-0">
                                         <div class="table-responsive">
                                             <table class="table table-striped" id="contractortable" width="100%">
@@ -106,7 +109,8 @@
                                                         <th class="bg-green   text-white">Address Municipality</th>
                                                         <th class="bg-green  text-white">Address Barangay</th>
                                                         <th class="bg-green  text-white">Contractor Type</th>
-                                                       
+                                                        <th class="bg-green  text-white">Action </th>
+
 
                                                     </tr>
                                                 </thead>
@@ -117,15 +121,281 @@
                                 </div>
                             </div>
                         </div>
-                    </div> 
+
+
+                    </div>
+
+                    <div class="tab-pane fade" id="profile3" role="tabpanel" aria-labelledby="profile-tab3">
+                        @*for project tab*@
+
+                        <form id="createproject">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="card-header">
+                                        <h4>Create Project</h4>
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="form-group ">
+                                            <div class=" sample">
+                                                <label style="color: black;">site_code </label>
+                                            </div>
+                                            <input type="text" class="form-control" id="site_code" name="site_code">
+
+                                        </div>
+
+
+
+                                        <div class="form-group">
+                                            <div class=" sample">
+                                                <label style="color: black;">location_municipality </label>
+                                            </div>
+                                            <select id="location_municipality" name="location_municipality" class="form-control" style="width:100%">
+                                                <option value=" ">Not Applicable</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class=" sample">
+
+                                                <label style="color: black;">location_barangay </label>
+                                            </div>
+                                            <select name="location_barangay" style="width:100%" class="form-control">
+                                                <option value=" ">Not Applicable</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group ">
+                                            <div class=" sample">
+                                                <label style="color: black;">area </label>
+                                            </div>
+                                            <input type="text" class="form-control" id="area" name="area">
+
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class=" sample">
+
+                                                <label style="color: black;">year_form </label>
+                                            </div>
+                                            <select id="year_form" name="year_form" style="width:100%" class="form-control">
+                                                <option value=" ">Select a Year</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2018">2018</option>
+                                                <option value="2017">2017</option>
+                                                <option value="2016">2016</option>
+                                                <option value="2015">2015</option>
+                                                <option value="2014">2014</option>
+                                                <option value="2013">2013</option>
+                                                <option value="2012">2012</option>
+                                                <option value="2011">2011</option>
+
+                                            </select>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <div class=" sample">
+
+                                                <label style="color: black;">penro </label>
+                                            </div>
+                                            <select id="penro" name="penro" style="width:100%" class="form-control">
+                                                <option value="City-Penro">City-Penro</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class=" sample">
+
+                                                <label style="color: black;">cenro </label>
+                                            </div>
+                                            <select id="cenro" name="cenro" style="width:100%" class="form-control">
+                                                <option value=" ">Select a Cenro</option>
+                                                <option value="Cenro-Puerto Princesa">Cenro-Puerto Princesa</option>
+                                                <option value="Cenro-BrookesPoint">Cenro-BrookesPoint</option>
+                                                <option value="Cenro-Roxas">cenro-Roxas</option>
+                                                <option value="Cenro-Taytay">Cenro-Taytay</option>
+                                                <option value="Cenro-Quezon">Cenro-Quezon</option>
+
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class=" sample">
+
+                                                <label style="color: black;">region </label>
+                                            </div>
+                                            <select id="region" name="region" style="width:100%" class="form-control">
+                                                <option value="REGION-IV-B">REGION-IV-B</option>
+                                            </select>
+                                        </div>
+
+
+                                    </div>
+
+
+
+
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-center">
+
+                                        <input type="submit" value="SAVE" class="btn bg-green text-white btn-sm " />
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </form>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>Project Table</h4>
+
+                                    </div>
+
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table id="projecttable" class="table table-hover" width="100%">
+
+
+                                                <thead style="height:46px;">
+                                                    <tr>
+
+                                                        <th class="bg-green text-white">Area</th>
+                                                        <th class="bg-green text-white">SiteCode</th>
+                                                        <th class="bg-green text-white">location Municipality</th>
+                                                        <th class="bg-green text-white">Location Barangay</th>
+                                                        <th class="bg-green text-white">year form</th>
+                                                        <th class="bg-green text-white">Penro</th>
+                                                        <th class="bg-green text-white">Cenro</th>
+                                                        <th class="bg-green text-white">Region</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
+
 </div>
+
+
+@*EDIT CONTRACTOR IN MODAL*@
+<div id="editcontractorModal" class="modal fade" role="dialog" data-backdrop="false">
+    <div class="modal-dialog">
+
+
+
+        <div class="modal-content">
+            <div class="modal-header bg-green">
+                <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">Edit Contractor</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+
+
+                <form id="editcontractorform">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="hidden" class="form-control" id="contractorID" name="contractorID"> @*get id for edit needthis*@
+                                <div class="form-group ">
+                                    <label>Contractor Name</label>
+                                    <input type="text" class="form-control" id="contractor_name" name="contractor_name">
+                                    <p class="d-none text-red warning-kuno">Please Input a Field</p>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="contractor_type">Type</label>
+                                    <select class="form-control" style="width:100%" name="contractor_type" id="contractor_type">
+                                        <option value="">Type</option>
+                                        <option value="Group">Group</option>
+                                        <option value="Individual">Individual</option>
+                                    </select>
+                                    <p class="d-none text-red warning-kuno">Please Input a Field</p>
+                                </div>
+                            </div>
+
+
+                            @*<div class="col-md-6">
+
+                                <div class="form-group">
+                                    <div class=" sample">
+
+                                        <label style="color: black;">address_municipality</label>
+                                    </div>
+
+                                    <div class="form-group">
+
+                                        <select id="address_municipality" name="address_municipality" class="form-control" style="width:100%">
+                                            <option value=" ">Not Applicable</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class=" sample">
+
+                                            <label style="color: black;">address_barangay </label>
+                                        </div>
+                                        <select name="address_barangay" style="width:100%" class="form-control">
+                                            <option value=" ">Not Applicable</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>*@
+
+
+
+
+                        </div>
+                        <div class="text-center">
+                            <div class="text-center">
+
+                                <input type="submit" value="SAVE" class="btn bg-green text-white btn-sm contract_next" />
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 
 <script>
     $(document).ready(function () {
         ContractorAnimation();
+        Project();
     });
 </script>
+

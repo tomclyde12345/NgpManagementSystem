@@ -15,3 +15,6 @@
 .bg-green {
     background-color: #20642f !important;
 }
+.error {
+    color: red;
+}
