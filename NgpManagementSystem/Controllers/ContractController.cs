@@ -24,6 +24,11 @@ namespace NgpManagementSystem.Controllers
             return View();
         }
 
+        public ActionResult Create()
+        {
+            return View();
+        }
+
         //SERVERSIDE DATATABLES
         public ActionResult GetContractTable()
         {
@@ -80,7 +85,7 @@ namespace NgpManagementSystem.Controllers
 
                     contractID = contractdata.contractID,
                     moa = contractdata.moa,
-                    contractorName = contractdata.ngp_contractor.contractor_name,
+                    contractorName = contractdata.contractorName,
                     location_municipality = contractdata.NgpMunicipality.MunicipalityName,
                     location_barangay = contractdata.NgpBarangay.BarangayName,
                     location_sitio = contractdata.location_sitio,

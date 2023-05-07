@@ -1,5 +1,97 @@
 ﻿
 function Contract() {
+
+
+    //GET DATA CASCADING DROPDOWN FOR SAVING PROJECT
+    $.ajax({
+        type: 'GET',
+        url: '/api/getmunicipality/municipality/get',
+        success: function (data) {
+            var html = '<option value="">Select municipalityName</option>';
+            $.each(data, function (i, item) {
+                html += '<option value="' + item.municipalityId + '">' + item.municipalityName + '</option>';
+            });
+            $('select[name=location_municipality]').html(html);
+            // render divisionsId2 select
+            // console log on select change
+            $('select[name=location_municipality]').on('change', function () {
+                var municipalityId = $('select[name=location_municipality]').val();
+
+                $.ajax({
+                    type: 'GET',
+                    url: '/api/barangaylist/get/' + municipalityId,
+                    success: function (data) {
+                        var html = '';
+                        $.each(data, function (i, item) {
+                            html += '<option value="' + item.barangayId + '">' + item.barangayName + '</option>';
+                        });
+                        console.log(data);
+                        $('select[name=location_barangay]').html(html);
+                    }
+                });
+            });
+        }
+    });
+
+
+    //SAVINGR CONTRACT ADD CONTRACT
+    $("#createcontract").validate({
+        rules: {
+            moa: {
+                required: true,
+            },
+            contractor_name: {
+                required: true,
+            },
+        },
+        errorClass: "validationerror",
+        messages: {
+            moa: {
+                required: "Please Input a moa",
+            },
+            contractor_name: {
+                required: "Select  a Contractor Name",
+            },
+        },
+        submitHandler: function () {
+            if ($("#createcontract").valid()) {
+                var valdata = $("#createcontract").serialize();
+              
+                $.ajax({
+                    url: '/api/contract/post',
+                    type: "POST",
+                    dataType: 'json',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: valdata,
+                });
+                setTimeout(function () {
+                    toastr.success('Successsfully Added a Contract');
+                    setTimeout(function () {
+                        location.reload();
+                    }, 2000)
+                }, 1500);
+            }
+        }
+    });
+
+
+    
+
+
+
+    //GET DATA FOR CONTRACTOR DYNAMIC FOR CREATE CONTRACT 
+    $.ajax({
+        type: 'GET',
+        url: '/api/contractorgetdata/get',
+        success: function (data) {
+            $.each(data, function (index, value) {
+                $('select[name=contractorName]').append('<option value="' + value.contractor_name + '">' + value.contractor_name + '</option>');
+            })
+        }
+    });
+
+
+
     $("#contracttable").DataTable({
         "ajax": {
             "url": "/Contract/GetContractTable",

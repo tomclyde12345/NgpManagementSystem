@@ -179,6 +179,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\API\AccountAPIController.cs" />
+    <Compile Include="Controllers\API\ContractApiController.cs" />
     <Compile Include="Controllers\API\ContractorAPIController.cs" />
     <Compile Include="Controllers\API\MunicipalityAPIController.cs" />
     <Compile Include="Controllers\API\ProjectApiController.cs" />
@@ -192,6 +193,7 @@
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\BarangayDTO.cs" />
+    <Compile Include="DTO\ContractDTO.cs" />
     <Compile Include="DTO\ContractorDTO.cs" />
     <Compile Include="DTO\MunicipalityDTO.cs" />
     <Compile Include="DTO\ProjectDTO.cs" />
@@ -5146,10 +5148,10 @@
     <Content Include="Views\Contractor\Create.cshtml" />
     <Content Include="Views\Project\Create.cshtml" />
     <Content Include="Views\Information\Index.cshtml" />
+    <Content Include="Views\Contract\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Contract\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

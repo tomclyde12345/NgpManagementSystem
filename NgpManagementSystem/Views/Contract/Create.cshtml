@@ -1,0 +1,175 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-green">
+                <h4 class="text-white">Create Contract</h4>
+                <div class="card-header-form">
+
+                </div>
+            </div>
+            <br />
+            <form id="createcontract">
+
+                <div style="padding: 2px 2.5%">
+                    <div class="row">
+
+                        <div class="col-md-6">
+
+                            <div class="form-group ">
+                                <label>moa </label>
+                                <input type="text" class="form-control" id="moa" name="moa">
+
+                            </div>
+                            <div class="form-group ">
+                                <label>project_name </label>
+                                <input type="text" class="form-control" id="project_name" name="project_name">
+
+                            </div>
+                            <div class="form-group">
+                                <label for="contractorName">contractorName</label>
+                                <select class="form-control" style="width:100%" name="contractorName" id="contractorName">
+                                    <option value="">Select Contractor Name</option>
+
+                                </select>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="location_municipality">location_municipality</label>
+                                <select id="location_municipality" name="location_municipality" class="form-control" style="width:100%">
+                                    <option value=" ">Not Applicable</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="location_barangay">location_barangay</label>
+                                <select id="location_barangay" name="location_barangay" class="form-control" style="width:100%">
+                                    <option value=" ">Not Applicable</option>
+                                </select>
+                            </div>
+
+
+
+
+
+
+                            <div class="form-group ">
+                                <label>location_sitio </label>
+                                <input type="text" class="form-control" id="location_sitio" name="location_sitio">
+
+                            </div>
+                            <div class="form-group ">
+                                <label>area </label>
+                                <input type="text" class="form-control" id="area" name="area">
+
+                            </div>
+
+                            <div class="form-group ">
+                                <label>commodity </label>
+                                <input type="text" class="form-control" id="commodity" name="commodity">
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="commodity_type">commodity_type</label>
+                                <select id="commodity_type" name="commodity_type" class="form-control" style="width:100%">
+                                    <option value="">Please Select a commodity_type</option>
+                                    <option value="forest trees">forest trees</option>
+                                    <option value="fruit trees">fruit trees</option>
+                                    <option value="bamboo">bamboo</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group ">
+                                <label>survival_rate </label>
+                                <input type="text" class="form-control" id="survival_rate" name="survival_rate">
+
+                            </div>
+
+                          
+
+                            <div class="form-group ">
+                                <label>contract_cost </label>
+                                <input type="text" class="form-control" id="contract_cost" name="contract_cost">
+
+                            </div>
+
+                            <div class="form-group ">
+                                <label>site_code </label>
+                                <input type="text" class="form-control" id="site_code" name="site_code">
+
+                            </div>
+
+
+                            <div class="form-group ">
+                                <label>year_established </label>
+                                <input type="text" class="form-control" id="year_established" name="year_established">
+
+                            </div>
+
+
+
+                            <div class="form-group ">
+                                <label>num_seedlings_planted </label>
+                                <input type="text" class="form-control" id="num_seedlings_planted" name="num_seedlings_planted">
+
+                            </div>
+
+                            <div class="form-group ">
+                                <label>num_seedlings_produced </label>
+                                <input type="text" class="form-control" id="num_seedlings_produced" name="num_seedlings_produced">
+
+                            </div>
+
+
+                            <div class="form-group ">
+                                <label>num_seedlings_survived </label>
+                                <input type="text" class="form-control" id="num_seedlings_survived" name="num_seedlings_survived">
+
+                            </div>
+
+                            <div class="form-group ">
+                                <label>num_seedlings_replanted </label>
+                                <input type="text" class="form-control" id="num_seedlings_replanted" name="num_seedlings_replanted">
+
+                            </div>
+
+                            <div class="form-group ">
+                                <label>num_seedlings_survived_year1 </label>
+                                <input type="text" class="form-control" id="num_seedlings_survived_year1" name="num_seedlings_survived_year1">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="text-center">
+
+                        <input type="submit" value="SAVE" class="btn bg-green text-white btn-sm " />
+
+                    </div>
+
+                </div>
+                <br />
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        Contract();
+
+    });
+</script>
+
