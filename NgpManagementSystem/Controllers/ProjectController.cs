@@ -23,6 +23,10 @@ namespace NgpManagementSystem.Controllers
         {
             return View();
         }
+        public ActionResult Create()
+        {
+            return View();
+        }
 
         //SERVERSIDE DATATABLES
         public ActionResult GetProjecttable()

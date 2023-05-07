@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-green">
+                <h4 class="text-white">Create Contractor</h4>
+                <div class="card-header-form">
+                   
+                </div>
+            </div>
+            <br />
+            <form id="contract_main">
+
+                <div style="padding: 2px 2.5%">
+                    <div class="row">
+
+                        <div class="col-md-6">
+
+                            <div class="form-group ">
+                                <label>Contractor Name</label>
+                                <input type="text" class="form-control" id="contractor_name" name="contractor_name">
+                                <p class="d-none text-red warning-kuno">Please Input a Field</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contractor_type">Type</label>
+                                <select class="form-control" style="width:100%" name="contractor_type" id="contractor_type">
+                                    <option value="">Type</option>
+                                    <option value="Group">Group</option>
+                                    <option value="Individual">Individual</option>
+                                </select>
+                                <p class="d-none text-red warning-kuno">Please Input a Field</p>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                                <div class=" sample">
+
+                                    <label style="color: black;">address_municipality</label>
+                                </div>
+
+                                <div class="form-group">
+
+                                    <select id="address_municipality" name="address_municipality" class="form-control" style="width:100%">
+                                        <option value=" ">Not Applicable</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class=" sample">
+
+                                        <label style="color: black;">address_barangay </label>
+                                    </div>
+                                    <select name="address_barangay" style="width:100%" class="form-control">
+                                        <option value=" ">Not Applicable</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+                    <div class="text-center">
+                        <div class="text-center">
+
+                            <input type="submit" value="SAVE" class="btn bg-green text-white btn-sm contract_next" />
+
+                        </div>
+
+                    </div>
+                <br />
+              
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        ContractorAnimation();
+
+    });
+</script>
+

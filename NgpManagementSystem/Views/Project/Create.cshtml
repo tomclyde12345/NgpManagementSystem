@@ -1,0 +1,156 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-green">
+                <h4 class="text-white">Create Projects</h4>
+                <div class="card-header-form">
+
+                </div>
+            </div>
+            <br />
+            <form id="createproject">
+
+                <div style="padding: 2px 2.5%">
+                    <div class="row">
+
+                        <div class="col-md-6">
+
+                            <div class="form-group ">
+                                <div class=" sample">
+                                    <label style="color: black;">site_code </label>
+                                </div>
+                                <input type="text" class="form-control" id="site_code" name="site_code">
+
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <div class=" sample">
+                                    <label style="color: black;">location_municipality </label>
+                                </div>
+                                <select id="location_municipality" name="location_municipality" class="form-control" style="width:100%">
+                                    <option value=" ">Not Applicable</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <div class=" sample">
+
+                                    <label style="color: black;">location_barangay </label>
+                                </div>
+                                <select name="location_barangay" style="width:100%" class="form-control">
+                                    <option value=" ">Not Applicable</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group ">
+                                <div class=" sample">
+                                    <label style="color: black;">area </label>
+                                </div>
+                                <input type="text" class="form-control" id="area" name="area">
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class=" sample">
+
+                                    <label style="color: black;">year_form </label>
+                                </div>
+                                <select id="year_form" name="year_form" style="width:100%" class="form-control" required>
+                                    <option value=" ">Select a Year</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2011">2011</option>
+
+                                </select>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class=" sample">
+
+                                    <label style="color: black;">penro </label>
+                                </div>
+                                <select id="penro" name="penro" style="width:100%" class="form-control">
+                                    <option value="City-Penro">City-Penro</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <div class=" sample">
+
+                                    <label style="color: black;">cenro </label>
+                                </div>
+                                <select id="cenro" name="cenro" style="width:100%" class="form-control">
+                                    <option value=" ">Select a Cenro</option>
+                                    <option value="Cenro-Puerto Princesa">Cenro-Puerto Princesa</option>
+                                    <option value="Cenro-BrookesPoint">Cenro-BrookesPoint</option>
+                                    <option value="Cenro-Roxas">cenro-Roxas</option>
+                                    <option value="Cenro-Taytay">Cenro-Taytay</option>
+                                    <option value="Cenro-Quezon">Cenro-Quezon</option>
+
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <div class=" sample">
+
+                                    <label style="color: black;">region </label>
+                                </div>
+                                <select id="region" name="region" style="width:100%" class="form-control">
+                                    <option value="REGION-IV-B">REGION-IV-B</option>
+                                </select>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="text-center">
+
+                        <input type="submit" value="SAVE" class="btn bg-green text-white btn-sm " />
+
+                    </div>
+                    <br />
+                    <br />
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+       
+        Project();
+    });
+</script>
+
+

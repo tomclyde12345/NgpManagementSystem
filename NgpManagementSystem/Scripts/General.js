@@ -1,4 +1,87 @@
 ﻿
+function Contract() {
+    $("#contracttable").DataTable({
+        "ajax": {
+            "url": "/Contract/GetContractTable",
+            "type": "POST",
+            "datatype": "json", dataSrc: "data"
+        },
+
+        "processing": "true",
+        "serverSide": "true",
+        "serverSide": "true",
+
+
+        "columns": [
+
+            {
+                "data": "contractID", "name": "contractID", "className": "hideThis"
+            },
+            {
+                "data": "contractorName", "name": "contractorName",
+            },
+            {
+                "data": "location_municipality", "name": "location_municipality",
+            },
+            {
+                "data": "location_barangay", "name": "location_barangay",
+            },
+            {
+                "data": "location_sitio", "name": "location_sitio",
+            },
+            {
+                "data": "area", "name": "area",
+            },
+            {
+                "data": "commodity", "name": "commodity",
+            },
+            {
+                "data": "commodity_type", "name": "commodity_type",
+            },
+
+            {
+                "data": "survival_rate", "name": "survival_rate",
+            },
+            {
+                "data": "project_name", "name": "project_name",
+            },
+            {
+                "data": "contract_cost", "name": "contract_cost",
+            },
+            {
+                "data": "site_code", "name": "site_code",
+            },
+            {
+                "data": "year_established", "name": "year_established",
+            },
+            {
+                "data": "num_seedlings_planted", "name": "num_seedlings_planted",
+            },
+            {
+                "data": "num_seedlings_survived", "name": "num_seedlings_survived",
+            },
+            {
+                "data": "num_seedlings_replanted", "name": "num_seedlings_replanted",
+            },
+            {
+                "data": "num_seedlings_survived_year1", "name": "num_seedlings_survived_year1",
+            },
+
+        ],
+
+
+        "processing": "true",
+        "language": {
+            "processing": "processing... please wait"
+        },
+
+     
+
+
+    });
+}
+
+
 function Project() {
 
     //SERVERSIDE DATATABLE PROJECT
@@ -60,33 +143,57 @@ function Project() {
     //SAVING PROJECT CREATE
     $("#createproject").validate({
         rules: {
-            //contractor_name: {
-            //    required: true,
-            //},
-            //address_municipality: {
-            //    required: true,
-            //},
-            //address_barangay: {
-            //    required: true,
-            //},
-            //contractor_type: {
-            //    required: true,
-            //},
+            site_code: {
+                required: true,
+            },
+            location_municipality: {
+                required: true,
+            },
+            location_barangay: {
+                required: true,
+            },
+            area: {
+                required: true,
+            },
+            year_form: {
+                required: true,
+            },
+            penro: {
+                required: true,
+            },
+            cenro: {
+                required: true,
+            },
+            region: {
+                required: true,
+            },
         },
         errorClass: "validationerror",
         messages: {
-            //contractor_name: {
-            //    required: "Please Input a Contractor",
-            //},
-            //address_municipality: {
-            //    required: "Please Select a Municipality",
-            //},
-            //address_barangay: {
-            //    required: "Please Select a Barangay",
-            //},
-            //contractor_type: {
-            //    required: "Please Select a Type",
-            //},
+            site_code: {
+                required: "Please Input a site_code",
+            },
+            location_municipality: {
+                required: "Please Select a location_municipality",
+            },
+            location_barangay: {
+                required: "Please Select a location_barangay",
+            },
+            area: {
+                required: "Please Input a area",
+            },
+            site_code: {
+                required: "Please Select a site_code",
+            },
+            year_form: {
+                required: "Please Select a year_form",
+            },
+            penro: {
+                required: "Please Select a penro",
+            },
+            cenro: {
+                required: "Please Select a cenro",
+            },
         },
         submitHandler: function () {
             if ($("#createproject").valid()) {
@@ -103,6 +210,7 @@ function Project() {
                     toastr.success('Successsfully Added a Project');
                     setTimeout(function () {
                         location.reload();
+                        
                     }, 1000)
                 }, 1000);
             }
@@ -296,6 +404,7 @@ function ContractorAnimation() {
                     toastr.success('Successsfully Added a Contractor');
                     setTimeout(function () {
                         location.reload();
+                        window.location.href = "/Contractor/Index";
                     }, 1000)
                 }, 1000);
             }
