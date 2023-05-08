@@ -21,11 +21,19 @@ namespace NgpManagementSystem.Controllers
         }
         public ActionResult Index()
         {
+            if (Session["Role_Id"] == null)
+            {
+                return RedirectToAction("logout", "Account");
+            }
             return View();
         }
 
         public ActionResult Create()
         {
+            if (Session["Role_Id"] == null)
+            {
+                return RedirectToAction("logout", "Account");
+            }
             return View();
         }
 

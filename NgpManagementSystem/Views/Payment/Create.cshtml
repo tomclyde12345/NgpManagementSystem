@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-green">
+                <h4 class="text-white">Create Payments</h4>
+                <div class="card-header-form">
+
+                </div>
+            </div>
+            <br />
+            <form id="paymentcreate">
+
+                <div style="padding: 2px 2.5%">
+                    <div class="row">
+
+                        <div class="col-md-6">
+
+
+
+                            <div class="form-group">
+                                <label for="contract_no">contract_no</label>
+                                <select class="form-control" style="width:100%" name="contract_no" id="contract_no">
+                                    <option value=""> Select Contract</option>
+
+                                </select>
+
+                            </div>
+                            <div class="form-group ">
+                                <label>num_release </label>
+                                <input type="text" class="form-control" id="num_release" name="num_release">
+
+                            </div>
+
+                        </div>
+                   
+
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="text-center">
+
+                        <input type="submit" value="SAVE" class="btn bg-green text-white btn-sm contract_next" />
+
+                    </div>
+
+                </div>
+                <br />
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        Payment();
+
+    });
+</script>
+
+
+

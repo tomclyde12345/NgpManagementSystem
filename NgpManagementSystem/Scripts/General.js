@@ -1,4 +1,74 @@
 ﻿
+function Payment() {
+
+
+    //GET DATA FOR CONTRACTOR DYNAMIC FOR CREATE PAYMENT 
+    $.ajax({
+        type: 'GET',
+        url: '/api/contractdataforpayment/get',
+        success: function (data) {
+            $.each(data, function (index, value) {
+                $('select[name=contract_no]').append('<option value="' + value.contractID + '">' + value.contractorName + '</option>');
+            })
+        }
+    });
+
+
+    //SAVINGR CONTRACT ADD CONTRACT
+    $("#paymentcreate").validate({
+        rules: {
+            contract_no: {
+                required: true,
+            },
+            num_release: {
+                required: true,
+            },
+           
+        },
+        errorClass: "validationerror",
+        messages: {
+            contract_no: {
+                required: "Please Seleact a Contract",
+            },
+            num_release: {
+                required: "Please Seleact a num_release",
+            },
+          
+        },
+        submitHandler: function () {
+            if ($("#paymentcreate").valid()) {
+                var valdata = $("#paymentcreate").serialize();
+
+                $.ajax({
+                    url: '/api/payment/post',
+                    type: "POST",
+                    dataType: 'json',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: valdata,
+                });
+                setTimeout(function () {
+                    toastr.success('Successsfully Added a Payment');
+                    setTimeout(function () {
+                        location.reload();
+                    }, 2000)
+                }, 1500);
+            }
+        }
+    });
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
 function Contract() {
 
 

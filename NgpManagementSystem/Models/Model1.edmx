@@ -63,7 +63,7 @@
           <Key>
             <PropertyRef Name="paymentID" />
           </Key>
-          <Property Name="paymentID" Type="int" Nullable="false" />
+          <Property Name="paymentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="contract_no" Type="int" />
           <Property Name="contractorName" Type="nvarchar" MaxLength="100" />
           <Property Name="num_release" Type="nvarchar" MaxLength="100" />
@@ -534,7 +534,7 @@
           <Key>
             <PropertyRef Name="paymentID" />
           </Key>
-          <Property Name="paymentID" Type="Int32" Nullable="false" />
+          <Property Name="paymentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="contract_no" Type="Int32" />
           <Property Name="contractorName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="num_release" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
