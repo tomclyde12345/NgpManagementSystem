@@ -21,10 +21,18 @@ namespace NgpManagementSystem.Controllers
         }
         public ActionResult Index()
         {
+            if (Session["Role_Id"] == null)
+            {
+                return RedirectToAction("logout", "NgpManagement");
+            }
             return View();
         }
         public ActionResult Create()
         {
+            if (Session["Role_Id"] == null)
+            {
+                return RedirectToAction("logout", "NgpManagement");
+            }
             return View();
         }
         public ActionResult GetContractorTable()

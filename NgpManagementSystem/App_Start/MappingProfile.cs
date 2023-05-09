@@ -20,6 +20,7 @@ namespace NgpManagementSystem.App_Start
             Mapper.CreateMap<ngp_projects, ProjectDTO>().ReverseMap();
             Mapper.CreateMap<ngp_contract, ContractDTO>().ReverseMap();
             Mapper.CreateMap<ngp_payment, PaymentDTO>().ReverseMap();
+            Mapper.CreateMap<ngp_sched, SchedDTO>().ReverseMap();
         }
     }
 }

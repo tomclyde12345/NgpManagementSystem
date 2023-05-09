@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-green">
+                <h4 class="text-white">Create Sched</h4>
+                <div class="card-header-form">
+
+                </div>
+            </div>
+            <br />
+            <form id="schedcreate">
+
+                <div style="padding: 2px 2.5%">
+                    <div class="row">
+
+                        <div class="col-md-6">
+
+
+
+
+                            <div class="form-group ">
+                                <label>ors_no </label>
+                                <input type="text" class="form-control" id="ors_no" name="ors_no">
+
+                            </div>
+                            <div class="form-group ">
+                                <label>ors_date </label>
+                                <input type="date" class="form-control" id="ors_date" name="ors_date">
+
+                            </div>
+
+                            <div class="form-group ">
+                                <label>dv_no </label>
+                                <input type="text" class="form-control" id="dv_no" name="dv_no">
+
+                            </div>
+                            <div class="form-group ">
+                                <label>dv_date </label>
+                                <input type="date" class="form-control" id="dv_date" name="dv_date">
+
+                            </div>
+
+
+                            <div class="form-group ">
+                                <label>lddap_no </label>
+                                <input type="text" class="form-control" id="lddap_no" name="lddap_no">
+
+                            </div>
+                            <div class="form-group ">
+                                <label>lddap_date </label>
+                                <input type="date" class="form-control" id="lddap_date" name="lddap_date">
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contract_no">ContractId</label>
+                                <select class="form-control" style="width:100%" name="ContractId" id="ContractId">
+                                    <option value=""> Select ContractId</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="text-center">
+
+                        <input type="submit" value="SAVE" class="btn bg-green text-white btn-sm contract_next" />
+
+                    </div>
+
+                </div>
+                <br />
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        Sched();
+
+    });
+</script>
+
+
+

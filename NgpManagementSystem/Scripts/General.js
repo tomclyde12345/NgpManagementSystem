@@ -1,6 +1,192 @@
 ﻿
+function Sched() {
+
+
+    //GET DATA FOR SCHED DYNAMIC FOR CREATE SCHEDULE 
+    $.ajax({
+        type: 'GET',
+        url: '/api/contractdataforsched/get',
+        success: function (data) {
+            $.each(data, function (index, value) {
+                $('select[name=ContractId]').append('<option value="' + value.contractID + '">' + value.contractorName + '</option>');
+            })
+        }
+    });
+
+
+
+
+    //SERVERSIDE DATATABLE FOR payments
+    $("#schedtable").DataTable({
+        "ajax": {
+            "url": "/Sched/GetSchedTable",
+            "type": "POST",
+            "datatype": "json", dataSrc: "data"
+        },
+
+        "processing": "true",
+        "serverSide": "true",
+        "serverSide": "true",
+
+
+        "columns": [
+
+            {
+                "data": "schedID", "name": "schedID", "className": "hideThis"
+            },
+            {
+                "data": "ors_no", "name": "ors_no",
+            },
+            {
+                "data": "ors_date", "name": "ors_date",
+            },
+            {
+                "data": "dv_no", "name": "dv_no",
+            },
+            {
+                "data": "dv_date", "name": "dv_date",
+            },
+            {
+                "data": "lddap_no", "name": "lddap_no",
+            },
+            {
+                "data": "lddap_date", "name": "lddap_date",
+            },
+            {
+                "data": "contractor_name", "name": "contractor_name",
+            },
+
+        ],
+
+
+        "processing": "true",
+        "language": {
+            "processing": "processing... please wait"
+        },
+
+
+
+
+    });
+
+
+    //SAVINGR SCHED ADD SCHED
+    $("#schedcreate").validate({
+        rules: {
+            ContractId: {
+                required: true,
+            },
+            ors_no: {
+                required: true,
+            },
+            ors_date: {
+                required: true,
+            },
+            dv_no: {
+                required: true,
+            },
+            dv_date: {
+                required: true,
+            },
+            lddap_no: {
+                required: true,
+            },
+            lddap_date: {
+                required: true,
+            },
+           
+          
+
+        },
+        errorClass: "validationerror",
+        messages: {
+            ContractId: {
+                required: "Please Seleact a Contract",
+            },
+
+            ors_no: {
+                required: "Please Input a ors_no",
+            },
+            ors_date: {
+                required: "Please Seleact a ors_date",
+            },
+            dv_no: {
+                required: "Please Input a dv_no",
+            },
+            dv_date: {
+                required: "Please Seleact a dv_date",
+            },
+            lddap_no: {
+                required: "Please Input a lddap_no",
+            },
+            lddap_date: {
+                required: "Please Seleact a lddap_date",
+            },
+           
+
+        },
+        submitHandler: function () {
+            if ($("#schedcreate").valid()) {
+                var valdata = $("#schedcreate").serialize();
+
+                $.ajax({
+                    url: '/api/sched/post',
+                    type: "POST",
+                    dataType: 'json',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: valdata,
+                });
+                setTimeout(function () {
+                    toastr.success('Successsfully Added a Sched');
+                    setTimeout(function () {
+                        location.reload();
+                    }, 2000)
+                }, 1500);
+            }
+        }
+    });
+
+}
 function Payment() {
 
+
+    //SERVERSIDE DATATABLE FOR payments
+    $("#paymenttable").DataTable({
+        "ajax": {
+            "url": "/Payment/GetPaymentTable",
+            "type": "POST",
+            "datatype": "json", dataSrc: "data"
+        },
+
+        "processing": "true",
+        "serverSide": "true",
+        "serverSide": "true",
+
+
+        "columns": [
+
+            {
+                "data": "paymentID", "name": "paymentID", "className": "hideThis"
+            },
+            {
+                "data": "contractorName", "name": "contractorName",
+            },
+            {
+                "data": "num_release", "name": "num_release",
+            },
+          
+        ],
+
+
+        "processing": "true",
+        "language": {
+            "processing": "processing... please wait"
+        },
+
+
+
+
+    });
 
     //GET DATA FOR CONTRACTOR DYNAMIC FOR CREATE PAYMENT 
     $.ajax({

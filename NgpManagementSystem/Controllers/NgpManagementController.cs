@@ -15,6 +15,7 @@ namespace NgpManagementSystem.Controllers
         public NgpdbmsEntities Db = new NgpdbmsEntities();
         protected override void Dispose(bool disposing)
         {
+
             Db.Dispose();
         }
         public ActionResult Login() //the same name to login

@@ -11,6 +11,10 @@ namespace NgpManagementSystem.Controllers
         // GET: User
         public ActionResult Index()
         {
+            if (Session["Role_Id"] == null)
+            {
+                return RedirectToAction("logout", "NgpManagement");
+            }
             return View();
         }
     }

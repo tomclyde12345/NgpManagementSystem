@@ -21,6 +21,12 @@
                     <li class="nav-item">
                         <a class="nav-link" id="profile-tab4" data-toggle="tab" href="#profile4" role="tab" aria-controls="forContract" aria-selected="false">Contract </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab5" data-toggle="tab" href="#profile5" role="tab" aria-controls="forPayments" aria-selected="false">Payment </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab6" data-toggle="tab" href="#profile6" role="tab" aria-controls="forSched" aria-selected="false">Sched </a>
+                    </li>
 
                 </ul>
                 <div class="tab-content" id="myTabContent2">
@@ -107,45 +113,109 @@
                     </div>
 
                     <div class="tab-pane fade" id="profile4" role="tabpanel" aria-labelledby="profile-tab4">
+                        <div class="card-body p-0">
+                            <div class="card-header">
+                                <h4>Contract Table</h4>
+
+                            </div>
+                            <div style="padding:2px 2.5%">
+                                <button type="button" class="btn btn-info btn-md " style="border-radius:20px;" onclick="location.href ='/Contract/Create'">Create Contract <i class="fa fa-plus-circle"></i> </button>
+                            </div>
+                            <br />
+                            <div class="table-responsive">
+                                <table id="contracttable" class="table table-hover" width="100%">
+
+
+                                    <thead style="height:46px;">
+                                        <tr>
+
+                                            <th style="display:none;">contractID</th>
+                                            <th class="bg-green text-white">ContractorName</th>
+                                            <th class="bg-green text-white">location_municipality</th>
+                                            <th class="bg-green text-white">location_barangay</th>
+                                            <th class="bg-green text-white">location_sitio</th>
+                                            <th class="bg-green text-white">area</th>
+                                            <th class="bg-green text-white">commodity</th>
+                                            <th class="bg-green text-white">commodity_type</th>
+                                            <th class="bg-green text-white">survival_rate</th>
+                                            <th class="bg-green text-white">project_name</th>
+                                            <th class="bg-green text-white">contract_cost</th>
+                                            <th class="bg-green text-white">site_code</th>
+                                            <th class="bg-green text-white">year_established</th>
+                                            <th class="bg-green text-white"> num_seedlings_planted</th>
+                                            <th class="bg-green text-white">num_seedlings_produced</th>
+                                            <th class="bg-green text-white">num_seedlings_survived</th>
+                                            <th class="bg-green text-white">num_seedlings_survived_year1</th>
+
+
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body p-0">
-                        <div class="card-header">
-                            <h4>Contract Table</h4>
 
+                    <div class="tab-pane fade" id="profile5" role="tabpanel" aria-labelledby="profile-tab5">
+                        <div class="card-body p-0">
+                            <div class="card-header">
+                                <h4>Payment Table</h4>
+
+                            </div>
+                            <div style="padding:2px 2.5%">
+                                <button type="button" class="btn btn-info btn-md " style="border-radius:20px;" onclick="location.href ='/Payment/Create'">Create Payment <i class="fa fa-plus-circle"></i> </button>
+                            </div>
+                            <br />
+                            <div class="table-responsive">
+                                <table id="paymenttable" class="table table-hover" width="100%">
+
+
+                                    <thead style="height:46px;">
+                                        <tr>
+
+                                            <th style="display:none;">paymentId</th>
+                                            <th class="bg-green text-white">ContractorName</th>
+                                            <th class="bg-green text-white">num release</th>
+
+
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
                         </div>
-                        <div style="padding:2px 2.5%">
-                            <button type="button" class="btn btn-info btn-md " style="border-radius:20px;" onclick="location.href ='/Contract/Create'">Create Contract <i class="fa fa-plus-circle"></i> </button>
-                        </div>
-                        <br />
-                        <div class="table-responsive">
-                            <table id="contracttable" class="table table-hover" width="100%">
+                    </div>
+
+                    <div class="tab-pane fade" id="profile6" role="tabpanel" aria-labelledby="profile-tab6">
+                        <div class="card-body p-0">
+                            <div class="card-header">
+                                <h4>Sched Table</h4>
+
+                            </div>
+                            <div style="padding:2px 2.5%">
+                                <button type="button" class="btn btn-info btn-md " style="border-radius:20px;" onclick="location.href ='/Sched/Create'">Create Sched <i class="fa fa-plus-circle"></i> </button>
+                            </div>
+                            <br />
+                            <div class="table-responsive">
+                                <table id="schedtable" class="table table-hover" width="100%">
 
 
-                                <thead style="height:46px;">
-                                    <tr>
+                                    <thead style="height:46px;">
+                                        <tr>
 
-                                        <th style="display:none;">contractID</th>
-                                        <th class="bg-green text-white">ContractorName</th>
-                                        <th class="bg-green text-white">location_municipality</th>
-                                        <th class="bg-green text-white">location_barangay</th>
-                                        <th class="bg-green text-white">location_sitio</th>
-                                        <th class="bg-green text-white">area</th>
-                                        <th class="bg-green text-white">commodity</th>
-                                        <th class="bg-green text-white">commodity_type</th>
-                                        <th class="bg-green text-white">survival_rate</th>
-                                        <th class="bg-green text-white">project_name</th>
-                                        <th class="bg-green text-white">contract_cost</th>
-                                        <th class="bg-green text-white">site_code</th>
-                                        <th class="bg-green text-white">year_established</th>
-                                        <th class="bg-green text-white"> num_seedlings_planted</th>
-                                        <th class="bg-green text-white">num_seedlings_produced</th>
-                                        <th class="bg-green text-white">num_seedlings_survived</th>
-                                        <th class="bg-green text-white">num_seedlings_survived_year1</th>
+                                            <th style="display:none;">schedID</th>
+                                            <th class="bg-green text-white">ors_no</th>
+                                            <th class="bg-green text-white">ors_date</th>
+                                            <th class="bg-green text-white">dv_no</th>
+                                            <th class="bg-green text-white">dv_date</th>
+                                            <th class="bg-green text-white">lddap_no</th>
+                                            <th class="bg-green text-white">lddap_date</th>
+                                            <th class="bg-green text-white">contractor_name</th>
 
 
-                                    </tr>
-                                </thead>
-                            </table>
+
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -252,6 +322,8 @@
         ContractorAnimation();
         Project();
         Contract();
+        Payment();
+        Sched();
     });
 </script>
 
