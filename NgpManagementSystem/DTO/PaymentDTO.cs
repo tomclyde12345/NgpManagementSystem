@@ -11,6 +11,8 @@ namespace NgpManagementSystem.DTO
         public Nullable<int> contract_no { get; set; }
         public string contractorName { get; set; }
         public string num_release { get; set; }
+        public int yearestablishedId { get; set; }
+        
 
     }
 }

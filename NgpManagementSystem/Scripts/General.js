@@ -187,6 +187,16 @@ function Payment() {
 
 
     });
+    //GET DATA FOR yearestablishedId DYNAMIC FOR CREATE PAYMENT
+    $.ajax({
+        type: 'GET',
+        url: '/api/yeargetdata/get',
+        success: function (data) {
+            $.each(data, function (index, value) {
+                $('select[name=yearestablishedId]').append('<option value="' + value.id + '">' + value.name + '</option>');
+            })
+        }
+    });
 
     //GET DATA FOR CONTRACTOR DYNAMIC FOR CREATE PAYMENT 
     $.ajax({
@@ -332,6 +342,16 @@ function Contract() {
 
 
     
+    //GET DATA FOR YEAR DYNAMIC FOR CREATE CONTRACT 
+    $.ajax({
+        type: 'GET',
+        url: '/api/yeargetdata/get',
+        success: function (data) {
+            $.each(data, function (index, value) {
+                $('select[name=year_established]').append('<option value="' + value.id + '">' + value.name + '</option>');
+            })
+        }
+    });
 
 
 
@@ -752,7 +772,7 @@ function ContractorAnimation() {
                     toastr.success('Successsfully Added a Contractor');
                     setTimeout(function () {
                         location.reload();
-                        window.location.href = "/Contractor/Index";
+                        window.location.href = "/Contractor/Create";
                     }, 1000)
                 }, 1000);
             }
@@ -966,6 +986,8 @@ function Account() {
                 $("#changePhotoModal").modal('show');
                 $('#changephoto').find('input[name="id"]').val(data.id);
                 $('#changephoto').find('input[name="name"]').val(data.name);
+                $('#changephoto').find('input[name="FilePath"]').val(data.FilePath);
+                $('#changephoto').find('input[name="FileName"]').val(data.FileName);
                 console.log(data.id)
 
             }

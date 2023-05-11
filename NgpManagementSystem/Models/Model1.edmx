@@ -22,7 +22,7 @@
           <Property Name="project_name" Type="nvarchar" MaxLength="100" />
           <Property Name="contract_cost" Type="nvarchar" MaxLength="100" />
           <Property Name="site_code" Type="nvarchar" MaxLength="100" />
-          <Property Name="year_established" Type="nvarchar" MaxLength="100" />
+          <Property Name="year_established" Type="int" />
           <Property Name="num_seedlings_planted" Type="nvarchar" MaxLength="100" />
           <Property Name="num_seedlings_produced" Type="nvarchar" MaxLength="100" />
           <Property Name="num_seedlings_survived" Type="nvarchar" MaxLength="100" />
@@ -67,6 +67,7 @@
           <Property Name="contract_no" Type="int" />
           <Property Name="contractorName" Type="nvarchar" MaxLength="100" />
           <Property Name="num_release" Type="nvarchar" MaxLength="100" />
+          <Property Name="yearestablishedId" Type="int" />
         </EntityType>
         <EntityType Name="ngp_projects">
           <Key>
@@ -147,28 +148,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ProjectNameId" Type="int" />
-          <Property Name="moa_number" Type="nvarchar" MaxLength="100" />
-          <Property Name="Date_moa" Type="nvarchar" MaxLength="100" />
-          <Property Name="Unit_cost" Type="nvarchar" MaxLength="100" />
-          <Property Name="contract_cost" Type="nvarchar" MaxLength="100" />
-          <Property Name="date_obligated" Type="nvarchar" MaxLength="100" />
-          <Property Name="ors_no" Type="nvarchar" MaxLength="100" />
-          <Property Name="no_seedings_produced" Type="nvarchar" MaxLength="100" />
-          <Property Name="commodity_forest" Type="nvarchar" MaxLength="100" />
-          <Property Name="commodity_fruit" Type="nvarchar" MaxLength="100" />
-          <Property Name="commodity_bamboo" Type="nvarchar" MaxLength="100" />
-          <Property Name="no_seedlings_planted" Type="nvarchar" MaxLength="100" />
-          <Property Name="no_seedlings_survived" Type="nvarchar" MaxLength="100" />
-          <Property Name="survival_rate" Type="nvarchar" MaxLength="100" />
-          <Property Name="year_contracted" Type="nvarchar" MaxLength="100" />
-          <Property Name="moa3" Type="nvarchar" MaxLength="100" />
-          <Property Name="moa2" Type="nvarchar" MaxLength="100" />
-          <Property Name="no_seedlings_year1" Type="nvarchar" MaxLength="100" />
-          <Property Name="no_seedlings_replanted" Type="nvarchar" MaxLength="100" />
-          <Property Name="no_seedlings_replanted3" Type="nvarchar" MaxLength="100" />
-          <Property Name="no_seedlings_year3" Type="nvarchar" MaxLength="100" />
-          <Property Name="ContractorNameId" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <Association Name="FK_ngp_contract_ngp_contractor">
           <End Role="ngp_contractor" Type="Self.ngp_contractor" Multiplicity="0..1" />
@@ -218,6 +198,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ngp_contract_NgpYear">
+          <End Role="NgpYear" Type="Self.NgpYear" Multiplicity="0..1" />
+          <End Role="ngp_contract" Type="Self.ngp_contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NgpYear">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ngp_contract">
+              <PropertyRef Name="year_established" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ngp_contractor_NgpBarangay">
           <End Role="NgpBarangay" Type="Self.NgpBarangay" Multiplicity="0..1" />
           <End Role="ngp_contractor" Type="Self.ngp_contractor" Multiplicity="*" />
@@ -263,6 +255,18 @@
             </Principal>
             <Dependent Role="ngp_payment">
               <PropertyRef Name="contract_no" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ngp_payment_NgpYear">
+          <End Role="NgpYear" Type="Self.NgpYear" Multiplicity="0..1" />
+          <End Role="ngp_payment" Type="Self.ngp_payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NgpYear">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ngp_payment">
+              <PropertyRef Name="yearestablishedId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -356,6 +360,10 @@
             <End Role="NgpMunicipality" EntitySet="NgpMunicipality" />
             <End Role="ngp_contract" EntitySet="ngp_contract" />
           </AssociationSet>
+          <AssociationSet Name="FK_ngp_contract_NgpYear" Association="Self.FK_ngp_contract_NgpYear">
+            <End Role="NgpYear" EntitySet="NgpYear" />
+            <End Role="ngp_contract" EntitySet="ngp_contract" />
+          </AssociationSet>
           <AssociationSet Name="FK_ngp_contractor_NgpBarangay" Association="Self.FK_ngp_contractor_NgpBarangay">
             <End Role="NgpBarangay" EntitySet="NgpBarangay" />
             <End Role="ngp_contractor" EntitySet="ngp_contractor" />
@@ -370,6 +378,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_ngp_payment_ngp_contract" Association="Self.FK_ngp_payment_ngp_contract">
             <End Role="ngp_contract" EntitySet="ngp_contract" />
+            <End Role="ngp_payment" EntitySet="ngp_payment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ngp_payment_NgpYear" Association="Self.FK_ngp_payment_NgpYear">
+            <End Role="NgpYear" EntitySet="NgpYear" />
             <End Role="ngp_payment" EntitySet="ngp_payment" />
           </AssociationSet>
           <AssociationSet Name="FK_ngp_projects_ngp_dropdown" Association="Self.FK_ngp_projects_ngp_dropdown">
@@ -397,7 +409,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="NgpdbmsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="NgpdbmsEntities" annotation:LazyLoadingEnabled="true" >
+        <EntityContainer Name="NgpdbmsEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ngp_contract" EntityType="NgpdbmsModel.ngp_contract" />
           <EntitySet Name="ngp_contractor" EntityType="NgpdbmsModel.ngp_contractor" />
           <EntitySet Name="ngp_dropdown" EntityType="NgpdbmsModel.ngp_dropdown" />
@@ -427,6 +439,10 @@
             <End Role="NgpMunicipality" EntitySet="NgpMunicipalities" />
             <End Role="ngp_contract" EntitySet="ngp_contract" />
           </AssociationSet>
+          <AssociationSet Name="FK_ngp_contract_NgpYear" Association="NgpdbmsModel.FK_ngp_contract_NgpYear">
+            <End Role="NgpYear" EntitySet="NgpYears" />
+            <End Role="ngp_contract" EntitySet="ngp_contract" />
+          </AssociationSet>
           <AssociationSet Name="FK_ngp_payment_ngp_contract" Association="NgpdbmsModel.FK_ngp_payment_ngp_contract">
             <End Role="ngp_contract" EntitySet="ngp_contract" />
             <End Role="ngp_payment" EntitySet="ngp_payment" />
@@ -446,6 +462,10 @@
           <AssociationSet Name="FK_ngp_projects_ngp_dropdown" Association="NgpdbmsModel.FK_ngp_projects_ngp_dropdown">
             <End Role="ngp_dropdown" EntitySet="ngp_dropdown" />
             <End Role="ngp_projects" EntitySet="ngp_projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ngp_payment_NgpYear" Association="NgpdbmsModel.FK_ngp_payment_NgpYear">
+            <End Role="NgpYear" EntitySet="NgpYears" />
+            <End Role="ngp_payment" EntitySet="ngp_payment" />
           </AssociationSet>
           <AssociationSet Name="FK_ngp_projects_NgpBarangay" Association="NgpdbmsModel.FK_ngp_projects_NgpBarangay">
             <End Role="NgpBarangay" EntitySet="NgpBarangays" />
@@ -481,7 +501,7 @@
           <Property Name="project_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="contract_cost" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="site_code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="year_established" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="year_established" Type="Int32" />
           <Property Name="num_seedlings_planted" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="num_seedlings_produced" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="num_seedlings_survived" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -493,6 +513,7 @@
           <NavigationProperty Name="ngp_dropdown" Relationship="NgpdbmsModel.FK_ngp_contract_ngp_dropdown" FromRole="ngp_contract" ToRole="ngp_dropdown" />
           <NavigationProperty Name="NgpBarangay" Relationship="NgpdbmsModel.FK_ngp_contract_NgpBarangay" FromRole="ngp_contract" ToRole="NgpBarangay" />
           <NavigationProperty Name="NgpMunicipality" Relationship="NgpdbmsModel.FK_ngp_contract_NgpMunicipality" FromRole="ngp_contract" ToRole="NgpMunicipality" />
+          <NavigationProperty Name="NgpYear" Relationship="NgpdbmsModel.FK_ngp_contract_NgpYear" FromRole="ngp_contract" ToRole="NgpYear" />
           <NavigationProperty Name="ngp_payment" Relationship="NgpdbmsModel.FK_ngp_payment_ngp_contract" FromRole="ngp_contract" ToRole="ngp_payment" />
         </EntityType>
         <EntityType Name="ngp_contractor">
@@ -538,7 +559,9 @@
           <Property Name="contract_no" Type="Int32" />
           <Property Name="contractorName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="num_release" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="yearestablishedId" Type="Int32" />
           <NavigationProperty Name="ngp_contract" Relationship="NgpdbmsModel.FK_ngp_payment_ngp_contract" FromRole="ngp_payment" ToRole="ngp_contract" />
+          <NavigationProperty Name="NgpYear" Relationship="NgpdbmsModel.FK_ngp_payment_NgpYear" FromRole="ngp_payment" ToRole="NgpYear" />
         </EntityType>
         <EntityType Name="ngp_projects">
           <Key>
@@ -632,28 +655,9 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ProjectNameId" Type="Int32" />
-          <Property Name="moa_number" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Date_moa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Unit_cost" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="contract_cost" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="date_obligated" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ors_no" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="no_seedings_produced" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="commodity_forest" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="commodity_fruit" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="commodity_bamboo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="no_seedlings_planted" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="no_seedlings_survived" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="survival_rate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="year_contracted" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="moa3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="moa2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="no_seedlings_year1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="no_seedlings_replanted" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="no_seedlings_replanted3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="no_seedlings_year3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ContractorNameId" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ngp_contract" Relationship="NgpdbmsModel.FK_ngp_contract_NgpYear" FromRole="NgpYear" ToRole="ngp_contract" />
+          <NavigationProperty Name="ngp_payment" Relationship="NgpdbmsModel.FK_ngp_payment_NgpYear" FromRole="NgpYear" ToRole="ngp_payment" />
         </EntityType>
         <Association Name="FK_ngp_contract_ngp_contractor">
           <End Type="NgpdbmsModel.ngp_contractor" Role="ngp_contractor" Multiplicity="0..1" />
@@ -700,6 +704,18 @@
             </Principal>
             <Dependent Role="ngp_contract">
               <PropertyRef Name="location_municipality" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ngp_contract_NgpYear">
+          <End Type="NgpdbmsModel.NgpYear" Role="NgpYear" Multiplicity="0..1" />
+          <End Type="NgpdbmsModel.ngp_contract" Role="ngp_contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NgpYear">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ngp_contract">
+              <PropertyRef Name="year_established" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -763,6 +779,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ngp_payment_NgpYear">
+          <End Type="NgpdbmsModel.NgpYear" Role="NgpYear" Multiplicity="0..1" />
+          <End Type="NgpdbmsModel.ngp_payment" Role="ngp_payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NgpYear">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ngp_payment">
+              <PropertyRef Name="yearestablishedId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ngp_projects_NgpBarangay">
           <End Type="NgpdbmsModel.NgpBarangay" Role="NgpBarangay" Multiplicity="0..1" />
           <End Type="NgpdbmsModel.ngp_projects" Role="ngp_projects" Multiplicity="*" />
@@ -811,12 +839,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        </Schema>
+      </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="NgpdbmsModelStoreContainer" CdmEntityContainer="NgpdbmsEntities" >
+        <EntityContainerMapping StorageEntityContainer="NgpdbmsModelStoreContainer" CdmEntityContainer="NgpdbmsEntities">
           <EntitySetMapping Name="ngp_contract">
             <EntityTypeMapping TypeName="NgpdbmsModel.ngp_contract">
               <MappingFragment StoreEntitySet="ngp_contract">
@@ -878,6 +906,7 @@
           <EntitySetMapping Name="ngp_payment">
             <EntityTypeMapping TypeName="NgpdbmsModel.ngp_payment">
               <MappingFragment StoreEntitySet="ngp_payment">
+                <ScalarProperty Name="yearestablishedId" ColumnName="yearestablishedId" />
                 <ScalarProperty Name="num_release" ColumnName="num_release" />
                 <ScalarProperty Name="contractorName" ColumnName="contractorName" />
                 <ScalarProperty Name="contract_no" ColumnName="contract_no" />
@@ -969,28 +998,7 @@
           <EntitySetMapping Name="NgpYears">
             <EntityTypeMapping TypeName="NgpdbmsModel.NgpYear">
               <MappingFragment StoreEntitySet="NgpYear">
-                <ScalarProperty Name="ContractorNameId" ColumnName="ContractorNameId" />
-                <ScalarProperty Name="no_seedlings_year3" ColumnName="no_seedlings_year3" />
-                <ScalarProperty Name="no_seedlings_replanted3" ColumnName="no_seedlings_replanted3" />
-                <ScalarProperty Name="no_seedlings_replanted" ColumnName="no_seedlings_replanted" />
-                <ScalarProperty Name="no_seedlings_year1" ColumnName="no_seedlings_year1" />
-                <ScalarProperty Name="moa2" ColumnName="moa2" />
-                <ScalarProperty Name="moa3" ColumnName="moa3" />
-                <ScalarProperty Name="year_contracted" ColumnName="year_contracted" />
-                <ScalarProperty Name="survival_rate" ColumnName="survival_rate" />
-                <ScalarProperty Name="no_seedlings_survived" ColumnName="no_seedlings_survived" />
-                <ScalarProperty Name="no_seedlings_planted" ColumnName="no_seedlings_planted" />
-                <ScalarProperty Name="commodity_bamboo" ColumnName="commodity_bamboo" />
-                <ScalarProperty Name="commodity_fruit" ColumnName="commodity_fruit" />
-                <ScalarProperty Name="commodity_forest" ColumnName="commodity_forest" />
-                <ScalarProperty Name="no_seedings_produced" ColumnName="no_seedings_produced" />
-                <ScalarProperty Name="ors_no" ColumnName="ors_no" />
-                <ScalarProperty Name="date_obligated" ColumnName="date_obligated" />
-                <ScalarProperty Name="contract_cost" ColumnName="contract_cost" />
-                <ScalarProperty Name="Unit_cost" ColumnName="Unit_cost" />
-                <ScalarProperty Name="Date_moa" ColumnName="Date_moa" />
-                <ScalarProperty Name="moa_number" ColumnName="moa_number" />
-                <ScalarProperty Name="ProjectNameId" ColumnName="ProjectNameId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

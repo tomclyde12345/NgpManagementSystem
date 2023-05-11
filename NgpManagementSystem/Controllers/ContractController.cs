@@ -104,7 +104,7 @@ namespace NgpManagementSystem.Controllers
                     project_name = contractdata.project_name,
                     contract_cost = contractdata.contract_cost,
                     site_code = contractdata.site_code,
-                    year_established = contractdata.year_established,
+                    year_established = contractdata.NgpYear.Name,
                     num_seedlings_planted = contractdata.num_seedlings_planted,
                     num_seedlings_produced = contractdata.num_seedlings_produced,
                     num_seedlings_survived = contractdata.num_seedlings_survived,

@@ -22,6 +22,17 @@ namespace NgpManagementSystem.Controllers.API
             Db.Dispose();
         }
 
+
+        //get data for YEAR
+        [HttpGet]
+        [Route("api/yeargetdata/get")]
+        public IHttpActionResult GetYEARrData()
+        {
+            var year = Db.NgpYears.ToList().Select(Mapper.Map<NgpYear, YearDTO>);
+            return Ok(year.OrderByDescending(x => x.Id));
+        }
+
+
         //CREATE/SAVING METHODS CONTRACT
         [HttpPost]
         [Route("api/contract/post")]
@@ -51,19 +62,6 @@ namespace NgpManagementSystem.Controllers.API
                     contract.num_seedlings_survived = contractDTO.num_seedlings_survived;
                     contract.num_seedlings_replanted = contractDTO.num_seedlings_replanted;
                     contract.num_seedlings_survived_year1 = contractDTO.num_seedlings_survived_year1;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

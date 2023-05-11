@@ -33,6 +33,7 @@ namespace NgpManagementSystem.Controllers.API
 
 
 
+
         [HttpPost]
         [Route("api/payment/post")]
         public IHttpActionResult Save(PaymentDTO paymentDTO)
@@ -49,6 +50,7 @@ namespace NgpManagementSystem.Controllers.API
                     payment.contractorName = Db.ngp_contract.SingleOrDefault(x => x.contractID == paymentDTO.contract_no).contractorName;
 
                     payment.num_release = paymentDTO.num_release;
+                    payment.yearestablishedId = paymentDTO.yearestablishedId;
 
                     Db.ngp_payment.Add(payment);
                   

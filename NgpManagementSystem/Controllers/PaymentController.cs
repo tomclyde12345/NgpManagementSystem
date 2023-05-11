@@ -77,9 +77,11 @@ namespace NgpManagementSystem.Controllers
                 {
 
                     paymentID = paymentsdata.paymentID,
-                    num_release = paymentsdata.num_release,
+                 
                     contractorName = paymentsdata.contractorName,
-                  
+                    yearestablishedId = paymentsdata.NgpYear.Name,
+
+
 
 
                 }).ToList();

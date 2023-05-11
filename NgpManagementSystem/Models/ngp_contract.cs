@@ -33,7 +33,7 @@ namespace NgpManagementSystem.Models
         public string project_name { get; set; }
         public string contract_cost { get; set; }
         public string site_code { get; set; }
-        public string year_established { get; set; }
+        public Nullable<int> year_established { get; set; }
         public string num_seedlings_planted { get; set; }
         public string num_seedlings_produced { get; set; }
         public string num_seedlings_survived { get; set; }
@@ -46,6 +46,7 @@ namespace NgpManagementSystem.Models
         public virtual ngp_dropdown ngp_dropdown { get; set; }
         public virtual NgpBarangay NgpBarangay { get; set; }
         public virtual NgpMunicipality NgpMunicipality { get; set; }
+        public virtual NgpYear NgpYear { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ngp_payment> ngp_payment { get; set; }
     }

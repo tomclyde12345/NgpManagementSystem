@@ -20,7 +20,7 @@ namespace NgpManagementSystem.DTO
         public string project_name { get; set; }
         public string contract_cost { get; set; }
         public string site_code { get; set; }
-        public string year_established { get; set; }
+        public int year_established { get; set; }
         public string num_seedlings_planted { get; set; }
         public string num_seedlings_produced { get; set; }
         public string num_seedlings_survived { get; set; }

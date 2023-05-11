@@ -14,28 +14,19 @@ namespace NgpManagementSystem.Models
     
     public partial class NgpYear
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public NgpYear()
+        {
+            this.ngp_contract = new HashSet<ngp_contract>();
+            this.ngp_payment = new HashSet<ngp_payment>();
+        }
+    
         public int Id { get; set; }
-        public Nullable<int> ProjectNameId { get; set; }
-        public string moa_number { get; set; }
-        public string Date_moa { get; set; }
-        public string Unit_cost { get; set; }
-        public string contract_cost { get; set; }
-        public string date_obligated { get; set; }
-        public string ors_no { get; set; }
-        public string no_seedings_produced { get; set; }
-        public string commodity_forest { get; set; }
-        public string commodity_fruit { get; set; }
-        public string commodity_bamboo { get; set; }
-        public string no_seedlings_planted { get; set; }
-        public string no_seedlings_survived { get; set; }
-        public string survival_rate { get; set; }
-        public string year_contracted { get; set; }
-        public string moa3 { get; set; }
-        public string moa2 { get; set; }
-        public string no_seedlings_year1 { get; set; }
-        public string no_seedlings_replanted { get; set; }
-        public string no_seedlings_replanted3 { get; set; }
-        public string no_seedlings_year3 { get; set; }
-        public Nullable<int> ContractorNameId { get; set; }
+        public string Name { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ngp_contract> ngp_contract { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ngp_payment> ngp_payment { get; set; }
     }
 }

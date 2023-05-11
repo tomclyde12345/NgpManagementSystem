@@ -112,7 +112,7 @@ namespace NgpManagementSystem.Controllers.API
 
                                 if (name == null || name.Length == 0)
                                 {
-                                    user.FilePath = "/DefaultImage/city-hall.png";
+                                    user.FilePath = "/DefaultImage/denr.png";
                                 }
                                 else
                                 {
@@ -209,7 +209,7 @@ namespace NgpManagementSystem.Controllers.API
         public async Task<string> ChangePhoto()
         {
             var ctx = HttpContext.Current;
-            var root = ctx.Server.MapPath("~/SampleImg/");
+            var root = ctx.Server.MapPath("/SampleImg/");
             var provider =
                 new MultipartFormDataStreamProvider(root);
 
@@ -243,7 +243,7 @@ namespace NgpManagementSystem.Controllers.API
 
 
                                 {
-                                    res.FilePath = "~/SampleImg/" + dateNew + name;
+                                    res.FilePath = "/SampleImg/" + dateNew + name;
                                 }
 
                                 res.FileName = name;
