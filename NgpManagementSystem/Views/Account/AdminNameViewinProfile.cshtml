@@ -4,17 +4,9 @@
 @foreach (var adminnameinviewprofile in Model)
 {
 
-    if (adminnameinviewprofile.FilePath == null)
-    {
-        <div class="user-menu" style="cursor: pointer; margin-left: -165px; position: relative; top: -12px;">
-            <img class="user-image" src="~/DefaultImage/denr.png" style="width: 45px; height: 45px; border-radius: 50%; margin: 6px 0px; " />
-            <span>@adminnameinviewprofile.Name</span>
-        </div>
-    }
-    else
-    {
-        <div class="user-menu" style="cursor: pointer; margin-left: -165px; position: relative; top: -12px;">
-            <img src="@adminnameinviewprofile.FilePath" style="width: 45px; height: 45px; border-radius: 50%; margin: 6px 0px;" />
+ 
+        <div class="user-menu" style="cursor: pointer; margin-left: -115px; position: relative; top: -30px;">
+           
             <span class="text-white">@adminnameinviewprofile.Name</span>
         </div>
     }
@@ -22,5 +14,3 @@
 
 
 
-
-}

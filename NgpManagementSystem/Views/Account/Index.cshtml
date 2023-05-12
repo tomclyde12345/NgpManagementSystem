@@ -53,7 +53,7 @@
             </div>
             <div class="modal-body">
                 <form id="createrole">
-                  
+
                     <div class="row">
                         <div class="col-sm-12">
 
@@ -62,7 +62,7 @@
 
                                 <input type="text" class="form-control" name="RoleName" id="RoleName" value="" />
                             </div>
-                         
+
                         </div>
 
                     </div>
@@ -122,7 +122,7 @@
 
                             <div class="form-group">
                                 <label for="name">Image</label>
-                                <input type="file" class="form-control" id="FilePath" name="FilePath" accept="image/*" onchange="imgchange(event)" />
+                                <input type="file" class="form-control" id="FilePath" name="FilePath" accept="image/*" />
                                 <input type="hidden" class="form-control" name="FileName" id="FileName">
 
                             </div>
@@ -192,7 +192,7 @@
                     </div>
                 </div>
                 <br />
-              
+
                 <form id="editaccount">
                     <div class=" row">
                         <div class="col-sm-6">
@@ -279,65 +279,62 @@
 </div>
 
 
+@*CHANGE PHOTO MODAL *@
+<div class="modal fade" id="changePhotoModal"  data-backdrop="false">
+    <div class="modal-dialog modal-m modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header card-header2">
+                <h4 class="card-title d-flex justify-content-between modal-title" style="padding:0;color:white;">Change Image</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="text-center">
+                        <div id="imageshow" style=" position: relative; height: 196px; width: 100%; overflow: hidden;">
 
-<div class="card-body">
-    <div class="card">
-        @*CHANGE PROFILE IMAGE IN MODAL*@
-        <div class="modal fade" id="changePhotoModal" data-backdrop="false">
-            <div class="modal-dialog modal-m modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header bg-green">
-                        <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">Change Profile Image</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        </div>
                     </div>
-                    @*UPLOAD PICTURE*@
-                    <br />
-                    <div id="imageshow" class="align-self-center">
 
-                    </div>
-
-                    <br />
-
-                    <form id="changephoto">
-                        <div class="modal-body">
-                            <label for="userName">Name</label>
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="ti-user"></i></span>
-                                <input type="text" class="form-control" name="name" id="name" value="" readonly />
-
-                            </div>
-                            <input type="hidden" class="form-control" name="Id" id="id" value="" />
-
-                            <label for="password">Image</label>
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="ti-image"></i></span>
-                                <input type="file" class="form-control" id="FilePath" name="FilePath" accept="image/*" required />
-                                <input type="hidden" class="form-control" id="FileName" name="FileName"  required />
-                            </div>
-
-
-                        </div>
-                        <div class="text-center">
-
-                            <button class="btn bg-green text-white btn-sm btn-grd-* " id="btnsubmit" type="submit">SAVE</button>
-                        </div>
-
-                        <div class="modal-footer ">
-
-
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">CLOSE</button>
-
-                        </div>
-                    </form>
                 </div>
+
+                <br />
+                <form id="changephoto" enctype="multipart/form-data">
+
+                    <input type="hidden" class="form-control" id="AccountId" name="AccountId" />
+                    <input type="hidden" class="form-control" id="Id" name="Id" />
+                    <input type="hidden" class="form-control" name="userId" id="userId">
+                    <input type="hidden" class="form-control" name="userName" id="userName">
+                    <input type="hidden" class="form-control" name="namelang" id="namelang">
+
+                    <div class="text-center">
+
+                        <input type="text" class="form-control text-center" id="name" name="name" readonly />
+
+                        <br />
+                        <div class="alert alert-primary">
+                            Please Choose an Image File to Change a Photo
+
+                        </div>
+                        <input type="file" class="form-control" id="FilePath" name="FilePath" accept="image/*" required />
+                        <br />
+                    </div>
+
+                    <div class="text-center">
+                        <button class="btn btn-primary " id="btnsubmit" type="submit">SAVE</button>
+                    </div>
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-danger" data-dismiss="modal">CLOSE</button>
             </div>
         </div>
-
     </div>
 </div>
-
 
 
 <div class="card-body">

@@ -5,21 +5,7 @@
 @foreach (var adminnameinviewprofile in Model)
 {
 
-    if (adminnameinviewprofile.FilePath == null)
-    {
-        <div class="text-center">
-            <img class="rounded-circle" src="~/DefaultImage/denr.png" width="50" height="50" />
-            <span>@adminnameinviewprofile.Name</span>
-        </div>
-    }
-    else
-    {
-        <div class="user-menu text-center" style="cursor: pointer;">
-            <img class="rounded-circle" src="@adminnameinviewprofile.FilePath" width="50" height="50" />
-
-        </div>
-    }
-    <br />
+   
 <div class="text-center">
     <span class="text-black font-weight-800">@adminnameinviewprofile.Name</span>
     <br />

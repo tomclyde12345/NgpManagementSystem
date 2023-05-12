@@ -60,7 +60,6 @@ namespace NgpManagementSystem.Controllers.API
 
         [HttpPost]
         [Route("api/addaccount/post")]
-
         public async Task<string> PostImage()
         {
 
@@ -74,18 +73,22 @@ namespace NgpManagementSystem.Controllers.API
                 await Request.Content
                     .ReadAsMultipartAsync(provider);
                 ScryptEncoder encoder = new ScryptEncoder();
-                NgpUser user = new NgpUser();
+                NgpUser res = new NgpUser();
 
-                if (user.Id == 0)
+                if (res.Id == 0)
                 {
-                    user.Name = provider.FormData["Name"];
-                    user.Email = provider.FormData["Email"];
-                    user.UserName = provider.FormData["UserName"];
-                    user.Password = encoder.Encode(provider.FormData["Password"]);
-                    user.RoleID = Convert.ToInt32(provider.FormData["RoleID"]);
+                    res.Name = provider.FormData["Name"];
+                    res.Email = provider.FormData["Email"];
+                    res.UserName = provider.FormData["UserName"];
+                    res.Password = encoder.Encode(provider.FormData["Password"]);
+                    res.RoleID = Convert.ToInt32(provider.FormData["RoleID"]);
 
+                    Db.NgpUsers.Add(res);
+
+                  
                 }
 
+                Db.SaveChanges();
 
                 foreach (var file in provider.FileData)
                 {
@@ -108,27 +111,28 @@ namespace NgpManagementSystem.Controllers.API
 
                                 File.Move(localFileName, filePath);
 
-
+                                NgpUpload upload = new NgpUpload();
 
                                 if (name == null || name.Length == 0)
                                 {
-                                    user.FilePath = "/DefaultImage/denr.png";
+                                    upload.FilePath = "/DefaultImage/city-hall.png";
                                 }
                                 else
                                 {
-                                    user.FilePath = "/SampleImg/" + dateNew + name;
+                                    upload.FilePath = "/SampleImg/" + dateNew + name;
                                 }
-                                user.FileName = name;
-                                user.Id = user.Id;
+                                upload.FileName = name;
+                                upload.AccountId = res.Id;
 
-                                Db.NgpUsers.Add(user);
+                                Db.NgpUploads.Add(upload);
                                 Db.SaveChanges();
-
 
                             }
                         }
                     }
                 }
+
+
 
 
             }
@@ -140,6 +144,74 @@ namespace NgpManagementSystem.Controllers.API
             return "File uploaded!";
         }
 
+
+
+
+
+        //EDIT  PROFILE IMAGE
+        [HttpPost]
+        [Route("api/changephoto")]
+        public async Task<string> ChangePhoto()
+        {
+            var ctx = HttpContext.Current;
+            var root = ctx.Server.MapPath("~/SampleImg/");
+            var provider =
+                new MultipartFormDataStreamProvider(root);
+
+            try
+            {
+                await Request.Content
+                    .ReadAsMultipartAsync(provider);
+
+                NgpUser res = new NgpUser();
+
+                foreach (var file in provider.FileData)
+                {
+                    foreach (var key in provider.FormData.AllKeys)
+                    {
+                        foreach (var val in provider.FormData.GetValues(key))
+
+                            if (key == "AccountId")
+                            {
+                                var name = file.Headers
+                                       .ContentDisposition
+                                       .FileName;
+
+                                // remove double quotes from string.
+                                name = name.Trim('"');
+                                var dateNew = Convert.ToString(DateTime.Now.Ticks) + "-";
+
+                                var localFileName = file.LocalFileName;
+                                var filePath = Path.Combine(root, dateNew + name);
+
+                                File.Move(localFileName, filePath);
+                                NgpUpload upload = new NgpUpload();
+
+                                {
+                                    upload.FilePath = "/SampleImg/" + dateNew + name;
+                                }
+
+                                upload.FileName = name;
+                                upload.AccountId = Convert.ToInt32(provider.FormData["AccountId"]);
+                                upload.Id = upload.Id;
+                                Db.NgpUploads.Add(upload);
+                               
+                            };
+                        Db.SaveChanges();
+
+                    }
+                }
+
+
+            }
+
+            catch (Exception e)
+            {
+                return $"Error: {e.Message}";
+            }
+
+            return "File uploaded!";
+        }
 
 
 
@@ -197,77 +269,13 @@ namespace NgpManagementSystem.Controllers.API
         [Route("api/account/getpics/{id}")]
         public IHttpActionResult GetPics(int id)
         {
-            var account = Db.NgpUsers.OrderByDescending(u => u.Id).FirstOrDefault(u => u.Id == id);
-            return Ok(account);
+            var upload = Db.NgpUploads.OrderByDescending(u => u.Id).FirstOrDefault(u => u.AccountId == id);
+            return Ok(upload);
         }
 
-
-        //CHANGE PROFILE PICTURE SAVING PHOTO
-
-        [HttpPost]
-        [Route("api/changephoto")]
-        public async Task<string> ChangePhoto()
-        {
-            var ctx = HttpContext.Current;
-            var root = ctx.Server.MapPath("/SampleImg/");
-            var provider =
-                new MultipartFormDataStreamProvider(root);
-
-            try
-            {
-                await Request.Content
-                    .ReadAsMultipartAsync(provider);
-
-                NgpUser res = new NgpUser();
-
-                foreach (var file in provider.FileData)
-                {
-                    foreach (var key in provider.FormData.AllKeys)
-                    {
-                        foreach (var val in provider.FormData.GetValues(key))
-
-                            if (key == "Id")
-                            {
-                                var name = file.Headers
-                                       .ContentDisposition
-                                       .FileName;
-
-                                // remove double quotes from string.
-                                name = name.Trim('"');
-                                var dateNew = Convert.ToString(DateTime.Now.Ticks) + "-";
-
-                                var localFileName = file.LocalFileName;
-                                var filePath = Path.Combine(root, dateNew + name);
-
-                                File.Move(localFileName, filePath);
+    
 
 
-                                {
-                                    res.FilePath = "/SampleImg/" + dateNew + name;
-                                }
-
-                                res.FileName = name;
-                                res.Id = Convert.ToInt32(provider.FormData["Id"]);
-                                res.Id = res.Id;
-
-                                Db.SaveChanges();
-
-                            };
-
-
-                    }
-                }
-
-
-            }
-
-            catch (Exception e)
-            {
-                return $"Error: {e.Message}";
-            }
-
-            return "File uploaded!";
-        }
 
         //SAVING RESET PASSWORD
 

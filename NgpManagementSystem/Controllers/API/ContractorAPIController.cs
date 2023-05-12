@@ -58,8 +58,9 @@ namespace NgpManagementSystem.Controllers.API
 
         //EDIT METHOD FOR  SAVING  EDIT CONTRACTOR
 
+
         [HttpPost]
-        [Route("api/savingeditcontractor/post/{id}")]
+        [Route("api/savingeditcontractor/postcontractor/{id}")]
         public IHttpActionResult EditContractorSave(ContractorDTO contractorDTO)
         {
 
@@ -73,7 +74,6 @@ namespace NgpManagementSystem.Controllers.API
                 contractor.address_barangay = contractorDTO.address_barangay;
                 contractor.contractor_name = contractorDTO.contractor_name;
                 contractor.contractor_type = contractorDTO.contractor_type;
-
 
             }
 

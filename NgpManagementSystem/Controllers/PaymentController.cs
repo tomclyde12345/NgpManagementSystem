@@ -79,6 +79,7 @@ namespace NgpManagementSystem.Controllers
                     paymentID = paymentsdata.paymentID,
                  
                     contractorName = paymentsdata.contractorName,
+                    num_release = paymentsdata.num_release,
                     yearestablishedId = paymentsdata.NgpYear.Name,
 
 

@@ -174,6 +174,9 @@ function Payment() {
             {
                 "data": "num_release", "name": "num_release",
             },
+            {
+                "data": "yearestablishedId", "name": "yearestablishedId",
+            },
           
         ],
 
@@ -690,41 +693,54 @@ function ContractorAnimation() {
             contractor_name: {
                 required: true,
             },
+            address_municipality: {
+                required: true,
+            },
+            address_barangay: {
+                required: true,
+            },
             contractor_type: {
                 required: true,
             },
-          
-
         },
-        errorClass: "tomerror",
+        errorClass: "validationerror",
         messages: {
             contractor_name: {
-                required: "Please Enter Your Name",
+                required: "Please Input a Contractor",
             },
-           
-
+            address_municipality: {
+                required: "Please Select a Municipality",
+            },
+            address_barangay: {
+                required: "Please Select a Barangay",
+            },
+            contractor_type: {
+                required: "Please Select a Type",
+            },
         },
         submitHandler: function () {
-            if ($("#editcontractorModal").valid()) {
-                var valdata = $("#editcontractorModal").serialize();
+            if ($("#editcontractorform").valid()) {
+                var valdata = $("#editcontractorform").serialize();
                 $('#editcontractorModal').modal('hide');
                 $.ajax({
-                    url: '/api/savingeditcontractor/post/' + id,
+                    url: '/api/savingeditcontractor/postcontractor' + contractorID,
                     type: "POST",
                     dataType: 'json',
                     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                     data: valdata,
                 });
                 //setTimeout(function () {
-                //    toastr.success('EDIT SUCCESSFULLY');
+                //    toastr.success('Successsfully Edit a Contractor');
                 //    setTimeout(function () {
                 //        location.reload();
-                //    }, 2000)
-                //}, 1500);
+                //        window.location.href = "/Information/Index";
+                //    }, 1000)
+                //}, 1000);
             }
         }
     });
 
+   
 
     //SAVINGR CONTRACTOR CREATE
     $("#contract_main").validate({
@@ -891,7 +907,7 @@ function Account() {
             {
                 "data": null,
                 'render': function (data, type, full, meta) {
-                    return '<button  class=\'btn btn-info  photo d-block btn-sm\' data-id = ' + data.Id + ' > Change Profile <span class="fa fa-image f-20" >  </span></button>' + '<button  class=\'btn btn-primary btn-sm  resetpass \' data-id = ' + data.Id + ' > Reset Password <span class="fa fa-key f-20" >  </span></button>'
+                    return '<button  class=\'btn btn-info  changephoto d-block btn-sm\' data-id = ' + data.Id + ' > Change Profile <span class="fa fa-image f-20" >  </span></button>' + '<button  class=\'btn btn-primary btn-sm  resetpass \' data-id = ' + data.Id + ' > Reset Password <span class="fa fa-key f-20" >  </span></button>'
 
                 }
             },
@@ -975,7 +991,7 @@ function Account() {
 
 
     //GET DATA CHANGE IMAGE
-    $('#usertable').on('click', '.photo', function () {
+    $('#usertable').on('click', '.changephoto', function () {
         var id = $(this).attr('data-id');
         var url = '/api/editaccount/geteditaccount/' + id;
 
@@ -984,10 +1000,8 @@ function Account() {
             url: url,
             success: function (data) {
                 $("#changePhotoModal").modal('show');
-                $('#changephoto').find('input[name="id"]').val(data.id);
+                $('#changephoto').find('input[name="AccountId"]').val(data.id);
                 $('#changephoto').find('input[name="name"]').val(data.name);
-                $('#changephoto').find('input[name="FilePath"]').val(data.FilePath);
-                $('#changephoto').find('input[name="FileName"]').val(data.FileName);
                 console.log(data.id)
 
             }
@@ -998,15 +1012,17 @@ function Account() {
         $.ajax({
             type: 'GET',
             url: url2,
-
             success: function (data) {
                 $('#changephoto').find('input[name="id"]').val(data.id);
                 $("#imageshow").empty();
                 $("#imageshow").append("<img style='width:155px;height:155px; border-radius: 92px; overflow:hidden' src='" + data.filePath + "' />");
             }
         });
-
     });
+
+
+
+
 
 
 
