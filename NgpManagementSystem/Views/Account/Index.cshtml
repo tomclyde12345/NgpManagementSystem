@@ -9,32 +9,44 @@
                 <h4>Users Table</h4>
 
             </div>
-            <form-group style="padding: 2% 2.5%">
-                <button class="btn btn-primary btn-sm " data-toggle="modal" data-target="#createModal">CREATE ACCOUNT <i class="fa fa-user-plus"></i></button>
-                <button class="btn btn-primary btn-sm " data-toggle="modal" data-target="#createroleModal">CREATE ROLE <i class="fa fa-plus-circle"></i></button>
-            </form-group>
-            <div class="card-body p-0">
-                <div class="table-responsive">
-                    <table class="table table-striped" id="usertable" width="100%">
-                        <thead>
-                            <tr>
+            @{ if ((int)Session["Role_Id"] == 1)
 
-                                <th class="bg-green  text-white">Id</th>
-                                <th class="bg-green    text-white">Name</th>
-                                <th class="bg-green   text-white">Email</th>
-                                <th class="bg-green  text-white">UserName</th>
-                                <th class="bg-green  text-white">Goverment Agency</th>
-                                <th class="bg-green   text-white"> Action</th>
-                                <th class="bg-green   text-white"> Change</th>
-                                <th class="bg-green   text-white">Role</th>
+                {
+                    <form-group style="padding: 2% 2.5%">
+                        <button class="btn btn-primary btn-sm " data-toggle="modal" data-target="#createModal">CREATE ACCOUNT <i class="fa fa-user-plus"></i></button>
+                        <button class="btn btn-primary btn-sm " data-toggle="modal" data-target="#createroleModal">CREATE ROLE <i class="fa fa-plus-circle"></i></button>
+                    </form-group>
 
-                            </tr>
-                        </thead>
+                 }
+                  else
+            {
 
-                    </table>
+            }
+                }
+
+
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="usertable" width="100%">
+                                <thead>
+                                    <tr>
+
+                                        <th class="bg-green  text-white">Id</th>
+                                        <th class="bg-green    text-white">Name</th>
+                                        <th class="bg-green   text-white">Email</th>
+                                        <th class="bg-green  text-white">UserName</th>
+                                        <th class="bg-green  text-white">Goverment Agency</th>
+                                        <th class="bg-green   text-white"> Action</th>
+                                        <th class="bg-green   text-white"> Change</th>
+                                        <th class="bg-green   text-white">Role</th>
+
+                                    </tr>
+                                </thead>
+
+                            </table>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
     </div>
 </div>
 

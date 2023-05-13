@@ -115,7 +115,7 @@ namespace NgpManagementSystem.Controllers.API
 
                                 if (name == null || name.Length == 0)
                                 {
-                                    upload.FilePath = "/DefaultImage/city-hall.png";
+                                    upload.FilePath = "/DefaultImage/denr.png";
                                 }
                                 else
                                 {
@@ -193,7 +193,7 @@ namespace NgpManagementSystem.Controllers.API
 
                                 upload.FileName = name;
                                 upload.AccountId = Convert.ToInt32(provider.FormData["AccountId"]);
-                                upload.Id = upload.Id;
+                                //upload.Id = upload.Id;
                                 Db.NgpUploads.Add(upload);
                                
                             };

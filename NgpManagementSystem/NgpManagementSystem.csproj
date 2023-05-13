@@ -5161,8 +5161,6 @@
     <Content Include="Views\Contract\Create.cshtml" />
     <Content Include="Views\Payment\Create.cshtml" />
     <Content Include="Views\Sched\Create.cshtml" />
-    <Content Include="Views\Account\DisplayPicture.cshtml" />
-    <Content Include="Views\Account\DisplayPictureSideTop.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

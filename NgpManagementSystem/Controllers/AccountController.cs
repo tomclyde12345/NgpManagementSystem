@@ -151,61 +151,9 @@ namespace NgpManagementSystem.Controllers
             return PartialView(adminnameviewinprofile);
         }
 
-        public ActionResult DisplayPicture() //DISPLAY
-        {
-            if (Session["Role_Id"] == null)
-            {
-                return RedirectToAction("logout", "Account");
-            }
+      
 
 
-            var uploadpic = Db.NgpUploads.ToList();
-
-
-            var sess_id = (int)Session["LoginID"];
-
-            if ((int)Session["Role_Id"] == 1)
-            {
-                uploadpic = uploadpic.Where(d => d.AccountId == sess_id).ToList();
-            }
-            else
-
-             if ((int)Session["Role_Id"] != 1)
-            {
-                uploadpic = uploadpic.Where(d => d.AccountId == sess_id).ToList();
-            }
-
-
-            return PartialView(uploadpic);
-        }
-
-
-        public ActionResult DisplayPictureSideTop() //DISPLAY
-        {
-            if (Session["Role_Id"] == null)
-            {
-                return RedirectToAction("logout", "Account");
-            }
-
-
-            var uploadpic = Db.NgpUploads.ToList();
-
-
-            var sess_id = (int)Session["LoginID"];
-
-            if ((int)Session["Role_Id"] == 1)
-            {
-                uploadpic = uploadpic.Where(d => d.AccountId == sess_id).ToList();
-            }
-            else
-
-             if ((int)Session["Role_Id"] != 1)
-            {
-                uploadpic = uploadpic.Where(d => d.AccountId == sess_id).ToList();
-            }
-
-
-            return PartialView(uploadpic);
-        }
+     
     }
 }
