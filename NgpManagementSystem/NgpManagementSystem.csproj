@@ -181,6 +181,7 @@
     <Compile Include="Controllers\API\AccountAPIController.cs" />
     <Compile Include="Controllers\API\ContractApiController.cs" />
     <Compile Include="Controllers\API\ContractorAPIController.cs" />
+    <Compile Include="Controllers\API\CountApiController.cs" />
     <Compile Include="Controllers\API\MunicipalityAPIController.cs" />
     <Compile Include="Controllers\API\PaymentAPIController.cs" />
     <Compile Include="Controllers\API\ProjectApiController.cs" />
@@ -224,6 +225,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\NgpBarangay.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NgpLogsContractor.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NgpMunicipality.cs">

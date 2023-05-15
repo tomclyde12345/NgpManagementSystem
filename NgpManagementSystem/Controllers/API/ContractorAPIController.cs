@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 
 namespace NgpManagementSystem.Controllers.API
@@ -28,6 +29,7 @@ namespace NgpManagementSystem.Controllers.API
         {
             var contractor = Mapper.Map<ContractorDTO, ngp_contractor>(contractorDTO);
 
+            var sess_id = (int)HttpContext.Current.Session["LoginID"];
             if (contractorDTO.contractorID == 0)
             {
 
@@ -39,49 +41,62 @@ namespace NgpManagementSystem.Controllers.API
             }
 
 
-            Db.SaveChanges();
-
-            return Ok();
-        }
-
-
-        //GET DATA ONLY FOR EDIT CONTRACTOR with ID
-        [HttpGet]
-        [Route("api/contractor/geteditcontractor/{id}")]
-        public IHttpActionResult GetEditContractor(int id)
-        {
-            var editcontractor = Db.ngp_contractor.SingleOrDefault(c => c.contractorID == id);
-            return Ok(Mapper.Map<ngp_contractor, ContractorDTO>(editcontractor));
-        }
-
-
-
-        //EDIT METHOD FOR  SAVING  EDIT CONTRACTOR
-
-
-        [HttpPost]
-        [Route("api/savingeditcontractor/postcontractor/{id}")]
-        public IHttpActionResult EditContractorSave(ContractorDTO contractorDTO)
-        {
-
-
-            if (ModelState.IsValid)
+            Db.NgpLogsContractors.Add(new NgpLogsContractor()
             {
-                var contractor = Db.ngp_contractor.Single(c => c.contractorID == contractorDTO.contractorID);
 
-                contractor.contractorID = contractorDTO.contractorID;
-                contractor.address_municipality = contractorDTO.address_municipality;
-                contractor.address_barangay = contractorDTO.address_barangay;
-                contractor.contractor_name = contractorDTO.contractor_name;
-                contractor.contractor_type = contractorDTO.contractor_type;
+                Date = DateTime.Now,
+                Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name,
+                UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
+                LogMessage = "Added a Contractor " + "Name: " + contractorDTO.contractor_name,
+                UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
 
-            }
+
+            });
 
             Db.SaveChanges();
 
-
             return Ok();
 
+
         }
+
+        //GET in form contractor
+        [Route("api/contractorget/get/{id}")]
+        [HttpGet]
+        public IHttpActionResult GetContractorData(int id)
+        {
+            var contractor = Db.ngp_contractor.SingleOrDefault(d => d.contractorID == id);
+            if (contractor == null)
+            {
+                return NotFound();
+            }
+            return Ok(Mapper.Map<ngp_contractor, ContractorDTO>(contractor));
+        }
+
+
+        //Put
+        [HttpPut]
+        [Route("api/contractorput/updatecontractor/{id}")]
+        public IHttpActionResult UpdateDept(int id, ContractorDTO contractorDTO)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var contractorinDb = Db.ngp_contractor.SingleOrDefault(d => d.contractorID == id);
+            if (contractorinDb == null)
+            {
+                return NotFound();
+            }
+            Mapper.Map(contractorDTO, contractorinDb);
+            contractorinDb.contractorID = id;
+            contractorinDb.contractor_name =  contractorDTO.contractor_name;
+            contractorinDb.address_barangay = contractorDTO.address_barangay;
+            contractorinDb.address_municipality = contractorDTO.address_municipality;
+
+
+            Db.SaveChanges();
+            return Ok();
+        }
+
     }
 }

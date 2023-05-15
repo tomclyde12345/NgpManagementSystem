@@ -1,4 +1,86 @@
 ﻿
+function TotalCounts() {
+
+    //TOTAL USERS ACCCOUNT COUNT
+    $.ajax({
+        type: 'GET',
+        url: '/api/totalusercount/count',
+        headers: {
+            'Authorization': 'Bearer ' + localStorage.getItem('access_token')
+        },
+        success: function (data) {
+            //alert(data);
+            $('#UserAccountadmincount').text(data);
+        },
+        //if failed
+        error: function (data) {
+
+            // toastr.info("Success")
+        }
+    });
+
+    //TOTAL CONTRACTORS COUNT
+    $.ajax({
+        type: 'GET',
+        url: '/api/totalcontractor/count',
+        headers: {
+            'Authorization': 'Bearer ' + localStorage.getItem('access_token')
+        },
+        success: function (data) {
+            //alert(data);
+            $('#Contractoradmincount').text(data);
+        },
+        //if failed
+        error: function (data) {
+
+            // toastr.info("Success")
+        }
+    });
+
+
+    //TOTAL PROJECTS COUNT
+    $.ajax({
+        type: 'GET',
+        url: '/api/totalprojects/count',
+        headers: {
+            'Authorization': 'Bearer ' + localStorage.getItem('access_token')
+        },
+        success: function (data) {
+            //alert(data);
+            $('#Projectsadmincount').text(data);
+        },
+        //if failed
+        error: function (data) {
+
+            // toastr.info("Success")
+        }
+    });
+
+    //TOTAL CONTRACT COUNT
+    $.ajax({
+        type: 'GET',
+        url: '/api/totalcontract/count',
+        headers: {
+            'Authorization': 'Bearer ' + localStorage.getItem('access_token')
+        },
+        success: function (data) {
+            //alert(data);
+            $('#Contractsadmincount').text(data);
+        },
+        //if failed
+        error: function (data) {
+
+            // toastr.info("Success")
+        }
+    });
+
+
+
+}
+
+
+
+
 function Sched() {
 
 
@@ -664,81 +746,76 @@ function ContractorAnimation() {
     });
 
     //GET DATA ONLY FOR EDIT Contractor GET METHOD 
-    $('#contractortable').on('click', '.editcontractor', function () {
+    
+    $("#contractortable").on('click', '.editcontractor', function () {
         var id = $(this).attr('data-id');
-        var url = '/api/contractor/geteditcontractor/' + id;
-        /*    toastr.success(id);*/
-
-
+        var url = '/api/contractorget/get/' + id;
+        //alert(id);
         $.ajax({
             type: 'GET',
             url: url,
             success: function (data) {
-                $('#editcontractorModal').modal('show');
+                $("#editcontractorModal").modal('show');
                 $('#editcontractorform').find('input[name="contractorID"]').val(data.contractorID);
                 $('#editcontractorform').find('input[name="contractor_name"]').val(data.contractor_name);
                 $('#editcontractorform').find('select[name="contractor_type"]').val(data.contractor_type);
                 $('#editcontractorform').find('select[name="address_municipality"]').val(data.address_municipality);
                 $('#editcontractorform').find('select[name="address_barangay"]').val(data.address_barangay);
 
+            },
+            //if failed
+            error: function (data) {
+                // console.log(data, data.id, data.name);
+                toastr.error("error")
             }
         })
+    })
+     //PUT DATA ONLY FOR EDIT Contractor GET METHOD 
+    $("#UpdateRecord").click(function (e) {
+        e.preventDefault();
+        var data = {
 
-    });
+            contractor_name: $('#editcontractorform').find('input[name=contractor_name]').val(),
+            contractor_type: $('#editcontractorform').find('select[name=contractor_type]').val(),
+            address_municipality: $('#editcontractorform').find('select[name=address_municipality]').val(),
+            address_barangay: $('#editcontractorform').find('select[name=address_barangay]').val(),
+        };
 
 
-    /* SAVING EDIT CONTRACTOR POST METHOD*/
-    $("#editcontractorform").validate({
-        rules: {
-            contractor_name: {
-                required: true,
+        var id = $('#editcontractorform').find('input[name="contractorID"]').val();
+        $.ajax({
+            type: 'PUT',
+            url: '/api/contractorput/updatecontractor/' + id,
+            data: data,
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('access_token')
             },
-            address_municipality: {
-                required: true,
-            },
-            address_barangay: {
-                required: true,
-            },
-            contractor_type: {
-                required: true,
-            },
-        },
-        errorClass: "validationerror",
-        messages: {
-            contractor_name: {
-                required: "Please Input a Contractor",
-            },
-            address_municipality: {
-                required: "Please Select a Municipality",
-            },
-            address_barangay: {
-                required: "Please Select a Barangay",
-            },
-            contractor_type: {
-                required: "Please Select a Type",
-            },
-        },
-        submitHandler: function () {
-            if ($("#editcontractorform").valid()) {
-                var valdata = $("#editcontractorform").serialize();
+            success: function (data) {
+
+
                 $('#editcontractorModal').modal('hide');
-                $.ajax({
-                    url: '/api/savingeditcontractor/postcontractor' + contractorID,
-                    type: "POST",
-                    dataType: 'json',
-                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-                    data: valdata,
-                });
-                //setTimeout(function () {
-                //    toastr.success('Successsfully Edit a Contractor');
-                //    setTimeout(function () {
-                //        location.reload();
-                //        window.location.href = "/Information/Index";
-                //    }, 1000)
-                //}, 1000);
+                //show please wait modal
+              /*  $('#pleasewait').modal('show');*/
+                //show toastr after 3
+                setTimeout(function () {
+                    toastr.success("Contractor Successfully Updated!");
+                    // hide please wait modal
+                }, 2000);
+                setTimeout(function () {
+                    window.location.reload();
+                }, 3000);
+            },
+            //if failed
+            error: function (data) {
+                toastr.error("Error Saving")
             }
-        }
+        });
     });
+
+
+
+
+
 
    
 

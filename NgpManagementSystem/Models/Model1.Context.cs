@@ -33,6 +33,7 @@ namespace NgpManagementSystem.Models
         public virtual DbSet<ngp_projects> ngp_projects { get; set; }
         public virtual DbSet<ngp_sched> ngp_sched { get; set; }
         public virtual DbSet<NgpBarangay> NgpBarangays { get; set; }
+        public virtual DbSet<NgpLogsContractor> NgpLogsContractors { get; set; }
         public virtual DbSet<NgpMunicipality> NgpMunicipalities { get; set; }
         public virtual DbSet<NgpRole> NgpRoles { get; set; }
         public virtual DbSet<NgpUpload> NgpUploads { get; set; }

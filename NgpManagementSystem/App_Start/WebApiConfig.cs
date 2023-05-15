@@ -10,6 +10,10 @@ namespace NgpManagementSystem
 {
     public static class WebApiConfig
     {
+        //FOR SESSION
+        public static string UrlPrefix { get { return "api"; } }
+        public static string UrlPrefixRelative { get { return "~/api"; } }
+        //FOR SESSION
         public static void Register(HttpConfiguration config)
         {
             var settings = config.Formatters.JsonFormatter.SerializerSettings;
@@ -23,7 +27,7 @@ namespace NgpManagementSystem
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            // addd suported media type multipart/form-data
+            // addd suported media type multipart/form-data FOR UPPLOAD PHOTO
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("multipart/form-data"));
             config.Formatters.XmlFormatter.SupportedMediaTypes.Add(new System.Net.Http.Headers.MediaTypeHeaderValue("multipart/form-data"));
