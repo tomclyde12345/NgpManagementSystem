@@ -22,6 +22,8 @@ namespace NgpManagementSystem.App_Start
             Mapper.CreateMap<ngp_payment, PaymentDTO>().ReverseMap();
             Mapper.CreateMap<ngp_sched, SchedDTO>().ReverseMap();
             Mapper.CreateMap<NgpYear, YearDTO>().ReverseMap();
+            Mapper.CreateMap<NgpLogsUserAccount, LogsAccountDTO>().ReverseMap();
+            Mapper.CreateMap<NgpLogsContractor, LogsContractorDTO>().ReverseMap();
         }
     }
 }

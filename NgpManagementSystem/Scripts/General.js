@@ -1,4 +1,70 @@
-﻿
+﻿function AdminLogsDashboard() {
+
+
+    $.ajax({
+        type: 'GET',
+        url: '/api/adminlogsaccount/get',
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem('access_token')
+        },
+        success: function (data) {
+            $('#logsactivityuseraccount tbody').html('');
+            $.each(data, function (index, value) {
+                $('#logsactivityuseraccount tbody').append(
+                    '<tr>' +
+                    /*          '<td>' + '<span style="font-size: 15px;">' + value.name + '</span>' + '</td>' +*/
+                    '<td>' + '<span class="badge badge-light text-black-50  " style="font-size: 10px;border-radius:40px;">' + moment(value.date).format('MMMM DD YYYY LT') + '</span>' + '</td>' +
+                    '<td>' + '<span style="font-size: 15px;">' + value.logMessage + '</span>' + '</td>' +
+                    '<td>' + '<span style="font-size: 15px;">' + value.name + '</span>' + '</td>' +
+                    '<td>' + '<span class="badge badge-info   " style="font-size: 12px;">' + value.roleId + '</span>' + '</td>' +
+                    '</tr>'
+                );
+            });
+        },
+
+        //if failed
+        error: function (data) {
+
+            // toastr.info("Success")
+        }
+    });
+
+
+
+    $.ajax({
+        type: 'GET',
+        url: '/api/adminlogscontractor/get',
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem('access_token')
+        },
+        success: function (data) {
+            $('#logsactivitycontractor tbody').html('');    
+            $.each(data, function (index, value) {
+                $('#logsactivitycontractor tbody').append(
+                    '<tr>' +
+                    /*          '<td>' + '<span style="font-size: 15px;">' + value.name + '</span>' + '</td>' +*/
+                    '<td>' + '<span class="badge badge-light text-black-50  " style="font-size: 10px;border-radius:40px;">' + moment(value.date).format('MMMM DD YYYY LT') + '</span>' + '</td>' +
+                    '<td>' + '<span style="font-size: 15px;">' + value.logMessage + '</span>' + '</td>' +
+                    '<td>' + '<span style="font-size: 15px;">' + value.name + '</span>' + '</td>' +
+                    '<td>' + '<span class="badge badge-info   " style="font-size: 12px;">' + value.roleId + '</span>' + '</td>' +
+                    '</tr>'
+                );
+            });
+        },
+
+        //if failed
+        error: function (data) {
+
+            // toastr.info("Success")
+        }
+    });
+
+
+}
+
+
+
+
 function TotalCounts() {
 
     //TOTAL USERS ACCCOUNT COUNT
@@ -905,7 +971,7 @@ function ContractorAnimation() {
             {
                 "data": null,
                 'render': function (data, type, full, meta) {
-                    return '<button  class=\'btn btn-success  editcontractor d-block btn-sm\' data-id = ' + data.contractorID + ' > Edit  <span class="fa fa-edit f-20" >  </span></button>' 
+                    return '<button  class=\'btn btn-success  editcontractor d-block btn-sm\' data-id = ' + data.contractorID + ' > Edit  <span class="fa fa-edit f-20" >  </span></button>' + '<button  class=\'btn btn-danger  deletecontractor d-block btn-sm\' data-id = ' + data.contractorID + ' > Delete  <span class="fa fa-edit f-20" >  </span></button>' 
 
                 }
             },
@@ -937,6 +1003,46 @@ function ContractorAnimation() {
             })
         }
     });
+
+
+    /// GET DATA FOR DELETE CONTRACTOR 
+
+    $('#contractortable').on('click', '.deletecontractor', function () {
+        var id = $(this).attr('data-id');
+        var url = '/api/contractordelete/delete/' + id;
+        $("#ContractorId").val(id);
+        $("#deletecontractorModal").modal('show');
+
+
+    });
+
+
+    /*  DELETE CONTRACTOR  DELETE DATA AFTER CLICK*/
+    $("#btnContractorDelete").click(function () {
+
+        // for deletion
+        var st = $("#ContractorId").val();
+        //alert(dept);
+        $.ajax({
+            type: "DELETE",
+            url: "/api/contractordelete/delete/" + st,
+            success: function (response) {
+
+                setTimeout(function () {
+                    toastr.success("Contractor Successfully Deleted");
+                    setTimeout(function () {
+                        location.reload();
+                    }, 2000)
+                }, 1500);
+                $("#deletecontractorModal").modal('hide');
+            },
+            error: function (response) {
+                toastr.error("Unable to Delete ");
+                //alert(result, result.DepartmentId, result.Name);
+            }
+        })
+
+    })
 
 }
  

@@ -220,7 +220,7 @@
                         </div>
                     </div>
                 </div>
-                </div>
+            </div>
         </div>
     </div>
 
@@ -268,30 +268,30 @@
 
                             <div class="col-md-6">
 
-                        <div class="form-group">
-                            <div class=" sample">
+                                <div class="form-group">
+                                    <div class=" sample">
 
-                                <label style="color: black;">address_municipality</label>
-                            </div>
+                                        <label style="color: black;">address_municipality</label>
+                                    </div>
 
-                            <div class="form-group">
+                                    <div class="form-group">
 
-                                <select id="address_municipality" name="address_municipality" class="form-control" style="width:100%">
-                                    <option value=" ">Not Applicable</option>
-                                </select>
-                            </div>
+                                        <select id="address_municipality" name="address_municipality" class="form-control" style="width:100%">
+                                            <option value=" ">Not Applicable</option>
+                                        </select>
+                                    </div>
 
-                            <div class="form-group">
-                                <div class=" sample">
+                                    <div class="form-group">
+                                        <div class=" sample">
 
-                                    <label style="color: black;">address_barangay </label>
+                                            <label style="color: black;">address_barangay </label>
+                                        </div>
+                                        <select name="address_barangay" id="address_barangay" style="width:100%" class="form-control" required="required">
+                                            <option value=" ">Not Applicable</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <select name="address_barangay"  id="address_barangay"  style="width:100%" class="form-control" required="required">
-                                    <option value=" ">Not Applicable</option>
-                                </select>
                             </div>
-                        </div>
-                    </div>
 
 
 
@@ -314,6 +314,35 @@
             </div>
         </div>
 
+    </div>
+</div>
+
+
+
+@*DELETE CONTRACTOR IN MODAL *@
+<div class="modal fade" id="deletecontractorModal" role="dialog" data-backdrop="false" >
+    <div class="modal-dialog modal-m modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-green">
+                <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">Delete Contractor</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <form id="deleteaccount">
+                <div class="modal-body">
+                    <br />
+                    <h5 class="card-subtitle ">Are you sure you want to Delete This Contractor ?</h5>
+                </div>
+                <div class="modal-footer coolTZ">
+                    <input type="hidden" name="ContractorId" id="ContractorId" />
+
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">CLOSE</button>
+                    <a href="#" class="btn bg-green text-white" id="btnContractorDelete">CONFIRM</a>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 

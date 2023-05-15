@@ -62,7 +62,7 @@ namespace NgpManagementSystem.Controllers.API
         [Route("api/addaccount/post")]
         public async Task<string> PostImage()
         {
-
+            var sess_id = (int)HttpContext.Current.Session["LoginID"];
             var ctx = HttpContext.Current;
             var root = ctx.Server.MapPath("~/SampleImg/");
             var provider =
@@ -84,8 +84,19 @@ namespace NgpManagementSystem.Controllers.API
                     res.RoleID = Convert.ToInt32(provider.FormData["RoleID"]);
 
                     Db.NgpUsers.Add(res);
+                    Db.NgpLogsUserAccounts.Add(new NgpLogsUserAccount()
+                    {
 
-                  
+                        Date = DateTime.Now,
+                        Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name,
+                        UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
+                        LogMessage = "Added a  User Account  " + "Name of user: " + res.Name,
+                        UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
+                        RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.NgpRole.RoleName,
+
+
+                    });
+
                 }
 
                 Db.SaveChanges();

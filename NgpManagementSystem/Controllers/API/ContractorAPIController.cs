@@ -49,6 +49,7 @@ namespace NgpManagementSystem.Controllers.API
                 UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
                 LogMessage = "Added a Contractor " + "Name: " + contractorDTO.contractor_name,
                 UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
+                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.NgpRole.RoleName,
 
 
             });
@@ -94,6 +95,30 @@ namespace NgpManagementSystem.Controllers.API
             contractorinDb.address_municipality = contractorDTO.address_municipality;
 
 
+            Db.SaveChanges();
+            return Ok();
+        }
+
+
+
+        [HttpDelete]
+        [Route("api/contractordelete/delete/{id}")]
+        public IHttpActionResult DeleteContractor(int id)
+        {
+            var contractorinDb = Db.ngp_contractor.SingleOrDefault(d => d.contractorID == id);
+            if (contractorinDb == null)
+            {
+                return NotFound();
+            }
+            Db.ngp_contractor.Remove(contractorinDb);
+            //_db.LoginActivity.Add(new LoginActivity()
+            //{
+            //    UserName = User.Identity.GetFullName(),
+            //    ActivityMessage = "Deleted A Department",
+            //    ActivityDate = DateTime.Now.ToString("MMMM dd yyyy hh:mm tt"),
+            //    Email = User.Identity.GetUserName(),
+
+            //});
             Db.SaveChanges();
             return Ok();
         }

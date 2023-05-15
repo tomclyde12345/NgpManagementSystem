@@ -12,7 +12,7 @@ namespace NgpManagementSystem.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class NgpLogsContractor
+    public partial class NgpLogsUserAccount
     {
         public int Id { get; set; }
         public Nullable<System.DateTime> Date { get; set; }

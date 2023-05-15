@@ -4,5 +4,67 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Index</h2>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body pb-0">
+                <h5 class="card-title">User Account Logs</h5>
 
+                <table class="table table-condensed" id="logsactivityuseraccount">
+                    <thead>
+                        <tr>
+                            @*<th class="bg-primary text-white">Name</th>*@
+                            <th class="bg-green text-white">Date </th>
+                            <th class="bg-green text-white">LogMessage </th>
+                            <th class="bg-green text-white">Name</th>
+                            <th class="bg-green text-white">Role</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="text-end m-3">
+                    <button type="button" class="btn btn-primary" style="border-radius:20px;" onclick="location.href ='@Url.Action("AdminUserAccountLogs","Logs")'">See all Activity</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body pb-0">
+                <h5 class="card-title">Contractor Logs</h5>
+
+                <table class="table table-condensed" id="logsactivitycontractor">
+                    <thead>
+                        <tr>
+                            @*<th class="bg-primary text-white">Name</th>*@
+                            <th class="bg-green text-white">Date </th>
+                            <th class="bg-green text-white">LogMessage </th>
+                            <th class="bg-green text-white">Name</th>
+                            <th class="bg-green text-white">Role</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="text-end m-3">
+                    <button type="button" class="btn btn-primary" style="border-radius:20px;" onclick="location.href ='@Url.Action("AdminMemberLogs","Logs")'">See all Activity</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(window).ready(function () {
+        AdminLogsDashboard();
+    });
+</script>

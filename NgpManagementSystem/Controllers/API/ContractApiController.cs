@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 
 namespace NgpManagementSystem.Controllers.API
@@ -41,7 +42,7 @@ namespace NgpManagementSystem.Controllers.API
             if (ModelState.IsValid)
             {
                 var contract = Mapper.Map<ContractDTO, ngp_contract>(contractDTO);
-
+               
                 if (contractDTO.contractID == 0)
                 {
 
@@ -70,9 +71,9 @@ namespace NgpManagementSystem.Controllers.API
 
 
                     Db.ngp_contract.Add(contract);
-                        Db.SaveChanges();
+                       
                 }
-
+              
             }
 
             Db.SaveChanges();
