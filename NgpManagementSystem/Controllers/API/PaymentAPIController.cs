@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 
 namespace NgpManagementSystem.Controllers.API
@@ -39,6 +40,7 @@ namespace NgpManagementSystem.Controllers.API
         public IHttpActionResult Save(PaymentDTO paymentDTO)
 
         {
+            var sess_id = (int)HttpContext.Current.Session["LoginID"];
             if (ModelState.IsValid)
             {
                 var payment = Mapper.Map<PaymentDTO, ngp_payment>(paymentDTO);
@@ -55,7 +57,18 @@ namespace NgpManagementSystem.Controllers.API
                     Db.ngp_payment.Add(payment);
                   
                 }
-              
+                Db.NgpLogsPayments.Add(new NgpLogsPayment()
+                {
+
+                    Date = DateTime.Now,
+                    Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name,
+                    UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
+                    LogMessage = "Added a Payment " + "Contractor Name: " + payment.contractorName,
+                    UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
+                    RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.NgpRole.RoleName,
+
+                });
+
                 Db.SaveChanges();
                 return Ok("200");
             }

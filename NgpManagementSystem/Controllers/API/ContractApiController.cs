@@ -42,7 +42,7 @@ namespace NgpManagementSystem.Controllers.API
             if (ModelState.IsValid)
             {
                 var contract = Mapper.Map<ContractDTO, ngp_contract>(contractDTO);
-               
+                var sess_id = (int)HttpContext.Current.Session["LoginID"];
                 if (contractDTO.contractID == 0)
                 {
 
@@ -64,16 +64,23 @@ namespace NgpManagementSystem.Controllers.API
                     contract.num_seedlings_replanted = contractDTO.num_seedlings_replanted;
                     contract.num_seedlings_survived_year1 = contractDTO.num_seedlings_survived_year1;
 
-
-
-
                     //contract.contractorName = Db.ngp_contractor.SingleOrDefault(x => x.contractorID == contractDTO.contractID).contractor_name;
-
 
                     Db.ngp_contract.Add(contract);
                        
                 }
-              
+                Db.NgpLogsContracts.Add(new NgpLogsContract()
+                {
+
+                    Date = DateTime.Now,
+                    Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name,
+                    UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
+                    LogMessage = "Added a Contract " + "Contractor Name: " + contractDTO.contractorName,
+                    UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
+                    RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.NgpRole.RoleName,
+
+                });
+
             }
 
             Db.SaveChanges();

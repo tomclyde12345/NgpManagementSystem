@@ -4,22 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c3920627c0e844e1aff571513d330b39" Name="Diagram1">
-        <EntityTypeShape EntityType="NgpdbmsModel.ngp_contract" Width="1.5" PointX="5.25" PointY="14.5" />
-        <EntityTypeShape EntityType="NgpdbmsModel.ngp_contractor" Width="1.5" PointX="8.25" PointY="16.25" />
-        <EntityTypeShape EntityType="NgpdbmsModel.ngp_dropdown" Width="1.5" PointX="6" PointY="10.5" />
-        <EntityTypeShape EntityType="NgpdbmsModel.ngp_history" Width="1.5" PointX="10.5" PointY="16.75" />
-        <EntityTypeShape EntityType="NgpdbmsModel.ngp_payment" Width="1.5" PointX="10.5" PointY="13.5" />
-        <EntityTypeShape EntityType="NgpdbmsModel.ngp_projects" Width="1.5" PointX="8.25" PointY="11.875" />
-        <EntityTypeShape EntityType="NgpdbmsModel.ngp_sched" Width="1.5" PointX="0.75" PointY="4.75" />
-        <EntityTypeShape EntityType="NgpdbmsModel.NgpBarangay" Width="1.5" PointX="3" PointY="23.75" />
-        <EntityTypeShape EntityType="NgpdbmsModel.NgpLogsContractor" Width="1.5" PointX="2.75" PointY="4.75" />
-        <EntityTypeShape EntityType="NgpdbmsModel.NgpLogsUserAccount" Width="1.5" PointX="4.75" PointY="4.75" />
+      <Diagram DiagramId="c3920627c0e844e1aff571513d330b39" Name="Diagram1" ZoomLevel="54">
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_contract" Width="1.5" PointX="5.25" PointY="7.125" />
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_contractor" Width="1.5" PointX="8.25" PointY="8.875" />
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_dropdown" Width="1.5" PointX="6" PointY="3" />
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_history" Width="1.5" PointX="10.5" PointY="9.375" />
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_payment" Width="1.5" PointX="10.5" PointY="6" />
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_projects" Width="1.5" PointX="8.25" PointY="4.5" />
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_sched" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpBarangay" Width="1.5" PointX="3" PointY="9" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpLogsContract" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpLogsContractor" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpLogsPayment" Width="1.5" PointX="12.75" PointY="4.75" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpLogsProject" Width="1.5" PointX="7.75" PointY="12.75" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpLogsSched" Width="1.5" PointX="12.75" PointY="8.75" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpLogsUserAccount" Width="1.5" PointX="9.75" PointY="12.75" />
         <EntityTypeShape EntityType="NgpdbmsModel.NgpMunicipality" Width="1.5" PointX="0.75" PointY="9.125" />
-        <EntityTypeShape EntityType="NgpdbmsModel.NgpRole" Width="1.5" PointX="0.75" PointY="1.375" />
-        <EntityTypeShape EntityType="NgpdbmsModel.NgpUpload" Width="1.5" PointX="5.75" PointY="0.75" />
-        <EntityTypeShape EntityType="NgpdbmsModel.NgpUser" Width="1.5" PointX="3" PointY="1" />
-        <EntityTypeShape EntityType="NgpdbmsModel.NgpYear" Width="1.5" PointX="3" PointY="16.75" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpRole" Width="1.5" PointX="8.75" PointY="1.375" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpUpload" Width="1.5" PointX="11.75" PointY="12.75" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpUser" Width="1.5" PointX="11" PointY="1" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpYear" Width="1.5" PointX="3" PointY="6.375" />
         <AssociationConnector Association="NgpdbmsModel.FK_ngp_contract_ngp_contractor" />
         <AssociationConnector Association="NgpdbmsModel.FK_ngp_contract_ngp_dropdown" />
         <AssociationConnector Association="NgpdbmsModel.FK_ngp_contract_NgpBarangay" />

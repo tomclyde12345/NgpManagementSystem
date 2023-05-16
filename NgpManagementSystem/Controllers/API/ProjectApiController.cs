@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 
 namespace NgpManagementSystem.Controllers.API
@@ -30,6 +31,7 @@ namespace NgpManagementSystem.Controllers.API
         {
             var project = Mapper.Map<ProjectDTO, ngp_projects>(projectDTO);
 
+            var sess_id = (int)HttpContext.Current.Session["LoginID"];
             if (projectDTO.projectID == 0)
             {
 
@@ -44,6 +46,17 @@ namespace NgpManagementSystem.Controllers.API
                 Db.ngp_projects.Add(project);
             }
 
+            Db.NgpLogsProjects.Add(new NgpLogsProject()
+            {
+
+                Date = DateTime.Now,
+                Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name,
+                UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
+                LogMessage = "Added a Project " + "SiteCode Name: " + projectDTO.site_code,
+                UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
+                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.NgpRole.RoleName,
+
+            });
 
             Db.SaveChanges();
 

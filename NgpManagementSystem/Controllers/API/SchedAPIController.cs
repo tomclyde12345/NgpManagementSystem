@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 
 namespace NgpManagementSystem.Controllers.API
@@ -31,7 +32,7 @@ namespace NgpManagementSystem.Controllers.API
             {
                 var sched = Mapper.Map<SchedDTO, ngp_sched>(schedDTO);
 
-
+                var sess_id = (int)HttpContext.Current.Session["LoginID"];
                 if (sched.schedID == 0)
                 {
                     sched.ContractId = Db.ngp_contract.SingleOrDefault(x => x.contractID == schedDTO.ContractId).contractID;
@@ -50,6 +51,18 @@ namespace NgpManagementSystem.Controllers.API
                     Db.ngp_sched.Add(sched);
 
                 }
+
+                Db.NgpLogsScheds.Add(new NgpLogsSched()
+                {
+
+                    Date = DateTime.Now,
+                    Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name,
+                    UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
+                    LogMessage = "Added a Sched " + "Contractor Name: " + sched.contractor_name,
+                    UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
+                    RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.NgpRole.RoleName,
+
+                });
 
                 Db.SaveChanges();
                 return Ok("200");

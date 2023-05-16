@@ -60,6 +60,123 @@
     });
 
 
+    $.ajax({
+        type: 'GET',
+        url: '/api/adminlogsforcontract/get',
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem('access_token')
+        },
+        success: function (data) {
+            $('#logsactivitycontract tbody').html('');
+            $.each(data, function (index, value) {
+                $('#logsactivitycontract tbody').append(
+                    '<tr>' +
+                    /*          '<td>' + '<span style="font-size: 15px;">' + value.name + '</span>' + '</td>' +*/
+                    '<td>' + '<span class="badge badge-light text-black-50  " style="font-size: 10px;border-radius:40px;">' + moment(value.date).format('MMMM DD YYYY LT') + '</span>' + '</td>' +
+                    '<td>' + '<span style="font-size: 15px;">' + value.logMessage + '</span>' + '</td>' +
+                    '<td>' + '<span style="font-size: 15px;">' + value.name + '</span>' + '</td>' +
+                    '<td>' + '<span class="badge badge-info   " style="font-size: 12px;">' + value.roleId + '</span>' + '</td>' +
+                    '</tr>'
+                );
+            });
+        },
+
+        //if failed
+        error: function (data) {
+
+            // toastr.info("Success")
+        }
+    });
+
+
+    $.ajax({
+        type: 'GET',
+        url: '/api/adminlogsforpayment/get',
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem('access_token')
+        },
+        success: function (data) {
+            $('#logsactivitypayment tbody').html('');
+            $.each(data, function (index, value) {
+                $('#logsactivitypayment tbody').append(
+                    '<tr>' +
+                    /*          '<td>' + '<span style="font-size: 15px;">' + value.name + '</span>' + '</td>' +*/
+                    '<td>' + '<span class="badge badge-light text-black-50  " style="font-size: 10px;border-radius:40px;">' + moment(value.date).format('MMMM DD YYYY LT') + '</span>' + '</td>' +
+                    '<td>' + '<span style="font-size: 15px;">' + value.logMessage + '</span>' + '</td>' +
+                    '<td>' + '<span style="font-size: 15px;">' + value.name + '</span>' + '</td>' +
+                    '<td>' + '<span class="badge badge-info   " style="font-size: 12px;">' + value.roleId + '</span>' + '</td>' +
+                    '</tr>'
+                );
+            });
+        },
+
+        //if failed
+        error: function (data) {
+
+            // toastr.info("Success")
+        }
+    });
+
+
+
+    $.ajax({
+        type: 'GET',
+        url: '/api/adminlogsprojects/get',
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem('access_token')
+        },
+        success: function (data) {
+            $('#logsactivityprojects tbody').html('');
+            $.each(data, function (index, value) {
+                $('#logsactivityprojects tbody').append(
+                    '<tr>' +
+                    /*          '<td>' + '<span style="font-size: 15px;">' + value.name + '</span>' + '</td>' +*/
+                    '<td>' + '<span class="badge badge-light text-black-50  " style="font-size: 10px;border-radius:40px;">' + moment(value.date).format('MMMM DD YYYY LT') + '</span>' + '</td>' +
+                    '<td>' + '<span style="font-size: 15px;">' + value.logMessage + '</span>' + '</td>' +
+                    '<td>' + '<span style="font-size: 15px;">' + value.name + '</span>' + '</td>' +
+                    '<td>' + '<span class="badge badge-info   " style="font-size: 12px;">' + value.roleId + '</span>' + '</td>' +
+                    '</tr>'
+                );
+            });
+        },
+
+        //if failed
+        error: function (data) {
+
+            // toastr.info("Success")
+        }
+    });
+
+
+
+    $.ajax({
+        type: 'GET',
+        url: '/api/adminlogssched/get',
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem('access_token')
+        },
+        success: function (data) {
+            $('#logsactivitysched tbody').html('');
+            $.each(data, function (index, value) {
+                $('#logsactivitysched tbody').append(
+                    '<tr>' +
+                    /*          '<td>' + '<span style="font-size: 15px;">' + value.name + '</span>' + '</td>' +*/
+                    '<td>' + '<span class="badge badge-light text-black-50  " style="font-size: 10px;border-radius:40px;">' + moment(value.date).format('MMMM DD YYYY LT') + '</span>' + '</td>' +
+                    '<td>' + '<span style="font-size: 15px;">' + value.logMessage + '</span>' + '</td>' +
+                    '<td>' + '<span style="font-size: 15px;">' + value.name + '</span>' + '</td>' +
+                    '<td>' + '<span class="badge badge-info   " style="font-size: 12px;">' + value.roleId + '</span>' + '</td>' +
+                    '</tr>'
+                );
+            });
+        },
+
+        //if failed
+        error: function (data) {
+
+            // toastr.info("Success")
+        }
+    });
+
 }
 
 

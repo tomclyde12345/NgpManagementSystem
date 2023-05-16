@@ -107,6 +107,18 @@
           <Property Name="BarangayName" Type="nvarchar" MaxLength="100" />
           <Property Name="MunicipalityId" Type="int" />
         </EntityType>
+        <EntityType Name="NgpLogsContract">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="LogMessage" Type="nvarchar" MaxLength="200" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="200" />
+        </EntityType>
         <EntityType Name="NgpLogsContractor">
           <Key>
             <PropertyRef Name="Id" />
@@ -115,6 +127,42 @@
           <Property Name="Date" Type="datetime" />
           <Property Name="UserName" Type="nvarchar" MaxLength="100" />
           <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="LogMessage" Type="nvarchar" MaxLength="200" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="NgpLogsPayment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="LogMessage" Type="nvarchar" MaxLength="200" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="NgpLogsProject">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="LogMessage" Type="nvarchar" MaxLength="200" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="NgpLogsSched">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
           <Property Name="LogMessage" Type="nvarchar" MaxLength="200" />
           <Property Name="UserId" Type="int" />
           <Property Name="RoleId" Type="nvarchar" MaxLength="200" />
@@ -361,7 +409,11 @@
           <EntitySet Name="ngp_projects" EntityType="Self.ngp_projects" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ngp_sched" EntityType="Self.ngp_sched" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgpBarangay" EntityType="Self.NgpBarangay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NgpLogsContract" EntityType="Self.NgpLogsContract" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgpLogsContractor" EntityType="Self.NgpLogsContractor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NgpLogsPayment" EntityType="Self.NgpLogsPayment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NgpLogsProject" EntityType="Self.NgpLogsProject" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NgpLogsSched" EntityType="Self.NgpLogsSched" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgpLogsUserAccount" EntityType="Self.NgpLogsUserAccount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgpMunicipality" EntityType="Self.NgpMunicipality" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgpRole" EntityType="Self.NgpRole" Schema="dbo" store:Type="Tables" />
@@ -442,7 +494,11 @@
           <EntitySet Name="ngp_projects" EntityType="NgpdbmsModel.ngp_projects" />
           <EntitySet Name="ngp_sched" EntityType="NgpdbmsModel.ngp_sched" />
           <EntitySet Name="NgpBarangays" EntityType="NgpdbmsModel.NgpBarangay" />
+          <EntitySet Name="NgpLogsContracts" EntityType="NgpdbmsModel.NgpLogsContract" />
           <EntitySet Name="NgpLogsContractors" EntityType="NgpdbmsModel.NgpLogsContractor" />
+          <EntitySet Name="NgpLogsPayments" EntityType="NgpdbmsModel.NgpLogsPayment" />
+          <EntitySet Name="NgpLogsProjects" EntityType="NgpdbmsModel.NgpLogsProject" />
+          <EntitySet Name="NgpLogsScheds" EntityType="NgpdbmsModel.NgpLogsSched" />
           <EntitySet Name="NgpLogsUserAccounts" EntityType="NgpdbmsModel.NgpLogsUserAccount" />
           <EntitySet Name="NgpMunicipalities" EntityType="NgpdbmsModel.NgpMunicipality" />
           <EntitySet Name="NgpRoles" EntityType="NgpdbmsModel.NgpRole" />
@@ -634,6 +690,18 @@
           <NavigationProperty Name="ngp_projects" Relationship="NgpdbmsModel.FK_ngp_projects_NgpBarangay" FromRole="NgpBarangay" ToRole="ngp_projects" />
           <NavigationProperty Name="NgpMunicipality" Relationship="NgpdbmsModel.FK_NgpBarangay_NgpMunicipality" FromRole="NgpBarangay" ToRole="NgpMunicipality" />
         </EntityType>
+        <EntityType Name="NgpLogsContract">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="UserName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LogMessage" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="RoleId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="NgpLogsContractor">
           <Key>
             <PropertyRef Name="Id" />
@@ -642,6 +710,42 @@
           <Property Name="Date" Type="DateTime" Precision="3" />
           <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LogMessage" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="RoleId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NgpLogsPayment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="UserName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LogMessage" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="RoleId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NgpLogsProject">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="UserName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LogMessage" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="RoleId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NgpLogsSched">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="UserName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="LogMessage" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="UserId" Type="Int32" />
           <Property Name="RoleId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
@@ -1003,9 +1107,61 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="NgpLogsContracts">
+            <EntityTypeMapping TypeName="NgpdbmsModel.NgpLogsContract">
+              <MappingFragment StoreEntitySet="NgpLogsContract">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="LogMessage" ColumnName="LogMessage" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="NgpLogsContractors">
             <EntityTypeMapping TypeName="NgpdbmsModel.NgpLogsContractor">
               <MappingFragment StoreEntitySet="NgpLogsContractor">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="LogMessage" ColumnName="LogMessage" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NgpLogsPayments">
+            <EntityTypeMapping TypeName="NgpdbmsModel.NgpLogsPayment">
+              <MappingFragment StoreEntitySet="NgpLogsPayment">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="LogMessage" ColumnName="LogMessage" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NgpLogsProjects">
+            <EntityTypeMapping TypeName="NgpdbmsModel.NgpLogsProject">
+              <MappingFragment StoreEntitySet="NgpLogsProject">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="LogMessage" ColumnName="LogMessage" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NgpLogsScheds">
+            <EntityTypeMapping TypeName="NgpdbmsModel.NgpLogsSched">
+              <MappingFragment StoreEntitySet="NgpLogsSched">
                 <ScalarProperty Name="RoleId" ColumnName="RoleId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="LogMessage" ColumnName="LogMessage" />

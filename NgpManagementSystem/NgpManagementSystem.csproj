@@ -202,7 +202,11 @@
     <Compile Include="DTO\BarangayDTO.cs" />
     <Compile Include="DTO\ContractDTO.cs" />
     <Compile Include="DTO\ContractorDTO.cs" />
+    <Compile Include="DTO\LogsContractDTO.cs" />
     <Compile Include="DTO\LogsContractorDTO.cs" />
+    <Compile Include="DTO\LogsPaymentDTO.cs" />
+    <Compile Include="DTO\LogsProjectDTO.cs" />
+    <Compile Include="DTO\LogsSchedDTO.cs" />
     <Compile Include="DTO\MunicipalityDTO.cs" />
     <Compile Include="DTO\PaymentDTO.cs" />
     <Compile Include="DTO\ProjectDTO.cs" />
@@ -230,7 +234,19 @@
     <Compile Include="Models\NgpBarangay.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\NgpLogsContract.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\NgpLogsContractor.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NgpLogsPayment.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NgpLogsProject.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NgpLogsSched.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NgpLogsUserAccount.cs">

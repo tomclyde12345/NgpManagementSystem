@@ -24,6 +24,10 @@ namespace NgpManagementSystem.App_Start
             Mapper.CreateMap<NgpYear, YearDTO>().ReverseMap();
             Mapper.CreateMap<NgpLogsUserAccount, LogsAccountDTO>().ReverseMap();
             Mapper.CreateMap<NgpLogsContractor, LogsContractorDTO>().ReverseMap();
+            Mapper.CreateMap<NgpLogsContract, LogsContractDTO>().ReverseMap();
+            Mapper.CreateMap<NgpLogsPayment, LogsPaymentDTO>().ReverseMap();
+            Mapper.CreateMap<NgpLogsProject, LogsProjectDTO>().ReverseMap();
+            Mapper.CreateMap<NgpLogsSched, LogsSchedDTO>().ReverseMap();
         }
     }
 }
