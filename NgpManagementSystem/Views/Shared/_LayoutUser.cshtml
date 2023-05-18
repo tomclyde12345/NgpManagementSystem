@@ -21,7 +21,7 @@
     <link href="~/Content/select2.min.css" rel="stylesheet" />
     <link href="~/Content/assets/modules/prism/prism.css" rel="stylesheet" />
     <script src="~/Scripts/select2.js"></script>
-    <script src="~/Scripts/select2.min.js"></script> 
+    <script src="~/Scripts/select2.min.js"></script>
     <script src="~/Scripts/General.js"></script>
 
     <meta charset="UTF-8">
@@ -66,9 +66,6 @@
                     <ul class="navbar-nav mr-3">
                         <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
 
-                        <li>
-                            <a data-toggle="modal" data-target="#maint_modal" id="maint_tz"><i class="fa fa-cog f-20"></i> Maintenance Mode</a>
-                        </li>
 
 
                     </ul>
@@ -79,8 +76,8 @@
 
 
 
-                    @*FOR ADMIN*@
-                    @{ if ((int)Session["Role_Id"] == 1)
+                    @*FOR User*@
+                    @{ if ((int)Session["Role_Id"] != 1)
 
                         {
 
@@ -93,12 +90,10 @@
                                     }
 
                                 </a>
-
-
                                 <div class="dropdown-menu dropdown-menu-right">
 
-                                    <a href="/Admin/Index" class="dropdown-item has-icon">
-                                        <i class="fa fa-fire"></i> Admin Dashboard
+                                    <a href="/User/Index" class="dropdown-item has-icon">
+                                        <i class="fa fa-fire"></i> User Dashboard
                                     </a>
                                     <a href="/Account/Index" class="dropdown-item has-icon">
                                         <i class="far fa-user"></i> Account Settings
@@ -110,92 +105,83 @@
                                     </a>
                                 </div>
                             </li>
-
-
                         }
-
-
                     }
                 </ul>
 
             </nav>
-            @*FOR ADMIN*@
-            @{ if ((int)Session["Role_Id"] == 1)
 
-                {
-                    <div class="main-sidebar sidebar-style-2">
-                        <aside id="sidebar-wrapper">
-                            <div class="sidebar-brand">
-                                <a href="index.html"> Ngp Management System</a>
-                            </div>
+            <div class="main-sidebar sidebar-style-2">
+                <aside id="sidebar-wrapper">
+                    <div class="sidebar-brand">
+                        <a href="index.html"> Ngp Management System</a>
+                    </div>
 
-                            @{
-                                Html.RenderAction("DisplayPicNameandRole", "Account");
-                            }
-                            <div class="sidebar-brand sidebar-brand-sm">
-                                <a href="index.html">St</a>
-                            </div>
-                            <ul class="sidebar-menu">
-                                <li><a class="nav-link" style="color: #28a745 !important;" href="/Admin/Index"><i class="fa fa-fire"></i> <span> Admin Dashboard</span></a></li>
-                                <li class="menu-header">Starter</li>
-                                <li class="dropdown">
-                                    <a href="#" style="color: #28a745 !important;" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fa fa-user"></i> <span>Manage Account</span></a>
-                                    <ul class="dropdown-menu">
+                    @{
+                        Html.RenderAction("DisplayPicNameandRole", "Account");
+                    }
+                    <div class="sidebar-brand sidebar-brand-sm">
+                        <a href="index.html">St</a>
+                    </div>
+                    <ul class="sidebar-menu">
+                        <li><a class="nav-link" style="color: #28a745 !important;" href="/User/Index"><i class="fa fa-fire"></i> <span> User Dashboard</span></a></li>
+                        <li class="menu-header">Starter</li>
+                        <li class="dropdown">
+                            <a href="#" style="color: #28a745 !important;" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fa fa-user"></i> <span>Manage Account</span></a>
+                            <ul class="dropdown-menu">
 
-                                        <li><a class="nav-link" href="/Account/Index">Users Table</a></li>
-                                    </ul>
-                                </li>
+                                <li><a class="nav-link" href="/Account/Index">Users Table</a></li>
+                            </ul>
+                        </li>
 
-                                <li class="dropdown">
-                                    <a href="" style="color: #28a745 !important;" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Contractor</span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="nav-link" href="/Contractor/Create">Create Contractor<i class="fa fa-plus-circle"></i></a></li>
+                        <li class="dropdown">
+                            <a href="" style="color: #28a745 !important;" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Contractor</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="/Contractor/Create">Create Contractor<i class="fa fa-plus-circle"></i></a></li>
 
-
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="" style="color: #28a745 !important;" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Projects</span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="nav-link" href="/Project/Create">Create Projects<i class="fa fa-plus-circle"></i></a></li>
-
-
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="" style="color: #28a745 !important;" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Contract</span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="nav-link" href="/Contract/Create">Create Contract<i class="fa fa-plus-circle"></i></a></li>
-
-
-                                    </ul>
-                                </li>
-
-                                <li class="dropdown">
-                                    <a href="" style="color: #28a745 !important;" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Payments</span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="nav-link" href="/Payment/Create">Create Payment<i class="fa fa-plus-circle"></i></a></li>
-
-
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="" style="color: #28a745 !important;" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Sched</span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="nav-link" href="/Sched/Create">Create Sched<i class="fa fa-plus-circle"></i></a></li>
-
-
-                                    </ul>
-                                </li>
-                                <li><a class="nav-link" href="/Information/Index" style="color: #28a745 !important;"><i class="fas fa-pencil-ruler"></i> <span>Information List</span></a></li>
 
                             </ul>
-                        </aside>
-                    </div>
-                }
+                        </li>
+                        <li class="dropdown">
+                            <a href="" style="color: #28a745 !important;" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Projects</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="/Project/Create">Create Projects<i class="fa fa-plus-circle"></i></a></li>
 
 
-            }
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="" style="color: #28a745 !important;" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Contract</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="/Contract/Create">Create Contract<i class="fa fa-plus-circle"></i></a></li>
+
+
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="" style="color: #28a745 !important;" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Payments</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="/Payment/Create">Create Payment<i class="fa fa-plus-circle"></i></a></li>
+
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="" style="color: #28a745 !important;" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Sched</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="/Sched/Create">Create Sched<i class="fa fa-plus-circle"></i></a></li>
+
+
+                            </ul>
+                        </li>
+                        <li><a class="nav-link" href="/Information/Index" style="color: #28a745 !important;"><i class="fas fa-pencil-ruler"></i> <span>Information List</span></a></li>
+                    </ul>
+
+
+                </aside>
+            </div>
+
 
 
             <!-- Main Content -->
@@ -298,7 +284,22 @@
 
                     @RenderBody();
 
+                  
+                            <div class="modal fade"  data-backdrop="false" id="login-modal" tabindex="-1" role="dialog"    aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
 
+
+                                        <a href="/NgpManagement/Login">
+                                            <img src="~/DefaultImage/maintenance.jpg" style="display: block; width: 100%; height: 550px;" />
+                                            <input type="hidden" id="message" name="message">
+                                        </a>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                  
                 </section>
             </div>
 
@@ -313,121 +314,26 @@
             </footer>
         </div>
     </div>
-
-
-    <div class="modal fade" id="maint_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog modal-notify modal-danger" role="document">
-            <div class="modal-content">
-                <div class="modal-header card-header2">
-                    <h5 class="heading" style="color:white;">MAINTENANCE MODE</h5>
-                </div>
-
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p>
-                                Turn On/Off Maintenance Mode for the National Greening Project Management System
-                            </p>
-                            <form id="maintenanceStatus">
-                                <div class="form-group">
-                                    <select class="form-control" id="isActive" name="isActive">
-                                        <option value="0">No</option>
-                                        <option value="1">Yes</option>
-                                    </select>
-                                    <input type="hidden" id="id" name="id">
-                                </div>
-                                <div class="form-group">
-                                    <label for="maintenanceMessage">Maintenance Message</label>
-                                    <textarea type="text" id="message" name="message" required
-                                              class="form-control" rows="3" style="background: #fff;"></textarea>
-                                </div>
-
-
-
-
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-primary btn-md" style="margin: 0 auto;"
-                                            id="saveMaintenance">
-                                        Submit
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal-footer ">
-                    <a class="btn btn-danger" data-dismiss="modal" style="color:white;">Close</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <!-- General JS Scripts -->
+    @*MAINTENANCE MODE USER*@
     <script>
         $(document).ready(function () {
-            $("#maintenanceStatus").validate({
-                rules: {
-                    message: {
-                        required: true,
-                    },
-                },
-                errorClass: "tomerror",
-                messages: {
-                    message: {
-                        required: "Please Input a Message",
-                    },
-                },
-            });
-            $('#maintenanceStatus').submit(function (e) {
-                e.preventDefault();
-                if ($("#maintenanceStatus").valid()) {
-                    $('#maint_modal').modal('hide');
-                    var id = $(this).attr('data-id');
-                    var url = '/api/maintenancemode/getmaintenancemode/' + id;
-                    $("#maintenanceStatus").attr('data-id', id);
-                    var isActive = $('select[name=isActive]').val();
-                    //check true or false
-                    if (isActive == 1) {
-                        isActive = true;
-                    } else {
-                        isActive = false;
-                    }
-                    var message = $('textarea[name=message]').val();
-                    // data
-                    var data = {
-                        isActive: isActive,
-                        id: 1,
-                        message: message,
+            setInterval(function () {
+                $.ajax({
+                    type: 'GET',
+                    url: '/Maintenance/Get',
+                    success: function (data) {
+                        console.log('getmaintenance', data[0].isActive);
 
-                    };
-                    $.ajax({
-                        type: 'POST',
-                        url: '/api/maintenancemode/getmaintenancemode/' + id,
-                        data: data,
-
-                        success: function (data) {
-                            toastr.success("Status Successfully Changed!");
-                          
-                            setTimeout(() => {
-                                location.reload();
-
-                                /*  $('#saveMaintenance')[0].reset();*/
-                            }, 1000);
-                        },
-                        //if failed
-                        error: function (data) {
-                            // toastr.info("Success")
+                        if (data[0].isActive == true) {
+                            $("#login-modal").modal("show");
                         }
-                    });
-                }
-            });
+                    }
+                });
+            }, 1500);
         });
+
     </script>
-
-
-    <!-- General JS Scripts -->
-
     <script src="/Content/assets/modules/popper.js"></script>
     <script src="/Content/assets/modules/tooltip.js"></script>
     <script src="/Content/assets/modules/bootstrap/js/bootstrap.min.js"></script>
@@ -458,8 +364,6 @@
 
         });
     </script>
-
-
 
 
 </body>

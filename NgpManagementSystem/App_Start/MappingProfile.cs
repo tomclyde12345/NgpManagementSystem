@@ -28,6 +28,7 @@ namespace NgpManagementSystem.App_Start
             Mapper.CreateMap<NgpLogsPayment, LogsPaymentDTO>().ReverseMap();
             Mapper.CreateMap<NgpLogsProject, LogsProjectDTO>().ReverseMap();
             Mapper.CreateMap<NgpLogsSched, LogsSchedDTO>().ReverseMap();
+            Mapper.CreateMap<NgpMaintenanceMode, MaintenanceModeDto>().ReverseMap();
         }
     }
 }

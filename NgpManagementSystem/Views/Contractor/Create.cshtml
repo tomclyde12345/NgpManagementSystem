@@ -1,9 +1,7 @@
-﻿
-@{
-    ViewBag.Title = "Create";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = (int)Session["Role_Id"] == 1 ? "~/Views/Shared/_LayoutAdmin.cshtml" : "~/Views/Shared/_LayoutUser.cshtml";
 }
-
 
 <div class="row">
     <div class="col-12">
@@ -11,7 +9,7 @@
             <div class="card-header bg-green">
                 <h4 class="text-white">Create Contractor</h4>
                 <div class="card-header-form">
-                   
+
                 </div>
             </div>
             <br />
@@ -72,16 +70,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="text-center">
                     <div class="text-center">
-                        <div class="text-center">
 
-                            <input type="submit" value="SAVE" class="btn bg-green text-white btn-sm contract_next" />
-
-                        </div>
+                        <input type="submit" value="SAVE" class="btn bg-green text-white btn-sm contract_next" />
 
                     </div>
+
+                </div>
                 <br />
-              
+
             </form>
         </div>
     </div>

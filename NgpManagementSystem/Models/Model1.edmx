@@ -179,6 +179,15 @@
           <Property Name="UserId" Type="int" />
           <Property Name="RoleId" Type="nvarchar" MaxLength="200" />
         </EntityType>
+        <EntityType Name="NgpMaintenanceMode">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Label" Type="nvarchar(max)" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="Message" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="NgpMunicipality">
           <Key>
             <PropertyRef Name="MunicipalityId" />
@@ -388,6 +397,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_NgpLogsUserAccount_NgpLogsUserAccount">
+          <End Role="NgpLogsUserAccount" Type="Self.NgpLogsUserAccount" Multiplicity="1" />
+          <End Role="NgpLogsUserAccount1" Type="Self.NgpLogsUserAccount" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="NgpLogsUserAccount">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NgpLogsUserAccount1">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_NgpUser_NgpRole">
           <End Role="NgpRole" Type="Self.NgpRole" Multiplicity="0..1" />
           <End Role="NgpUser" Type="Self.NgpUser" Multiplicity="*" />
@@ -415,6 +436,7 @@
           <EntitySet Name="NgpLogsProject" EntityType="Self.NgpLogsProject" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgpLogsSched" EntityType="Self.NgpLogsSched" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgpLogsUserAccount" EntityType="Self.NgpLogsUserAccount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NgpMaintenanceMode" EntityType="Self.NgpMaintenanceMode" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgpMunicipality" EntityType="Self.NgpMunicipality" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgpRole" EntityType="Self.NgpRole" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgpUpload" EntityType="Self.NgpUpload" Schema="dbo" store:Type="Tables" />
@@ -476,6 +498,10 @@
             <End Role="NgpMunicipality" EntitySet="NgpMunicipality" />
             <End Role="NgpBarangay" EntitySet="NgpBarangay" />
           </AssociationSet>
+          <AssociationSet Name="FK_NgpLogsUserAccount_NgpLogsUserAccount" Association="Self.FK_NgpLogsUserAccount_NgpLogsUserAccount">
+            <End Role="NgpLogsUserAccount" EntitySet="NgpLogsUserAccount" />
+            <End Role="NgpLogsUserAccount1" EntitySet="NgpLogsUserAccount" />
+          </AssociationSet>
           <AssociationSet Name="FK_NgpUser_NgpRole" Association="Self.FK_NgpUser_NgpRole">
             <End Role="NgpRole" EntitySet="NgpRole" />
             <End Role="NgpUser" EntitySet="NgpUser" />
@@ -500,6 +526,7 @@
           <EntitySet Name="NgpLogsProjects" EntityType="NgpdbmsModel.NgpLogsProject" />
           <EntitySet Name="NgpLogsScheds" EntityType="NgpdbmsModel.NgpLogsSched" />
           <EntitySet Name="NgpLogsUserAccounts" EntityType="NgpdbmsModel.NgpLogsUserAccount" />
+          <EntitySet Name="NgpMaintenanceModes" EntityType="NgpdbmsModel.NgpMaintenanceMode" />
           <EntitySet Name="NgpMunicipalities" EntityType="NgpdbmsModel.NgpMunicipality" />
           <EntitySet Name="NgpRoles" EntityType="NgpdbmsModel.NgpRole" />
           <EntitySet Name="NgpUploads" EntityType="NgpdbmsModel.NgpUpload" />
@@ -560,6 +587,10 @@
           <AssociationSet Name="FK_NgpBarangay_NgpMunicipality" Association="NgpdbmsModel.FK_NgpBarangay_NgpMunicipality">
             <End Role="NgpMunicipality" EntitySet="NgpMunicipalities" />
             <End Role="NgpBarangay" EntitySet="NgpBarangays" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NgpLogsUserAccount_NgpLogsUserAccount" Association="NgpdbmsModel.FK_NgpLogsUserAccount_NgpLogsUserAccount">
+            <End Role="NgpLogsUserAccount" EntitySet="NgpLogsUserAccounts" />
+            <End Role="NgpLogsUserAccount1" EntitySet="NgpLogsUserAccounts" />
           </AssociationSet>
           <AssociationSet Name="FK_NgpUser_NgpRole" Association="NgpdbmsModel.FK_NgpUser_NgpRole">
             <End Role="NgpRole" EntitySet="NgpRoles" />
@@ -761,6 +792,17 @@
           <Property Name="LogMessage" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="UserId" Type="Int32" />
           <Property Name="RoleId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NgpLogsUserAccount1" Relationship="NgpdbmsModel.FK_NgpLogsUserAccount_NgpLogsUserAccount" FromRole="NgpLogsUserAccount" ToRole="NgpLogsUserAccount1" />
+          <NavigationProperty Name="NgpLogsUserAccount2" Relationship="NgpdbmsModel.FK_NgpLogsUserAccount_NgpLogsUserAccount" FromRole="NgpLogsUserAccount1" ToRole="NgpLogsUserAccount" />
+        </EntityType>
+        <EntityType Name="NgpMaintenanceMode">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Label" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="NgpMunicipality">
           <Key>
@@ -979,6 +1021,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_NgpLogsUserAccount_NgpLogsUserAccount">
+          <End Type="NgpdbmsModel.NgpLogsUserAccount" Role="NgpLogsUserAccount" Multiplicity="1" />
+          <End Type="NgpdbmsModel.NgpLogsUserAccount" Role="NgpLogsUserAccount1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="NgpLogsUserAccount">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NgpLogsUserAccount1">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_NgpUser_NgpRole">
           <End Type="NgpdbmsModel.NgpRole" Role="NgpRole" Multiplicity="0..1" />
           <End Type="NgpdbmsModel.NgpUser" Role="NgpUser" Multiplicity="*" />
@@ -1181,6 +1235,16 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NgpMaintenanceModes">
+            <EntityTypeMapping TypeName="NgpdbmsModel.NgpMaintenanceMode">
+              <MappingFragment StoreEntitySet="NgpMaintenanceMode">
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="Label" ColumnName="Label" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

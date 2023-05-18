@@ -1,6 +1,6 @@
-﻿function AdminLogsDashboard() {
+﻿
 
-
+function AdminLogsDashboard() {
     $.ajax({
         type: 'GET',
         url: '/api/adminlogsaccount/get',
@@ -524,14 +524,6 @@ function Payment() {
 
 
 }
-
-
-
-
-
-
-
-
 
 function Contract() {
 

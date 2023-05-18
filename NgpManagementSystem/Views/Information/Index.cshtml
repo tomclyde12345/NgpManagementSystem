@@ -1,7 +1,6 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    Layout = (int)Session["Role_Id"] == 1 ? "~/Views/Shared/_LayoutAdmin.cshtml" : "~/Views/Shared/_LayoutUser.cshtml";
 }
 
 <div class="row">
@@ -293,9 +292,6 @@
                                 </div>
                             </div>
 
-
-
-
                         </div>
                         <div class="text-center">
                             <div class="text-center">
@@ -320,7 +316,7 @@
 
 
 @*DELETE CONTRACTOR IN MODAL *@
-<div class="modal fade" id="deletecontractorModal" role="dialog" data-backdrop="false" >
+<div class="modal fade" id="deletecontractorModal" role="dialog" data-backdrop="false">
     <div class="modal-dialog modal-m modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header bg-green">

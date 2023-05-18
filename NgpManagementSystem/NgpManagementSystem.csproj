@@ -183,6 +183,7 @@
     <Compile Include="Controllers\API\ContractApiController.cs" />
     <Compile Include="Controllers\API\ContractorAPIController.cs" />
     <Compile Include="Controllers\API\CountApiController.cs" />
+    <Compile Include="Controllers\API\MaintenanceAPIController.cs" />
     <Compile Include="Controllers\API\MunicipalityAPIController.cs" />
     <Compile Include="Controllers\API\PaymentAPIController.cs" />
     <Compile Include="Controllers\API\ProjectApiController.cs" />
@@ -191,6 +192,7 @@
     <Compile Include="Controllers\ContractorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InformationController.cs" />
+    <Compile Include="Controllers\MaintenanceController.cs" />
     <Compile Include="Controllers\NgpManagementController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
@@ -207,6 +209,7 @@
     <Compile Include="DTO\LogsPaymentDTO.cs" />
     <Compile Include="DTO\LogsProjectDTO.cs" />
     <Compile Include="DTO\LogsSchedDTO.cs" />
+    <Compile Include="DTO\MaintenanceModeDto.cs" />
     <Compile Include="DTO\MunicipalityDTO.cs" />
     <Compile Include="DTO\PaymentDTO.cs" />
     <Compile Include="DTO\ProjectDTO.cs" />
@@ -250,6 +253,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NgpLogsUserAccount.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NgpMaintenanceMode.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NgpMunicipality.cs">
@@ -4865,6 +4871,7 @@
     <Content Include="Content\toastr.min.css" />
     <Content Include="DefaultImage\city-hall.png" />
     <Content Include="DefaultImage\denr.png" />
+    <Content Include="DefaultImage\maintenance.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -5180,16 +5187,17 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Account\AdminNameViewinProfile.cshtml" />
     <Content Include="Views\Account\DisplayPicNameandRole.cshtml" />
-    <Content Include="Views\Contractor\Index.cshtml" />
     <Content Include="Views\Contractor\Create.cshtml" />
     <Content Include="Views\Project\Create.cshtml" />
     <Content Include="Views\Information\Index.cshtml" />
     <Content Include="Views\Contract\Create.cshtml" />
     <Content Include="Views\Payment\Create.cshtml" />
     <Content Include="Views\Sched\Create.cshtml" />
+    <Content Include="Views\Shared\_LayoutUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Maintenance\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

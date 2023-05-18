@@ -1,9 +1,8 @@
 ﻿
 @{
-    ViewBag.Title = "Create";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "Index";
+    Layout = (int)Session["Role_Id"] == 1 ? "~/Views/Shared/_LayoutAdmin.cshtml" : "~/Views/Shared/_LayoutUser.cshtml";
 }
-
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -148,7 +147,7 @@
 
 <script>
     $(document).ready(function () {
-       
+
         Project();
     });
 </script>

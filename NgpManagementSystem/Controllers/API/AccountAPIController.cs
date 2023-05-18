@@ -204,7 +204,7 @@ namespace NgpManagementSystem.Controllers.API
 
                                 upload.FileName = name;
                                 upload.AccountId = Convert.ToInt32(provider.FormData["AccountId"]);
-                                //upload.Id = upload.Id;
+                                upload.Id = res.Id;
                                 Db.NgpUploads.Add(upload);
                                
                             };
@@ -233,7 +233,7 @@ namespace NgpManagementSystem.Controllers.API
         public IHttpActionResult EditAccount(AccountDTO editaccountDTO)
         {
 
-
+            var sess_id = (int)HttpContext.Current.Session["LoginID"];
             if (ModelState.IsValid)
             {
                 var accountdt = Db.NgpUsers.Single(c => c.Id == editaccountDTO.Id);
@@ -244,9 +244,18 @@ namespace NgpManagementSystem.Controllers.API
                 accountdt.Email = editaccountDTO.Email;
                 accountdt.RoleID = editaccountDTO.RoleID;
 
+            Db.NgpLogsUserAccounts.Add(new NgpLogsUserAccount()
+            {
+
+                Date = DateTime.Now,
+                Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name,
+                UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
+                LogMessage = "Edit a  User Account  " + "Name of user: " + accountdt.Name+ "Name of Editor:"+ accountdt.UserName + "Role:" + accountdt.NgpRole.RoleName,
+                UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
+                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.NgpRole.RoleName,
+            });
 
             }
-
             Db.SaveChanges();
 
 
@@ -294,7 +303,7 @@ namespace NgpManagementSystem.Controllers.API
         [Route("api/resetpassword/postresetpassword/{id}")]
         public IHttpActionResult SavingResetPassword(AccountDTO resetpass)
         {
-
+            var sess_id = (int)HttpContext.Current.Session["LoginID"];
             ScryptEncoder encoder = new ScryptEncoder();
             if (ModelState.IsValid)
             {
@@ -307,7 +316,16 @@ namespace NgpManagementSystem.Controllers.API
                 accountdt.RoleID = resetpass.RoleID;
                 accountdt.Password = encoder.Encode(resetpass.Password);
 
+                Db.NgpLogsUserAccounts.Add(new NgpLogsUserAccount()
+                {
 
+                    Date = DateTime.Now,
+                    Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name,
+                    UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
+                    LogMessage = "Reset a Password " + "Name of user: " + accountdt.Name + "UserName:" + accountdt.UserName + " Role:" + accountdt.NgpRole.RoleName,
+                    UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
+                    RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.NgpRole.RoleName,
+                });
 
             }
 
