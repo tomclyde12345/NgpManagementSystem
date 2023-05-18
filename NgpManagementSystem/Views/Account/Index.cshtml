@@ -17,36 +17,36 @@
                         <button class="btn btn-primary btn-sm " data-toggle="modal" data-target="#createroleModal">CREATE ROLE <i class="fa fa-plus-circle"></i></button>
                     </form-group>
 
-                 }
-                  else
-            {
-
-            }
                 }
+                else
+                {
+
+                }
+            }
 
 
-                    <div class="card-body p-0">
-                        <div class="table-responsive">
-                            <table class="table table-striped" id="usertable" width="100%">
-                                <thead>
-                                    <tr>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-striped" id="usertable" width="100%">
+                        <thead>
+                            <tr>
 
-                                        <th class="bg-green  text-white">Id</th>
-                                        <th class="bg-green    text-white">Name</th>
-                                        <th class="bg-green   text-white">Email</th>
-                                        <th class="bg-green  text-white">UserName</th>
-                                        <th class="bg-green  text-white">Goverment Agency</th>
-                                        <th class="bg-green   text-white"> Action</th>
-                                        <th class="bg-green   text-white"> Change</th>
-                                        <th class="bg-green   text-white">Role</th>
+                                <th class="bg-green  text-white">Id</th>
+                                <th class="bg-green    text-white">Name</th>
+                                <th class="bg-green   text-white">Email</th>
+                                <th class="bg-green  text-white">UserName</th>
+                                <th class="bg-green  text-white">Goverment Agency</th>
+                                <th class="bg-green   text-white"> Action</th>
+                                <th class="bg-green   text-white"> Change</th>
+                                <th class="bg-green   text-white">Role</th>
 
-                                    </tr>
-                                </thead>
+                            </tr>
+                        </thead>
 
-                            </table>
-                        </div>
-                    </div>
+                    </table>
                 </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -95,25 +95,18 @@
 </div>
 
 
-
-
-@*CREATE ACCOUNT IN MODAL *@
-<div id="createModal" class="modal fade" role="dialog" data-backdrop="false">
-    <div class="modal-dialog modal-lg">
-
-        <!-- Modal content-->
+<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-notify modal-danger modal-lg" role="document">
         <div class="modal-content">
-            <div class="modal-header bg-green">
-                <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">Create Account</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+            <div class="modal-header card-header2">
+                <h5 class="heading" style="color:white;">MAINTENANCE MODE</h5>
             </div>
             <div class="modal-body">
                 <form id="createaccount" enctype="multipart/form-data">
                     @*<div class="text-center">
-                            <img id="imgs" style=" position: relative; height: 190px; width: 32%; overflow: hidden;" src="~/Images/try.png" />
-                        </div>*@
+                    <img id="imgs" style=" position: relative; height: 190px; width: 32%; overflow: hidden;" src="~/Images/try.png" />
+                </div>*@
                     <br />
                     <div class="form-group" style="display:none;">
                         <label for="name">Id</label>
@@ -168,17 +161,16 @@
 
                         <button class="btn bg-green btn-sm  text-white" id="btnsubmit" type="submit">Save</button>
                     </div>
-
-
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
-
     </div>
 </div>
+
+
 
 
 @*EDIT ACCOUNT IN MODAL*@
@@ -292,7 +284,7 @@
 
 
 @*CHANGE PHOTO MODAL *@
-<div class="modal fade" id="changePhotoModal"  data-backdrop="false">
+<div class="modal fade" id="changePhotoModal" data-backdrop="false">
     <div class="modal-dialog modal-m modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header card-header2">
