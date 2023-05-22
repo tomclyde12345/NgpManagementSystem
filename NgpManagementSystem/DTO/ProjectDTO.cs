@@ -17,6 +17,10 @@ namespace NgpManagementSystem.DTO
         public string cenro { get; set; }
         public string region { get; set; }
         public Nullable<int> dropdownID { get; set; }
+        public int RoleId { get; set; }
+        public int UserId { get; set; }
+        public string UserName { get; set; }
+        public string Name { get; set; }
 
     }
 }

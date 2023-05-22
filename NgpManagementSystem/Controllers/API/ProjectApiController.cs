@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using NgpManagementSystem.DTO;
 using NgpManagementSystem.Models;
+using NgpManagementSystem.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +44,9 @@ namespace NgpManagementSystem.Controllers.API
                 project.penro = projectDTO.penro;
                 project.cenro = projectDTO.cenro;
                 project.region = projectDTO.region;
+                project.RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID; //saving role depend in login id
+                project.UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id; //saving userId depend in UserId of user login
+                project.UserName = Db.NgpUsers.FirstOrDefault(o=>o.Id== sess_id)?.UserName; //saving username depend in username of user login
                 Db.ngp_projects.Add(project);
             }
 

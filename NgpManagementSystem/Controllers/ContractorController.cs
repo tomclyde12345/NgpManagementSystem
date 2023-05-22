@@ -68,10 +68,29 @@ namespace NgpManagementSystem.Controllers
                             x.contractor_name.ToString().Contains(searchValue.ToLower()) ||
                             x.NgpMunicipality.MunicipalityName.ToLower().Contains(searchValue.ToLower()) ||
                             x.NgpBarangay.BarangayName.ToString().Contains(searchValue.ToLower()) ||
+                            x.NgpRole.RoleName.ToString().Contains(searchValue.ToLower()) ||
+                            x.NgpUser.UserName.ToString().Contains(searchValue.ToLower()) ||
+                             x.NgpUser.Name.ToString().Contains(searchValue.ToLower()) ||
                             x.contractor_type.ToString().Contains(searchValue.ToLower()));
 
 
                 }
+
+                //SEARCH FILTER  ROLE
+                if (!string.IsNullOrEmpty(Request["columns[5][search][value]"]))
+                {
+                    var filtersearcroles = Request["columns[5][search][value]"].ToLowerInvariant();
+                    contractorlist = contractorlist.Where(x => x.NgpRole != null && x.NgpRole.RoleName.ToLower().Contains(filtersearcroles)).OrderBy(x => x.contractorID);
+                }
+
+
+                //SEARCH FILTER  CONTRACTOR NAME
+                //if (!string.IsNullOrEmpty(Request["columns[1][search][value]"]))
+                //{
+                //    var filtersearchcontractor= Request["columns[1][search][value]"].ToLowerInvariant();
+                //    contractorlist = contractorlist.Where(x => x.contractor_name != null && x.contractor_name.ToLower().Contains(filtersearchcontractor)).OrderBy(x => x.contractorID);
+                //}
+
 
                 int totalrowsafterfiltering = contractorlist.Count();
                 //sorting
@@ -91,6 +110,8 @@ namespace NgpManagementSystem.Controllers
                     address_barangay = user.NgpBarangay.BarangayName,
                     address_municipality = user.NgpMunicipality.MunicipalityName,
                     contractor_type = user.contractor_type,
+                    RoleId = user.NgpRole.RoleName,
+                   Name = user.NgpUser.Name,
 
 
                 }).ToList();

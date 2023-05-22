@@ -1037,12 +1037,13 @@ function ContractorAnimation() {
                     data: valdata,
                 });
                 setTimeout(function () {
+                    $("#pleasewaitModal").modal('show');
                     toastr.success('Successsfully Added a Contractor');
                     setTimeout(function () {
                         location.reload();
-                        window.location.href = "/Contractor/Create";
-                    }, 1000)
-                }, 1000);
+                        window.location.href = "/Information/Index";
+                    }, 2000)
+                }, 2000);
             }
         }
     });
@@ -1078,9 +1079,37 @@ function ContractorAnimation() {
                 "data": "contractor_type", "name": "contractor_type",
             },
             {
+                "data": "RoleId", "name": "RoleId",
+                "render": function (data, type, row) {
+
+                    if (data == "NgpAdmin") {
+
+                        return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >NgpAdmin</span>'
+                    }
+
+                    return '<span class=" badge bg-secondary text-black" style="font-size:12px;" >' + data + '</span>'
+
+                   
+
+                },
+            },
+            {
+                "data": "Name", "name": "Name",
+                "render": function (data, type, row) {
+
+                 
+
+                    return '<span class=" badge bg-info text-white" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+
+            },
+            {
                 "data": null,
                 'render': function (data, type, full, meta) {
-                    return '<button  class=\'btn btn-success  editcontractor d-block btn-sm\' data-id = ' + data.contractorID + ' > Edit  <span class="fa fa-edit f-20" >  </span></button>' + '<button  class=\'btn btn-danger  deletecontractor d-block btn-sm\' data-id = ' + data.contractorID + ' > Delete  <span class="fa fa-edit f-20" >  </span></button>' 
+                    return '<button  style=width:68px;  class=\'btn btn-outline-success editcontractor d-block btn-sm\' data-id = ' + data.contractorID + ' > Edit  <span class="fa fa-edit f-20" >  </span></button>' + '<button  class=\'btn btn-outline-danger  deletecontractor d-block btn-sm\' data-id = ' + data.contractorID + ' > Delete  <span class="fa fa-trash f-20" >  </span></button>' 
 
                 }
             },
@@ -1096,11 +1125,47 @@ function ContractorAnimation() {
         },
 
         "fnInitComplete": function (oSettings, json) {
-
+            SearchfilterRole(json);
+          /*  SearchfilterContractor(json);*/
         }
 
 
-    });
+   });
+
+   //forsearchfilterforrole
+    function SearchfilterRole(json) {
+        var filterforrole = $('<select/>').addClass("forsearchdropdownfilterrole ");
+        filterforrole.append($('<option/>').attr('value', '').text('Select Filter'));
+        var roles = [];
+        $(json.data).each(function (index, element) {
+            if ($.inArray(element.RoleId, roles) == -1) {
+                roles.push(element.RoleId);
+                filterforrole.append($('<option/>').attr('value', element.RoleId).text(element.RoleId));
+            }
+        });
+        $("#FilterSearchRole").append(filterforrole).children("select").select2();
+        $("#FilterSearchRole").on('change', 'select', function () {
+            contractorTbl.column(5).search($(this).val()).draw();
+        });
+    }
+
+
+    //forsearchfilterforcontractor
+    //function SearchfilterContractor(json) {
+    //    var filterforcontractorname = $('<select/>').addClass("forsearchdropdownfiltercontractor ");
+    //    filterforrole.append($('<option/>').attr('value', '').text('Select Filter'));
+    //    var contractor = [];
+    //    $(json.data).each(function (index, element) {
+    //        if ($.inArray(element.contractor_name, contractor) == -1) {
+    //            contractor.push(element.contractor_name);
+    //            filterforcontractorname.append($('<option/>').attr('value', element.contractor_name).text(element.contractor_name));
+    //        }
+    //    });
+    //    $("#FilterSearchContractor").append(filterforcontractorname).children("select").select2();
+    //    $("#FilterSearchContractor").on('change', 'select', function () {
+    //        contractorTbl.column(1).search($(this).val()).draw();
+    //    });
+    //}
 
     //GET DATA FOR ROLE DYNAMIC FOR TYPE CONTRACTOR
     $.ajax({

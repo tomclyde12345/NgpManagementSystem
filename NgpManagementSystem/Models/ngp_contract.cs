@@ -41,11 +41,17 @@ namespace NgpManagementSystem.Models
         public string num_seedlings_survived_year1 { get; set; }
         public Nullable<int> dropdownID { get; set; }
         public string contractorName { get; set; }
+        public Nullable<int> RoleId { get; set; }
+        public Nullable<int> UserId { get; set; }
+        public string UserName { get; set; }
+        public string Name { get; set; }
     
         public virtual ngp_contractor ngp_contractor { get; set; }
         public virtual ngp_dropdown ngp_dropdown { get; set; }
         public virtual NgpBarangay NgpBarangay { get; set; }
         public virtual NgpMunicipality NgpMunicipality { get; set; }
+        public virtual NgpRole NgpRole { get; set; }
+        public virtual NgpUser NgpUser { get; set; }
         public virtual NgpYear NgpYear { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ngp_payment> ngp_payment { get; set; }

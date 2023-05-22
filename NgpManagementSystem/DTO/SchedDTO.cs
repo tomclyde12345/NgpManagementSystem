@@ -17,5 +17,9 @@ namespace NgpManagementSystem.DTO
         public string contractor_name { get; set; }
         public Nullable<int> ContractorId { get; set; }
         public Nullable<int> ContractId { get; set; }
+        public Nullable<int> RoleId { get; set; }
+        public Nullable<int> UserId { get; set; }
+        public string UserName { get; set; }
+        public string Name { get; set; }
     }
 }

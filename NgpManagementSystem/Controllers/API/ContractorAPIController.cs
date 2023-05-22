@@ -3,6 +3,7 @@ using NgpManagementSystem.DTO;
 using NgpManagementSystem.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -36,7 +37,11 @@ namespace NgpManagementSystem.Controllers.API
                 contractor.contractor_name = contractorDTO.contractor_name;
                 contractor.address_municipality = contractorDTO.address_municipality;
                 contractor.address_barangay = contractorDTO.address_barangay;
-                contractor.contractor_type = contractorDTO.contractor_type; 
+                contractor.contractor_type = contractorDTO.contractor_type;
+                contractor.RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID; //saving role depend in login id
+                contractor.UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id; //saving role depend in UserId login
+                contractor.UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName; //saving username depend in login
+                contractor.Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name; //saving username depend in login
                 Db.ngp_contractor.Add(contractor);
             }
 

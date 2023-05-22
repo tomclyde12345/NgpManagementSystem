@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Web;
 
 namespace NgpManagementSystem.DTO
@@ -28,5 +29,9 @@ namespace NgpManagementSystem.DTO
         public string num_seedlings_survived_year1 { get; set; }
         public Nullable<int> dropdownID { get; set; }
         public string contractorName { get; set; }
+        public int RoleId { get; set; }
+        public Nullable<int> UserId { get; set; }
+        public string UserName { get; set; }
+        public string Name { get; set; }
     }
 }

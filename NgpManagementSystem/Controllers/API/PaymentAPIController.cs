@@ -4,6 +4,7 @@ using NgpManagementSystem.DTO;
 using NgpManagementSystem.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -53,6 +54,12 @@ namespace NgpManagementSystem.Controllers.API
 
                     payment.num_release = paymentDTO.num_release;
                     payment.yearestablishedId = paymentDTO.yearestablishedId;
+
+                    payment.RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID; //saving role depend in login id
+                    payment.UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id; //saving role depend in UserId login
+                    payment.UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName; //saving username depend in login
+
+
 
                     Db.ngp_payment.Add(payment);
                   

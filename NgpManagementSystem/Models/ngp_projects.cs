@@ -24,9 +24,15 @@ namespace NgpManagementSystem.Models
         public string cenro { get; set; }
         public string region { get; set; }
         public Nullable<int> dropdownID { get; set; }
+        public Nullable<int> RoleId { get; set; }
+        public Nullable<int> UserId { get; set; }
+        public string UserName { get; set; }
+        public string Name { get; set; }
     
         public virtual ngp_dropdown ngp_dropdown { get; set; }
         public virtual NgpBarangay NgpBarangay { get; set; }
         public virtual NgpMunicipality NgpMunicipality { get; set; }
+        public virtual NgpRole NgpRole { get; set; }
+        public virtual NgpUser NgpUser { get; set; }
     }
 }

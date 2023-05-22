@@ -46,7 +46,10 @@ namespace NgpManagementSystem.Controllers.API
                     sched.dv_date = schedDTO.dv_date;
                     sched.lddap_no = schedDTO.lddap_no;
                     sched.lddap_date = schedDTO.lddap_date;
-                 
+                    sched.RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID; //saving role depend in login id
+                    sched.UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id; //saving userId depend in UserId of user login
+                    sched.UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName; //saving username depend in username of user login
+
 
                     Db.ngp_sched.Add(sched);
 

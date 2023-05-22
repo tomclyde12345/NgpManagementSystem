@@ -17,12 +17,27 @@ namespace NgpManagementSystem.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NgpRole()
         {
+            this.ngp_contract = new HashSet<ngp_contract>();
+            this.ngp_contractor = new HashSet<ngp_contractor>();
+            this.ngp_payment = new HashSet<ngp_payment>();
+            this.ngp_projects = new HashSet<ngp_projects>();
+            this.ngp_sched = new HashSet<ngp_sched>();
             this.NgpUsers = new HashSet<NgpUser>();
         }
     
         public int Id { get; set; }
         public string RoleName { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ngp_contract> ngp_contract { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ngp_contractor> ngp_contractor { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ngp_payment> ngp_payment { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ngp_projects> ngp_projects { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ngp_sched> ngp_sched { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NgpUser> NgpUsers { get; set; }
     }

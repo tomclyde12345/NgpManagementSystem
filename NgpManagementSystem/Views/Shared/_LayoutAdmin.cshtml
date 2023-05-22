@@ -338,54 +338,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="maint_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog modal-notify modal-danger" role="document">
-            <div class="modal-content">
-                <div class="modal-header card-header2">
-                    <h5 class="heading" style="color:white;">MAINTENANCE MODE </h5>
-                </div>
-
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p>
-                                Turn On/Off Maintenance Mode for the National Greening Project Management System
-                            </p>
-                            <form id="maintenanceStatus">
-                                <div class="form-group">
-                                    <select class="form-control" id="isActive" name="isActive">
-                                        <option value="0">No</option>
-                                        <option value="1">Yes</option>
-                                    </select>
-                                    <input type="hidden" id="id" name="id">
-                                </div>
-                                <div class="form-group">
-                                    <label for="maintenanceMessage">Maintenance Message</label>
-                                    <textarea type="text" id="message" name="message" required
-                                              class="form-control" rows="3" style="background: #fff;"></textarea>
-                                </div>
-
-
-
-
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-primary btn-md" style="margin: 0 auto;"
-                                            id="saveMaintenance">
-                                        Submit
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal-footer ">
-                    <a class="btn btn-danger" data-dismiss="modal" style="color:white;">Close</a>
-                </div>
-            </div>
-        </div>
-    </div>
+   
     <script>
         $(document).ready(function () {
             $("#maintenanceStatus").validate({
@@ -477,7 +430,10 @@
     <script>
         $(window).ready(function () {
             TotalCounts();
-
+            //NEED THIS FOR MODAL
+            $(document).on('show.bs.modal', '.modal', function () {
+                $(this).appendTo('body');
+            });
         });
     </script>
 

@@ -1,6 +1,6 @@
 ﻿@{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    Layout = (int)Session["Role_Id"] == 1 ? "~/Views/Shared/_LayoutAdmin.cshtml" : "~/Views/Shared/_LayoutUser.cshtml";
 }
 <div class="row">
     <div class="col-12">
@@ -52,7 +52,7 @@
 
 
 @*CREATE ROLE IN MODAL *@
-<div id="createroleModal" class="modal fade" role="dialog" data-backdrop="false">
+<div id="createroleModal" class="modal fade" role="dialog">
     <div class="modal-dialog modal-md">
 
         <!-- Modal content-->
@@ -174,7 +174,7 @@
 
 
 @*EDIT ACCOUNT IN MODAL*@
-<div id="editAccountModal" class="modal fade" role="dialog" data-backdrop="false">
+<div id="editAccountModal" class="modal fade" role="dialog" >
     <div class="modal-dialog">
 
 
@@ -256,7 +256,7 @@
 
 
 @*DELETE ACCOUNT IN MODAL *@
-<div class="modal fade" id="deleteAccountModal" role="dialog" data-backdrop="false">
+<div class="modal fade" id="deleteAccountModal" role="dialog">
     <div class="modal-dialog modal-m modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header bg-green">
@@ -284,7 +284,7 @@
 
 
 @*CHANGE PHOTO MODAL *@
-<div class="modal fade" id="changePhotoModal" data-backdrop="false">
+<div class="modal fade" id="changePhotoModal" >
     <div class="modal-dialog modal-m modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header card-header2">
@@ -344,7 +344,7 @@
 <div class="card-body">
     <div class="card">
         @*RESET PASSWORD IN MODAL*@
-        <div class="modal fade" id="resetpassModal" data-backdrop="false">
+        <div class="modal fade" id="resetpassModal">
             <div class="modal-dialog modal-m modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header bg-green">
@@ -414,5 +414,9 @@
 <script>
     $(window).ready(function () {
         Account();
+    });
+    //NEED THIS FOR MODAL
+    $(document).on('show.bs.modal', '.modal', function () {
+        $(this).appendTo('body');
     });
 </script>
