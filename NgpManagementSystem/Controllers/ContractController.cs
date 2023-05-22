@@ -60,14 +60,13 @@ namespace NgpManagementSystem.Controllers
                 {
                     contractlist = contractlist.
                         Where(x => x.contractID.ToString().Contains(searchValue.ToLower()) ||
-                        x.location_municipality.ToString().Contains(searchValue.ToLower()) ||
-                          x.location_barangay.ToString().Contains(searchValue.ToLower()) ||
-                            x.location_sitio.ToString().Contains(searchValue.ToLower()) ||
-                              x.area.ToString().Contains(searchValue.ToLower()) ||
-                                x.survival_rate.ToString().Contains(searchValue.ToLower()) ||
-                                  x.ngp_contractor.contractor_name.ToString().Contains(searchValue.ToLower()) ||
-
-                            x.site_code.ToString().Contains(searchValue.ToLower()));
+                       x.location_municipality.ToString().Contains(searchValue.ToLower()) ||
+                       x.location_barangay.ToString().Contains(searchValue.ToLower()) ||
+                       x.location_sitio.ToString().Contains(searchValue.ToLower()) ||
+                       x.area.ToString().Contains(searchValue.ToLower()) ||
+                       x.survival_rate.ToString().Contains(searchValue.ToLower()) ||
+                       x.ngp_contractor.contractor_name.ToString().Contains(searchValue.ToLower()) ||
+                       x.site_code.ToString().Contains(searchValue.ToLower()));
 
 
                 }
@@ -110,6 +109,9 @@ namespace NgpManagementSystem.Controllers
                     num_seedlings_survived = contractdata.num_seedlings_survived,
                     num_seedlings_replanted = contractdata.num_seedlings_replanted,
                     num_seedlings_survived_year1 = contractdata.num_seedlings_survived_year1,
+                    RoleId = contractdata.NgpRole.RoleName,
+                    Name = contractdata.NgpUser.Name,
+
 
 
                 }).ToList();

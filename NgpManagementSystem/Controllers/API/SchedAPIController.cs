@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using Microsoft.Ajax.Utilities;
 using NgpManagementSystem.DTO;
 using NgpManagementSystem.Models;
+using NgpManagementSystem.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,6 +51,8 @@ namespace NgpManagementSystem.Controllers.API
                     sched.RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID; //saving role depend in login id
                     sched.UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id; //saving userId depend in UserId of user login
                     sched.UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName; //saving username depend in username of user login
+                    sched.Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name; //saving username depend in name of user login
+
 
 
                     Db.ngp_sched.Add(sched);
@@ -83,5 +87,79 @@ namespace NgpManagementSystem.Controllers.API
             return Ok(contract.OrderByDescending(x => x.contractID));
         }
 
+
+
+
+        //GET in form sched
+        [Route("api/schedget/get/{id}")]
+        [HttpGet]
+        public IHttpActionResult GetSched(int id)
+        {
+            var sched = Db.ngp_sched.SingleOrDefault(d => d.schedID == id);
+            if (sched == null)
+            {
+                return NotFound();
+            }
+            return Ok(Mapper.Map<ngp_sched, SchedDTO>(sched));
+        }
+
+
+        //Put
+        [HttpPut]
+        [Route("api/schedput/updatesched/{id}")]
+        public IHttpActionResult UpdateSched(int id, SchedDTO schedDTO)
+        {
+
+            var sess_id = (int)HttpContext.Current.Session["LoginID"]; //need this for session  login
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var schedinDb = Db.ngp_sched.SingleOrDefault(d => d.schedID == id);
+            if (schedinDb == null)
+            {
+                return NotFound();
+            }
+            Mapper.Map(schedDTO, schedinDb);
+            schedinDb.schedID = id;
+            schedinDb.ors_no = schedDTO.ors_no;
+            schedinDb.ors_date = schedDTO.ors_date;
+            schedinDb.dv_no = schedDTO.dv_no;
+            schedinDb.dv_date = schedDTO.dv_date;
+            schedinDb.lddap_no = schedDTO.lddap_no;
+            schedinDb.lddap_date = schedDTO.lddap_date;
+            schedinDb.ContractId = Db.ngp_contract.SingleOrDefault(x => x.contractID == schedDTO.ContractId).contractID; // need contractorId match in contractor
+            schedinDb.contractor_name = Db.ngp_contract.SingleOrDefault(x => x.contractID == schedDTO.ContractId).contractorName; // need contractorname == match in contractorname in contractor
+            schedinDb.RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID; //saving role depend in login id
+            schedinDb.UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id; //saving userId depend in UserId of user login
+            schedinDb.UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName; //saving username depend in username of user login
+            schedinDb.Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name; //saving username depend in name of user login
+
+            Db.SaveChanges();
+            return Ok();
+        }
+
+
+
+        [HttpDelete]
+        [Route("api/scheddelete/delete/{id}")]
+        public IHttpActionResult DeleteSched(int id)
+        {
+            var schedinDb = Db.ngp_sched.SingleOrDefault(d => d.schedID == id);
+            if (schedinDb == null)
+            {
+                return NotFound();
+            }
+            Db.ngp_sched.Remove(schedinDb);
+            //_db.LoginActivity.Add(new LoginActivity()
+            //{
+            //    UserName = User.Identity.GetFullName(),
+            //    ActivityMessage = "Deleted A Department",
+            //    ActivityDate = DateTime.Now.ToString("MMMM dd yyyy hh:mm tt"),
+            //    Email = User.Identity.GetUserName(),
+
+            //});
+            Db.SaveChanges();
+            return Ok();
+        }
     }
 }

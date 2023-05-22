@@ -65,7 +65,7 @@ namespace NgpManagementSystem.Controllers
                             x.area.ToString().Contains(searchValue.ToLower()) ||
                             x.year_form.ToString().Contains(searchValue.ToLower()) ||
                             x.penro.ToString().Contains(searchValue.ToLower()) ||
-                             x.cenro.ToString().Contains(searchValue.ToLower()) ||
+                            x.cenro.ToString().Contains(searchValue.ToLower()) ||
                             x.region.ToString().Contains(searchValue.ToLower()));
 
 
@@ -93,6 +93,9 @@ namespace NgpManagementSystem.Controllers
                     cenro = projectdata.cenro,
                     region = projectdata.region,
                     year_form = projectdata.year_form,
+                    RoleId = projectdata.NgpRole.RoleName,
+                    Name = projectdata.NgpUser.Name,
+
 
 
                 }).ToList();

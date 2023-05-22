@@ -33,7 +33,7 @@
                         @*for Contractor tab*@
 
 
-                      
+
 
                         <div class="row">
                             <div class="col-12">
@@ -51,7 +51,7 @@
                                         <br />
                                         <br />
                                     </div>
-                                  
+
                                     <br />
                                     <div class="card-body p-0">
                                         <div class="table-responsive">
@@ -113,6 +113,8 @@
                                                         <th class="bg-green text-white">Penro</th>
                                                         <th class="bg-green text-white">Cenro</th>
                                                         <th class="bg-green text-white">Region</th>
+                                                        <th class="bg-green text-white">Role</th>
+                                                        <th class="bg-green text-white">Create By:</th>
                                                     </tr>
                                                 </thead>
                                             </table>
@@ -132,11 +134,11 @@
 
                             <br />
                             <div style="padding:2px 2.5%">
-                              
+
                                 <button type="button" class="btn btn-info btn-md " style="border-radius:20px;" onclick="location.href ='/Contract/Create'">Create Contract <i class="fa fa-plus-circle"></i> </button>
 
                             </div>
-                          
+
                             <div class="table-responsive">
                                 <table id="contracttable" class="table table-hover" width="100%">
 
@@ -161,6 +163,8 @@
                                             <th class="bg-green text-white">num_seedlings_produced</th>
                                             <th class="bg-green text-white">num_seedlings_survived</th>
                                             <th class="bg-green text-white">num_seedlings_survived_year1</th>
+                                            <th class="bg-green text-white">Role</th>
+                                            <th class="bg-green text-white">Create By:</th>
 
 
                                         </tr>
@@ -191,6 +195,8 @@
                                             <th class="bg-green text-white">ContractorName</th>
                                             <th class="bg-green text-white">num release</th>
                                             <th class="bg-green text-white">year released</th>
+                                            <th class="bg-green text-white">Role</th>
+                                            <th class="bg-green text-white">Create By:</th>
 
 
                                         </tr>
@@ -225,6 +231,9 @@
                                             <th class="bg-green text-white">lddap_no</th>
                                             <th class="bg-green text-white">lddap_date</th>
                                             <th class="bg-green text-white">contractor_name</th>
+                                            <th class="bg-green text-white">Role</th>
+                                            <th class="bg-green text-white">Create By:</th>
+                                            <th class="bg-green text-white">Action:</th>
 
 
 
@@ -243,7 +252,7 @@
 
 
 @*EDIT CONTRACTOR IN MODAL*@
-<div id="editcontractorModal" class="modal fade" role="dialog" >
+<div id="editcontractorModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
 
@@ -352,6 +361,134 @@
 
                     <button type="button" class="btn btn-danger" data-dismiss="modal">CLOSE</button>
                     <a href="#" class="btn bg-green text-white" id="btnContractorDelete">CONFIRM</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+@*EDIT SCHED IN MODAL*@
+<div id="editschedModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+
+
+        <div class="modal-content">
+            <div class="modal-header bg-green">
+                <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">Edit Sched</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+
+                <form id="editschedform">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+
+
+                                <input type="hidden" class="form-control" id="schedID" name="schedID"> @*need id *@
+
+                                <input type="hidden" class="form-control" id="contractor_name" name="contractor_name"> @*need contractorname *@
+
+                                <input type="hidden" class="form-control" id="roleId" name="roleId"> @*need roleId *@
+                                <input type="hidden" class="form-control" id="userName" name="userName"> @*need userName *@
+
+
+                                <div class="form-group ">
+                                    <label>ors_no </label>
+                                    <input type="text" class="form-control" id="ors_no" name="ors_no">
+
+                                </div>
+                                <div class="form-group ">
+                                    <label>ors_date </label>
+                                    <input type="date" class="form-control" id="ors_date" name="ors_date">
+
+                                </div>
+
+                                <div class="form-group ">
+                                    <label>dv_no </label>
+                                    <input type="text" class="form-control" id="dv_no" name="dv_no">
+
+                                </div>
+                                <div class="form-group ">
+                                    <label>dv_date </label>
+                                    <input type="date" class="form-control" id="dv_date" name="dv_date">
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group ">
+                                    <label>lddap_no </label>
+                                    <input type="text" class="form-control" id="lddap_no" name="lddap_no">
+
+                                </div>
+                                <div class="form-group ">
+                                    <label>lddap_date </label>
+                                    <input type="date" class="form-control" id="lddap_date" name="lddap_date">
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="contractId">contractId</label>
+                                    <select class="form-control" style="width:100%" name="contractId" id="contractId">
+                                        <option value=""> Select contractId</option>
+
+                                    </select>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="text-center">
+                            <div class="text-center">
+
+                                <button type="button" value=" submit" class="btn bg-green text-white " id="UpdateSched">Save</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+@*DELETE sched IN MODAL *@
+<div class="modal fade" id="deleteschedModal" role="dialog">
+    <div class="modal-dialog modal-m modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-green">
+                <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">Delete Sched</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <form id="deletesched">
+                <div class="modal-body">
+                    <br />
+                    <h5 class="card-subtitle ">Are you sure you want to Delete This Sched ?</h5>
+                </div>
+                <div class="modal-footer coolTZ ">
+                    <input type="hidden" name="ScheduleId" id="ScheduleId" />
+
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">CLOSE</button>
+                    <a href="#" class="btn bg-green text-white" id="btnSchedDelete">CONFIRM</a>
                 </div>
             </form>
         </div>

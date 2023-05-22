@@ -47,6 +47,7 @@ namespace NgpManagementSystem.Controllers.API
                 project.RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID; //saving role depend in login id
                 project.UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id; //saving userId depend in UserId of user login
                 project.UserName = Db.NgpUsers.FirstOrDefault(o=>o.Id== sess_id)?.UserName; //saving username depend in username of user login
+                project.Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name; //saving name depend in login
                 Db.ngp_projects.Add(project);
             }
 

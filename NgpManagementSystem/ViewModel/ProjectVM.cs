@@ -17,5 +17,8 @@ namespace NgpManagementSystem.ViewModel
         public string cenro { get; set; }
         public string region { get; set; }
         public string dropdownID { get; set; }
+        public string RoleId { get; set; }
+        public string UserName { get; set; }
+        public string Name { get; set; }
     }
 }

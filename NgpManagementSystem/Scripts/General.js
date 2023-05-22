@@ -257,14 +257,13 @@ function TotalCounts() {
         }
     });
 
-
-
 }
 
 
 
-
 function Sched() {
+
+
 
 
     //GET DATA FOR SCHED DYNAMIC FOR CREATE SCHEDULE 
@@ -277,6 +276,18 @@ function Sched() {
             })
         }
     });
+
+     //GET DATA FOR SCHED DYNAMIC FOR EDIT SCHEDULE  VIA MODAL
+    $.ajax({
+        type: 'GET',
+        url: '/api/contractdataforsched/get',
+        success: function (data) {
+            $.each(data, function (index, value) {
+                $('select[name=contractId]').append('<option value="' + value.contractID + '">' + value.contractorName + '</option>');
+            })
+        }
+    });
+
 
 
 
@@ -320,6 +331,37 @@ function Sched() {
             {
                 "data": "contractor_name", "name": "contractor_name",
             },
+            {
+                "data": "RoleId", "name": "RoleId",
+                "render": function (data, type, row) {
+
+                    if (data == "NgpAdmin") {
+
+                        return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >NgpAdmin</span>'
+                    }
+
+                    return '<span class=" badge bg-secondary text-black" style="font-size:12px;" >' + data + '</span>'
+
+                },
+            },
+            {
+                "data": "Name", "name": "Name",
+                "render": function (data, type, row) {
+
+                    return '<span class=" badge bg-info text-white" style="font-size:12px;" >' + data + '</span>'
+
+                },
+
+            },
+
+            {
+                "data": null,
+                'render': function (data, type, full, meta) {
+                    return '<button  style=width:68px;  class=\'btn btn-outline-success editsched d-block btn-sm\' data-id = ' + data.schedID + ' > Edit  <span class="fa fa-edit f-20" >  </span></button>' +
+                        '<button  style=width:68px;  class=\'btn btn-outline-danger deletesched d-block btn-sm\' data-id = ' + data.schedID + ' > Delete  <span class="fa fa-trash f-20" >  </span></button>'
+                }
+            },
+
 
         ],
 
@@ -333,6 +375,51 @@ function Sched() {
 
 
     });
+
+
+
+    /// GET DATA FOR DELETE SCHED 
+
+    $('#schedtable').on('click', '.deletesched', function () {
+        var id = $(this).attr('data-id');
+        var url = '/api/scheddelete/delete/' + schedID;
+        $("#ScheduleId").val(id);
+        $("#deleteschedModal").modal('show');
+
+
+    });
+
+
+    /*  DELETE CONTRACTOR  DELETE DATA AFTER CLICK*/
+    $("#btnSchedDelete").click(function () {
+
+        // for deletion
+        var st = $("#ContrScheduleIdactorId").val();
+        //alert(dept);
+        $.ajax({
+            type: "DELETE",
+            url: "/api/scheddelete/delete/" + st,
+            success: function (response) {
+
+                setTimeout(function () {
+                    toastr.success("Schedule Successfully Deleted");
+                    setTimeout(function () {
+                        location.reload();
+                    }, 2000)
+                }, 1500);
+                $("#deleteschedModal").modal('hide');
+            },
+            error: function (response) {
+                toastr.error("Unable to Delete ");
+                //alert(result, result.DepartmentId, result.Name);
+            }
+        })
+
+    })
+
+
+
+
 
 
     //SAVINGR SCHED ADD SCHED
@@ -411,6 +498,95 @@ function Sched() {
         }
     });
 
+
+
+
+
+    //GET DATA ONLY FOR EDIT SCHED GET METHOD 
+
+    $("#schedtable").on('click', '.editsched', function () {
+        var id = $(this).attr('data-id');
+        var url = '/api/schedget/get/' + id;
+        //alert(id);
+        $.ajax({
+            type: 'GET',
+            url: url,
+            success: function (data) {
+                $("#editschedModal").modal('show');
+                $('#editschedform').find('input[name="schedID"]').val(data.schedID);
+                $('#editschedform').find('input[name="ors_no"]').val(data.ors_no);
+                $('#editschedform').find('input[name="ors_date"]').val(data.ors_date);
+                $('#editschedform').find('input[name="dv_no"]').val(data.dv_no);
+                $('#editschedform').find('input[name="dv_date"]').val(data.dv_date);
+                $('#editschedform').find('input[name="lddap_no"]').val(data.lddap_no);
+                $('#editschedform').find('input[name="lddap_date"]').val(data.lddap_date);
+                $('#editschedform').find('select[name="contractId"]').val(data.contractId);
+                $('#editschedform').find('input[name="contractor_name"]').val(data.contractor_name);
+                $('#editschedform').find('input[name="roleId"]').val(data.roleId);
+                $('#editschedform').find('input[name="userName"]').val(data.userName);
+
+            },
+            //if failed
+            error: function (data) {
+                // console.log(data, data.id, data.name);
+                toastr.error("error")
+            }
+        })
+    })
+    //PUT DATA ONLY FOR EDIT SCHED GET METHOD 
+    $("#UpdateSched").click(function (e) {
+        e.preventDefault();
+        var data = {
+
+            schedID: $('#editschedform').find('input[name=schedID]').val(),
+            ors_no: $('#editschedform').find('input[name=ors_no]').val(),
+            ors_date: $('#editschedform').find('input[name=ors_date]').val(),
+            dv_no: $('#editschedform').find('input[name=dv_no]').val(),
+            dv_date: $('#editschedform').find('input[name=dv_date]').val(),
+            lddap_no: $('#editschedform').find('input[name=lddap_no]').val(),
+            lddap_date: $('#editschedform').find('input[name=lddap_date]').val(),
+            contractId: $('#editschedform').find('select[name=contractId]').val(),
+            contractor_name: $('#editschedform').find('input[name=contractor_name]').val(),
+            roleId: $('#editschedform').find('input[name=roleId]').val(),
+            userName: $('#editschedform').find('input[name=userName]').val(),
+
+        };
+
+
+        var id = $('#editschedform').find('input[name="schedID"]').val();
+        $.ajax({
+            type: 'PUT',
+            url: '/api/schedput/updatesched/' + id,
+            data: data,
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('access_token')
+            },
+            success: function (data) {
+
+
+                $('#editschedModal').modal('hide');
+                //show please wait modal
+                /*  $('#pleasewait').modal('show');*/
+                //show toastr after 3
+                setTimeout(function () {
+                    toastr.success("Sched Successfully Updated!");
+                    // hide please wait modal
+                }, 2000);
+                setTimeout(function () {
+                    window.location.reload();
+                }, 3000);
+            },
+            //if failed
+            error: function (data) {
+                toastr.error("Error Saving")
+            }
+        });
+    });
+
+
+
+
+
 }
 function Payment() {
 
@@ -441,6 +617,32 @@ function Payment() {
             },
             {
                 "data": "yearestablishedId", "name": "yearestablishedId",
+            },
+            {
+                "data": "RoleId", "name": "RoleId",
+                "render": function (data, type, row) {
+
+                    if (data == "NgpAdmin") {
+
+                        return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >NgpAdmin</span>'
+                    }
+
+                    return '<span class=" badge bg-secondary text-black" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+            },
+            {
+                "data": "Name", "name": "Name",
+                "render": function (data, type, row) {
+
+                    return '<span class=" badge bg-info text-white" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+
             },
           
         ],
@@ -694,6 +896,32 @@ function Contract() {
             {
                 "data": "num_seedlings_survived_year1", "name": "num_seedlings_survived_year1",
             },
+            {
+                "data": "RoleId", "name": "RoleId",
+                "render": function (data, type, row) {
+
+                    if (data == "NgpAdmin") {
+
+                        return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >NgpAdmin</span>'
+                    }
+
+                    return '<span class=" badge bg-secondary text-black" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+            },
+            {
+                "data": "Name", "name": "Name",
+                "render": function (data, type, row) {
+
+                    return '<span class=" badge bg-info text-white" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+
+            },
 
         ],
 
@@ -750,6 +978,32 @@ function Project() {
             },
             {
                 "data": "region", "name": "region"
+            },
+            {
+                "data": "RoleId", "name": "RoleId",
+                "render": function (data, type, row) {
+
+                    if (data == "NgpAdmin") {
+
+                        return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >NgpAdmin</span>'
+                    }
+
+                    return '<span class=" badge bg-secondary text-black" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+            },
+            {
+                "data": "Name", "name": "Name",
+                "render": function (data, type, row) {
+
+                    return '<span class=" badge bg-info text-white" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+
             },
 
 
@@ -1096,8 +1350,6 @@ function ContractorAnimation() {
             {
                 "data": "Name", "name": "Name",
                 "render": function (data, type, row) {
-
-                 
 
                     return '<span class=" badge bg-info text-white" style="font-size:12px;" >' + data + '</span>'
 

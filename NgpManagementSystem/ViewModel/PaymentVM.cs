@@ -15,5 +15,8 @@ namespace NgpManagementSystem.ViewModel
         public string yearestablishedId { get; set; }
 
         public virtual ngp_contract ngp_contract { get; set; }
+        public string RoleId { get; set; }
+        public string UserName { get; set; }
+        public string Name { get; set; }
     }
 }

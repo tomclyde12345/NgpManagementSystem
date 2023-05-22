@@ -79,6 +79,7 @@
           <Property Name="RoleId" Type="int" />
           <Property Name="UserId" Type="int" />
           <Property Name="UserName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="ngp_projects">
           <Key>
@@ -907,6 +908,7 @@
           <Property Name="RoleId" Type="Int32" />
           <Property Name="UserId" Type="Int32" />
           <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ngp_contract" Relationship="NgpdbmsModel.FK_ngp_payment_ngp_contract" FromRole="ngp_payment" ToRole="ngp_contract" />
           <NavigationProperty Name="NgpRole" Relationship="NgpdbmsModel.FK_ngp_payment_NgpRole" FromRole="ngp_payment" ToRole="NgpRole" />
           <NavigationProperty Name="NgpUser" Relationship="NgpdbmsModel.FK_ngp_payment_NgpUser" FromRole="ngp_payment" ToRole="NgpUser" />
@@ -1498,6 +1500,7 @@
           <EntitySetMapping Name="ngp_payment">
             <EntityTypeMapping TypeName="NgpdbmsModel.ngp_payment">
               <MappingFragment StoreEntitySet="ngp_payment">
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="RoleId" ColumnName="RoleId" />

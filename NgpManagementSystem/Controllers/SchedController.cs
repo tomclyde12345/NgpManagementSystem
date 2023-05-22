@@ -91,6 +91,8 @@ namespace NgpManagementSystem.Controllers
                     lddap_no = paymentsdata.lddap_no,
                     lddap_date = paymentsdata.lddap_date,
                     contractor_name = paymentsdata.contractor_name,
+                    RoleId = paymentsdata.NgpRole.RoleName,
+                    Name = paymentsdata.Name,
 
                 }).ToList();
 

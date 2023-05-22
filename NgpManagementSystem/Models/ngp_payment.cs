@@ -22,6 +22,7 @@ namespace NgpManagementSystem.Models
         public Nullable<int> RoleId { get; set; }
         public Nullable<int> UserId { get; set; }
         public string UserName { get; set; }
+        public string Name { get; set; }
     
         public virtual ngp_contract ngp_contract { get; set; }
         public virtual NgpRole NgpRole { get; set; }

@@ -66,6 +66,8 @@ namespace NgpManagementSystem.Controllers.API
                     contract.RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID; //saving role depend in login id
                     contract.UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id; //saving role depend in UserId login
                     contract.UserName = Db.NgpUsers.FirstOrDefault(o=>o.Id== sess_id)?.UserName; //saving username depend in login
+                    contract.Name= Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name; //saving username depend in login
+
 
 
                     //contract.contractorName = Db.ngp_contractor.SingleOrDefault(x => x.contractorID == contractDTO.contractID).contractor_name;

@@ -17,5 +17,8 @@ namespace NgpManagementSystem.ViewModel
         public string contractor_name { get; set; }
         public Nullable<int> ContractorId { get; set; }
         public Nullable<int> ContractId { get; set; }
+        public string RoleId { get; set; }
+        public string Name { get; set; }
+        public string UserName { get; set; }
     }
 }

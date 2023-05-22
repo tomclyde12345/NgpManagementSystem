@@ -28,5 +28,7 @@ namespace NgpManagementSystem.ViewModel
         public string num_seedlings_replanted { get; set; }
         public string num_seedlings_survived_year1 { get; set; }
         public Nullable<int> dropdownID { get; set; }
+        public string RoleId { get; set; }
+        public string Name { get; set; }
     }
 }
