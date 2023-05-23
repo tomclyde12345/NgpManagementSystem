@@ -1241,12 +1241,7 @@ function ContractorAnimation() {
         });
     });
 
-
-
-
-
-
-   
+     
 
     //SAVINGR CONTRACTOR CREATE
     $("#contract_main").validate({
@@ -1628,11 +1623,6 @@ function Account() {
             }
         });
     });
-
-
-
-
-
 
 
 
