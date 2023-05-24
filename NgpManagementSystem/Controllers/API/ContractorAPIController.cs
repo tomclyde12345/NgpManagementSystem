@@ -57,8 +57,29 @@ namespace NgpManagementSystem.Controllers.API
                 contractor.commodity_year1 = contractorDTO.commodity_year1;
                 contractor.num_seedlings_planted_year1 = contractorDTO.num_seedlings_planted_year1;
                 contractor.survivalrate_year1 = contractorDTO.survivalrate_year1;
+                //for contract year 2
+                contractor.moanumber_year2 = contractorDTO.moanumber_year2;
+                contractor.datemoasigned_year2 = contractorDTO.datemoasigned_year2;
+                contractor.unitcost_year2 = contractorDTO.unitcost_year2;
+                contractor.contractcost_year2 = contractorDTO.contractcost_year2;
+                contractor.dateobligated_year2 = contractorDTO.dateobligated_year2;
+                contractor.orsno_year2 = contractorDTO.orsno_year2;
+                contractor.num_seedlings_planted_year2 = contractorDTO.num_seedlings_planted_year2;
+                contractor.num_seedlings_survive_endofyear_1_year2 = contractorDTO.num_seedlings_survive_endofyear_1_year2;
+                contractor.survivalrate_year2 = contractorDTO.survivalrate_year2;
+                contractor.num_seedlings_replanted_year2 = contractorDTO.num_seedlings_replanted_year2;
 
-
+                //for contract year 3
+                contractor.moanumber_year3 = contractorDTO.moanumber_year3;
+                contractor.datemoasigned_year3 = contractorDTO.datemoasigned_year3;
+                contractor.unitcost_year3 = contractorDTO.unitcost_year3;
+                contractor.contractcost_year3 = contractorDTO.contractcost_year3;
+                contractor.dateobligated_year3 = contractorDTO.dateobligated_year3;
+                contractor.orsno_year2 = contractorDTO.orsno_year2;
+                contractor.num_seedlings_planted_year3 = contractorDTO.num_seedlings_planted_year3;
+                contractor.num_seedlings_survive_endofyear_1_year3 = contractorDTO.num_seedlings_survive_endofyear_1_year3;
+                contractor.survivalrate_year3 = contractorDTO.survivalrate_year3;
+                contractor.num_seedlings_replanted_year3 = contractorDTO.num_seedlings_replanted_year3;
 
 
                 contractor.RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID; //saving role depend in login id

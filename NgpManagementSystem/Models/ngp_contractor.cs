@@ -47,6 +47,26 @@ namespace NgpManagementSystem.Models
         public string num_seedlings_planted_year1 { get; set; }
         public string num_seedlings_survive_year1 { get; set; }
         public string survivalrate_year1 { get; set; }
+        public string moanumber_year2 { get; set; }
+        public string datemoasigned_year2 { get; set; }
+        public string unitcost_year2 { get; set; }
+        public string contractcost_year2 { get; set; }
+        public string dateobligated_year2 { get; set; }
+        public string orsno_year2 { get; set; }
+        public string num_seedlings_planted_year2 { get; set; }
+        public string num_seedlings_survive_endofyear_1_year2 { get; set; }
+        public string survivalrate_year2 { get; set; }
+        public string num_seedlings_replanted_year2 { get; set; }
+        public string moanumber_year3 { get; set; }
+        public string datemoasigned_year3 { get; set; }
+        public string unitcost_year3 { get; set; }
+        public string contractcost_year3 { get; set; }
+        public string dateobligated_year3 { get; set; }
+        public string orsno_year3 { get; set; }
+        public string num_seedlings_planted_year3 { get; set; }
+        public string num_seedlings_survive_endofyear_1_year3 { get; set; }
+        public string survivalrate_year3 { get; set; }
+        public string num_seedlings_replanted_year3 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ngp_contract> ngp_contract { get; set; }

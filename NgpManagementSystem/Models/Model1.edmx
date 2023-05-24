@@ -65,6 +65,26 @@
           <Property Name="num_seedlings_planted_year1" Type="nvarchar(max)" />
           <Property Name="num_seedlings_survive_year1" Type="nvarchar(max)" />
           <Property Name="survivalrate_year1" Type="nvarchar(max)" />
+          <Property Name="moanumber_year2" Type="nvarchar(max)" />
+          <Property Name="datemoasigned_year2" Type="nvarchar(max)" />
+          <Property Name="unitcost_year2" Type="nvarchar(max)" />
+          <Property Name="contractcost_year2" Type="nvarchar(max)" />
+          <Property Name="dateobligated_year2" Type="nvarchar(max)" />
+          <Property Name="orsno_year2" Type="nvarchar(max)" />
+          <Property Name="num_seedlings_planted_year2" Type="nvarchar(max)" />
+          <Property Name="num_seedlings_survive_endofyear_1_year2" Type="nvarchar(max)" />
+          <Property Name="survivalrate_year2" Type="nvarchar(max)" />
+          <Property Name="num_seedlings_replanted_year2" Type="nvarchar(max)" />
+          <Property Name="moanumber_year3" Type="nvarchar(max)" />
+          <Property Name="datemoasigned_year3" Type="nvarchar(max)" />
+          <Property Name="unitcost_year3" Type="nvarchar(max)" />
+          <Property Name="contractcost_year3" Type="nvarchar(max)" />
+          <Property Name="dateobligated_year3" Type="nvarchar(max)" />
+          <Property Name="orsno_year3" Type="nvarchar(max)" />
+          <Property Name="num_seedlings_planted_year3" Type="nvarchar(max)" />
+          <Property Name="num_seedlings_survive_endofyear_1_year3" Type="nvarchar(max)" />
+          <Property Name="survivalrate_year3" Type="nvarchar(max)" />
+          <Property Name="num_seedlings_replanted_year3" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="ngp_dropdown">
           <Key>
@@ -902,6 +922,26 @@
           <Property Name="num_seedlings_planted_year1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="num_seedlings_survive_year1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="survivalrate_year1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="moanumber_year2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="datemoasigned_year2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="unitcost_year2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="contractcost_year2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="dateobligated_year2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="orsno_year2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="num_seedlings_planted_year2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="num_seedlings_survive_endofyear_1_year2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="survivalrate_year2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="num_seedlings_replanted_year2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="moanumber_year3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="datemoasigned_year3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="unitcost_year3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="contractcost_year3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="dateobligated_year3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="orsno_year3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="num_seedlings_planted_year3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="num_seedlings_survive_endofyear_1_year3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="survivalrate_year3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="num_seedlings_replanted_year3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ngp_contract" Relationship="NgpdbmsModel.FK_ngp_contract_ngp_contractor" FromRole="ngp_contractor" ToRole="ngp_contract" />
           <NavigationProperty Name="NgpBarangay" Relationship="NgpdbmsModel.FK_ngp_contractor_NgpBarangay" FromRole="ngp_contractor" ToRole="NgpBarangay" />
           <NavigationProperty Name="NgpMunicipality" Relationship="NgpdbmsModel.FK_ngp_contractor_NgpMunicipality" FromRole="ngp_contractor" ToRole="NgpMunicipality" />
@@ -1499,6 +1539,26 @@
           <EntitySetMapping Name="ngp_contractor">
             <EntityTypeMapping TypeName="NgpdbmsModel.ngp_contractor">
               <MappingFragment StoreEntitySet="ngp_contractor">
+                <ScalarProperty Name="num_seedlings_replanted_year3" ColumnName="num_seedlings_replanted_year3" />
+                <ScalarProperty Name="survivalrate_year3" ColumnName="survivalrate_year3" />
+                <ScalarProperty Name="num_seedlings_survive_endofyear_1_year3" ColumnName="num_seedlings_survive_endofyear_1_year3" />
+                <ScalarProperty Name="num_seedlings_planted_year3" ColumnName="num_seedlings_planted_year3" />
+                <ScalarProperty Name="orsno_year3" ColumnName="orsno_year3" />
+                <ScalarProperty Name="dateobligated_year3" ColumnName="dateobligated_year3" />
+                <ScalarProperty Name="contractcost_year3" ColumnName="contractcost_year3" />
+                <ScalarProperty Name="unitcost_year3" ColumnName="unitcost_year3" />
+                <ScalarProperty Name="datemoasigned_year3" ColumnName="datemoasigned_year3" />
+                <ScalarProperty Name="moanumber_year3" ColumnName="moanumber_year3" />
+                <ScalarProperty Name="num_seedlings_replanted_year2" ColumnName="num_seedlings_replanted_year2" />
+                <ScalarProperty Name="survivalrate_year2" ColumnName="survivalrate_year2" />
+                <ScalarProperty Name="num_seedlings_survive_endofyear_1_year2" ColumnName="num_seedlings_survive_endofyear_1_year2" />
+                <ScalarProperty Name="num_seedlings_planted_year2" ColumnName="num_seedlings_planted_year2" />
+                <ScalarProperty Name="orsno_year2" ColumnName="orsno_year2" />
+                <ScalarProperty Name="dateobligated_year2" ColumnName="dateobligated_year2" />
+                <ScalarProperty Name="contractcost_year2" ColumnName="contractcost_year2" />
+                <ScalarProperty Name="unitcost_year2" ColumnName="unitcost_year2" />
+                <ScalarProperty Name="datemoasigned_year2" ColumnName="datemoasigned_year2" />
+                <ScalarProperty Name="moanumber_year2" ColumnName="moanumber_year2" />
                 <ScalarProperty Name="survivalrate_year1" ColumnName="survivalrate_year1" />
                 <ScalarProperty Name="num_seedlings_survive_year1" ColumnName="num_seedlings_survive_year1" />
                 <ScalarProperty Name="num_seedlings_planted_year1" ColumnName="num_seedlings_planted_year1" />
