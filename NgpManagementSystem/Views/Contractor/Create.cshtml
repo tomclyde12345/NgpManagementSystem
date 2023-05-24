@@ -3,235 +3,6 @@
     Layout = (int)Session["Role_Id"] == 1 ? "~/Views/Shared/_LayoutAdmin.cshtml" : "~/Views/Shared/_LayoutUser.cshtml";
 }
 
-<style>
-    * {
-        margin: 0;
-        padding: 0
-    }
-
-    html {
-        height: 100%
-    }
-
-    p {
-        color: grey
-    }
-
-    #heading {
-        text-transform: uppercase;
-        color: #20642f !important;
-        font-weight: normal
-    }
-
-    #contract_main {
-        text-align: center;
-        position: relative;
-        margin-top: 20px
-    }
-
-        #contract_main fieldset {
-            background: white;
-            border: 0 none;
-            border-radius: 0.5rem;
-            box-sizing: border-box;
-            width: 100%;
-            margin: 0;
-            padding-bottom: 20px;
-            position: relative
-        }
-
-    .form-card {
-        text-align: left
-    }
-
-    #contract_main fieldset:not(:first-of-type) {
-        display: none
-    }
-
-    #contract_main input,
-    #contract_main textarea {
-        padding: 8px 15px 8px 15px;
-        border: 1px solid #ccc;
-        border-radius: 0px;
-        margin-bottom: 25px;
-        margin-top: 2px;
-        width: 100%;
-        box-sizing: border-box;
-        font-family: montserrat;
-        color: #2C3E50;
-        background-color: #ECEFF1;
-        font-size: 16px;
-        letter-spacing: 1px
-    }
-
-        #contract_main input:focus,
-        #contract_main textarea:focus {
-            -moz-box-shadow: none !important;
-            -webkit-box-shadow: none !important;
-            box-shadow: none !important;
-            border: 1px solid #673AB7;
-            outline-width: 0
-        }
-
-    #contract_main .action-button {
-        width: 100px;
-        background-color: #20642f !important;
-        font-weight: bold;
-        color: white;
-        border: 0 none;
-        border-radius: 0px;
-        cursor: pointer;
-        padding: 10px 5px;
-        margin: 10px 0px 10px 5px;
-        float: right
-    }
-
-        #contract_main .action-button:hover,
-        #contract_main .action-button:focus {
-            background-color: #311B92
-        }
-
-    #contract_main .action-button-previous {
-        width: 100px;
-        background: #616161;
-        font-weight: bold;
-        color: white;
-        border: 0 none;
-        border-radius: 0px;
-        cursor: pointer;
-        padding: 10px 5px;
-        margin: 10px 5px 10px 0px;
-        float: right
-    }
-
-        #contract_main .action-button-previous:hover,
-        #contract_main .action-button-previous:focus {
-            background-color: #000000
-        }
-
-    .card {
-        z-index: 0;
-        border: none;
-        position: relative
-    }
-
-    .fs-title {
-        font-size: 25px;
-        color: black;
-        margin-bottom: 15px;
-        font-weight: lighter;
-        text-align: left;
-    }
-
-    .purple-text {
-        color: #673AB7;
-        font-weight: normal
-    }
-
-    .steps {
-        font-size: 25px;
-        color: gray;
-        margin-bottom: 10px;
-        font-weight: normal;
-        text-align: right
-    }
-
-    .fieldlabels {
-        color: gray;
-        text-align: left
-    }
-
-    #progressbar {
-        margin-bottom: 30px;
-        overflow: hidden;
-        color: #59a66a !important
-    }
-
-        #progressbar .active {
-            color: #59a66a !important
-        }
-
-        #progressbar li {
-            list-style-type: none;
-            font-size: 15px;
-            width: 20%;
-            float: left;
-            position: relative;
-            font-weight: 400
-        }
-
-        #progressbar #contractor:before {
-            font-family: FontAwesome;
-            content: "\f0c0"
-        }
-
-        #progressbar #projects:before {
-            font-family: FontAwesome;
-            content: "\f007"
-        }
-
-        #progressbar #payment:before {
-            font-family: FontAwesome;
-            content: "\f030"
-        }
-
-        #progressbar #sched:before {
-            font-family: FontAwesome;
-            content: "\f030"
-        }
-
-        #progressbar #contract:before {
-            font-family: FontAwesome;
-            content: "\f030"
-        }
-
-        #progressbar #confirm:before {
-            font-family: FontAwesome;
-            content: "\f00c"
-        }
-
-        #progressbar li:before {
-            width: 50px;
-            height: 50px;
-            line-height: 45px;
-            display: block;
-            font-size: 20px;
-            color: #ffffff;
-            background: lightgray;
-            border-radius: 50%;
-            margin: 0 auto 10px auto;
-            padding: 2px
-        }
-
-        #progressbar li:after {
-            content: '';
-            width: 100%;
-            height: 2px;
-            background: lightgray;
-            position: absolute;
-            left: 0;
-            top: 25px;
-            z-index: -1
-        }
-
-        #progressbar li.active:before,
-        #progressbar li.active:after {
-            background-color: #59a66a !important
-        }
-
-    .progress {
-        height: 20px
-    }
-
-    .progress-bar {
-        background-color: #59a66a !important
-    }
-
-    .fit-image {
-        width: 100%;
-        object-fit: cover
-    }
-</style>
 
 
 
@@ -321,6 +92,7 @@
                         <div style="padding: 2px 2.5%">
                             <div class="row">
                                 <div class="col-7">
+
                                     <h2 class="fs-title"> Create Projects </h2>
                                 </div>
 
@@ -336,6 +108,54 @@
 
 
                             <div class="row">
+                                <div class="col-md-4">
+
+                                    <div class="form-group ">
+                                        <div class=" sample">
+                                            <label style="color: black;">area </label>
+                                        </div>
+                                        <input type="text" class="form-control" id="area" name="area">
+
+                                    </div>
+
+
+                                   
+                                </div>
+
+                                <div class="col-md-4">
+
+                                    <div class="form-group">
+                                        <div class=" sample">
+
+                                            <label style="color: black;">cenro </label>
+                                        </div>
+                                        <select id="cenro" name="cenro" style="width:100%" class="form-control">
+                                            <option value=" ">Select a Cenro</option>
+                                            <option value="Cenro-Puerto Princesa">Cenro-Puerto Princesa</option>
+                                            <option value="Cenro-BrookesPoint">Cenro-BrookesPoint</option>
+                                            <option value="Cenro-Roxas">cenro-Roxas</option>
+                                            <option value="Cenro-Taytay">Cenro-Taytay</option>
+                                            <option value="Cenro-Quezon">Cenro-Quezon</option>
+
+                                        </select>
+                                    </div>
+
+
+
+
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <div class=" sample">
+
+                                            <label style="color: black;">region </label>
+                                        </div>
+                                        <select id="region" name="region" style="width:100%" class="form-control">
+                                            <option value="MIMAROPA">MIMAROPA</option>
+                                        </select>
+                                    </div>
+                                </div>
 
                                 <div class="col-md-6">
 
@@ -362,14 +182,7 @@
                                         </select>
                                     </div>
 
-                                    <div class="form-group ">
-                                        <div class=" sample">
-                                            <label style="color: black;">area </label>
-                                        </div>
-                                        <input type="text" class="form-control" id="area" name="area">
-
-                                    </div>
-
+                                   
 
                                 </div>
 
@@ -399,7 +212,6 @@
                                         </select>
                                     </div>
 
-
                                     <div class="form-group">
                                         <div class=" sample">
 
@@ -410,31 +222,6 @@
                                         </select>
                                     </div>
 
-                                    <div class="form-group">
-                                        <div class=" sample">
-
-                                            <label style="color: black;">cenro </label>
-                                        </div>
-                                        <select id="cenro" name="cenro" style="width:100%" class="form-control">
-                                            <option value=" ">Select a Cenro</option>
-                                            <option value="Cenro-Puerto Princesa">Cenro-Puerto Princesa</option>
-                                            <option value="Cenro-BrookesPoint">Cenro-BrookesPoint</option>
-                                            <option value="Cenro-Roxas">cenro-Roxas</option>
-                                            <option value="Cenro-Taytay">Cenro-Taytay</option>
-                                            <option value="Cenro-Quezon">Cenro-Quezon</option>
-
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <div class=" sample">
-
-                                            <label style="color: black;">region </label>
-                                        </div>
-                                        <select id="region" name="region" style="width:100%" class="form-control">
-                                            <option value="MIMAROPA">MIMAROPA</option>
-                                        </select>
-                                    </div>
 
 
                                 </div>
@@ -451,23 +238,27 @@
                 </fieldset>
                 <fieldset>
                     <div class="form-card">
-                        <div class="row">
-                            <div class="col-7">
-                                <h2 class="fs-title"> Create Contract :</h2>
+                        <div style="padding: 2px 4.5%">
+                            <div class="row">
+                                <div class="col-7">
+
+                                    <h2 class="fs-title"> Create Contract </h2>
+                                </div>
+
+                                <div class="col-5">
+                                    <h2 class="steps">Step 3 - 5</h2>
+                                </div>
                             </div>
-                            <div class="col-5">
-                                <h2 class="steps">Step 3 - 5</h2>
+
+                            <div class="alert alert-success">
+                                Pease Input a Field to Create a Contract <i class="fa fa-id-card"></i>
                             </div>
                         </div>
-
-
 
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
-                                    <div class="card-header">
-                                       
-                                    </div>
+                                
                                     <div class="card-body">
                                         <ul class="nav nav-pills" id="myTab3" role="tablist">
                                             <li class="nav-item">
@@ -483,179 +274,190 @@
                                         <div class="tab-content" id="myTabContent2">
                                             <div class="tab-pane fade show active" id="home3" role="tabpanel" aria-labelledby="home-tab3">
 
-                                                <div class="form-group ">
-                                                    <label style="color: black;">moanumber_year1 </label>
-                                                    <input type="text" class="form-control" id="moanumber_year1"
-                                                           name="moanumber_year1">
-                                                </div>
-                                                <div class="form-group ">
-                                                    <label style="color: black;">datemoasigned_year1 </label>
-                                                    <input type="date" class="form-control" id="datemoasigned_year1"
-                                                           name="datemoasigned_year1">
-                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">moanumber_year1 </label>
+                                                            <input type="text" class="form-control" id="moanumber_year1"
+                                                                   name="moanumber_year1">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">datemoasigned_year1 </label>
+                                                            <input type="date" class="form-control" id="datemoasigned_year1"
+                                                                   name="datemoasigned_year1">
+                                                        </div>
 
-                                                <div class="form-group ">
-                                                    <label style="color: black;">contractcost_year1 </label>
-                                                    <input type="text" class="form-control" id="contractcost_year1"
-                                                           name="contractcost_year1">
-                                                </div>
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">contractcost_year1 </label>
+                                                            <input type="text" class="form-control" id="contractcost_year1"
+                                                                   name="contractcost_year1">
+                                                        </div>
 
-                                                <div class="form-group ">
-                                                    <label style="color: black;">dateobligated_year1 </label>
-                                                    <input type="date" class="form-control" id="dateobligated_year1"
-                                                           name="dateobligated_year1">
-                                                </div>
-                                                <div class="form-group ">
-                                                    <label style="color: black;">orsno_year1 </label>
-                                                    <input type="text" class="form-control" id="orsno_year1"
-                                                           name="orsno_year1">
-                                                </div>
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">dateobligated_year1 </label>
+                                                            <input type="date" class="form-control" id="dateobligated_year1"
+                                                                   name="dateobligated_year1">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">orsno_year1 </label>
+                                                            <input type="text" class="form-control" id="orsno_year1"
+                                                                   name="orsno_year1">
+                                                        </div>
+                                                    </div>
 
-                                                <div class="form-group ">
-                                                    <label style="color: black;">num_seedlings_produced_year1 </label>
-                                                    <input type="text" class="form-control" id="num_seedlings_produced_year1"
-                                                           name="num_seedlings_produced_year1">
-                                                </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">num_seedlings_produced_year1 </label>
+                                                            <input type="text" class="form-control" id="num_seedlings_produced_year1"
+                                                                   name="num_seedlings_produced_year1">
+                                                        </div>
 
-                                                <div class="form-group ">
-                                                    <label style="color: black;">commodity_year1 </label>
-                                                    <input type="text" class="form-control" id="commodity_year1"
-                                                           name="commodity_year1">
-                                                </div>
-                                                <div class="form-group ">
-                                                    <label style="color: black;">num_seedlings_planted_year1 </label>
-                                                    <input type="text" class="form-control" id="num_seedlings_planted_year1"
-                                                           name="num_seedlings_planted_year1">
-                                                </div>
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">commodity_year1 </label>
+                                                            <input type="text" class="form-control" id="commodity_year1"
+                                                                   name="commodity_year1">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">num_seedlings_planted_year1 </label>
+                                                            <input type="text" class="form-control" id="num_seedlings_planted_year1"
+                                                                   name="num_seedlings_planted_year1">
+                                                        </div>
 
-                                                <div class="form-group ">
-                                                    <label style="color: black;">num_seedlings_survive_year1 </label>
-                                                    <input type="text" class="form-control" id="num_seedlings_survive_year1"
-                                                           name="num_seedlings_survive_year1">
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">num_seedlings_survive_year1 </label>
+                                                            <input type="text" class="form-control" id="num_seedlings_survive_year1"
+                                                                   name="num_seedlings_survive_year1">
+                                                        </div>
+
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">survivalrate_year1 </label>
+                                                            <input type="text" class="form-control" id="survivalrate_year1"
+                                                                   name="survivalrate_year1">
+                                                        </div>
+                                                    </div>
                                                 </div>
-
-                                                <div class="form-group ">
-                                                    <label style="color: black;">survivalrate_year1 </label>
-                                                    <input type="text" class="form-control" id="survivalrate_year1"
-                                                           name="survivalrate_year1">
-                                                </div>
-
-
                                             </div>
                                             <div class="tab-pane fade" id="profile3" role="tabpanel" aria-labelledby="profile-tab3">
-
-                                                <div class="form-group ">
-                                                    <label style="color: black;">moanumber_year2 </label>
-                                                    <input type="text" class="form-control" id="moanumber_year2"
-                                                           name="moanumber_year2">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">moanumber_year2 </label>
+                                                            <input type="text" class="form-control" id="moanumber_year2"
+                                                                   name="moanumber_year2">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">datemoasigned_year2 </label>
+                                                            <input type="date" class="form-control" id="datemoasigned_year2"
+                                                                   name="datemoasigned_year2">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">unitcost_year2 </label>
+                                                            <input type="text" class="form-control" id="unitcost_year2"
+                                                                   name="unitcost_year2">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">contractcost_year2 </label>
+                                                            <input type="text" class="form-control" id="contractcost_year2"
+                                                                   name="contractcost_year2">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">dateobligated_year2 </label>
+                                                            <input type="date" class="form-control" id="dateobligated_year2"
+                                                                   name="dateobligated_year2">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">orsno_year2 </label>
+                                                            <input type="text" class="form-control" id="orsno_year2"
+                                                                   name="orsno_year2">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">num_seedlings_planted_year2 </label>
+                                                            <input type="text" class="form-control" id="num_seedlings_planted_year2"
+                                                                   name="num_seedlings_planted_year2">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">num_seedlings_survive_endofyear_1_year2 </label>
+                                                            <input type="text" class="form-control" id="num_seedlings_survive_endofyear_1_year2"
+                                                                   name="num_seedlings_survive_endofyear_1_year2">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">survivalrate_year2 </label>
+                                                            <input type="text" class="form-control" id="survivalrate_year2"
+                                                                   name="survivalrate_year2">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">num_seedlings_replanted_year2 </label>
+                                                            <input type="text" class="form-control" id="num_seedlings_replanted_year2"
+                                                                   name="num_seedlings_replanted_year2">
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="form-group ">
-                                                    <label style="color: black;">datemoasigned_year2 </label>
-                                                    <input type="date" class="form-control" id="datemoasigned_year2"
-                                                           name="datemoasigned_year2">
-                                                </div>
-                                                <div class="form-group ">
-                                                    <label style="color: black;">unitcost_year2 </label>
-                                                    <input type="text" class="form-control" id="unitcost_year2"
-                                                           name="unitcost_year2">
-                                                </div>
-                                                <div class="form-group ">
-                                                    <label style="color: black;">contractcost_year2 </label>
-                                                    <input type="text" class="form-control" id="contractcost_year2"
-                                                           name="contractcost_year2">
-                                                </div>
-                                                <div class="form-group ">
-                                                    <label style="color: black;">dateobligated_year2 </label>
-                                                    <input type="date" class="form-control" id="dateobligated_year2"
-                                                           name="dateobligated_year2">
-                                                </div>
-                                                <div class="form-group ">
-                                                    <label style="color: black;">orsno_year2 </label>
-                                                    <input type="text" class="form-control" id="orsno_year2"
-                                                           name="orsno_year2">
-                                                </div>
-                                                <div class="form-group ">
-                                                    <label style="color: black;">num_seedlings_planted_year2 </label>
-                                                    <input type="text" class="form-control" id="num_seedlings_planted_year2"
-                                                           name="num_seedlings_planted_year2">
-                                                </div>
-                                                <div class="form-group ">
-                                                    <label style="color: black;">num_seedlings_survive_endofyear_1_year2 </label>
-                                                    <input type="text" class="form-control" id="num_seedlings_survive_endofyear_1_year2"
-                                                           name="num_seedlings_survive_endofyear_1_year2">
-                                                </div>
-                                                <div class="form-group ">
-                                                    <label style="color: black;">survivalrate_year2 </label>
-                                                    <input type="text" class="form-control" id="survivalrate_year2"
-                                                           name="survivalrate_year2">
-                                                </div>
-                                                <div class="form-group ">
-                                                    <label style="color: black;">num_seedlings_replanted_year2 </label>
-                                                    <input type="text" class="form-control" id="num_seedlings_replanted_year2"
-                                                           name="num_seedlings_replanted_year2">
-                                                </div>
-
-
 
 
                                             </div>
                                             <div class="tab-pane fade" id="contact3" role="tabpanel" aria-labelledby="contact-tab3">
 
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">moanumber_year3 </label>
+                                                            <input type="text" class="form-control" id="moanumber_year3"
+                                                                   name="moanumber_year3">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">datemoasigned_year3 </label>
+                                                            <input type="date" class="form-control" id="datemoasigned_year3"
+                                                                   name="datemoasigned_year3">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">unitcost_year3 </label>
+                                                            <input type="text" class="form-control" id="unitcost_year3"
+                                                                   name="unitcost_year3">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">contractcost_year3 </label>
+                                                            <input type="text" class="form-control" id="contractcost_year3"
+                                                                   name="contractcost_year3">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">dateobligated_year3 </label>
+                                                            <input type="date" class="form-control" id="dateobligated_year3"
+                                                                   name="dateobligated_year3">
+                                                        </div>
+                                                    </div>
 
 
+                                                    <div class="col-md-6">
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">orsno_year3 </label>
+                                                            <input type="text" class="form-control" id="orsno_year3"
+                                                                   name="orsno_year3">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">num_seedlings_planted_year3 </label>
+                                                            <input type="text" class="form-control" id="num_seedlings_planted_year3"
+                                                                   name="num_seedlings_planted_year3">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">num_seedlings_survive_endofyear_1_year3 </label>
+                                                            <input type="text" class="form-control" id="num_seedlings_survive_endofyear_1_year3"
+                                                                   name="num_seedlings_survive_endofyear_1_year3">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">survivalrate_year3 </label>
+                                                            <input type="text" class="form-control" id="survivalrate_year3"
+                                                                   name="survivalrate_year3">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label style="color: black;">num_seedlings_replanted_year3 </label>
+                                                            <input type="text" class="form-control" id="num_seedlings_replanted_year3"
+                                                                   name="num_seedlings_replanted_year3">
+                                                        </div>
 
-
-                                                <div class="form-group ">
-                                                    <label style="color: black;">moanumber_year3 </label>
-                                                    <input type="text" class="form-control" id="moanumber_year3"
-                                                           name="moanumber_year3">
+                                                    </div>
                                                 </div>
-                                                <div class="form-group ">
-                                                    <label style="color: black;">datemoasigned_year3 </label>
-                                                    <input type="date" class="form-control" id="datemoasigned_year3"
-                                                           name="datemoasigned_year3">
-                                                </div>
-                                                <div class="form-group ">
-                                                    <label style="color: black;">unitcost_year3 </label>
-                                                    <input type="text" class="form-control" id="unitcost_year3"
-                                                           name="unitcost_year3">
-                                                </div>
-                                                <div class="form-group ">
-                                                    <label style="color: black;">contractcost_year3 </label>
-                                                    <input type="text" class="form-control" id="contractcost_year3"
-                                                           name="contractcost_year3">
-                                                </div>
-                                                <div class="form-group ">
-                                                    <label style="color: black;">dateobligated_year3 </label>
-                                                    <input type="date" class="form-control" id="dateobligated_year3"
-                                                           name="dateobligated_year3">
-                                                </div>
-                                                <div class="form-group ">
-                                                    <label style="color: black;">orsno_year3 </label>
-                                                    <input type="text" class="form-control" id="orsno_year3"
-                                                           name="orsno_year3">
-                                                </div>
-                                                <div class="form-group ">
-                                                    <label style="color: black;">num_seedlings_planted_year3 </label>
-                                                    <input type="text" class="form-control" id="num_seedlings_planted_year3"
-                                                           name="num_seedlings_planted_year3">
-                                                </div>
-                                                <div class="form-group ">
-                                                    <label style="color: black;">num_seedlings_survive_endofyear_1_year3 </label>
-                                                    <input type="text" class="form-control" id="num_seedlings_survive_endofyear_1_year3"
-                                                           name="num_seedlings_survive_endofyear_1_year3">
-                                                </div>
-                                                <div class="form-group ">
-                                                    <label style="color: black;">survivalrate_year3 </label>
-                                                    <input type="text" class="form-control" id="survivalrate_year3"
-                                                           name="survivalrate_year3">
-                                                </div>
-                                                <div class="form-group ">
-                                                    <label style="color: black;">num_seedlings_replanted_year3 </label>
-                                                    <input type="text" class="form-control" id="num_seedlings_replanted_year3"
-                                                           name="num_seedlings_replanted_year3">
-                                                </div>
-
 
 
 
@@ -664,7 +466,7 @@
                                     </div>
                                 </div>
                             </div>
-                          
+
                         </div>
 
 
@@ -735,86 +537,6 @@
 
 
     
-
-<script>
-    $(document).ready(function () {
-
-        var current_fs, next_fs, previous_fs; //fieldsets
-        var opacity;
-        var current = 1;
-        var steps = $("fieldset").length;
-
-        setProgressBar(current);
-
-        $(".next").click(function () {
-
-            current_fs = $(this).parent();
-            next_fs = $(this).parent().next();
-
-            //Add Class Active
-            $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-
-            //show the next fieldset
-            next_fs.show();
-            //hide the current fieldset with style
-            current_fs.animate({ opacity: 0 }, {
-                step: function (now) {
-                    // for making fielset appear animation
-                    opacity = 1 - now;
-
-                    current_fs.css({
-                        'display': 'none',
-                        'position': 'relative'
-                    });
-                    next_fs.css({ 'opacity': opacity });
-                },
-                duration: 500
-            });
-            setProgressBar(++current);
-        });
-
-        $(".previous").click(function () {
-
-            current_fs = $(this).parent();
-            previous_fs = $(this).parent().prev();
-
-            //Remove class active
-            $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-
-            //show the previous fieldset
-            previous_fs.show();
-
-            //hide the current fieldset with style
-            current_fs.animate({ opacity: 0 }, {
-                step: function (now) {
-                    // for making fielset appear animation
-                    opacity = 1 - now;
-
-                    current_fs.css({
-                        'display': 'none',
-                        'position': 'relative'
-                    });
-                    previous_fs.css({ 'opacity': opacity });
-                },
-                duration: 500
-            });
-            setProgressBar(--current);
-        });
-
-        function setProgressBar(curStep) {
-            var percent = parseFloat(100 / steps) * curStep;
-            percent = percent.toFixed();
-            $(".progress-bar")
-                .css("width", percent + "%")
-        }
-
-        $(".submit").click(function () {
-            return false;
-        })
-
-    });
-</script>
-
 
 
 
