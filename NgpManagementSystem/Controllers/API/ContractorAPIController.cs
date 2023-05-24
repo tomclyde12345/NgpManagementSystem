@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using NgpManagementSystem.DTO;
 using NgpManagementSystem.Models;
+using NgpManagementSystem.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
@@ -38,6 +39,28 @@ namespace NgpManagementSystem.Controllers.API
                 contractor.address_municipality = contractorDTO.address_municipality;
                 contractor.address_barangay = contractorDTO.address_barangay;
                 contractor.contractor_type = contractorDTO.contractor_type;
+                //for Project
+                contractor.location_municipality = contractorDTO.location_municipality;
+                contractor.location_barangay = contractorDTO.location_barangay;
+                contractor.area = contractorDTO.area;
+                contractor.year_form = contractorDTO.year_form;
+                contractor.penro = contractorDTO.penro;
+                contractor.cenro = contractorDTO.cenro;
+                contractor.region = contractorDTO.region;
+                //for contract year 1
+                contractor.moanumber_year1 = contractorDTO.moanumber_year1;
+                contractor.datemoasigned_year1 = contractorDTO.datemoasigned_year1;
+                contractor.contractcost_year1 = contractorDTO.contractcost_year1;
+                contractor.dateobligated_year1 = contractorDTO.dateobligated_year1;
+                contractor.orsno_year1 = contractorDTO.orsno_year1;
+                contractor.num_seedlings_produced_year1 = contractorDTO.num_seedlings_produced_year1;
+                contractor.commodity_year1 = contractorDTO.commodity_year1;
+                contractor.num_seedlings_planted_year1 = contractorDTO.num_seedlings_planted_year1;
+                contractor.survivalrate_year1 = contractorDTO.survivalrate_year1;
+
+
+
+
                 contractor.RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID; //saving role depend in login id
                 contractor.UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id; //saving role depend in UserId login
                 contractor.UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName; //saving username depend in login

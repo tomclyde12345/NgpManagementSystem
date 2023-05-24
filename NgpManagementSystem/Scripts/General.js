@@ -1103,6 +1103,17 @@ function Project() {
 
 
 
+
+}
+
+
+
+
+function ContractorAnimation() {
+
+
+
+
     //GET DATA CASCADING DROPDOWN FOR SAVING PROJECT
     $.ajax({
         type: 'GET',
@@ -1134,12 +1145,7 @@ function Project() {
         }
     });
 
-}
 
-
-
-
-function ContractorAnimation() {
 
 
 
@@ -1256,6 +1262,27 @@ function ContractorAnimation() {
                 required: true,
             },
             contractor_type: {
+                required: true,
+            },
+            location_municipality: {
+                required: true,
+            },
+            location_barangay: {
+                required: true,
+            },
+            area: {
+                required: true,
+            },
+            year_form: {
+                required: true,
+            },
+            penro: {
+                required: true,
+            },
+            cenro: {
+                required: true,
+            },
+            region: {
                 required: true,
             },
         },

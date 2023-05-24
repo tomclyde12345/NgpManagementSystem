@@ -119,9 +119,8 @@
         font-size: 25px;
         color: black;
         margin-bottom: 15px;
-        font-weight:lighter;
+        font-weight: lighter;
         text-align: left;
-
     }
 
     .purple-text {
@@ -175,10 +174,12 @@
             font-family: FontAwesome;
             content: "\f030"
         }
+
         #progressbar #sched:before {
             font-family: FontAwesome;
             content: "\f030"
         }
+
         #progressbar #contract:before {
             font-family: FontAwesome;
             content: "\f030"
@@ -231,6 +232,398 @@
         object-fit: cover
     }
 </style>
+
+
+
+<div class="row justify-content-center">
+    <div class="col-md-12  ">
+        <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+            <div class="text-center">
+                <h2 id="heading">National Greening Project Management System </h2>
+                <br />
+            </div>
+            <form id="contract_main">
+                <!-- progressbar -->
+                <ul id="progressbar">
+                    <li class="active" id="contractor"><i class=""></i><strong>CONTRACTOR</strong></li>
+                    <li id="projects"><strong>PROJECTS</strong></li>
+                    <li id="contract"><strong>CONTRACT</strong></li>
+                    <li id="payment"><strong>PAYMENTS</strong></li>
+                    <li id="sched"><strong>SCHED</strong></li>
+
+                </ul>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                </div> <br> <!-- fieldsets -->
+                <fieldset>
+                    <div class="form-card">
+                        <div style="padding: 2px 2.5%">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h1 class="fs-title">Create Contractor</h1>
+                                    <br />
+                                </div>
+                                
+                                <div class="col-5">
+                                    <h2 class="steps">Step 1 - 5</h2>
+                                </div>
+                            </div>
+                            <div  style="padding: 2px 4.5%">
+                                <div class="alert alert-success">
+                                    Pease Input a Field to Create a Contractor <i class="fa fa-user"></i>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label style="color:black;">Contractor Name</label>
+                                        <input type="text" class="form-control" id="contractor_name" name="contractor_name">
+
+                                    </div>
+
+
+                                    <label style="color:black;">Type</label>
+                                    <select class="form-control" style="width:100%" name="contractor_type" id="contractor_type">
+                                        <option value="">Type</option>
+                                        <option value="Group">Group</option>
+                                        <option value="Individual">Individual</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+                                        <label style="color:black;">Address Municipality</label>
+                                        <select id="address_municipality" name="address_municipality" class="form-control" style="width:100%">
+                                            <option value=" ">Not Applicable</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label style="color:black;">Address Barangay </label>
+                                        <select name="address_barangay" style="width:100%" class="form-control">
+                                            <option value=" ">Not Applicable</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        </div> <input type="button" name="next" class="next action-button" value="Next" />
+                 </fieldset>
+
+                <fieldset>
+                    <div class="form-card">
+                        <div style="padding: 2px 2.5%">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title"> Create Projects </h2>
+                                </div>
+
+                                <div class="col-5">
+                                    <h2 class="steps">Step 2 - 5</h2>
+                                </div>
+                            </div>
+                            <div style="padding: 2px 4.5%">
+                                <div class="alert alert-success">
+                                    Pease Input a Field to Create a Project <i class="fa fa-id-card"></i>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+
+                               
+
+
+
+                                    <div class="form-group">
+                                        <div class=" sample">
+                                            <label style="color: black;">location_municipality </label>
+                                        </div>
+                                        <select id="location_municipality" name="location_municipality" class="form-control" style="width:100%">
+                                            <option value=" ">Not Applicable</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class=" sample">
+
+                                            <label style="color: black;">location_barangay </label>
+                                        </div>
+                                        <select name="location_barangay" style="width:100%" class="form-control">
+                                            <option value=" ">Not Applicable</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <div class=" sample">
+                                            <label style="color: black;">area </label>
+                                        </div>
+                                        <input type="text" class="form-control" id="area" name="area">
+
+                                    </div>
+
+
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class=" sample">
+
+                                            <label style="color: black;">year_form </label>
+                                        </div>
+                                        <select id="year_form" name="year_form" style="width:100%" class="form-control" required>
+                                            <option value=" ">Select a Year</option>
+                                            <option value="2023">2023</option>
+                                            <option value="2022">2022</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2020">2020</option>
+                                            <option value="2019">2019</option>
+                                            <option value="2018">2018</option>
+                                            <option value="2017">2017</option>
+                                            <option value="2016">2016</option>
+                                            <option value="2015">2015</option>
+                                            <option value="2014">2014</option>
+                                            <option value="2013">2013</option>
+                                            <option value="2012">2012</option>
+                                            <option value="2011">2011</option>
+
+                                        </select>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class=" sample">
+
+                                            <label style="color: black;">penro </label>
+                                        </div>
+                                        <select id="penro" name="penro" style="width:100%" class="form-control">
+                                            <option value="PENRO">PENRO</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class=" sample">
+
+                                            <label style="color: black;">cenro </label>
+                                        </div>
+                                        <select id="cenro" name="cenro" style="width:100%" class="form-control">
+                                            <option value=" ">Select a Cenro</option>
+                                            <option value="Cenro-Puerto Princesa">Cenro-Puerto Princesa</option>
+                                            <option value="Cenro-BrookesPoint">Cenro-BrookesPoint</option>
+                                            <option value="Cenro-Roxas">cenro-Roxas</option>
+                                            <option value="Cenro-Taytay">Cenro-Taytay</option>
+                                            <option value="Cenro-Quezon">Cenro-Quezon</option>
+
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class=" sample">
+
+                                            <label style="color: black;">region </label>
+                                        </div>
+                                        <select id="region" name="region" style="width:100%" class="form-control">
+                                            <option value="MIMAROPA">MIMAROPA</option>
+                                        </select>
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                </fieldset>
+                <fieldset>
+                    <div class="form-card">
+                        <div class="row">
+                            <div class="col-7">
+                                <h2 class="fs-title"> Create Contract :</h2>
+                            </div>
+                            <div class="col-5">
+                                <h2 class="steps">Step 3 - 5</h2>
+                            </div>
+                        </div>
+
+
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                       
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="nav nav-pills" id="myTab3" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="home-tab3" data-toggle="tab" href="#home3" role="tab" aria-controls="home" aria-selected="true">Year 1</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="profile-tab3" data-toggle="tab" href="#profile3" role="tab" aria-controls="profile" aria-selected="false">Year 2</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="contact-tab3" data-toggle="tab" href="#contact3" role="tab" aria-controls="contact" aria-selected="false">Year 3</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content" id="myTabContent2">
+                                            <div class="tab-pane fade show active" id="home3" role="tabpanel" aria-labelledby="home-tab3">
+
+                                                <div class="form-group ">
+                                                    <label style="color: black;">moanumber_year1 </label>
+                                                    <input type="text" class="form-control" id="moanumber_year1"
+                                                           name="moanumber_year1">
+                                                </div>
+                                                <div class="form-group ">
+                                                    <label style="color: black;">datemoasigned_year1 </label>
+                                                    <input type="date" class="form-control" id="datemoasigned_year1"
+                                                           name="datemoasigned_year1">
+                                                </div>
+
+                                                <div class="form-group ">
+                                                    <label style="color: black;">contractcost_year1 </label>
+                                                    <input type="text" class="form-control" id="contractcost_year1"
+                                                           name="contractcost_year1">
+                                                </div>
+
+                                                <div class="form-group ">
+                                                    <label style="color: black;">dateobligated_year1 </label>
+                                                    <input type="date" class="form-control" id="dateobligated_year1"
+                                                           name="dateobligated_year1">
+                                                </div>
+                                                <div class="form-group ">
+                                                    <label style="color: black;">orsno_year1 </label>
+                                                    <input type="text" class="form-control" id="orsno_year1"
+                                                           name="orsno_year1">
+                                                </div>
+
+                                                <div class="form-group ">
+                                                    <label style="color: black;">num_seedlings_produced_year1 </label>
+                                                    <input type="text" class="form-control" id="num_seedlings_produced_year1"
+                                                           name="num_seedlings_produced_year1">
+                                                </div>
+
+                                                <div class="form-group ">
+                                                    <label style="color: black;">commodity_year1 </label>
+                                                    <input type="text" class="form-control" id="commodity_year1"
+                                                           name="commodity_year1">
+                                                </div>
+                                                <div class="form-group ">
+                                                    <label style="color: black;">num_seedlings_planted_year1 </label>
+                                                    <input type="text" class="form-control" id="num_seedlings_planted_year1"
+                                                           name="num_seedlings_planted_year1">
+                                                </div>
+
+                                                <div class="form-group ">
+                                                    <label style="color: black;">num_seedlings_survive_year1 </label>
+                                                    <input type="text" class="form-control" id="num_seedlings_survive_year1"
+                                                           name="num_seedlings_survive_year1">
+                                                </div>
+
+                                                <div class="form-group ">
+                                                    <label style="color: black;">survivalrate_year1 </label>
+                                                    <input type="text" class="form-control" id="survivalrate_year1"
+                                                           name="survivalrate_year1">
+                                                </div>
+
+
+                                            </div>
+                                            <div class="tab-pane fade" id="profile3" role="tabpanel" aria-labelledby="profile-tab3">
+                                             
+
+                                            </div>
+                                            <div class="tab-pane fade" id="contact3" role="tabpanel" aria-labelledby="contact-tab3">
+                                                Vestibulum imperdiet odio sed neque ultricies, ut dapibus mi maximus. Proin ligula massa, gravida in lacinia efficitur, hendrerit eget mauris. Pellentesque fermentum, sem interdum molestie finibus, nulla diam varius leo, nec varius lectus elit id dolor.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+
+
+
+
+                    </div>
+                    <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                </fieldset>
+
+                <fieldset>
+                    <div class="form-card">
+                        <div class="row">
+                            <div class="col-7">
+                                <h2 class="fs-title">Payment :</h2>
+                            </div>
+                            <div class="col-5">
+                                <h2 class="steps">Step 4 - 5</h2>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <input type="button" name="next" class="next action-button" value="Next" />
+
+
+                    <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+
+
+                </fieldset>
+
+                <fieldset>
+                    <div class="form-card">
+                        <div class="row">
+                            <div class="col-7">
+                                <h2 class="fs-title">Sched :</h2>
+                            </div>
+                            <div class="col-5">
+                                <h2 class="steps">Step 5 - 5</h2>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="next action-button" value="Submit">Save</button>
+
+
+                    <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+
+
+                </fieldset>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+       <div class="modal fade" id="pleasewaitModal">
+                <div class="modal-dialog modal-m modal-dialog-centered">
+                    <div class="modal-content">
+                        <img id="loading" style="height: 170px; width: 480px; padding-left:8px;" src="~/Images/picturepleasewait.gif" />
+
+
+                    </div>
+                </div>
+            </div>
+
+
+    
 
 <script>
     $(document).ready(function () {
@@ -312,265 +705,6 @@
 </script>
 
 
-
-
-
-
-    <div class="row justify-content-center">
-        <div class="col-md-12  ">
-            <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
-                <div class="text-center">
-                    <h2 id="heading">National Greening Project Management System </h2>
-                 <br />
-                </div>
-                <form id="contract_main">
-                    <!-- progressbar -->
-                    <ul id="progressbar">
-                        <li class="active" id="contractor"><i class=""></i><strong>Contractor</strong></li>
-                        <li id="projects"><strong>projects</strong></li>
-                        <li id="contract"><strong>contract</strong></li>
-                        <li id="payment"><strong>Payment</strong></li>
-                        <li id="sched"><strong>sched</strong></li>
-
-                    </ul>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div> <br> <!-- fieldsets -->
-                    <fieldset>
-                        <div class="form-card">
-                            <div class="row">
-                                <div class="col-7">
-                                    <h2 class="fs-title">Create Contractor:</h2>
-                                </div>
-                                <div class="col-5">
-                                    <h2 class="steps">Step 1 - 5</h2>
-                                </div>
-                            </div>
-
-                            <label>Contractor Name</label>
-                            <input type="text" class="form-control" id="contractor_name" name="contractor_name">
-                            <p class="d-none text-red warning-kuno">Please Input a Field</p>
-
-
-
-
-                        </div> <input type="button" name="next" class="next action-button" value="Next" />
-                    </fieldset>
-                    <fieldset>
-                        <div class="form-card">
-                            <div class="row">
-                                <div class="col-7">
-                                    <h2 class="fs-title">Karugtong :</h2>
-                                </div>
-                                <div class="col-5">
-                                    <h2 class="steps">Step 2 - 5</h2>
-                                </div>
-                            </div>
-
-                            <label for="contractor_type">Type</label>
-                            <select class="form-control" style="width:100%" name="contractor_type" id="contractor_type">
-                                <option value="">Type</option>
-                                <option value="Group">Group</option>
-                                <option value="Individual">Individual</option>
-                            </select>
-
-
-                            <div class="form-group">
-                                <div class=" sample">
-
-                                    <label style="color: black;">address_municipality</label>
-                                </div>
-
-                                <div class="form-group">
-
-                                    <select id="address_municipality" name="address_municipality" class="form-control" style="width:100%">
-                                        <option value=" ">Not Applicable</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class=" sample">
-
-                                        <label style="color: black;">address_barangay </label>
-                                    </div>
-                                    <select name="address_barangay" style="width:100%" class="form-control">
-                                        <option value=" ">Not Applicable</option>
-                                    </select>
-                                </div>
-                            </div>
-
-
-
-
-
-                        </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
-                    </fieldset>
-                    <fieldset>
-                        <div class="form-card">
-                            <div class="row">
-                                <div class="col-7">
-                                    <h2 class="fs-title">Contract :</h2>
-                                </div>
-                                <div class="col-5">
-                                    <h2 class="steps">Step 3 - 5</h2>
-                                </div>
-                            </div>
-                          
-                        </div>
-                        <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
-                    </fieldset>
-
-                    <fieldset>
-                        <div class="form-card">
-                            <div class="row">
-                                <div class="col-7">
-                                    <h2 class="fs-title">Payment :</h2>
-                                </div>
-                                <div class="col-5">
-                                    <h2 class="steps">Step 4 - 5</h2>
-                                </div>
-                            </div>
-                           
-                        </div>
-
-                        <input type="button" name="next" class="next action-button" value="Next" />
-                        
-                        
-                        <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
-
-
-                    </fieldset>
-
-                    <fieldset>
-                        <div class="form-card">
-                            <div class="row">
-                                <div class="col-7">
-                                    <h2 class="fs-title">Sched :</h2>
-                                </div>
-                                <div class="col-5">
-                                    <h2 class="steps">Step 5 - 5</h2>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <button type="submit" class="next action-button" value="Submit" >Save</button>
-                     
-
-                        <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
-
-
-                    </fieldset>
-
-                </form>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-
-
-<!--<div class="row">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-header bg-green">
-                <h4 class="text-white">Create Contractor</h4>
-                <div class="card-header-form">
-
-                </div>
-            </div>
-            <br />
-            <form id="contract_main">
-
-                <div style="padding: 2px 2.5%">
-                    <div class="row">
-
-                        <div class="col-md-6">
-
-                            <div class="form-group ">
-                                <label>Contractor Name</label>
-                                <input type="text" class="form-control" id="contractor_name" name="contractor_name">
-                                <p class="d-none text-red warning-kuno">Please Input a Field</p>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="contractor_type">Type</label>
-                                <select class="form-control" style="width:100%" name="contractor_type" id="contractor_type">
-                                    <option value="">Type</option>
-                                    <option value="Group">Group</option>
-                                    <option value="Individual">Individual</option>
-                                </select>
-                                <p class="d-none text-red warning-kuno">Please Input a Field</p>
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-6">
-
-                            <div class="form-group">
-                                <div class=" sample">
-
-                                    <label style="color: black;">address_municipality</label>
-                                </div>
-
-                                <div class="form-group">
-
-                                    <select id="address_municipality" name="address_municipality" class="form-control" style="width:100%">
-                                        <option value=" ">Not Applicable</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class=" sample">
-
-                                        <label style="color: black;">address_barangay </label>
-                                    </div>
-                                    <select name="address_barangay" style="width:100%" class="form-control">
-                                        <option value=" ">Not Applicable</option>
-                                    </select>
-                                </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <div class="text-center">
-
-                        <input type="submit" value="SAVE" class="btn bg-green text-white btn-sm contract_next" />
-
-                    </div>
-
-                </div>
-                <br />
-
-            </form>
-        </div>
-    </div>
-</div>
-
-
-<div class="card-body">
-    <div class="card">-->
-        @*PLEASE WAIT MODAL  IN MODAL *@
-        @*<div class="modal fade" id="pleasewaitModal">
-            <div class="modal-dialog modal-m modal-dialog-centered">
-                <div class="modal-content">
-                    <img id="loading" style="height: 170px; width: 480px; padding-left:8px;" src="~/Images/picturepleasewait.gif" />
-
-
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>*@
 
 
 
