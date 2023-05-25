@@ -21,7 +21,7 @@ namespace NgpManagementSystem.Controllers.API
         {
 
             Db.Dispose();
-        } 
+        }
         //CREATE/SAVING METHODS contractor
         [HttpPost
         ]
@@ -81,6 +81,110 @@ namespace NgpManagementSystem.Controllers.API
                 contractor.survivalrate_year3 = contractorDTO.survivalrate_year3;
                 contractor.num_seedlings_replanted_year3 = contractorDTO.num_seedlings_replanted_year3;
 
+                //for payments 
+
+
+                //year1 1st release
+                contractor.grossammount_year1_1st = contractorDTO.grossammount_year1_1st;
+                contractor.lddap_no_year1_1st = contractorDTO.lddap_no_year1_1st;
+                contractor.date_lddap_year1_1st = contractorDTO.date_lddap_year1_1st;
+
+                //year1 2nd release
+                contractor.grossammount_year1_2nd = contractorDTO.grossammount_year1_2nd;
+                contractor.retention_fee_year1_2nd = contractorDTO.retention_fee_year1_2nd;
+                contractor.mobilization_fund_year1_2nd = contractorDTO.mobilization_fund_year1_2nd;
+                contractor.amountless_rf_mf_year1_2nd = contractorDTO.amountless_rf_mf_year1_2nd;
+                contractor.bir_year1_2nd = contractorDTO.bir_year1_2nd;
+                contractor.netammountpaid_year1_2nd = contractorDTO.netammountpaid_year1_2nd;
+                contractor.lddapno_year1_2nd = contractorDTO.lddapno_year1_2nd;
+                contractor.date_lddap_year1_2nd = contractorDTO.date_lddap_year1_2nd;
+
+
+                //year1 3rd release
+                contractor.grossammount_year1_3rd = contractorDTO.grossammount_year1_3rd;
+                contractor.retention_fee_year1_3rd = contractorDTO.retention_fee_year1_3rd;
+                contractor.mobilization_fund_year1_3rd = contractorDTO.mobilization_fund_year1_3rd;
+                contractor.amountless_rf_mf_year1_3rd = contractorDTO.amountless_rf_mf_year1_3rd;
+                contractor.bir_year1_3rd = contractorDTO.bir_year1_2nd;
+                contractor.netammountpaid_year1_3rd = contractorDTO.netammountpaid_year1_3rd;
+                contractor.lddapno_year1_3rd = contractorDTO.lddapno_year1_3rd;
+                contractor.date_lddap_year1_3rd = contractorDTO.date_lddap_year1_3rd;
+
+
+                //year1 4rd release
+                contractor.grossammount_year1_4th = contractorDTO.grossammount_year1_4th;
+                contractor.retention_fee_year1_4th = contractorDTO.retention_fee_year1_4th;
+                contractor.mobilization_fund_year1_4th = contractorDTO.mobilization_fund_year1_4th;
+                contractor.amountless_rf_mf_year1_4th = contractorDTO.amountless_rf_mf_year1_4th;
+                contractor.bir_year1_4th = contractorDTO.bir_year1_2nd;
+                contractor.netammountpaid_year1_4th = contractorDTO.netammountpaid_year1_4th;
+                contractor.lddapno_year1_4th = contractorDTO.lddapno_year1_4th;
+                contractor.date_lddap_year1_4th = contractorDTO.date_lddap_year1_4th;
+
+                //year1 5th release
+                contractor.grossammount_year1_5th = contractorDTO.grossammount_year1_5th;
+                contractor.retention_fee_year1_5th = contractorDTO.retention_fee_year1_5th;
+                contractor.mobilization_fund_year1_5th = contractorDTO.mobilization_fund_year1_5th;
+                contractor.amountless_rf_mf_year1_5th = contractorDTO.amountless_rf_mf_year1_5th;
+                contractor.bir_year1_5th = contractorDTO.bir_year1_2nd;
+                contractor.netammountpaid_year1_5th = contractorDTO.netammountpaid_year1_5th;
+                contractor.lddapno_year1_5th = contractorDTO.lddapno_year1_5th;
+                contractor.date_lddap_year1_5th = contractorDTO.date_lddap_year1_5th;
+
+                //year1 6th release
+                contractor.grossammount_year1_6th = contractorDTO.grossammount_year1_6th;
+                contractor.retention_fee_year1_6th = contractorDTO.retention_fee_year1_6th;
+                contractor.mobilization_fund_year1_6th = contractorDTO.mobilization_fund_year1_6th;
+                contractor.amountless_rf_mf_year1_6th = contractorDTO.amountless_rf_mf_year1_6th;
+                contractor.bir_year1_6th = contractorDTO.bir_year1_6th;
+
+                //year2 1st release
+                contractor.survivalrate_year2_1st = contractorDTO.survivalrate_year2_1st;
+                contractor.grossammount_year2_1st = contractorDTO.grossammount_year2_1st;
+                contractor.redentionfee_fee_year2_1st = contractorDTO.redentionfee_fee_year2_1st;
+                contractor.amountless_rf_year2_1st = contractorDTO.amountless_rf_year2_1st;
+                contractor.bir_year2_1st = contractorDTO.bir_year2_1st;
+                contractor.netamount_paid_year2_1st = contractorDTO.netamount_paid_year2_1st;
+                contractor.lddapno_year2_1st = contractorDTO.lddapno_year2_1st;
+                contractor.date_lddap_year2_1st = contractorDTO.date_lddap_year2_1st;
+
+
+
+                //year2 2nd release
+                contractor.survivalrate_year2_2nd = contractorDTO.survivalrate_year2_2nd;
+                contractor.grossammount_year2_2nd = contractorDTO.grossammount_year2_2nd;
+                contractor.redentionfee_fee_year2_2nd = contractorDTO.redentionfee_fee_year2_2nd;
+                contractor.amountless_rf_year2_2nd = contractorDTO.amountless_rf_year2_2nd;
+                contractor.bir_year2_2nd = contractorDTO.bir_year2_2nd;
+                contractor.netamount_paid_year2_2nd = contractorDTO.netamount_paid_year2_2nd;
+                contractor.lddapno_year2_2nd = contractorDTO.lddapno_year2_2nd;
+                contractor.date_lddap_year2_2nd = contractorDTO.date_lddap_year2_2nd;
+
+
+
+                //year2 3rd release
+                contractor.survivalrate_year2_3rd = contractorDTO.survivalrate_year2_3rd;
+                contractor.grossammount_year2_3rd = contractorDTO.grossammount_year2_3rd;
+                contractor.redentionfee_fee_year2_3rd = contractorDTO.redentionfee_fee_year2_3rd;
+                contractor.amountless_rf_year2_3rd = contractorDTO.amountless_rf_year2_3rd;
+                contractor.bir_year2_3rd = contractorDTO.bir_year2_3rd;
+                contractor.netamount_paid_year2_3rd = contractorDTO.netamount_paid_year2_3rd;
+                contractor.lddapno_year2_3rd = contractorDTO.lddapno_year2_3rd;
+                contractor.date_lddap_year2_3rd = contractorDTO.date_lddap_year2_3rd;
+
+                //year2 4th release
+                contractor.survivalrate_year2_4th = contractorDTO.survivalrate_year2_4th;
+                contractor.grossammount_year2_4th = contractorDTO.grossammount_year2_4th;
+                contractor.redentionfee_fee_year2_4th = contractorDTO.redentionfee_fee_year2_4th;
+                contractor.amountless_rf_year2_4th = contractorDTO.amountless_rf_year2_4th;
+                contractor.bir_year2_1st3 = contractorDTO.bir_year2_1st3;
+                contractor.netamount_paid_year2_4th = contractorDTO.netamount_paid_year2_4th;
+                contractor.lddapno_year2_4th = contractorDTO.lddapno_year2_4th;
+                contractor.date_lddap_year2_4th = contractorDTO.date_lddap_year2_4th;
+
+
+
+
 
                 contractor.RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID; //saving role depend in login id
                 contractor.UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id; //saving role depend in UserId login
@@ -139,7 +243,7 @@ namespace NgpManagementSystem.Controllers.API
             }
             Mapper.Map(contractorDTO, contractorinDb);
             contractorinDb.contractorID = id;
-            contractorinDb.contractor_name =  contractorDTO.contractor_name;
+            contractorinDb.contractor_name = contractorDTO.contractor_name;
             contractorinDb.address_barangay = contractorDTO.address_barangay;
             contractorinDb.address_municipality = contractorDTO.address_municipality;
 

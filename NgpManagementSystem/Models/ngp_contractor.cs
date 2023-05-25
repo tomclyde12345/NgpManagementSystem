@@ -107,6 +107,38 @@ namespace NgpManagementSystem.Models
         public string mobilization_fund_year1_6th { get; set; }
         public string amountless_rf_mf_year1_6th { get; set; }
         public string bir_year1_6th { get; set; }
+        public string survivalrate_year2_1st { get; set; }
+        public string grossammount_year2_1st { get; set; }
+        public string redentionfee_fee_year2_1st { get; set; }
+        public string amountless_rf_year2_1st { get; set; }
+        public string bir_year2_1st { get; set; }
+        public string netamount_paid_year2_1st { get; set; }
+        public string lddapno_year2_1st { get; set; }
+        public string date_lddap_year2_1st { get; set; }
+        public string survivalrate_year2_2nd { get; set; }
+        public string grossammount_year2_2nd { get; set; }
+        public string redentionfee_fee_year2_2nd { get; set; }
+        public string amountless_rf_year2_2nd { get; set; }
+        public string bir_year2_2nd { get; set; }
+        public string netamount_paid_year2_2nd { get; set; }
+        public string lddapno_year2_2nd { get; set; }
+        public string date_lddap_year2_2nd { get; set; }
+        public string survivalrate_year2_3rd { get; set; }
+        public string grossammount_year2_3rd { get; set; }
+        public string redentionfee_fee_year2_3rd { get; set; }
+        public string amountless_rf_year2_3rd { get; set; }
+        public string bir_year2_3rd { get; set; }
+        public string netamount_paid_year2_3rd { get; set; }
+        public string lddapno_year2_3rd { get; set; }
+        public string date_lddap_year2_3rd { get; set; }
+        public string survivalrate_year2_4th { get; set; }
+        public string grossammount_year2_4th { get; set; }
+        public string redentionfee_fee_year2_4th { get; set; }
+        public string amountless_rf_year2_4th { get; set; }
+        public string bir_year2_1st3 { get; set; }
+        public string netamount_paid_year2_4th { get; set; }
+        public string lddapno_year2_4th { get; set; }
+        public string date_lddap_year2_4th { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ngp_contract> ngp_contract { get; set; }
