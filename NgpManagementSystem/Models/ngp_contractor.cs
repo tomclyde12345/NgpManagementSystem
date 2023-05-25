@@ -67,6 +67,46 @@ namespace NgpManagementSystem.Models
         public string num_seedlings_survive_endofyear_1_year3 { get; set; }
         public string survivalrate_year3 { get; set; }
         public string num_seedlings_replanted_year3 { get; set; }
+        public string grossammount_year1_1st { get; set; }
+        public string lddap_no_year1_1st { get; set; }
+        public string date_lddap_year1_1st { get; set; }
+        public string grossammount_year1_2nd { get; set; }
+        public string retention_fee_year1_2nd { get; set; }
+        public string mobilization_fund_year1_2nd { get; set; }
+        public string amountless_rf_mf_year1_2nd { get; set; }
+        public string bir_year1_2nd { get; set; }
+        public string netammountpaid_year1_2nd { get; set; }
+        public string lddapno_year1_2nd { get; set; }
+        public string date_lddap_year1_2nd { get; set; }
+        public string grossammount_year1_3rd { get; set; }
+        public string retention_fee_year1_3rd { get; set; }
+        public string mobilization_fund_year1_3rd { get; set; }
+        public string amountless_rf_mf_year1_3rd { get; set; }
+        public string bir_year1_3rd { get; set; }
+        public string netammountpaid_year1_3rd { get; set; }
+        public string lddapno_year1_3rd { get; set; }
+        public string date_lddap_year1_3rd { get; set; }
+        public string grossammount_year1_4th { get; set; }
+        public string retention_fee_year1_4th { get; set; }
+        public string mobilization_fund_year1_4th { get; set; }
+        public string amountless_rf_mf_year1_4th { get; set; }
+        public string bir_year1_4th { get; set; }
+        public string netammountpaid_year1_4th { get; set; }
+        public string lddapno_year1_4th { get; set; }
+        public string date_lddap_year1_4th { get; set; }
+        public string grossammount_year1_5th { get; set; }
+        public string retention_fee_year1_5th { get; set; }
+        public string mobilization_fund_year1_5th { get; set; }
+        public string amountless_rf_mf_year1_5th { get; set; }
+        public string bir_year1_5th { get; set; }
+        public string netammountpaid_year1_5th { get; set; }
+        public string lddapno_year1_5th { get; set; }
+        public string date_lddap_year1_5th { get; set; }
+        public string grossammount_year1_6th { get; set; }
+        public string retention_fee_year1_6th { get; set; }
+        public string mobilization_fund_year1_6th { get; set; }
+        public string amountless_rf_mf_year1_6th { get; set; }
+        public string bir_year1_6th { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ngp_contract> ngp_contract { get; set; }

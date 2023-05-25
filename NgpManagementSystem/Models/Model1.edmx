@@ -85,6 +85,46 @@
           <Property Name="num_seedlings_survive_endofyear_1_year3" Type="nvarchar(max)" />
           <Property Name="survivalrate_year3" Type="nvarchar(max)" />
           <Property Name="num_seedlings_replanted_year3" Type="nvarchar(max)" />
+          <Property Name="grossammount_year1_1st" Type="nvarchar(max)" />
+          <Property Name="lddap_no_year1_1st" Type="nvarchar(max)" />
+          <Property Name="date_lddap_year1_1st" Type="nvarchar(max)" />
+          <Property Name="grossammount_year1_2nd" Type="nvarchar(max)" />
+          <Property Name="retention_fee_year1_2nd" Type="nvarchar(max)" />
+          <Property Name="mobilization_fund_year1_2nd" Type="nvarchar(max)" />
+          <Property Name="amountless_rf_mf_year1_2nd" Type="nvarchar(max)" />
+          <Property Name="bir_year1_2nd" Type="nvarchar(max)" />
+          <Property Name="netammountpaid_year1_2nd" Type="nvarchar(max)" />
+          <Property Name="lddapno_year1_2nd" Type="nvarchar(max)" />
+          <Property Name="date_lddap_year1_2nd" Type="nvarchar(max)" />
+          <Property Name="grossammount_year1_3rd" Type="nvarchar(max)" />
+          <Property Name="retention_fee_year1_3rd" Type="nvarchar(max)" />
+          <Property Name="mobilization_fund_year1_3rd" Type="nvarchar(max)" />
+          <Property Name="amountless_rf_mf_year1_3rd" Type="nvarchar(max)" />
+          <Property Name="bir_year1_3rd" Type="nvarchar(max)" />
+          <Property Name="netammountpaid_year1_3rd" Type="nvarchar(max)" />
+          <Property Name="lddapno_year1_3rd" Type="nvarchar(max)" />
+          <Property Name="date_lddap_year1_3rd" Type="nvarchar(max)" />
+          <Property Name="grossammount_year1_4th" Type="nvarchar(max)" />
+          <Property Name="retention_fee_year1_4th" Type="nvarchar(max)" />
+          <Property Name="mobilization_fund_year1_4th" Type="nvarchar(max)" />
+          <Property Name="amountless_rf_mf_year1_4th" Type="nvarchar(max)" />
+          <Property Name="bir_year1_4th" Type="nvarchar(max)" />
+          <Property Name="netammountpaid_year1_4th" Type="nvarchar(max)" />
+          <Property Name="lddapno_year1_4th" Type="nvarchar(max)" />
+          <Property Name="date_lddap_year1_4th" Type="nvarchar(max)" />
+          <Property Name="grossammount_year1_5th" Type="nvarchar(max)" />
+          <Property Name="retention_fee_year1_5th" Type="nvarchar(max)" />
+          <Property Name="mobilization_fund_year1_5th" Type="nvarchar(max)" />
+          <Property Name="amountless_rf_mf_year1_5th" Type="nvarchar(max)" />
+          <Property Name="bir_year1_5th" Type="nvarchar(max)" />
+          <Property Name="netammountpaid_year1_5th" Type="nvarchar(max)" />
+          <Property Name="lddapno_year1_5th" Type="nvarchar(max)" />
+          <Property Name="date_lddap_year1_5th" Type="nvarchar(max)" />
+          <Property Name="grossammount_year1_6th" Type="nvarchar(max)" />
+          <Property Name="retention_fee_year1_6th" Type="nvarchar(max)" />
+          <Property Name="mobilization_fund_year1_6th" Type="nvarchar(max)" />
+          <Property Name="amountless_rf_mf_year1_6th" Type="nvarchar(max)" />
+          <Property Name="bir_year1_6th" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="ngp_dropdown">
           <Key>
@@ -942,6 +982,46 @@
           <Property Name="num_seedlings_survive_endofyear_1_year3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="survivalrate_year3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="num_seedlings_replanted_year3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="grossammount_year1_1st" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="lddap_no_year1_1st" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="date_lddap_year1_1st" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="grossammount_year1_2nd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="retention_fee_year1_2nd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mobilization_fund_year1_2nd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="amountless_rf_mf_year1_2nd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="bir_year1_2nd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="netammountpaid_year1_2nd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="lddapno_year1_2nd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="date_lddap_year1_2nd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="grossammount_year1_3rd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="retention_fee_year1_3rd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mobilization_fund_year1_3rd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="amountless_rf_mf_year1_3rd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="bir_year1_3rd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="netammountpaid_year1_3rd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="lddapno_year1_3rd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="date_lddap_year1_3rd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="grossammount_year1_4th" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="retention_fee_year1_4th" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mobilization_fund_year1_4th" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="amountless_rf_mf_year1_4th" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="bir_year1_4th" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="netammountpaid_year1_4th" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="lddapno_year1_4th" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="date_lddap_year1_4th" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="grossammount_year1_5th" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="retention_fee_year1_5th" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mobilization_fund_year1_5th" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="amountless_rf_mf_year1_5th" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="bir_year1_5th" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="netammountpaid_year1_5th" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="lddapno_year1_5th" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="date_lddap_year1_5th" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="grossammount_year1_6th" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="retention_fee_year1_6th" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mobilization_fund_year1_6th" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="amountless_rf_mf_year1_6th" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="bir_year1_6th" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ngp_contract" Relationship="NgpdbmsModel.FK_ngp_contract_ngp_contractor" FromRole="ngp_contractor" ToRole="ngp_contract" />
           <NavigationProperty Name="NgpBarangay" Relationship="NgpdbmsModel.FK_ngp_contractor_NgpBarangay" FromRole="ngp_contractor" ToRole="NgpBarangay" />
           <NavigationProperty Name="NgpMunicipality" Relationship="NgpdbmsModel.FK_ngp_contractor_NgpMunicipality" FromRole="ngp_contractor" ToRole="NgpMunicipality" />
@@ -1539,6 +1619,46 @@
           <EntitySetMapping Name="ngp_contractor">
             <EntityTypeMapping TypeName="NgpdbmsModel.ngp_contractor">
               <MappingFragment StoreEntitySet="ngp_contractor">
+                <ScalarProperty Name="bir_year1_6th" ColumnName="bir_year1_6th" />
+                <ScalarProperty Name="amountless_rf_mf_year1_6th" ColumnName="amountless_rf_mf_year1_6th" />
+                <ScalarProperty Name="mobilization_fund_year1_6th" ColumnName="mobilization_fund_year1_6th" />
+                <ScalarProperty Name="retention_fee_year1_6th" ColumnName="retention_fee_year1_6th" />
+                <ScalarProperty Name="grossammount_year1_6th" ColumnName="grossammount_year1_6th" />
+                <ScalarProperty Name="date_lddap_year1_5th" ColumnName="date_lddap_year1_5th" />
+                <ScalarProperty Name="lddapno_year1_5th" ColumnName="lddapno_year1_5th" />
+                <ScalarProperty Name="netammountpaid_year1_5th" ColumnName="netammountpaid_year1_5th" />
+                <ScalarProperty Name="bir_year1_5th" ColumnName="bir_year1_5th" />
+                <ScalarProperty Name="amountless_rf_mf_year1_5th" ColumnName="amountless_rf_mf_year1_5th" />
+                <ScalarProperty Name="mobilization_fund_year1_5th" ColumnName="mobilization_fund_year1_5th" />
+                <ScalarProperty Name="retention_fee_year1_5th" ColumnName="retention_fee_year1_5th" />
+                <ScalarProperty Name="grossammount_year1_5th" ColumnName="grossammount_year1_5th" />
+                <ScalarProperty Name="date_lddap_year1_4th" ColumnName="date_lddap_year1_4th" />
+                <ScalarProperty Name="lddapno_year1_4th" ColumnName="lddapno_year1_4th" />
+                <ScalarProperty Name="netammountpaid_year1_4th" ColumnName="netammountpaid_year1_4th" />
+                <ScalarProperty Name="bir_year1_4th" ColumnName="bir_year1_4th" />
+                <ScalarProperty Name="amountless_rf_mf_year1_4th" ColumnName="amountless_rf_mf_year1_4th" />
+                <ScalarProperty Name="mobilization_fund_year1_4th" ColumnName="mobilization_fund_year1_4th" />
+                <ScalarProperty Name="retention_fee_year1_4th" ColumnName="retention_fee_year1_4th" />
+                <ScalarProperty Name="grossammount_year1_4th" ColumnName="grossammount_year1_4th" />
+                <ScalarProperty Name="date_lddap_year1_3rd" ColumnName="date_lddap_year1_3rd" />
+                <ScalarProperty Name="lddapno_year1_3rd" ColumnName="lddapno_year1_3rd" />
+                <ScalarProperty Name="netammountpaid_year1_3rd" ColumnName="netammountpaid_year1_3rd" />
+                <ScalarProperty Name="bir_year1_3rd" ColumnName="bir_year1_3rd" />
+                <ScalarProperty Name="amountless_rf_mf_year1_3rd" ColumnName="amountless_rf_mf_year1_3rd" />
+                <ScalarProperty Name="mobilization_fund_year1_3rd" ColumnName="mobilization_fund_year1_3rd" />
+                <ScalarProperty Name="retention_fee_year1_3rd" ColumnName="retention_fee_year1_3rd" />
+                <ScalarProperty Name="grossammount_year1_3rd" ColumnName="grossammount_year1_3rd" />
+                <ScalarProperty Name="date_lddap_year1_2nd" ColumnName="date_lddap_year1_2nd" />
+                <ScalarProperty Name="lddapno_year1_2nd" ColumnName="lddapno_year1_2nd" />
+                <ScalarProperty Name="netammountpaid_year1_2nd" ColumnName="netammountpaid_year1_2nd" />
+                <ScalarProperty Name="bir_year1_2nd" ColumnName="bir_year1_2nd" />
+                <ScalarProperty Name="amountless_rf_mf_year1_2nd" ColumnName="amountless_rf_mf_year1_2nd" />
+                <ScalarProperty Name="mobilization_fund_year1_2nd" ColumnName="mobilization_fund_year1_2nd" />
+                <ScalarProperty Name="retention_fee_year1_2nd" ColumnName="retention_fee_year1_2nd" />
+                <ScalarProperty Name="grossammount_year1_2nd" ColumnName="grossammount_year1_2nd" />
+                <ScalarProperty Name="date_lddap_year1_1st" ColumnName="date_lddap_year1_1st" />
+                <ScalarProperty Name="lddap_no_year1_1st" ColumnName="lddap_no_year1_1st" />
+                <ScalarProperty Name="grossammount_year1_1st" ColumnName="grossammount_year1_1st" />
                 <ScalarProperty Name="num_seedlings_replanted_year3" ColumnName="num_seedlings_replanted_year3" />
                 <ScalarProperty Name="survivalrate_year3" ColumnName="survivalrate_year3" />
                 <ScalarProperty Name="num_seedlings_survive_endofyear_1_year3" ColumnName="num_seedlings_survive_endofyear_1_year3" />
