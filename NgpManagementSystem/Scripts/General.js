@@ -38,7 +38,7 @@ function AdminLogsDashboard() {
             "Authorization": "Bearer " + localStorage.getItem('access_token')
         },
         success: function (data) {
-            $('#logsactivitycontractor tbody').html('');    
+            $('#logsactivitycontractor tbody').html('');
             $.each(data, function (index, value) {
                 $('#logsactivitycontractor tbody').append(
                     '<tr>' +
@@ -277,7 +277,7 @@ function Sched() {
         }
     });
 
-     //GET DATA FOR SCHED DYNAMIC FOR EDIT SCHEDULE  VIA MODAL
+    //GET DATA FOR SCHED DYNAMIC FOR EDIT SCHEDULE  VIA MODAL
     $.ajax({
         type: 'GET',
         url: '/api/contractdataforsched/get',
@@ -446,8 +446,8 @@ function Sched() {
             lddap_date: {
                 required: true,
             },
-           
-          
+
+
 
         },
         errorClass: "validationerror",
@@ -474,7 +474,7 @@ function Sched() {
             lddap_date: {
                 required: "Please Seleact a lddap_date",
             },
-           
+
 
         },
         submitHandler: function () {
@@ -644,7 +644,7 @@ function Payment() {
                 },
 
             },
-          
+
         ],
 
 
@@ -689,7 +689,7 @@ function Payment() {
             num_release: {
                 required: true,
             },
-           
+
         },
         errorClass: "validationerror",
         messages: {
@@ -699,7 +699,7 @@ function Payment() {
             num_release: {
                 required: "Please Seleact a num_release",
             },
-          
+
         },
         submitHandler: function () {
             if ($("#paymentcreate").valid()) {
@@ -784,7 +784,7 @@ function Contract() {
         submitHandler: function () {
             if ($("#createcontract").valid()) {
                 var valdata = $("#createcontract").serialize();
-              
+
                 $.ajax({
                     url: '/api/contract/post',
                     type: "POST",
@@ -803,7 +803,7 @@ function Contract() {
     });
 
 
-    
+
     //GET DATA FOR YEAR DYNAMIC FOR CREATE CONTRACT 
     $.ajax({
         type: 'GET',
@@ -931,7 +931,7 @@ function Contract() {
             "processing": "processing... please wait"
         },
 
-     
+
 
 
     });
@@ -1092,7 +1092,7 @@ function Project() {
                     toastr.success('Successsfully Added a Project');
                     setTimeout(function () {
                         location.reload();
-                        
+
                     }, 1000)
                 }, 1000);
             }
@@ -1256,7 +1256,7 @@ function ContractorAnimation() {
     });
 
     //GET DATA ONLY FOR EDIT Contractor GET METHOD 
-    
+
     $("#contractortable").on('click', '.editcontractor', function () {
         var id = $(this).attr('data-id');
         var url = '/api/contractorget/get/' + id;
@@ -1280,7 +1280,7 @@ function ContractorAnimation() {
             }
         })
     })
-     //PUT DATA ONLY FOR EDIT Contractor GET METHOD 
+    //PUT DATA ONLY FOR EDIT Contractor GET METHOD 
     $("#UpdateRecord").click(function (e) {
         e.preventDefault();
         var data = {
@@ -1305,7 +1305,7 @@ function ContractorAnimation() {
 
                 $('#editcontractorModal').modal('hide');
                 //show please wait modal
-              /*  $('#pleasewait').modal('show');*/
+                /*  $('#pleasewait').modal('show');*/
                 //show toastr after 3
                 setTimeout(function () {
                     toastr.success("Contractor Successfully Updated!");
@@ -1322,7 +1322,7 @@ function ContractorAnimation() {
         });
     });
 
-     
+
 
     //SAVINGR CONTRACTOR CREATE
     $("#contract_main").validate({
@@ -1379,7 +1379,7 @@ function ContractorAnimation() {
         submitHandler: function () {
             if ($("#contract_main").valid()) {
                 var valdata = $("#contract_main").serialize();
-               
+
                 $.ajax({
                     url: '/api/contractor/post',
                     type: "POST",
@@ -1401,7 +1401,7 @@ function ContractorAnimation() {
 
 
     //SERVER SIDE DATATABLE SHOW DATA FOR CONTRACTOR
-   var contractorTbl = $("#contractortable").DataTable({
+    var contractorTbl = $("#contractortable").DataTable({
         "ajax": {
             "url": "/Contractor/GetContractorTable",
             "type": "POST",
@@ -1440,7 +1440,7 @@ function ContractorAnimation() {
 
                     return '<span class=" badge bg-secondary text-black" style="font-size:12px;" >' + data + '</span>'
 
-                   
+
 
                 },
             },
@@ -1458,11 +1458,11 @@ function ContractorAnimation() {
             {
                 "data": null,
                 'render': function (data, type, full, meta) {
-                    return '<button  style=width:68px;  class=\'btn btn-outline-success editcontractor d-block btn-sm\' data-id = ' + data.contractorID + ' > Edit  <span class="fa fa-edit f-20" >  </span></button>' + '<button  class=\'btn btn-outline-danger  deletecontractor d-block btn-sm\' data-id = ' + data.contractorID + ' > Delete  <span class="fa fa-trash f-20" >  </span></button>' 
+                    return '<button  style=width:68px;  class=\'btn btn-outline-success editcontractor d-block btn-sm\' data-id = ' + data.contractorID + ' > Edit  <span class="fa fa-edit f-20" >  </span></button>' + '<button  class=\'btn btn-outline-danger  deletecontractor d-block btn-sm\' data-id = ' + data.contractorID + ' > Delete  <span class="fa fa-trash f-20" >  </span></button>'
 
                 }
             },
-        
+
 
 
         ],
@@ -1475,13 +1475,13 @@ function ContractorAnimation() {
 
         "fnInitComplete": function (oSettings, json) {
             SearchfilterRole(json);
-          /*  SearchfilterContractor(json);*/
+            /*  SearchfilterContractor(json);*/
         }
 
 
-   });
+    });
 
-   //forsearchfilterforrole
+    //forsearchfilterforrole
     function SearchfilterRole(json) {
         var filterforrole = $('<select/>').addClass("forsearchdropdownfilterrole ");
         filterforrole.append($('<option/>').attr('value', '').text('Select Filter'));
@@ -1568,10 +1568,10 @@ function ContractorAnimation() {
     })
 
 }
- 
+
 
 function Account() {
-   //SERVER SIDE DATATABLE SHOW DATA FOR USER
+    //SERVER SIDE DATATABLE SHOW DATA FOR USER
     $("#usertable").DataTable({
         "ajax": {
             "url": "/Account/GetUserDatatable",
@@ -1605,8 +1605,8 @@ function Account() {
                 'render': function (data, type, full, meta) {
                     return '<button  class=\'btn btn-success btn-sm d-block  edit \' data-id = ' + data.Id + ' > Edit <span class="fa fa-edit f-20" >  </span></button>'
                         +
-                        '<button  class=\'btn btn-danger deleteaccount d-block btn-sm\' data-id = ' + data.Id + ' > Delete<span class="fa fa-trash f-20" >  </span></button>' 
-                        
+                        '<button  class=\'btn btn-danger deleteaccount d-block btn-sm\' data-id = ' + data.Id + ' > Delete<span class="fa fa-trash f-20" >  </span></button>'
+
 
                 }
             },
@@ -1629,10 +1629,10 @@ function Account() {
 
                 },
             },
-           
 
-           
-           
+
+
+
         ],
 
 
@@ -1691,8 +1691,8 @@ function Account() {
 
             }
         })
-       
-      
+
+
     });
 
 
@@ -1901,7 +1901,7 @@ function Account() {
     });
 
 
-    /*  DELETE ACCOUNT POST  DELETE DATA AFTER CLICK*/ 
+    /*  DELETE ACCOUNT POST  DELETE DATA AFTER CLICK*/
     $("#btnAccounteDelete").click(function () {
 
         // for deletion
