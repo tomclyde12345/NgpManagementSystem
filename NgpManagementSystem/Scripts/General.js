@@ -866,7 +866,7 @@ function ContractorAnimation() {
                 $('#edityear1contractform').find('input[name="commodity_year1"]').val(data.commodity_year1);
                 $('#edityear1contractform').find('input[name="num_seedlings_planted_year1"]').val(data.num_seedlings_planted_year1);
                 $('#edityear1contractform').find('input[name="survivalrate_year1"]').val(data.survivalrate_year1);
-
+                $('#edityear1contractform').find('input[name="num_seedlings_survive_year1"]').val(data.num_seedlings_survive_year1)
                 //for contract year 2
                 $('#edityear1contractform').find('input[name="moanumber_year2"]').val(data.moanumber_year2);
                 $('#edityear1contractform').find('input[name="datemoasigned_year2"]').val(data.datemoasigned_year2);
@@ -883,6 +883,7 @@ function ContractorAnimation() {
 
 
                 //for contract year 3
+                $('#edityear1contractform').find('input[name="orsno_year3"]').val(data.orsno_year3);
                 $('#edityear1contractform').find('input[name="moanumber_year3"]').val(data.moanumber_year3);
                 $('#edityear1contractform').find('input[name="datemoasigned_year3"]').val(data.datemoasigned_year3);
                 $('#edityear1contractform').find('input[name="unitcost_year3"]').val(data.unitcost_year3);
@@ -1043,7 +1044,7 @@ function ContractorAnimation() {
             location_municipality: $('#edityear1contractform').find('input[name=location_municipality]').val(),
             location_barangay: $('#edityear1contractform').find('input[name=location_barangay]').val(),
             area: $('#edityear1contractform').find('input[name=area]').val(),
-            year_form: $('#edityear1contractform').find('input[select=year_form]').val(),
+            year_form: $('#edityear1contractform').find('input[name=year_form]').val(),
             penro: $('#edityear1contractform').find('input[name=penro]').val(),
             cenro: $('#edityear1contractform').find('input[name=cenro]').val(),
             region: $('#edityear1contractform').find('input[name=region]').val(),
@@ -1051,6 +1052,7 @@ function ContractorAnimation() {
 
 
             //for contract year 1
+
             moanumber_year1: $('#edityear1contractform').find('input[name=moanumber_year1]').val(),
             datemoasigned_year1: $('#edityear1contractform').find('input[name=datemoasigned_year1]').val(),
             contractcost_year1: $('#edityear1contractform').find('input[name=contractcost_year1]').val(),
@@ -1060,6 +1062,8 @@ function ContractorAnimation() {
             commodity_year1: $('#edityear1contractform').find('input[name=commodity_year1]').val(),
             num_seedlings_planted_year1: $('#edityear1contractform').find('input[name=num_seedlings_planted_year1]').val(),
             survivalrate_year1: $('#edityear1contractform').find('input[name=survivalrate_year1]').val(),
+
+            num_seedlings_survive_year1: $('#edityear1contractform').find('input[name=num_seedlings_survive_year1]').val(),
 
 
             //for contract year 2
@@ -1077,6 +1081,7 @@ function ContractorAnimation() {
 
 
             //for contract year 3
+            orsno_year3: $('#edityear1contractform').find('input[name=orsno_year3]').val(),
             moanumber_year3: $('#edityear1contractform').find('input[name=moanumber_year3]').val(),
             datemoasigned_year3: $('#edityear1contractform').find('input[name=datemoasigned_year3]').val(),
             unitcost_year3: $('#edityear1contractform').find('input[name=unitcost_year3]').val(),

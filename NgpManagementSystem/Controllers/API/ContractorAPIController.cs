@@ -75,7 +75,7 @@ namespace NgpManagementSystem.Controllers.API
                 contractor.unitcost_year3 = contractorDTO.unitcost_year3;
                 contractor.contractcost_year3 = contractorDTO.contractcost_year3;
                 contractor.dateobligated_year3 = contractorDTO.dateobligated_year3;
-                contractor.orsno_year2 = contractorDTO.orsno_year2;
+                contractor.orsno_year3 = contractorDTO.orsno_year3;
                 contractor.num_seedlings_planted_year3 = contractorDTO.num_seedlings_planted_year3;
                 contractor.num_seedlings_survive_endofyear_1_year3 = contractorDTO.num_seedlings_survive_endofyear_1_year3;
                 contractor.survivalrate_year3 = contractorDTO.survivalrate_year3;
@@ -295,6 +295,7 @@ namespace NgpManagementSystem.Controllers.API
             contractorinDb.num_seedlings_survive_endofyear_1_year3 = contractorDTO.num_seedlings_survive_endofyear_1_year3;
             contractorinDb.survivalrate_year3 = contractorDTO.survivalrate_year3;
             contractorinDb.num_seedlings_replanted_year3 = contractorDTO.num_seedlings_replanted_year3;
+            contractorinDb.orsno_year3 = contractorDTO.orsno_year3;
 
             //for payments 
 
