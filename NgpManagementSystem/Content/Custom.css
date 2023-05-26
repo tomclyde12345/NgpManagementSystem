@@ -1,10 +1,11 @@
-﻿.hideThis{
- display:none;
+﻿.hideThis {
+    display: none;
 }
 
 .modal-backdrop {
     z-index: -1;
 }
+
 .tomerror {
     color: red;
 }
@@ -12,9 +13,11 @@
 .validationerror {
     color: red !important;
 }
+
 .bg-green {
     background-color: #20642f !important;
 }
+
 .error {
     color: red;
 }
@@ -170,7 +173,7 @@ p {
     #progressbar li {
         list-style-type: none;
         font-size: 15px;
-        width: 20%;
+        width: 25%;
         float: left;
         position: relative;
         font-weight: 400

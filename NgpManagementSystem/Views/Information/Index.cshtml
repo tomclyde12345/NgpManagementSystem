@@ -94,27 +94,25 @@
                                         <h4>Project Table</h4>
 
                                     </div>
-                                    <div style="padding:2px 2.5%">
-                                        <button type="button" class="btn btn-info btn-md " style="border-radius:20px;" onclick="location.href ='/Project/Create'">Create Projects <i class="fa fa-plus-circle"></i> </button>
-                                    </div>
+
                                     <br />
                                     <div class="card-body p-0">
                                         <div class="table-responsive">
-                                            <table id="projecttable" class="table table-hover" width="100%">
+                                            <table id="projectable" class="table table-hover" width="100%">
 
 
                                                 <thead style="height:46px;">
                                                     <tr>
+                                                        <th class="bg-green text-white">Id</th>
                                                         <th class="bg-green text-white">Area</th>
-                                                        <th class="bg-green text-white">SiteCode</th>
+                                                        <th class="bg-green text-white">cenro</th>
+                                                        <th class="bg-green text-white">Region</th>
                                                         <th class="bg-green text-white">location Municipality</th>
                                                         <th class="bg-green text-white">Location Barangay</th>
-                                                        <th class="bg-green text-white">year form</th>
                                                         <th class="bg-green text-white">Penro</th>
-                                                        <th class="bg-green text-white">Cenro</th>
-                                                        <th class="bg-green text-white">Region</th>
-                                                        <th class="bg-green text-white">Role</th>
-                                                        <th class="bg-green text-white">Create By:</th>
+                                                        <th class="bg-green text-white">year form</th>
+                                                        <th class="bg-green  text-white">Role: </th>
+                                                        <th class="bg-green  text-white">Create by: </th>
                                                     </tr>
                                                 </thead>
                                             </table>
@@ -125,6 +123,7 @@
                         </div>
                     </div>
 
+
                     <div class="tab-pane fade" id="profile4" role="tabpanel" aria-labelledby="profile-tab4">
                         <div class="card-body p-0">
                             <div class="card-header">
@@ -133,14 +132,10 @@
                             </div>
 
                             <br />
-                            <div style="padding:2px 2.5%">
 
-                                <button type="button" class="btn btn-info btn-md " style="border-radius:20px;" onclick="location.href ='/Contract/Create'">Create Contract <i class="fa fa-plus-circle"></i> </button>
-
-                            </div>
 
                             <div class="table-responsive">
-                                <table id="contracttable" class="table table-hover" width="100%">
+                                <table id="contracttables" class="table table-hover" width="100%">
 
 
                                     <thead style="height:46px;">
@@ -148,23 +143,10 @@
 
                                             <th style="display:none;">contractID</th>
                                             <th class="bg-green text-white">ContractorName</th>
-                                            <th class="bg-green text-white">location_municipality</th>
-                                            <th class="bg-green text-white">location_barangay</th>
-                                            <th class="bg-green text-white">location_sitio</th>
-                                            <th class="bg-green text-white">area</th>
-                                            <th class="bg-green text-white">commodity</th>
-                                            <th class="bg-green text-white">commodity_type</th>
-                                            <th class="bg-green text-white">survival_rate</th>
-                                            <th class="bg-green text-white">project_name</th>
-                                            <th class="bg-green text-white">contract_cost</th>
-                                            <th class="bg-green text-white">site_code</th>
-                                            <th class="bg-green text-white">year_established</th>
-                                            <th class="bg-green text-white"> num_seedlings_planted</th>
-                                            <th class="bg-green text-white">num_seedlings_produced</th>
-                                            <th class="bg-green text-white">num_seedlings_survived</th>
-                                            <th class="bg-green text-white">num_seedlings_survived_year1</th>
-                                            <th class="bg-green text-white">Role</th>
-                                            <th class="bg-green text-white">Create By:</th>
+                                            <th class="bg-green text-white">Year</th>
+                                            <th class="bg-green  text-white">Role: </th>
+                                            <th class="bg-green  text-white">Create by: </th>
+
 
 
                                         </tr>
@@ -180,9 +162,7 @@
                                 <h4>Payment Table</h4>
 
                             </div>
-                            <div style="padding:2px 2.5%">
-                                <button type="button" class="btn btn-info btn-md " style="border-radius:20px;" onclick="location.href ='/Payment/Create'">Create Payment <i class="fa fa-plus-circle"></i> </button>
-                            </div>
+
                             <br />
                             <div class="table-responsive">
                                 <table id="paymenttable" class="table table-hover" width="100%">
@@ -340,6 +320,310 @@
 
 
 
+
+
+
+
+@*YEAR1 CONTRACT SHOW IN MODAL(READONLY)*@
+<div id="year1contractModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+
+
+        <div class="modal-content">
+            <div class="modal-header bg-green">
+                <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">Year 1 for Contract List</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="showdatayear1contractform">
+                    <div class="row">
+
+
+                        <input type="hidden" class="form-control" id="contractorID" name="contractorID" /> @*need id*@
+
+                        <div class="col-md-6">
+                            <div class="form-group ">
+                                <label style="color: black;">moanumber_year1 </label>
+                                <input type="text" class="form-control" id="moanumber_year1" readonly
+                                       name="moanumber_year1">
+                            </div>
+                            <div class="form-group ">
+                                <label style="color: black;">datemoasigned_year1 </label>
+                                <input type="date" class="form-control" id="datemoasigned_year1" readonly
+                                       name="datemoasigned_year1">
+                            </div>
+
+                            <div class="form-group ">
+                                <label style="color: black;">contractcost_year1 </label>
+                                <input type="text" class="form-control" id="contractcost_year1" readonly
+                                       name="contractcost_year1">
+                            </div>
+
+                            <div class="form-group ">
+                                <label style="color: black;">dateobligated_year1 </label>
+                                <input type="date" class="form-control" id="dateobligated_year1" readonly
+                                       name="dateobligated_year1">
+                            </div>
+                            <div class="form-group ">
+                                <label style="color: black;">orsno_year1 </label>
+                                <input type="text" class="form-control" id="orsno_year1" readonly
+                                       name="orsno_year1">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group ">
+                                <label style="color: black;">num_seedlings_produced_year1 </label>
+                                <input type="text" class="form-control" id="num_seedlings_produced_year1" readonly
+                                       name="num_seedlings_produced_year1">
+                            </div>
+
+                            <div class="form-group ">
+                                <label style="color: black;">commodity_year1 </label>
+                                <input type="text" class="form-control" id="commodity_year1" readonly
+                                       name="commodity_year1">
+                            </div>
+                            <div class="form-group ">
+                                <label style="color: black;">num_seedlings_planted_year1 </label>
+                                <input type="text" class="form-control" id="num_seedlings_planted_year1" readonly
+                                       name="num_seedlings_planted_year1">
+                            </div>
+
+                            <div class="form-group ">
+                                <label style="color: black;">num_seedlings_survive_year1 </label>
+                                <input type="text" class="form-control" id="num_seedlings_survive_year1" readonly
+                                       name="num_seedlings_survive_year1">
+                            </div>
+
+                            <div class="form-group ">
+                                <label style="color: black;">survivalrate_year1 </label>
+                                <input type="text" class="form-control" id="survivalrate_year1" readonly
+                                       name="survivalrate_year1">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+@*YEAR2 CONTRACT SHOW IN MODAL(READONLY)*@
+<div id="year2contractModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+
+
+        <div class="modal-content">
+            <div class="modal-header bg-green">
+                <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">Year 2 for Contract List</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="showdatayear2contractform">
+                    <div class="row">
+
+
+                        <input type="hidden" class="form-control" id="contractorID" name="contractorID" /> @*need id*@
+                        <div class="col-md-6">
+                            <div class="form-group ">
+                                <label style="color: black;">moanumber_year2 </label>
+                                <input type="text" class="form-control" id="moanumber_year2" readonly
+                                       name="moanumber_year2">
+                            </div>
+                            <div class="form-group ">
+                                <label style="color: black;">datemoasigned_year2 </label>
+                                <input type="date" class="form-control" id="datemoasigned_year2" readonly
+                                       name="datemoasigned_year2">
+                            </div>
+                            <div class="form-group ">
+                                <label style="color: black;">unitcost_year2 </label>
+                                <input type="text" class="form-control" id="unitcost_year2" readonly
+                                       name="unitcost_year2">
+                            </div>
+                            <div class="form-group ">
+                                <label style="color: black;">contractcost_year2 </label>
+                                <input type="text" class="form-control" id="contractcost_year2" readonly
+                                       name="contractcost_year2">
+                            </div>
+                            <div class="form-group ">
+                                <label style="color: black;">dateobligated_year2 </label>
+                                <input type="date" class="form-control" id="dateobligated_year2" readonly
+                                       name="dateobligated_year2">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group ">
+                                <label style="color: black;">orsno_year2 </label>
+                                <input type="text" class="form-control" id="orsno_year2" readonly
+                                       name="orsno_year2">
+                            </div>
+                            <div class="form-group ">
+                                <label style="color: black;">num_seedlings_planted_year2 </label>
+                                <input type="text" class="form-control" id="num_seedlings_planted_year2" readonly
+                                       name="num_seedlings_planted_year2">
+                            </div>
+                            <div class="form-group ">
+                                <label style="color: black;">num_seedlings_survive_endofyear_1_year2 </label>
+                                <input type="text" class="form-control" id="num_seedlings_survive_endofyear_1_year2" readonly
+                                       name="num_seedlings_survive_endofyear_1_year2">
+                            </div>
+                            <div class="form-group ">
+                                <label style="color: black;">survivalrate_year2 </label>
+                                <input type="text" class="form-control" id="survivalrate_year2" readonly
+                                       name="survivalrate_year2">
+                            </div>
+                            <div class="form-group ">
+                                <label style="color: black;">num_seedlings_replanted_year2 </label>
+                                <input type="text" class="form-control" id="num_seedlings_replanted_year2" readonly
+                                       name="num_seedlings_replanted_year2">
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                </form>
+
+
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+@*YEAR3 CONTRACT SHOW IN MODAL(READONLY)*@
+<div id="year3contractModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+
+
+        <div class="modal-content">
+            <div class="modal-header bg-green">
+                <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">Year 3 for Contract List</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="showdatayear3contractform">
+                    <div class="row">
+
+
+                        <input type="hidden" class="form-control" id="contractorID" name="contractorID" /> @*need id*@
+
+                        <div class="col-md-6">
+                            <div class="form-group ">
+                                <label style="color: black;">moanumber_year3 </label>
+                                <input type="text" class="form-control" id="moanumber_year3" readonly
+                                       name="moanumber_year3">
+                            </div>
+                            <div class="form-group ">
+                                <label style="color: black;">datemoasigned_year3 </label>
+                                <input type="date" class="form-control" id="datemoasigned_year3" readonly
+                                       name="datemoasigned_year3">
+                            </div>
+                            <div class="form-group ">
+                                <label style="color: black;">unitcost_year3 </label>
+                                <input type="text" class="form-control" id="unitcost_year3" readonly
+                                       name="unitcost_year3">
+                            </div>
+                            <div class="form-group ">
+                                <label style="color: black;">contractcost_year3 </label>
+                                <input type="text" class="form-control" id="contractcost_year3" readonly
+                                       name="contractcost_year3">
+                            </div>
+                            <div class="form-group ">
+                                <label style="color: black;">dateobligated_year3 </label>
+                                <input type="date" class="form-control" id="dateobligated_year3" readonly
+                                       name="dateobligated_year3">
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="form-group ">
+                                <label style="color: black;">orsno_year3 </label>
+                                <input type="text" class="form-control" id="orsno_year3" readonly
+                                       name="orsno_year3">
+                            </div>
+                            <div class="form-group ">
+                                <label style="color: black;">num_seedlings_planted_year3 </label>
+                                <input type="text" class="form-control" id="num_seedlings_planted_year3" readonly
+                                       name="num_seedlings_planted_year3">
+                            </div>
+                            <div class="form-group ">
+                                <label style="color: black;">num_seedlings_survive_endofyear_1_year3 </label>
+                                <input type="text" class="form-control" id="num_seedlings_survive_endofyear_1_year3" readonly
+                                       name="num_seedlings_survive_endofyear_1_year3">
+                            </div>
+                            <div class="form-group ">
+                                <label style="color: black;">survivalrate_year3 </label>
+                                <input type="text" class="form-control" id="survivalrate_year3" readonly
+                                       name="survivalrate_year3">
+                            </div>
+                            <div class="form-group ">
+                                <label style="color: black;">num_seedlings_replanted_year3 </label>
+                                <input type="text" class="form-control" id="num_seedlings_replanted_year3" readonly
+                                       name="num_seedlings_replanted_year3">
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                </form>
+
+
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
 @*DELETE CONTRACTOR IN MODAL *@
 <div class="modal fade" id="deletecontractorModal" role="dialog">
     <div class="modal-dialog modal-m modal-dialog-centered">
@@ -369,140 +653,11 @@
 
 
 
-@*EDIT SCHED IN MODAL*@
-<div id="editschedModal" class="modal fade" role="dialog">
-    <div class="modal-dialog modal-lg">
-
-
-
-        <div class="modal-content">
-            <div class="modal-header bg-green">
-                <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">Edit Sched</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-
-
-                <form id="editschedform">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6">
-
-
-                                <input type="hidden" class="form-control" id="schedID" name="schedID"> @*need id *@
-
-                                <input type="hidden" class="form-control" id="contractor_name" name="contractor_name"> @*need contractorname *@
-
-                                <input type="hidden" class="form-control" id="roleId" name="roleId"> @*need roleId *@
-                                <input type="hidden" class="form-control" id="userName" name="userName"> @*need userName *@
-
-
-                                <div class="form-group ">
-                                    <label>ors_no </label>
-                                    <input type="text" class="form-control" id="ors_no" name="ors_no">
-
-                                </div>
-                                <div class="form-group ">
-                                    <label>ors_date </label>
-                                    <input type="date" class="form-control" id="ors_date" name="ors_date">
-
-                                </div>
-
-                                <div class="form-group ">
-                                    <label>dv_no </label>
-                                    <input type="text" class="form-control" id="dv_no" name="dv_no">
-
-                                </div>
-                                <div class="form-group ">
-                                    <label>dv_date </label>
-                                    <input type="date" class="form-control" id="dv_date" name="dv_date">
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="form-group ">
-                                    <label>lddap_no </label>
-                                    <input type="text" class="form-control" id="lddap_no" name="lddap_no">
-
-                                </div>
-                                <div class="form-group ">
-                                    <label>lddap_date </label>
-                                    <input type="date" class="form-control" id="lddap_date" name="lddap_date">
-
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="contractId">contractId</label>
-                                    <select class="form-control" style="width:100%" name="contractId" id="contractId">
-                                        <option value=""> Select contractId</option>
-
-                                    </select>
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="text-center">
-                            <div class="text-center">
-
-                                <button type="button" value=" submit" class="btn bg-green text-white " id="UpdateSched">Save</button>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-
-
-@*DELETE sched IN MODAL *@
-<div class="modal fade" id="deleteschedModal" role="dialog">
-    <div class="modal-dialog modal-m modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header bg-green">
-                <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">Delete Sched</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-
-            <form id="deletesched">
-                <div class="modal-body">
-                    <br />
-                    <h5 class="card-subtitle ">Are you sure you want to Delete This Sched ?</h5>
-                </div>
-                <div class="modal-footer coolTZ ">
-                    <input type="hidden" name="ScheduleId" id="ScheduleId" />
-
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">CLOSE</button>
-                    <a href="#" class="btn bg-green text-white" id="btnSchedDelete">CONFIRM</a>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
 
 <script>
     $(document).ready(function () {
         ContractorAnimation();
-        Project();
-        Contract();
-        Payment();
-        Sched();
+
         //NEED THIS FOR MODAL
         $(document).on('show.bs.modal', '.modal', function () {
             $(this).appendTo('body');
