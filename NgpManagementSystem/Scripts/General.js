@@ -837,19 +837,23 @@ function ContractorAnimation() {
                 //contractor
                 $('#edityear1contractform').find('input[name="contractorID"]').val(data.contractorID);
                 $('#edityear1contractform').find('input[name="contractor_name"]').val(data.contractor_name);
-                $('#edityear1contractform').find('select[name="address_municipality"]').val(data.address_municipality);
-                $('#edityear1contractform').find('select[name="address_barangay"]').val(data.address_barangay);
-                $('#edityear1contractform').find('select[name="contractor_type"]').val(data.contractor_type);
+                $('#edityear1contractform').find('input[name="address_municipality"]').val(data.address_municipality);
+                $('#edityear1contractform').find('input[name="address_barangay"]').val(data.address_barangay);
+                $('#edityear1contractform').find('input[name="contractor_type"]').val(data.contractor_type);
+                $('#edityear1contractform').find('input[name="name"]').val(data.name);
+                $('#edityear1contractform').find('input[name="userName"]').val(data.userName);
+                $('#edityear1contractform').find('input[name="userId"]').val(data.userId);
+                $('#edityear1contractform').find('input[name="roleId"]').val(data.roleId);
 
                 //project
-                $('#edityear1contractform').find('select[name="location_municipality"]').val(data.location_municipality);
-                $('#edityear1contractform').find('select[name="location_barangay"]').val(data.location_barangay);
+                $('#edityear1contractform').find('input[name="location_municipality"]').val(data.location_municipality);
+                $('#edityear1contractform').find('input[name="location_barangay"]').val(data.location_barangay);
                 $('#edityear1contractform').find('input[name="area"]').val(data.area);
-                $('#edityear1contractform').find('select[name="year_form"]').val(data.year_form);
-                $('#edityear1contractform').find('select[name="penro"]').val(data.penro);
+                $('#edityear1contractform').find('input[name="year_form"]').val(data.year_form);
+                $('#edityear1contractform').find('input[name="penro"]').val(data.penro);
                 $('#edityear1contractform').find('input[select="survivalrate_year1"]').val(data.survivalrate_year1);
-                $('#edityear1contractform').find('select[name="cenro"]').val(data.cenro);
-                $('#edityear1contractform').find('select[name="region"]').val(data.region);
+                $('#edityear1contractform').find('input[name="cenro"]').val(data.cenro);
+                $('#edityear1contractform').find('input[name="region"]').val(data.region);
 
                 //for contract year1
 
@@ -1022,20 +1026,27 @@ function ContractorAnimation() {
             //contractor
             contractorID: $('#edityear1contractform').find('input[name=contractorID]').val(),
             contractor_name: $('#edityear1contractform').find('input[name=contractor_name]').val(),
-            address_municipality: $('#edityear1contractform').find('select[name=address_municipality]').val(),
-            address_barangay: $('#edityear1contractform').find('select[name=address_barangay]').val(),
-            contractor_type: $('#edityear1contractform').find('select[name=contractor_type]').val(),
+            address_municipality: $('#edityear1contractform').find('input[name=address_municipality]').val(),
+            address_barangay: $('#edityear1contractform').find('input[name=address_barangay]').val(),
+            contractor_type: $('#edityear1contractform').find('input[name=contractor_type]').val(),
+
+
+            roleId: $('#edityear1contractform').find('input[name=roleId]').val(),
+            userId: $('#edityear1contractform').find('input[name=userId]').val(),
+            userName: $('#edityear1contractform').find('input[name=userName]').val(),
+            name: $('#edityear1contractform').find('input[name=name]').val(),
+
 
 
 
             //project
-            location_municipality: $('#edityear1contractform').find('select[name=location_municipality]').val(),
-            location_barangay: $('#edityear1contractform').find('select[name=location_barangay]').val(),
+            location_municipality: $('#edityear1contractform').find('input[name=location_municipality]').val(),
+            location_barangay: $('#edityear1contractform').find('input[name=location_barangay]').val(),
             area: $('#edityear1contractform').find('input[name=area]').val(),
-            year_form: $('#edityear1contractform').find('select[select=year_form]').val(),
-            penro: $('#edityear1contractform').find('select[name=penro]').val(),
-            cenro: $('#edityear1contractform').find('select[name=cenro]').val(),
-            region: $('#edityear1contractform').find('select[name=region]').val(),
+            year_form: $('#edityear1contractform').find('input[select=year_form]').val(),
+            penro: $('#edityear1contractform').find('input[name=penro]').val(),
+            cenro: $('#edityear1contractform').find('input[name=cenro]').val(),
+            region: $('#edityear1contractform').find('input[name=region]').val(),
 
 
 

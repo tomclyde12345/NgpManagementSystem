@@ -249,6 +249,11 @@ namespace NgpManagementSystem.Controllers.API
             contractorinDb.address_municipality = contractorDTO.address_municipality;
             contractorinDb.address_barangay = contractorDTO.address_barangay;
             contractorinDb.contractor_type = contractorDTO.contractor_type;
+
+            contractorinDb.UserId = contractorDTO.UserId;
+            contractorinDb.RoleId = contractorDTO.RoleId;
+            contractorinDb.UserName = contractorDTO.UserName;
+            contractorinDb.Name = contractorDTO.Name;
             //for Project
             contractorinDb.location_municipality = contractorDTO.location_municipality;
             contractorinDb.location_barangay = contractorDTO.location_barangay;
