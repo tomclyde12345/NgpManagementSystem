@@ -113,6 +113,7 @@
                                                         <th class="bg-green text-white">year form</th>
                                                         <th class="bg-green  text-white">Role: </th>
                                                         <th class="bg-green  text-white">Create by: </th>
+                                                        <th class="bg-green  text-white">Action: </th>
                                                     </tr>
                                                 </thead>
                                             </table>
@@ -231,9 +232,311 @@
 
 </div>
 
+
+
+
+@*EDIT Project IN MODAL*@
+<div id="editprojectModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+
+
+        <div class="modal-content">
+            <div class="modal-header bg-green">
+                <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">Edit Projects</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+
+                <form id="editprojectform">
+                    <div class="container-fluid">
+
+
+
+
+
+                        <div class="row">
+                            <div class="col-md-4">
+
+                                <div class="form-group ">
+                                    <div class=" sample">
+                                        <label style="color: black;">area </label>
+                                    </div>
+                                    <input type="text" class="form-control" id="area" name="area">
+
+                                </div>
+
+
+
+                            </div>
+
+                            <div class="col-md-4">
+
+                                <div class="form-group">
+                                    <div class=" sample">
+
+                                        <label style="color: black;">cenro </label>
+                                    </div>
+                                    <select id="cenro" name="cenro" style="width:100%" class="form-control">
+                                        <option value=" ">Select a Cenro</option>
+                                        <option value="Cenro-Puerto Princesa">Cenro-Puerto Princesa</option>
+                                        <option value="Cenro-BrookesPoint">Cenro-BrookesPoint</option>
+                                        <option value="Cenro-Roxas">cenro-Roxas</option>
+                                        <option value="Cenro-Taytay">Cenro-Taytay</option>
+                                        <option value="Cenro-Quezon">Cenro-Quezon</option>
+
+                                    </select>
+                                </div>
+
+
+
+
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <div class=" sample">
+
+                                        <label style="color: black;">region </label>
+                                    </div>
+                                    <select id="region" name="region" style="width:100%" class="form-control">
+                                        <option value="MIMAROPA">MIMAROPA</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+
+
+
+
+
+                                <div class="form-group">
+                                    <div class=" sample">
+                                        <label style="color: black;">location_municipality </label>
+                                    </div>
+                                    <select id="location_municipality" name="location_municipality" class="form-control" style="width:100%">
+                                        <option value=" ">Not Applicable</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class=" sample">
+
+                                        <label style="color: black;">location_barangay </label>
+                                    </div>
+                                    <select name="location_barangay" style="width:100%" class="form-control">
+                                        <option value=" ">Not Applicable</option>
+                                    </select>
+                                </div>
+
+
+
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class=" sample">
+
+                                        <label style="color: black;">year_form </label>
+                                    </div>
+                                    <select id="year_form" name="year_form" style="width:100%" class="form-control" required>
+                                        <option value=" ">Select a Year</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2014">2014</option>
+                                        <option value="2013">2013</option>
+                                        <option value="2012">2012</option>
+                                        <option value="2011">2011</option>
+
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class=" sample">
+
+                                        <label style="color: black;">penro </label>
+                                    </div>
+                                    <select id="penro" name="penro" style="width:100%" class="form-control">
+                                        <option value="PENRO">PENRO</option>
+                                    </select>
+                                </div>
+
+
+
+                            </div>
+
+
+                        </div>
+
+                        <input type="hidden" name="contractorID" id="contractorID" />
+                        <input type="hidden" name="contractor_name" id="contractor_name" />
+                        <input type="hidden" name="roleId" id="roleId" />
+                        <input type="hidden" name="name" id="name" />
+                        <input type="hidden" name="userId" id="userId" />
+                        <input type="hidden" name="userName" id="userName" />
+                        <input type="hidden" name="address_municipality" id="address_municipality" />
+                        <input type="hidden" name="address_barangay" id="address_barangay" />
+                        <input type="hidden" name="contractor_type" id="contractor_type" />
+
+                        <input type="hidden" name="area" id="area" />
+
+                        <input type="hidden" name="moanumber_year1" id="moanumber_year1" />
+                        <input type="hidden" name="datemoasigned_year1" id="datemoasigned_year1" />
+                        <input type="hidden" name="contractcost_year1" id="contractcost_year1" />
+                        <input type="hidden" name="dateobligated_year1" id="dateobligated_year1" />
+                        <input type="hidden" name="orsno_year1" id="orsno_year1" />
+                        <input type="hidden" name="num_seedlings_produced_year1" id="num_seedlings_produced_year1" />
+                        <input type="hidden" name="commodity_year1" id="commodity_year1" />
+                        <input type="hidden" name="num_seedlings_planted_year1" id="num_seedlings_planted_year1" />
+                        <input type="hidden" name="survivalrate_year1" id="survivalrate_year1" />
+                        <input type="hidden" name="moanumber_year2" id="moanumber_year2" />
+                        <input type="hidden" name="datemoasigned_year2" id="datemoasigned_year2" />
+                        <input type="hidden" name="unitcost_year2" id="unitcost_year2" />
+                        <input type="hidden" name="contractcost_year2" id="contractcost_year2" />
+                        <input type="hidden" name="dateobligated_year2" id="dateobligated_year2" />
+                        <input type="hidden" name="orsno_year2" id="orsno_year2" />
+                        <input type="hidden" name="num_seedlings_planted_year2" id="num_seedlings_planted_year2" />
+                        <input type="hidden" name="num_seedlings_survive_endofyear_1_year2" id="num_seedlings_survive_endofyear_1_year2" />
+
+                        <input type="hidden" name="survivalrate_year2" id="survivalrate_year2" />
+
+
+                        <input type="hidden" name="num_seedlings_replanted_year2" id="num_seedlings_replanted_year2" />
+                        <input type="hidden" name="moanumber_year3" id="moanumber_year3" />
+                        <input type="hidden" name="datemoasigned_year3" id="datemoasigned_year3" />
+                        <input type="hidden" name="unitcost_year3" id="unitcost_year3" />
+                        <input type="hidden" name="contractcost_year3" id="contractcost_year3" />
+                        <input type="hidden" name="dateobligated_year3" id="dateobligated_year3" />
+                        <input type="hidden" name="orsno_year3" id="orsno_year3" />
+                        <input type="hidden" name="num_seedlings_planted_year3" id="num_seedlings_planted_year3" />
+                        <input type="hidden" name="num_seedlings_survive_endofyear_1_year3" id="num_seedlings_survive_endofyear_1_year3" />
+                        <input type="hidden" name="survivalrate_year3" id="survivalrate_year3" />
+                        <input type="hidden" name="num_seedlings_replanted_year3" id="num_seedlings_replanted_year3" />
+                        <input type="hidden" name="grossammount_year1_1st" id="grossammount_year1_1st" />
+                        <input type="hidden" name="lddap_no_year1_1st" id="lddap_no_year1_1st" />
+                        <input type="hidden" name="date_lddap_year1_1st" id="date_lddap_year1_1st" />
+                        <input type="hidden" name="grossammount_year1_2nd" id="grossammount_year1_2nd" />
+                        <input type="hidden" name="retention_fee_year1_2nd" id="retention_fee_year1_2nd" />
+                        <input type="hidden" name="mobilization_fund_year1_2nd" id="mobilization_fund_year1_2nd" />
+                        <input type="hidden" name="amountless_rf_mf_year1_2nd" id="amountless_rf_mf_year1_2nd" />
+                        <input type="hidden" name="bir_year1_2nd" id="bir_year1_2nd" />
+                        <input type="hidden" name="netammountpaid_year1_2nd" id="netammountpaid_year1_2nd" />
+                        <input type="hidden" name="lddapno_year1_2nd" id="lddapno_year1_2nd" />
+                        <input type="hidden" name="date_lddap_year1_2nd" id="date_lddap_year1_2nd" />
+                        <input type="hidden" name="grossammount_year1_3rd" id="grossammount_year1_3rd" />
+                        <input type="hidden" name="retention_fee_year1_3rd" id="retention_fee_year1_3rd" />
+                        <input type="hidden" name="mobilization_fund_year1_3rd" id="mobilization_fund_year1_3rd" />
+                        <input type="hidden" name="amountless_rf_mf_year1_3rd" id="amountless_rf_mf_year1_3rd" />
+                        <input type="hidden" name="bir_year1_3rd" id="bir_year1_3rd" />
+                        <input type="hidden" name="netammountpaid_year1_3rd" id="netammountpaid_year1_3rd" />
+                        <input type="hidden" name="lddapno_year1_3rd" id="lddapno_year1_3rd" />
+                        <input type="hidden" name="date_lddap_year1_3rd" id="date_lddap_year1_3rd" />
+                        <input type="hidden" name="grossammount_year1_4th" id="grossammount_year1_4th" />
+                        <input type="hidden" name="retention_fee_year1_4th" id="retention_fee_year1_4th" />
+                        <input type="hidden" name="mobilization_fund_year1_4th" id="mobilization_fund_year1_4th" />
+                        <input type="hidden" name="amountless_rf_mf_year1_4th" id="amountless_rf_mf_year1_4th" />
+                        <input type="hidden" name="bir_year1_4th" id="bir_year1_4th" />
+                        <input type="hidden" name="netammountpaid_year1_4th" id="netammountpaid_year1_4th" />
+                        <input type="hidden" name="lddapno_year1_4th" id="lddapno_year1_4th" />
+                        <input type="hidden" name="date_lddap_year1_4th" id="date_lddap_year1_4th" />
+                        <input type="hidden" name="grossammount_year1_5th" id="grossammount_year1_5th" />
+                        <input type="hidden" name="retention_fee_year1_5th" id="retention_fee_year1_5th" />
+                        <input type="hidden" name="mobilization_fund_year1_5th" id="mobilization_fund_year1_5th" />
+                        <input type="hidden" name="amountless_rf_mf_year1_5th" id="amountless_rf_mf_year1_5th" />
+                        <input type="hidden" name="bir_year1_5th" id="bir_year1_5th" />
+                        <input type="hidden" name="netammountpaid_year1_5th" id="netammountpaid_year1_5th" />
+                        <input type="hidden" name="lddapno_year1_5th" id="lddapno_year1_5th" />
+                        <input type="hidden" name="date_lddap_year1_5th" id="date_lddap_year1_5th" />
+                        <input type="hidden" name="grossammount_year1_6th" id="grossammount_year1_6th" />
+                        <input type="hidden" name="retention_fee_year1_6th" id="retention_fee_year1_6th" />
+                        <input type="hidden" name="mobilization_fund_year1_6th" id="mobilization_fund_year1_6th" />
+                        <input type="hidden" name="amountless_rf_mf_year1_6th" id="amountless_rf_mf_year1_6th" />
+                        <input type="hidden" name="bir_year1_6th" id="bir_year1_6th" />
+                        <input type="hidden" name="survivalrate_year2_1st" id="survivalrate_year2_1st" />
+                        <input type="hidden" name="grossammount_year2_1st" id="grossammount_year2_1st" />
+                        <input type="hidden" name="redentionfee_fee_year2_1st" id="redentionfee_fee_year2_1st" />
+                        <input type="hidden" name="amountless_rf_year2_1st" id="amountless_rf_year2_1st" />
+                        <input type="hidden" name="bir_year2_1st" id="bir_year2_1st" />
+                        <input type="hidden" name="netamount_paid_year2_1st" id="netamount_paid_year2_1st" />
+                        <input type="hidden" name="lddapno_year2_1st" id="lddapno_year2_1st" />
+                        <input type="hidden" name="date_lddap_year2_1st" id="date_lddap_year2_1st" />
+                        <input type="hidden" name="survivalrate_year2_2nd" id="survivalrate_year2_2nd" />
+                        <input type="hidden" name="grossammount_year2_2nd" id="grossammount_year2_2nd" />
+                        <input type="hidden" name="redentionfee_fee_year2_2nd" id="redentionfee_fee_year2_2nd" />
+                        <input type="hidden" name="amountless_rf_year2_2nd" id="amountless_rf_year2_2nd" />
+                        <input type="hidden" name="bir_year2_2nd" id="bir_year2_2nd" />
+                        <input type="hidden" name="netamount_paid_year2_2nd" id="netamount_paid_year2_2nd" />
+                        <input type="hidden" name="lddapno_year2_2nd" id="lddapno_year2_2nd" />
+                        <input type="hidden" name="date_lddap_year2_2nd" id="date_lddap_year2_2nd" />
+                        <input type="hidden" name="survivalrate_year2_3rd" id="survivalrate_year2_3rd" />
+                        <input type="hidden" name="grossammount_year2_3rd" id="grossammount_year2_3rd" />
+                        <input type="hidden" name="redentionfee_fee_year2_3rd" id="redentionfee_fee_year2_3rd" />
+                        <input type="hidden" name="amountless_rf_year2_3rd" id="amountless_rf_year2_3rd" />
+                        <input type="hidden" name="bir_year2_3rd" id="bir_year2_3rd" />
+                        <input type="hidden" name="netamount_paid_year2_3rd" id="netamount_paid_year2_3rd" />
+                        <input type="hidden" name="lddapno_year2_3rd" id="lddapno_year2_3rd" />
+                        <input type="hidden" name="date_lddap_year2_3rd" id="date_lddap_year2_3rd" />
+                        <input type="hidden" name="survivalrate_year2_4th" id="survivalrate_year2_4th" />
+                        <input type="hidden" name="grossammount_year2_4th" id="grossammount_year2_4th" />
+                        <input type="hidden" name="redentionfee_fee_year2_4th" id="redentionfee_fee_year2_4th" />
+                        <input type="hidden" name="amountless_rf_year2_4th" id="amountless_rf_year2_4th" />
+                        <input type="hidden" name="bir_year2_1st3" id="bir_year2_1st3" />
+                        <input type="hidden" name="netamount_paid_year2_4th" id="netamount_paid_year2_4th" />
+                        <input type="hidden" name="lddapno_year2_4th" id="lddapno_year2_4th" />
+                        <input type="hidden" name="date_lddap_year2_4th" id="date_lddap_year2_4th" />
+                        <input type="hidden" name="num_seedlings_survive_year1" id="num_seedlings_survive_year1" />
+
+
+
+
+                        <div class="text-center">
+                            <div class="text-center">
+
+                                <button type="button" value=" submit" class="btn btn-success " id="UpdateProject">Save</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @*EDIT CONTRACTOR IN MODAL*@
-<div id="editcontractorModal" class="modal fade" role="dialog" data-backdrop="false">
-    <div class="modal-dialog">
+<div id="editcontractorModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
 
 
 
