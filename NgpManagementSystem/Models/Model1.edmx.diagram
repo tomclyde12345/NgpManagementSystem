@@ -5,14 +5,15 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="c3920627c0e844e1aff571513d330b39" Name="Diagram1" ZoomLevel="73">
-        <EntityTypeShape EntityType="NgpdbmsModel.ngp_contract" Width="1.5" PointX="7.5" PointY="45.375" />
-        <EntityTypeShape EntityType="NgpdbmsModel.ngp_contractor" Width="1.5" PointX="5.25" PointY="36.625" />
-        <EntityTypeShape EntityType="NgpdbmsModel.ngp_dropdown" Width="1.5" PointX="5.25" PointY="33" />
-        <EntityTypeShape EntityType="NgpdbmsModel.ngp_history" Width="1.5" PointX="7.5" PointY="54.125" />
-        <EntityTypeShape EntityType="NgpdbmsModel.ngp_payment" Width="1.5" PointX="12.75" PointY="47.25" />
-        <EntityTypeShape EntityType="NgpdbmsModel.ngp_projects" Width="1.5" PointX="10.25" PointY="46.75" />
-        <EntityTypeShape EntityType="NgpdbmsModel.ngp_sched" Width="1.5" PointX="10.25" PointY="41" />
-        <EntityTypeShape EntityType="NgpdbmsModel.NgpBarangay" Width="1.5" PointX="3" PointY="47.875" />
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_contract" Width="1.5" PointX="7.5" PointY="40.375" />
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_contractor" Width="1.5" PointX="5.25" PointY="31.625" />
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_dropdown" Width="1.5" PointX="5.25" PointY="57.625" />
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_history" Width="1.5" PointX="7.5" PointY="49.125" />
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_payment" Width="1.5" PointX="12.75" PointY="42.25" />
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_projects" Width="1.5" PointX="10.25" PointY="41.625" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpBarangay" Width="1.5" PointX="3" PointY="43" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgplocationBarangay" Width="1.5" PointX="10.25" PointY="37.125" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgplocationMunicipality" Width="1.5" PointX="8" PointY="37.125" />
         <EntityTypeShape EntityType="NgpdbmsModel.NgpLogsContract" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="NgpdbmsModel.NgpLogsContractor" Width="1.5" PointX="4.75" PointY="0.75" />
         <EntityTypeShape EntityType="NgpdbmsModel.NgpLogsPayment" Width="1.5" PointX="0.75" PointY="4.75" />
@@ -20,11 +21,11 @@
         <EntityTypeShape EntityType="NgpdbmsModel.NgpLogsSched" Width="1.5" PointX="4.75" PointY="4.75" />
         <EntityTypeShape EntityType="NgpdbmsModel.NgpLogsUserAccount" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="NgpdbmsModel.NgpMaintenanceMode" Width="1.5" PointX="6.75" PointY="0.75" />
-        <EntityTypeShape EntityType="NgpdbmsModel.NgpMunicipality" Width="1.5" PointX="0.75" PointY="48" />
-        <EntityTypeShape EntityType="NgpdbmsModel.NgpRole" Width="1.5" PointX="0.75" PointY="25.625" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpMunicipality" Width="1.5" PointX="0.75" PointY="43" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpRole" Width="1.5" PointX="0.75" PointY="23" />
         <EntityTypeShape EntityType="NgpdbmsModel.NgpUpload" Width="1.5" PointX="6.75" PointY="3.75" />
-        <EntityTypeShape EntityType="NgpdbmsModel.NgpUser" Width="1.5" PointX="3" PointY="69.125" />
-        <EntityTypeShape EntityType="NgpdbmsModel.NgpYear" Width="1.5" PointX="5.25" PointY="63.125" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpUser" Width="1.5" PointX="3" PointY="62" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpYear" Width="1.5" PointX="5.25" PointY="28.125" />
         <AssociationConnector Association="NgpdbmsModel.FK_ngp_contract_ngp_contractor" />
         <AssociationConnector Association="NgpdbmsModel.FK_ngp_contract_ngp_dropdown" />
         <AssociationConnector Association="NgpdbmsModel.FK_ngp_contract_NgpBarangay" />
@@ -42,13 +43,12 @@
         <AssociationConnector Association="NgpdbmsModel.FK_ngp_payment_NgpRole" />
         <AssociationConnector Association="NgpdbmsModel.FK_ngp_payment_NgpUser" />
         <AssociationConnector Association="NgpdbmsModel.FK_ngp_payment_NgpYear" />
-        <AssociationConnector Association="NgpdbmsModel.FK_ngp_projects_NgpBarangay" />
-        <AssociationConnector Association="NgpdbmsModel.FK_ngp_projects_NgpMunicipality" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_projects_ngp_projects" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_projects_NgplocationMunicipality" />
         <AssociationConnector Association="NgpdbmsModel.FK_ngp_projects_NgpRole" />
         <AssociationConnector Association="NgpdbmsModel.FK_ngp_projects_NgpUser" />
-        <AssociationConnector Association="NgpdbmsModel.FK_ngp_sched_NgpRole" />
-        <AssociationConnector Association="NgpdbmsModel.FK_ngp_sched_NgpUser" />
         <AssociationConnector Association="NgpdbmsModel.FK_NgpBarangay_NgpMunicipality" />
+        <AssociationConnector Association="NgpdbmsModel.FK_NgplocationBarangay_NgplocationMunicipality" />
         <AssociationConnector Association="NgpdbmsModel.FK_NgpLogsUserAccount_NgpLogsUserAccount" />
         <AssociationConnector Association="NgpdbmsModel.FK_NgpUser_NgpRole" />
       </Diagram>

@@ -348,7 +348,7 @@ function ContractorAnimation() {
     //GET DATA CASCADING DROPDOWN FOR SAVING PROJECT
     $.ajax({
         type: 'GET',
-        url: '/api/getmunicipality/municipality/get',
+        url: '/api/getlocationmunicipality/locationmunicipality/get',
         success: function (data) {
             var html = '<option value="">Select municipalityName</option>';
             $.each(data, function (i, item) {
@@ -362,7 +362,7 @@ function ContractorAnimation() {
 
                 $.ajax({
                     type: 'GET',
-                    url: '/api/barangaylist/get/' + municipalityId,
+                    url: '/api/locationbarangaylist/get/' + municipalityId,
                     success: function (data) {
                         var html = '';
                         $.each(data, function (i, item) {
@@ -428,14 +428,6 @@ function ContractorAnimation() {
                 $('#editcontractorform').find('select[name="address_municipality"]').val(data.address_municipality);
                 $('#editcontractorform').find('select[name="address_barangay"]').val(data.address_barangay);
 
-
-
-                //contractor
-                $('#editcontractorform').find('input[name="contractorID"]').val(data.contractorID);
-                $('#editcontractorform').find('input[name="contractor_name"]').val(data.contractor_name);
-                $('#editcontractorform').find('input[name="address_municipality"]').val(data.address_municipality);
-                $('#editcontractorform').find('input[name="address_barangay"]').val(data.address_barangay);
-                $('#editcontractorform').find('input[name="contractor_type"]').val(data.contractor_type);
                 $('#editcontractorform').find('input[name="name"]').val(data.name);
                 $('#editcontractorform').find('input[name="userName"]').val(data.userName);
                 $('#editcontractorform').find('input[name="userId"]').val(data.userId);
@@ -604,6 +596,10 @@ function ContractorAnimation() {
                 $('#editcontractorform').find('input[name="lddapno_year2_4th"]').val(data.lddapno_year2_4th);
                 $('#editcontractorform').find('input[name="date_lddap_year2_4th"]').val(data.date_lddap_year2_4th);
 
+
+
+
+
             },
             //if failed
             error: function (data) {
@@ -623,12 +619,6 @@ function ContractorAnimation() {
             address_barangay: $('#editcontractorform').find('select[name=address_barangay]').val(),
 
 
-
-            contractorID: $('#editcontractorform').find('input[name=contractorID]').val(),
-            contractor_name: $('#editcontractorform').find('input[name=contractor_name]').val(),
-            address_municipality: $('#editcontractorform').find('input[name=address_municipality]').val(),
-            address_barangay: $('#editcontractorform').find('input[name=address_barangay]').val(),
-            contractor_type: $('#editcontractorform').find('input[name=contractor_type]').val(),
 
 
             roleId: $('#editcontractorform').find('input[name=roleId]').val(),
@@ -808,6 +798,8 @@ function ContractorAnimation() {
             lddapno_year2_4th: $('#editcontractorform').find('input[name=lddapno_year2_4th]').val(),
             date_lddap_year2_4th: $('#editcontractorform').find('input[name=date_lddap_year2_4th]').val(),
 
+
+
         };
 
 
@@ -840,8 +832,6 @@ function ContractorAnimation() {
             }
         });
     });
-
-
 
     //SAVINGR CONTRACTOR CREATE
     $("#contract_main").validate({

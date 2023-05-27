@@ -12,24 +12,21 @@ namespace NgpManagementSystem.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class NgpMunicipality
+    public partial class NgplocationMunicipality
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public NgpMunicipality()
+        public NgplocationMunicipality()
         {
-            this.ngp_contract = new HashSet<ngp_contract>();
-            this.ngp_contractor = new HashSet<ngp_contractor>();
-            this.NgpBarangays = new HashSet<NgpBarangay>();
+            this.ngp_projects = new HashSet<ngp_projects>();
+            this.NgplocationBarangays = new HashSet<NgplocationBarangay>();
         }
     
         public int MunicipalityId { get; set; }
         public string MunicipalityName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ngp_contract> ngp_contract { get; set; }
+        public virtual ICollection<ngp_projects> ngp_projects { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ngp_contractor> ngp_contractor { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NgpBarangay> NgpBarangays { get; set; }
+        public virtual ICollection<NgplocationBarangay> NgplocationBarangays { get; set; }
     }
 }

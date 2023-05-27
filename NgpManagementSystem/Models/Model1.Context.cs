@@ -31,8 +31,9 @@ namespace NgpManagementSystem.Models
         public virtual DbSet<ngp_history> ngp_history { get; set; }
         public virtual DbSet<ngp_payment> ngp_payment { get; set; }
         public virtual DbSet<ngp_projects> ngp_projects { get; set; }
-        public virtual DbSet<ngp_sched> ngp_sched { get; set; }
         public virtual DbSet<NgpBarangay> NgpBarangays { get; set; }
+        public virtual DbSet<NgplocationBarangay> NgplocationBarangays { get; set; }
+        public virtual DbSet<NgplocationMunicipality> NgplocationMunicipalities { get; set; }
         public virtual DbSet<NgpLogsContract> NgpLogsContracts { get; set; }
         public virtual DbSet<NgpLogsContractor> NgpLogsContractors { get; set; }
         public virtual DbSet<NgpLogsPayment> NgpLogsPayments { get; set; }

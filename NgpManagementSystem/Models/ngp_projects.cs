@@ -30,8 +30,9 @@ namespace NgpManagementSystem.Models
         public string Name { get; set; }
     
         public virtual ngp_dropdown ngp_dropdown { get; set; }
-        public virtual NgpBarangay NgpBarangay { get; set; }
-        public virtual NgpMunicipality NgpMunicipality { get; set; }
+        public virtual ngp_projects ngp_projects1 { get; set; }
+        public virtual ngp_projects ngp_projects2 { get; set; }
+        public virtual NgplocationMunicipality NgplocationMunicipality { get; set; }
         public virtual NgpRole NgpRole { get; set; }
         public virtual NgpUser NgpUser { get; set; }
     }

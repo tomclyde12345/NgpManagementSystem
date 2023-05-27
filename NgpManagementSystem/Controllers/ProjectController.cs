@@ -60,8 +60,9 @@ namespace NgpManagementSystem.Controllers
                     projectlist = projectlist.
                         Where(x => x.projectID.ToString().Contains(searchValue.ToLower()) ||
                             x.site_code.ToString().Contains(searchValue.ToLower()) ||
-                            x.NgpMunicipality.MunicipalityName.ToString().Contains(searchValue.ToLower()) ||
-                            x.NgpBarangay.BarangayName.ToString().Contains(searchValue.ToLower()) ||
+
+
+
                             x.area.ToString().Contains(searchValue.ToLower()) ||
                             x.year_form.ToString().Contains(searchValue.ToLower()) ||
                             x.penro.ToString().Contains(searchValue.ToLower()) ||
@@ -87,8 +88,7 @@ namespace NgpManagementSystem.Controllers
                     projectID = projectdata.projectID,
                     area = projectdata.area,
                     site_code = projectdata.site_code,
-                    location_barangay = projectdata.NgpBarangay.BarangayName,
-                    location_municipality = projectdata.NgpMunicipality.MunicipalityName,
+
                     penro = projectdata.penro,
                     cenro = projectdata.cenro,
                     region = projectdata.region,

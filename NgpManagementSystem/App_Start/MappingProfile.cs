@@ -20,7 +20,7 @@ namespace NgpManagementSystem.App_Start
             Mapper.CreateMap<ngp_projects, ProjectDTO>().ReverseMap();
             Mapper.CreateMap<ngp_contract, ContractDTO>().ReverseMap();
             Mapper.CreateMap<ngp_payment, PaymentDTO>().ReverseMap();
-            Mapper.CreateMap<ngp_sched, SchedDTO>().ReverseMap();
+
             Mapper.CreateMap<NgpYear, YearDTO>().ReverseMap();
             Mapper.CreateMap<NgpLogsUserAccount, LogsAccountDTO>().ReverseMap();
             Mapper.CreateMap<NgpLogsContractor, LogsContractorDTO>().ReverseMap();
@@ -29,6 +29,8 @@ namespace NgpManagementSystem.App_Start
             Mapper.CreateMap<NgpLogsProject, LogsProjectDTO>().ReverseMap();
             Mapper.CreateMap<NgpLogsSched, LogsSchedDTO>().ReverseMap();
             Mapper.CreateMap<NgpMaintenanceMode, MaintenanceModeDto>().ReverseMap();
+            Mapper.CreateMap<NgplocationMunicipality, LocationMunicipalityDTO>().ReverseMap();
+            Mapper.CreateMap<NgplocationBarangay, LocationBarangayDTO>().ReverseMap();
         }
     }
 }

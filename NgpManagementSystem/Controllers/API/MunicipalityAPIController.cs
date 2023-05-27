@@ -40,5 +40,31 @@ namespace NgpManagementSystem.Controllers.API
 
             return Ok(barangay);
         }
+
+
+
+
+
+
+        //GET DATA FOR MUNICIPALITY
+        [Route("api/getlocationmunicipality/locationmunicipality/get")]
+        public IHttpActionResult GetlocationMunicipality()
+        {
+            var municipality = Db.NgplocationMunicipalities.ToList().Select(Mapper.Map<NgplocationMunicipality, LocationMunicipalityDTO>);
+            return Ok(municipality);
+        }
+
+
+        [Route("api/locationbarangaylist/get/{id}")]
+        public IHttpActionResult GetLocationbarangay(int id)
+        {
+            var barangay = Db.NgplocationBarangays.Where(d => d.MunicipalityId == id).ToList().Select(Mapper.Map<NgplocationBarangay, LocationBarangayDTO>);
+            if (barangay == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(barangay);
+        }
     }
 }

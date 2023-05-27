@@ -19,7 +19,6 @@ namespace NgpManagementSystem.Models
         {
             this.ngp_contract = new HashSet<ngp_contract>();
             this.ngp_contractor = new HashSet<ngp_contractor>();
-            this.ngp_projects = new HashSet<ngp_projects>();
         }
     
         public int BarangayId { get; set; }
@@ -30,8 +29,6 @@ namespace NgpManagementSystem.Models
         public virtual ICollection<ngp_contract> ngp_contract { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ngp_contractor> ngp_contractor { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ngp_projects> ngp_projects { get; set; }
         public virtual NgpMunicipality NgpMunicipality { get; set; }
     }
 }

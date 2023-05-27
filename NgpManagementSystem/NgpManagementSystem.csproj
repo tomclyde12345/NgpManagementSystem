@@ -200,6 +200,8 @@
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
+    <Compile Include="DTO\LocationBarangayDTO.cs" />
+    <Compile Include="DTO\LocationMunicipalityDTO.cs" />
     <Compile Include="DTO\LogsAccountDTO.cs" />
     <Compile Include="DTO\BarangayDTO.cs" />
     <Compile Include="DTO\ContractDTO.cs" />
@@ -235,6 +237,12 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\NgpBarangay.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NgplocationBarangay.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NgplocationMunicipality.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NgpLogsContract.cs">
@@ -289,9 +297,6 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ngp_projects.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ngp_sched.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />

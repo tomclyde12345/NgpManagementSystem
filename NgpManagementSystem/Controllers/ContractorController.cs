@@ -158,8 +158,6 @@ namespace NgpManagementSystem.Controllers
                         Where(x => x.area.ToString().Contains(searchValue.ToLower()) ||
                             x.cenro.ToString().Contains(searchValue.ToLower()) ||
                             x.region.ToLower().Contains(searchValue.ToLower()) ||
-                            x.NgpBarangay.BarangayName.ToString().Contains(searchValue.ToLower()) ||
-                            x.NgpMunicipality.MunicipalityName.ToString().Contains(searchValue.ToLower()) ||
                             x.year_form.ToString().Contains(searchValue.ToLower()) ||
                             x.penro.ToString().Contains(searchValue.ToLower()));
 
@@ -185,8 +183,7 @@ namespace NgpManagementSystem.Controllers
                     area = user.area,
                     cenro = user.cenro,
                     region = user.region,
-                    location_municipality = user.NgpMunicipality.MunicipalityName,
-                    location_barangay = user.NgpBarangay.BarangayName,
+
                     penro = user.penro,
                     year_form = user.year_form,
                     RoleId = user.NgpRole.RoleName,
