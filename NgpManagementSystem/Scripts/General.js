@@ -1528,15 +1528,84 @@ function ContractorAnimation() {
         });
     });
 
+    //SERVER SIDE DATATABLE SHOW DATA FOR PAYMENT
+    $("#paymentables").DataTable({
+        "ajax": {
+            "url": "/Contractor/GetPaymenttable",
+            "type": "POST",
+            "datatype": "json", dataSrc: "data"
+        },
+
+        "processing": "true",
+        "serverSide": "true",
+        "serverSide": "true",
+        "order": [[1, "desc"]],
+
+        "columns": [
+            {
+                "data": "contractorID", "name": "contractorID", "className": "hideThis",
+            },
+            {
+                "data": "contractor_name", "name": "contractor_name",
+            },
+            {
+                "data": null,
+                'render': function (data, type, full, meta) {
+                    return '<button   class=\'btn btn-outline-primary getdatayear1payment d-block btn-sm\' data-id = ' + data.contractorID + ' > PAYMENTS YEAR 1  <span class="fa fa-list f-20" >  </span></button>' + '<button  class=\'btn btn-outline-secondary  getdatayear2payment d-block btn-sm\' data-id = ' + data.contractorID + ' > PAYMENTS YEAR 2  <span class="fa fa-list f-20" >  </span></button>' + '<button  class=\'btn btn-outline-success  getdatayear3payment d-block btn-sm\' data-id = ' + data.contractorID + ' > PAYMENTS YEAR 3   <span class="fa fa-list f-20" >  </span></button>'
+
+                }
+            },
+            {
+                "data": "RoleId", "name": "RoleId",
+                "render": function (data, type, row) {
+
+                    if (data == "NgpAdmin") {
+
+                        return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >NgpAdmin</span>'
+                    }
+
+                    return '<span class=" badge bg-secondary text-black" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+            },
+            {
+                "data": "Name", "name": "Name",
+                "render": function (data, type, row) {
+
+                    return '<span class=" badge bg-info text-white" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+
+            },
+            {
+                "data": null,
+                'render': function (data, type, full, meta) {
+                    return '<button   class=\'btn btn-primary edityear1payment d-block btn-sm\' data-id = ' + data.contractorID + ' > PAYMENTS YEAR 1  <span class="fa fa-edit f-20" >  </span></button>' + '<button   class=\'btn btn-secondary edityear2payment d-block btn-sm\' data-id = ' + data.contractorID + ' > PAYMENTS YEAR 2  <span class="fa fa-edit f-20" >  </span></button>' + '<button  class=\'btn btn-success edityear3payment d-block btn-sm\' data-id = ' + data.contractorID + ' > PAYMENTS YEAR 3  <span class="fa fa-edit f-20" >  </span></button>'
+                }
+            },
 
 
 
 
+        ],
 
 
+        "processing": "true",
+        "language": {
+            "processing": "processing... please wait"
+        },
+
+        "fnInitComplete": function (oSettings, json) {
+
+            /*  SearchfilterContractor(json);*/
+        }
 
 
-
+    });
 
 
 
@@ -2654,7 +2723,7 @@ function ContractorAnimation() {
 
 
 
-                //for payments year 3 2nd release
+                //for payments year 2 2nd release
                 $('#edityear3contractform').find('input[name="survivalrate_year2_3rd"]').val(data.survivalrate_year2_3rd);
                 $('#edityear3contractform').find('input[name="grossammount_year2_3rd"]').val(data.grossammount_year2_3rd);
                 $('#edityear3contractform').find('input[name="redentionfee_fee_year2_3rd"]').val(data.redentionfee_fee_year2_3rd);
@@ -3046,6 +3115,177 @@ function ContractorAnimation() {
             }
         })
     })
+
+
+
+
+
+
+    //GET DATA ONLY FOR YEAR1 FOR PAYMENTS IN MODAL (READ ONLY)
+
+    $("#paymentables").on('click', '.getdatayear1payment', function () {
+        var id = $(this).attr('data-id');
+        var url = '/api/contractorget/get/' + id;
+        //alert(id);
+        $.ajax({
+            type: 'GET',
+            url: url,
+            success: function (data) {
+                $("#year1paymentModal").modal('show');
+                $('#showdatayear1paymentform').find('input[name="contractorID"]').val(data.contractorID);
+
+                //for payments year 1 1st release
+                $('#showdatayear1paymentform').find('input[name="grossammount_year1_1st"]').val(data.grossammount_year1_1st);
+                $('#showdatayear1paymentform').find('input[name="lddap_no_year1_1st"]').val(data.lddap_no_year1_1st);
+                $('#showdatayear1paymentform').find('input[name="date_lddap_year1_1st"]').val(data.date_lddap_year1_1st);
+
+
+
+                //for payments year 1 2nd release
+                $('#showdatayear1paymentform').find('input[name="grossammount_year1_2nd"]').val(data.grossammount_year1_2nd);
+                $('#showdatayear1paymentform').find('input[name="retention_fee_year1_2nd"]').val(data.retention_fee_year1_2nd);
+                $('#showdatayear1paymentform').find('input[name="mobilization_fund_year1_2nd"]').val(data.mobilization_fund_year1_2nd);
+                $('#showdatayear1paymentform').find('input[name="amountless_rf_mf_year1_2nd"]').val(data.amountless_rf_mf_year1_2nd);
+                $('#showdatayear1paymentform').find('input[name="bir_year1_2nd"]').val(data.bir_year1_2nd);
+                $('#showdatayear1paymentform').find('input[name="netammountpaid_year1_2nd"]').val(data.netammountpaid_year1_2nd);
+                $('#showdatayear1paymentform').find('input[name="lddapno_year1_2nd"]').val(data.lddapno_year1_2nd);
+                $('#showdatayear1paymentform').find('input[name="date_lddap_year1_2nd"]').val(data.date_lddap_year1_2nd);
+
+
+
+                //for payments year 1 3rd release
+                $('#showdatayear1paymentform').find('input[name="grossammount_year1_3rd"]').val(data.grossammount_year1_3rd);
+                $('#showdatayear1paymentform').find('input[name="retention_fee_year1_3rd"]').val(data.retention_fee_year1_3rd);
+                $('#showdatayear1paymentform').find('input[name="mobilization_fund_year1_3rd"]').val(data.mobilization_fund_year1_3rd);
+                $('#showdatayear1paymentform').find('input[name="amountless_rf_mf_year1_3rd"]').val(data.amountless_rf_mf_year1_3rd);
+                $('#showdatayear1paymentform').find('input[name="bir_year1_2nd"]').val(data.bir_year1_2nd);
+                $('#showdatayear1paymentform').find('input[name="netammountpaid_year1_3rd"]').val(data.netammountpaid_year1_3rd);
+                $('#showdatayear1paymentform').find('input[name="lddapno_year1_3rd"]').val(data.lddapno_year1_3rd);
+                $('#showdatayear1paymentform').find('input[name="date_lddap_year1_3rd"]').val(data.date_lddap_year1_3rd);
+
+
+                //for payments year 1 4th release
+                $('#showdatayear1paymentform').find('input[name="grossammount_year1_4th"]').val(data.grossammount_year1_4th);
+                $('#showdatayear1paymentform').find('input[name="retention_fee_year1_4th"]').val(data.retention_fee_year1_4th);
+                $('#showdatayear1paymentform').find('input[name="mobilization_fund_year1_4th"]').val(data.mobilization_fund_year1_4th);
+                $('#showdatayear1paymentform').find('input[name="amountless_rf_mf_year1_4th"]').val(data.amountless_rf_mf_year1_4th);
+                $('#showdatayear1paymentform').find('input[name="bir_year1_2nd"]').val(data.bir_year1_2nd);
+                $('#showdatayear1paymentform').find('input[name="netammountpaid_year1_4th"]').val(data.netammountpaid_year1_4th);
+                $('#showdatayear1paymentform').find('input[name="lddapno_year1_4th"]').val(data.lddapno_year1_4th);
+                $('#showdatayear1paymentform').find('input[name="date_lddap_year1_4th"]').val(data.date_lddap_year1_4th);
+
+
+                //for payments year 1 5th release
+                $('#showdatayear1paymentform').find('input[name="grossammount_year1_5th"]').val(data.grossammount_year1_5th);
+                $('#showdatayear1paymentform').find('input[name="retention_fee_year1_5th"]').val(data.retention_fee_year1_5th);
+                $('#showdatayear1paymentform').find('input[name="mobilization_fund_year1_5th"]').val(data.mobilization_fund_year1_5th);
+                $('#showdatayear1paymentform').find('input[name="amountless_rf_mf_year1_5th"]').val(data.amountless_rf_mf_year1_5th);
+                $('#showdatayear1paymentform').find('input[name="bir_year1_2nd"]').val(data.bir_year1_2nd);
+                $('#showdatayear1paymentform').find('input[name="netammountpaid_year1_5th"]').val(data.netammountpaid_year1_5th);
+                $('#showdatayear1paymentform').find('input[name="lddapno_year1_5th"]').val(data.lddapno_year1_5th);
+                $('#showdatayear1paymentform').find('input[name="date_lddap_year1_5th"]').val(data.date_lddap_year1_5th);
+
+
+
+
+                //for payments year 1 6th release
+                $('#showdatayear1paymentform').find('input[name="grossammount_year1_6th"]').val(data.grossammount_year1_6th);
+                $('#showdatayear1paymentform').find('input[name="retention_fee_year1_6th"]').val(data.retention_fee_year1_6th);
+                $('#showdatayear1paymentform').find('input[name="mobilization_fund_year1_6th"]').val(data.mobilization_fund_year1_6th);
+                $('#showdatayear1paymentform').find('input[name="amountless_rf_mf_year1_6th"]').val(data.amountless_rf_mf_year1_6th);
+                $('#showdatayear1paymentform').find('input[name="bir_year1_6th"]').val(data.bir_year1_6th);
+
+
+
+
+
+
+
+            },
+            //if failed
+            error: function (data) {
+                // console.log(data, data.id, data.name);
+                toastr.error("error")
+            }
+        })
+    })
+
+
+
+
+
+    //GET DATA ONLY FOR YEAR1 FOR PAYMENTS IN MODAL (READ ONLY)
+
+    $("#paymentables").on('click', '.getdatayear2payment', function () {
+        var id = $(this).attr('data-id');
+        var url = '/api/contractorget/get/' + id;
+        //alert(id);
+        $.ajax({
+            type: 'GET',
+            url: url,
+            success: function (data) {
+                $("#year2paymentModal").modal('show');
+                $('#showdatayear2paymentform').find('input[name="contractorID"]').val(data.contractorID);
+                //for payments year 2 1st release
+                $('#showdatayear2paymentform').find('input[name="survivalrate_year2_1st"]').val(data.survivalrate_year2_1st);
+                $('#showdatayear2paymentform').find('input[name="grossammount_year2_1st"]').val(data.grossammount_year2_1st);
+                $('#showdatayear2paymentform').find('input[name="redentionfee_fee_year2_1st"]').val(data.redentionfee_fee_year2_1st);
+                $('#showdatayear2paymentform').find('input[name="amountless_rf_year2_1st"]').val(data.amountless_rf_year2_1st);
+                $('#showdatayear2paymentform').find('input[name="bir_year2_1st"]').val(data.bir_year2_1st);
+                $('#showdatayear2paymentform').find('input[name="netamount_paid_year2_1st"]').val(data.netamount_paid_year2_1st);
+                $('#showdatayear2paymentform').find('input[name="lddapno_year2_1st"]').val(data.lddapno_year2_1st);
+                $('#showdatayear2paymentform').find('input[name="date_lddap_year2_1st"]').val(data.date_lddap_year2_1st);
+
+
+
+
+                //for payments year 2 2nd release
+                $('#showdatayear2paymentform').find('input[name="survivalrate_year2_2nd"]').val(data.survivalrate_year2_2nd);
+                $('#showdatayear2paymentform').find('input[name="grossammount_year2_2nd"]').val(data.grossammount_year2_2nd);
+                $('#showdatayear2paymentform').find('input[name="redentionfee_fee_year2_2nd"]').val(data.redentionfee_fee_year2_2nd);
+                $('#showdatayear2paymentform').find('input[name="amountless_rf_year2_2nd"]').val(data.amountless_rf_year2_2nd);
+                $('#showdatayear2paymentform').find('input[name="bir_year2_2nd"]').val(data.bir_year2_2nd);
+                $('#showdatayear2paymentform').find('input[name="netamount_paid_year2_2nd"]').val(data.netamount_paid_year2_2nd);
+                $('#showdatayear2paymentform').find('input[name="lddapno_year2_2nd"]').val(data.lddapno_year2_2nd);
+                $('#showdatayear2paymentform').find('input[name="date_lddap_year2_2nd"]').val(data.date_lddap_year2_2nd);
+
+
+
+                //for payments year 2 2nd release
+                $('#showdatayear2paymentform').find('input[name="survivalrate_year2_3rd"]').val(data.survivalrate_year2_3rd);
+                $('#showdatayear2paymentform').find('input[name="grossammount_year2_3rd"]').val(data.grossammount_year2_3rd);
+                $('#showdatayear2paymentform').find('input[name="redentionfee_fee_year2_3rd"]').val(data.redentionfee_fee_year2_3rd);
+                $('#showdatayear2paymentform').find('input[name="amountless_rf_year2_3rd"]').val(data.amountless_rf_year2_3rd);
+                $('#showdatayear2paymentform').find('input[name="bir_year2_3rd"]').val(data.bir_year2_3rd);
+                $('#showdatayear2paymentform').find('input[name="netamount_paid_year2_3rd"]').val(data.netamount_paid_year2_3rd);
+                $('#showdatayear2paymentform').find('input[name="lddapno_year2_3rd"]').val(data.lddapno_year2_3rd);
+                $('#showdatayear2paymentform').find('input[name="date_lddap_year2_3rd"]').val(data.date_lddap_year2_3rd);
+
+
+
+                //for payments year 2 4th release
+                $('#showdatayear2paymentform').find('input[name="survivalrate_year2_4th"]').val(data.survivalrate_year2_4th);
+                $('#showdatayear2paymentform').find('input[name="grossammount_year2_4th"]').val(data.grossammount_year2_4th);
+                $('#showdatayear2paymentform').find('input[name="redentionfee_fee_year2_4th"]').val(data.redentionfee_fee_year2_4th);
+                $('#showdatayear2paymentform').find('input[name="amountless_rf_year2_4th"]').val(data.amountless_rf_year2_4th);
+                $('#showdatayear2paymentform').find('input[name="bir_year2_1st3"]').val(data.bir_year2_1st3);
+                $('#showdatayear2paymentform').find('input[name="netamount_paid_year2_4th"]').val(data.netamount_paid_year2_4th);
+                $('#showdatayear2paymentform').find('input[name="lddapno_year2_4th"]').val(data.lddapno_year2_4th);
+                $('#showdatayear2paymentform').find('input[name="date_lddap_year2_4th"]').val(data.date_lddap_year2_4th);
+
+
+
+
+
+            },
+            //if failed
+            error: function (data) {
+                // console.log(data, data.id, data.name);
+                toastr.error("error")
+            }
+        })
+    })
+
 
 
 
