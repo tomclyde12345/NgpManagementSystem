@@ -48,7 +48,6 @@ namespace NgpManagementSystem.Models
     
         public virtual ngp_contractor ngp_contractor { get; set; }
         public virtual ngp_dropdown ngp_dropdown { get; set; }
-        public virtual NgpBarangay NgpBarangay { get; set; }
         public virtual NgpMunicipality NgpMunicipality { get; set; }
         public virtual NgpRole NgpRole { get; set; }
         public virtual NgpUser NgpUser { get; set; }

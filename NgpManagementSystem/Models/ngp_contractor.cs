@@ -143,6 +143,8 @@ namespace NgpManagementSystem.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ngp_contract> ngp_contract { get; set; }
         public virtual NgpBarangay NgpBarangay { get; set; }
+        public virtual NgplocationBarangay NgplocationBarangay { get; set; }
+        public virtual NgplocationMunicipality NgplocationMunicipality { get; set; }
         public virtual NgpMunicipality NgpMunicipality { get; set; }
         public virtual NgpRole NgpRole { get; set; }
         public virtual NgpUser NgpUser { get; set; }

@@ -183,6 +183,8 @@ namespace NgpManagementSystem.Controllers
                     area = user.area,
                     cenro = user.cenro,
                     region = user.region,
+                    location_barangay = user.NgplocationBarangay.BarangayName,
+                    location_municipality = user.NgplocationMunicipality.MunicipalityName,
 
                     penro = user.penro,
                     year_form = user.year_form,
