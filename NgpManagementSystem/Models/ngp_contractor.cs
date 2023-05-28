@@ -30,6 +30,7 @@ namespace NgpManagementSystem.Models
         public Nullable<int> UserId { get; set; }
         public string UserName { get; set; }
         public string Name { get; set; }
+        public Nullable<System.DateTime> DateAdded { get; set; }
         public Nullable<int> location_municipality { get; set; }
         public Nullable<int> location_barangay { get; set; }
         public string area { get; set; }

@@ -112,6 +112,8 @@ namespace NgpManagementSystem.Controllers
                     contractor_type = user.contractor_type,
                     RoleId = user.NgpRole.RoleName,
                     Name = user.NgpUser.Name,
+                    DateAdded = user.DateAdded,
+
 
 
                 }).ToList();

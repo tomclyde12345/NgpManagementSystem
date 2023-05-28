@@ -181,6 +181,7 @@ namespace NgpManagementSystem.Controllers.API
                 contractor.netamount_paid_year2_4th = contractorDTO.netamount_paid_year2_4th;
                 contractor.lddapno_year2_4th = contractorDTO.lddapno_year2_4th;
                 contractor.date_lddap_year2_4th = contractorDTO.date_lddap_year2_4th;
+                contractor.DateAdded = DateTime.Now;
 
 
 

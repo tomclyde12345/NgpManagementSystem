@@ -6,13 +6,13 @@
 <div class="row">
     <div class="col-12 col-sm-12 col-lg-12">
         <div class="card">
-            <div class="card-header">
-
+            <div class="card-header" style="background-color: #f1f1f1;">
+                <h4> Ngp Management System Information </h4>
             </div>
             <div class="card-body">
                 <ul class="nav nav-pills" id="myTab3" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="home-tab3" data-toggle="tab" href="#home3" role="tab" aria-controls="forContractor" aria-selected="true"> Contractor</a>
+                        <a class="nav-link active" id="home-tab3" data-toggle="tab" href="#home3" role="tab" aria-controls="forContractor" aria-selected="true" > Contractor</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="profile-tab3" data-toggle="tab" href="#profile3" role="tab" aria-controls="forProject" aria-selected="false">Project </a>
@@ -39,19 +39,20 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
+                                        <br />
                                         <h4>Contractor Table</h4>
 
                                     </div>
-                                    <div style="padding:2px 2.5%">
-                                        <button type="button" class="btn btn-info btn-md " style="border-radius:20px;" onclick="location.href ='/Contractor/Create'">Create Contractor <i class="fa fa-plus-circle"></i> </button>
-                                        <div class="col-md-8" style="float:right">
-                                            <div id="FilterSearchRole"></div>
-                                            @*<div id="FilterSearchContractor"></div>*@
-                                        </div>
-                                        <br />
-                                        <br />
-                                    </div>
-
+                                    <!--<div style="padding:2px 2.5%">-->
+                                    @*<button type="button" class="btn btn-info btn-md " style="border-radius:20px;" onclick="location.href ='/Contractor/Create'">Create Contractor <i class="fa fa-plus-circle"></i> </button>*@
+                                    <!--<div class="col-md-8" style="float:right">
+            <div id="FilterSearchRole"></div>
+    <div id="FilterSearchContractor"></div>
+    </div>
+        <br />
+        <br />
+    </div>-->
+                                    <br />
                                     <br />
                                     <div class="card-body p-0">
                                         <div class="table-responsive">
@@ -59,14 +60,15 @@
                                                 <thead>
                                                     <tr>
 
-                                                        <th class="bg-green  text-white">ContractorID</th>
-                                                        <th class="bg-green    text-white">ContractorName</th>
-                                                        <th class="bg-green   text-white">Address Municipality</th>
-                                                        <th class="bg-green  text-white">Address Barangay</th>
-                                                        <th class="bg-green  text-white">Contractor Type</th>
-                                                        <th class="bg-green  text-white">Role: </th>
-                                                        <th class="bg-green  text-white">Create by: </th>
-                                                        <th class="bg-green  text-white">Action </th>
+                                                        <th>ContractorID</th>
+                                                        <th>ContractorName</th>
+                                                        <th>Address Municipality</th>
+                                                        <th>Address Barangay</th>
+                                                        <th>Contractor Type</th>
+                                                        <th>DateAdded</th>
+                                                        <th>Role: </th>
+                                                        <th>Create by: </th>
+                                                        <th>Action </th>
 
 
                                                     </tr>

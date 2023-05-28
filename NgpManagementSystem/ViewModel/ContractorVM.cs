@@ -125,6 +125,7 @@ namespace NgpManagementSystem.ViewModel
         public string netamount_paid_year2_4th { get; set; }
         public string lddapno_year2_4th { get; set; }
         public string date_lddap_year2_4th { get; set; }
+        public DateTime? DateAdded { get; set; }
 
 
 

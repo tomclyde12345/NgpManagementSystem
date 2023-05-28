@@ -48,6 +48,7 @@
           <Property Name="UserId" Type="int" />
           <Property Name="UserName" Type="nvarchar(max)" />
           <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="DateAdded" Type="datetime" />
           <Property Name="location_municipality" Type="int" />
           <Property Name="location_barangay" Type="int" />
           <Property Name="area" Type="nvarchar" MaxLength="100" />
@@ -994,6 +995,7 @@
           <Property Name="UserId" Type="Int32" />
           <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateAdded" Type="DateTime" Precision="3" />
           <Property Name="location_municipality" Type="Int32" />
           <Property Name="location_barangay" Type="Int32" />
           <Property Name="area" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -1671,7 +1673,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -1820,6 +1822,7 @@
                 <ScalarProperty Name="area" ColumnName="area" />
                 <ScalarProperty Name="location_barangay" ColumnName="location_barangay" />
                 <ScalarProperty Name="location_municipality" ColumnName="location_municipality" />
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />

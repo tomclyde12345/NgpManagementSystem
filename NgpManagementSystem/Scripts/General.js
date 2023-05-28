@@ -939,6 +939,13 @@ function ContractorAnimation() {
                 "data": "contractor_type", "name": "contractor_type",
             },
             {
+                "data": "DateAdded", "name": "DateAdded",
+                "render": function (data, type, row, meta) {
+                    return `<span class="badge bg-success text-white ">${moment(data).format("MMMM DD YYYY, h:mm:ss a")}</span>`;
+                }
+
+            },
+            {
                 "data": "RoleId", "name": "RoleId",
                 "render": function (data, type, row) {
 
