@@ -192,6 +192,7 @@ namespace NgpManagementSystem.Controllers
                     year_form = user.year_form,
                     RoleId = user.NgpRole.RoleName,
                     Name = user.NgpUser.Name,
+                    DateAdded = user.DateAdded,
 
                 }).ToList();
 
@@ -258,6 +259,7 @@ namespace NgpManagementSystem.Controllers
                     contractor_name = user.contractor_name,
                     RoleId = user.NgpRole.RoleName,
                     Name = user.NgpUser.Name,
+                    DateAdded = user.DateAdded,
 
 
                 }).ToList();
@@ -327,6 +329,7 @@ namespace NgpManagementSystem.Controllers
                     contractor_name = user.contractor_name,
                     RoleId = user.NgpRole.RoleName,
                     Name = user.NgpUser.Name,
+                    DateAdded = user.DateAdded,
 
 
                 }).ToList();

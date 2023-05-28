@@ -928,20 +928,69 @@ function ContractorAnimation() {
             },
             {
                 "data": "contractor_name", "name": "contractor_name",
+                "render": function (data, type, row) {
+
+                    if (data == null) {
+
+                        return '<span  class=" badge bg-danger text-white" >null</span>'
+                    }
+
+                    return '<span >' + data + '</span>'
+
+
+
+                },
+
             },
             {
                 "data": "address_municipality", "name": "address_municipality",
+                "render": function (data, type, row) {
+
+                    if (data == null) {
+
+                        return '<span  class=" badge bg-danger text-white" >null</span>'
+                    }
+
+                    return '<span >' + data + '</span>'
+
+
+
+                },
             },
             {
                 "data": "address_barangay", "name": "address_barangay",
+                "render": function (data, type, row) {
+
+                    if (data == null) {
+
+                        return '<span  class=" badge bg-danger text-white" >null</span>'
+                    }
+
+                    return '<span >' + data + '</span>'
+
+
+
+                },
             },
             {
                 "data": "contractor_type", "name": "contractor_type",
+                "render": function (data, type, row, value) {
+
+                    if (data == null) {
+
+                        return '<span  class=" badge bg-danger text-white" >' + data + '</span>'
+                    }
+
+                    return '<span >' + data + '</span>'
+
+
+
+                },
             },
             {
                 "data": "DateAdded", "name": "DateAdded",
                 "render": function (data, type, row, meta) {
-                    return `<span class="badge bg-success text-white ">${moment(data).format("MMMM DD YYYY, h:mm:ss a")}</span>`;
+                    return `<span >${moment(data).format("MMMM DD YYYY, h:mm:ss a")}</span>`;
                 }
 
             },
@@ -1035,24 +1084,101 @@ function ContractorAnimation() {
             },
             {
                 "data": "area", "name": "area",
+                "render": function (data, type, row, value) {
+
+                    if (data == null) {
+
+                        return '<span  class=" badge bg-danger text-white" >' + data + '</span>'
+                    }
+
+                    return '<span >' + data + '</span>'
+
+
+
+                },
             },
-            {
-                "data": "cenro", "name": "cenro",
-            },
+           
             {
                 "data": "region", "name": "region",
+                "render": function (data, type, row, value) {
+
+                    if (data == null) {
+
+                        return '<span  class=" badge bg-danger text-white" >' + data + '</span>'
+                    }
+
+                    return '<span >' + data + '</span>'
+
+
+
+                },
             },
             {
                 "data": "location_municipality", "name": "location_municipality",
+                "render": function (data, type, row, value) {
+
+                    if (data == null) {
+
+                        return '<span  class=" badge bg-danger text-white" >' + data + '</span>'
+                    }
+
+                    return '<span >' + data + '</span>'
+
+
+
+                },
             },
             {
                 "data": "location_barangay", "name": "location_barangay",
+                "render": function (data, type, row, value) {
+
+                    if (data == null) {
+
+                        return '<span  class=" badge bg-danger text-white" >' + data + '</span>'
+                    }
+
+                    return '<span >' + data + '</span>'
+
+
+
+                },
             },
             {
                 "data": "penro", "name": "penro",
+                "render": function (data, type, row, value) {
+
+                    if (data == null) {
+
+                        return '<span  class=" badge bg-danger text-white" >' + data + '</span>'
+                    }
+
+                    return '<span >' + data + '</span>'
+
+
+
+                },
             },
             {
                 "data": "year_form", "name": "year_form",
+                "render": function (data, type, row, value) {
+
+                    if (data == null) {
+
+                        return '<span  class=" badge bg-danger text-white" >' + data + '</span>'
+                    }
+
+                    return '<span >' + data + '</span>'
+
+
+
+                },
+            },
+            {
+                "data": "DateAdded", "name": "DateAdded",
+                "render": function (data, type, row, meta) {
+                    return `<span >${moment(data).format("MMMM DD YYYY, h:mm:ss a")}</span>`;
+                }
+
             },
             {
                 "data": "RoleId", "name": "RoleId",
@@ -1558,9 +1684,16 @@ function ContractorAnimation() {
             {
                 "data": null,
                 'render': function (data, type, full, meta) {
-                    return '<button   class=\'btn btn-outline-primary getdatayear1payment d-block btn-sm\' data-id = ' + data.contractorID + ' > PAYMENTS YEAR 1  <span class="fa fa-list f-20" >  </span></button>' + '<button  class=\'btn btn-outline-secondary  getdatayear2payment d-block btn-sm\' data-id = ' + data.contractorID + ' > PAYMENTS YEAR 2  <span class="fa fa-list f-20" >  </span></button>' + '<button  class=\'btn btn-outline-success  getdatayear3payment d-block btn-sm\' data-id = ' + data.contractorID + ' > PAYMENTS YEAR 3   <span class="fa fa-list f-20" >  </span></button>'
+                    return '<button   class=\'btn btn-primary getdatayear1payment d-block btn-sm\' data-id = ' + data.contractorID + ' > PAYMENTS YEAR 1  <span class="fa fa-list f-20" >  </span></button>' + '<button  class=\'btn btn-info  getdatayear2payment d-block btn-sm\' data-id = ' + data.contractorID + ' > PAYMENTS YEAR 2  <span class="fa fa-list f-20" >  </span></button>' + '<button  class=\'btn btn-success  getdatayear3payment d-block btn-sm\' data-id = ' + data.contractorID + ' > PAYMENTS YEAR 3   <span class="fa fa-list f-20" >  </span></button>'
 
                 }
+            },
+            {
+                "data": "DateAdded", "name": "DateAdded",
+                "render": function (data, type, row, meta) {
+                    return `<span >${moment(data).format("MMMM DD YYYY, h:mm:ss a")}</span>`;
+                }
+
             },
             {
                 "data": "RoleId", "name": "RoleId",
@@ -1591,7 +1724,7 @@ function ContractorAnimation() {
             {
                 "data": null,
                 'render': function (data, type, full, meta) {
-                    return '<button   class=\'btn btn-primary edityear1payment d-block btn-sm\' data-id = ' + data.contractorID + ' > PAYMENTS YEAR 1  <span class="fa fa-edit f-20" >  </span></button>' + '<button   class=\'btn btn-secondary edityear2payment d-block btn-sm\' data-id = ' + data.contractorID + ' > PAYMENTS YEAR 2  <span class="fa fa-edit f-20" >  </span></button>' + '<button  class=\'btn btn-success edityear3payment d-block btn-sm\' data-id = ' + data.contractorID + ' > PAYMENTS YEAR 3  <span class="fa fa-edit f-20" >  </span></button>'
+                    return '<button   class=\'btn btn-outline-primary edityear1payment d-block btn-sm\' data-id = ' + data.contractorID + ' > PAYMENTS YEAR 1  <span class="fa fa-edit f-20" >  </span></button>' + '<button   class=\'btn btn-outline-info edityear2payment d-block btn-sm\' data-id = ' + data.contractorID + ' > PAYMENTS YEAR 2  <span class="fa fa-edit f-20" >  </span></button>' + '<button  class=\'btn btn-outline-success edityear3payment d-block btn-sm\' data-id = ' + data.contractorID + ' > PAYMENTS YEAR 3  <span class="fa fa-edit f-20" >  </span></button>'
                 }
             },
 
@@ -2509,9 +2642,16 @@ function ContractorAnimation() {
             {
                 "data": null,
                 'render': function (data, type, full, meta) {
-                    return '<button  style=width:72px;  class=\'btn btn-outline-primary getdatayear1contract d-block btn-sm\' data-id = ' + data.contractorID + ' > YEAR1  <span class="fa fa-list f-20" >  </span></button>' + '<button  class=\'btn btn-outline-secondary  getdatayear2contract d-block btn-sm\' data-id = ' + data.contractorID + ' > YEAR2  <span class="fa fa-list f-20" >  </span></button>' + '<button  class=\'btn btn-outline-success  getdatayear3contract d-block btn-sm\' data-id = ' + data.contractorID + ' > YEAR3  <span class="fa fa-list f-20" >  </span></button>'
+                    return '<button  style=width:72px;  class=\'btn btn-primary getdatayear1contract d-block btn-sm\' data-id = ' + data.contractorID + ' > YEAR1  <span class="fa fa-list f-20" >  </span></button>' + '<button  class=\'btn btn-info  getdatayear2contract d-block btn-sm\' data-id = ' + data.contractorID + ' > YEAR2  <span class="fa fa-list f-20" >  </span></button>' + '<button  class=\'btn btn-success  getdatayear3contract d-block btn-sm\' data-id = ' + data.contractorID + ' > YEAR3  <span class="fa fa-list f-20" >  </span></button>'
 
                 }
+            },
+            {
+                "data": "DateAdded", "name": "DateAdded",
+                "render": function (data, type, row, meta) {
+                    return `<span >${moment(data).format("MMMM DD YYYY, h:mm:ss a")}</span>`;
+                }
+
             },
             {
                 "data": "RoleId", "name": "RoleId",
@@ -2542,7 +2682,7 @@ function ContractorAnimation() {
             {
                 "data": null,
                 'render': function (data, type, full, meta) {
-                    return '<button  style=width:100px;  class=\'btn btn-primary edityear1contract d-block btn-sm\' data-id = ' + data.contractorID + ' > EDITYEAR1  <span class="fa fa-edit f-20" >  </span></button>' + '<button  style=width:100px;  class=\'btn btn-secondary edityear2contract d-block btn-sm\' data-id = ' + data.contractorID + ' > EDITYEAR2  <span class="fa fa-edit f-20" >  </span></button>' + '<button  style=width:100px;  class=\'btn btn-success edityear3contract d-block btn-sm\' data-id = ' + data.contractorID + ' > EDITYEAR3  <span class="fa fa-edit f-20" >  </span></button>'
+                    return '<button  style=width:100px;  class=\'btn btn-outline-primary edityear1contract d-block btn-sm\' data-id = ' + data.contractorID + ' > EDITYEAR1  <span class="fa fa-edit f-20" >  </span></button>' + '<button  style=width:100px;  class=\'btn btn-outline-info edityear2contract d-block btn-sm\' data-id = ' + data.contractorID + ' > EDITYEAR2  <span class="fa fa-edit f-20" >  </span></button>' + '<button  style=width:100px;  class=\'btn btn-outline-success edityear3contract d-block btn-sm\' data-id = ' + data.contractorID + ' > EDITYEAR3  <span class="fa fa-edit f-20" >  </span></button>'
                 }
             },
 
