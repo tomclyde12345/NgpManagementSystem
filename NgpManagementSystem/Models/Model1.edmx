@@ -243,7 +243,7 @@
           <Property Name="Name" Type="nvarchar" MaxLength="200" />
           <Property Name="LogMessage" Type="nvarchar(max)" />
           <Property Name="UserId" Type="int" />
-          <Property Name="RoleId" Type="nvarchar" MaxLength="200" />
+          <Property Name="RoleId" Type="int" />
         </EntityType>
         <EntityType Name="NgpLogsContractor">
           <Key>
@@ -255,7 +255,7 @@
           <Property Name="Name" Type="nvarchar" MaxLength="100" />
           <Property Name="LogMessage" Type="nvarchar(max)" />
           <Property Name="UserId" Type="int" />
-          <Property Name="RoleId" Type="nvarchar" MaxLength="200" />
+          <Property Name="RoleId" Type="int" />
         </EntityType>
         <EntityType Name="NgpLogsPayment">
           <Key>
@@ -267,7 +267,7 @@
           <Property Name="Name" Type="nvarchar" MaxLength="200" />
           <Property Name="LogMessage" Type="nvarchar(max)" />
           <Property Name="UserId" Type="int" />
-          <Property Name="RoleId" Type="nvarchar" MaxLength="200" />
+          <Property Name="RoleId" Type="int" />
         </EntityType>
         <EntityType Name="NgpLogsProject">
           <Key>
@@ -279,7 +279,7 @@
           <Property Name="Name" Type="nvarchar" MaxLength="200" />
           <Property Name="LogMessage" Type="nvarchar(max)" />
           <Property Name="UserId" Type="int" />
-          <Property Name="RoleId" Type="nvarchar" MaxLength="200" />
+          <Property Name="RoleId" Type="int" />
         </EntityType>
         <EntityType Name="NgpLogsSched">
           <Key>
@@ -303,7 +303,7 @@
           <Property Name="Name" Type="nvarchar" MaxLength="200" />
           <Property Name="LogMessage" Type="nvarchar" MaxLength="200" />
           <Property Name="UserId" Type="int" />
-          <Property Name="RoleId" Type="nvarchar" MaxLength="200" />
+          <Property Name="RoleId" Type="int" />
         </EntityType>
         <EntityType Name="NgpMaintenanceMode">
           <Key>
@@ -655,6 +655,102 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_NgpLogsContract_NgpRole">
+          <End Role="NgpRole" Type="Self.NgpRole" Multiplicity="0..1" />
+          <End Role="NgpLogsContract" Type="Self.NgpLogsContract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NgpRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NgpLogsContract">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NgpLogsContract_NgpUser">
+          <End Role="NgpUser" Type="Self.NgpUser" Multiplicity="0..1" />
+          <End Role="NgpLogsContract" Type="Self.NgpLogsContract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NgpUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NgpLogsContract">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NgpLogsContractor_NgpRole">
+          <End Role="NgpRole" Type="Self.NgpRole" Multiplicity="0..1" />
+          <End Role="NgpLogsContractor" Type="Self.NgpLogsContractor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NgpRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NgpLogsContractor">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NgpLogsContractor_NgpUser">
+          <End Role="NgpUser" Type="Self.NgpUser" Multiplicity="0..1" />
+          <End Role="NgpLogsContractor" Type="Self.NgpLogsContractor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NgpUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NgpLogsContractor">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NgpLogsPayment_NgpRole">
+          <End Role="NgpRole" Type="Self.NgpRole" Multiplicity="0..1" />
+          <End Role="NgpLogsPayment" Type="Self.NgpLogsPayment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NgpRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NgpLogsPayment">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NgpLogsPayment_NgpUser">
+          <End Role="NgpUser" Type="Self.NgpUser" Multiplicity="0..1" />
+          <End Role="NgpLogsPayment" Type="Self.NgpLogsPayment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NgpUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NgpLogsPayment">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NgpLogsProject_NgpRole">
+          <End Role="NgpRole" Type="Self.NgpRole" Multiplicity="0..1" />
+          <End Role="NgpLogsProject" Type="Self.NgpLogsProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NgpRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NgpLogsProject">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NgpLogsProject_NgpUser">
+          <End Role="NgpUser" Type="Self.NgpUser" Multiplicity="0..1" />
+          <End Role="NgpLogsProject" Type="Self.NgpLogsProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NgpUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NgpLogsProject">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_NgpLogsUserAccount_NgpLogsUserAccount">
           <End Role="NgpLogsUserAccount" Type="Self.NgpLogsUserAccount" Multiplicity="1" />
           <End Role="NgpLogsUserAccount1" Type="Self.NgpLogsUserAccount" Multiplicity="0..1" />
@@ -664,6 +760,30 @@
             </Principal>
             <Dependent Role="NgpLogsUserAccount1">
               <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NgpLogsUserAccount_NgpRole">
+          <End Role="NgpRole" Type="Self.NgpRole" Multiplicity="0..1" />
+          <End Role="NgpLogsUserAccount" Type="Self.NgpLogsUserAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NgpRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NgpLogsUserAccount">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NgpLogsUserAccount_NgpUser">
+          <End Role="NgpUser" Type="Self.NgpUser" Multiplicity="0..1" />
+          <End Role="NgpLogsUserAccount" Type="Self.NgpLogsUserAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NgpUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NgpLogsUserAccount">
+              <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -801,9 +921,49 @@
             <End Role="NgplocationMunicipality" EntitySet="NgplocationMunicipality" />
             <End Role="NgplocationBarangay" EntitySet="NgplocationBarangay" />
           </AssociationSet>
+          <AssociationSet Name="FK_NgpLogsContract_NgpRole" Association="Self.FK_NgpLogsContract_NgpRole">
+            <End Role="NgpRole" EntitySet="NgpRole" />
+            <End Role="NgpLogsContract" EntitySet="NgpLogsContract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NgpLogsContract_NgpUser" Association="Self.FK_NgpLogsContract_NgpUser">
+            <End Role="NgpUser" EntitySet="NgpUser" />
+            <End Role="NgpLogsContract" EntitySet="NgpLogsContract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NgpLogsContractor_NgpRole" Association="Self.FK_NgpLogsContractor_NgpRole">
+            <End Role="NgpRole" EntitySet="NgpRole" />
+            <End Role="NgpLogsContractor" EntitySet="NgpLogsContractor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NgpLogsContractor_NgpUser" Association="Self.FK_NgpLogsContractor_NgpUser">
+            <End Role="NgpUser" EntitySet="NgpUser" />
+            <End Role="NgpLogsContractor" EntitySet="NgpLogsContractor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NgpLogsPayment_NgpRole" Association="Self.FK_NgpLogsPayment_NgpRole">
+            <End Role="NgpRole" EntitySet="NgpRole" />
+            <End Role="NgpLogsPayment" EntitySet="NgpLogsPayment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NgpLogsPayment_NgpUser" Association="Self.FK_NgpLogsPayment_NgpUser">
+            <End Role="NgpUser" EntitySet="NgpUser" />
+            <End Role="NgpLogsPayment" EntitySet="NgpLogsPayment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NgpLogsProject_NgpRole" Association="Self.FK_NgpLogsProject_NgpRole">
+            <End Role="NgpRole" EntitySet="NgpRole" />
+            <End Role="NgpLogsProject" EntitySet="NgpLogsProject" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NgpLogsProject_NgpUser" Association="Self.FK_NgpLogsProject_NgpUser">
+            <End Role="NgpUser" EntitySet="NgpUser" />
+            <End Role="NgpLogsProject" EntitySet="NgpLogsProject" />
+          </AssociationSet>
           <AssociationSet Name="FK_NgpLogsUserAccount_NgpLogsUserAccount" Association="Self.FK_NgpLogsUserAccount_NgpLogsUserAccount">
             <End Role="NgpLogsUserAccount" EntitySet="NgpLogsUserAccount" />
             <End Role="NgpLogsUserAccount1" EntitySet="NgpLogsUserAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NgpLogsUserAccount_NgpRole" Association="Self.FK_NgpLogsUserAccount_NgpRole">
+            <End Role="NgpRole" EntitySet="NgpRole" />
+            <End Role="NgpLogsUserAccount" EntitySet="NgpLogsUserAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NgpLogsUserAccount_NgpUser" Association="Self.FK_NgpLogsUserAccount_NgpUser">
+            <End Role="NgpUser" EntitySet="NgpUser" />
+            <End Role="NgpLogsUserAccount" EntitySet="NgpLogsUserAccount" />
           </AssociationSet>
           <AssociationSet Name="FK_NgpUser_NgpRole" Association="Self.FK_NgpUser_NgpRole">
             <End Role="NgpRole" EntitySet="NgpRole" />
@@ -936,9 +1096,49 @@
             <End Role="NgplocationMunicipality" EntitySet="NgplocationMunicipalities" />
             <End Role="NgplocationBarangay" EntitySet="NgplocationBarangays" />
           </AssociationSet>
+          <AssociationSet Name="FK_NgpLogsContract_NgpRole" Association="NgpdbmsModel.FK_NgpLogsContract_NgpRole">
+            <End Role="NgpRole" EntitySet="NgpRoles" />
+            <End Role="NgpLogsContract" EntitySet="NgpLogsContracts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NgpLogsContract_NgpUser" Association="NgpdbmsModel.FK_NgpLogsContract_NgpUser">
+            <End Role="NgpUser" EntitySet="NgpUsers" />
+            <End Role="NgpLogsContract" EntitySet="NgpLogsContracts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NgpLogsContractor_NgpRole" Association="NgpdbmsModel.FK_NgpLogsContractor_NgpRole">
+            <End Role="NgpRole" EntitySet="NgpRoles" />
+            <End Role="NgpLogsContractor" EntitySet="NgpLogsContractors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NgpLogsContractor_NgpUser" Association="NgpdbmsModel.FK_NgpLogsContractor_NgpUser">
+            <End Role="NgpUser" EntitySet="NgpUsers" />
+            <End Role="NgpLogsContractor" EntitySet="NgpLogsContractors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NgpLogsPayment_NgpRole" Association="NgpdbmsModel.FK_NgpLogsPayment_NgpRole">
+            <End Role="NgpRole" EntitySet="NgpRoles" />
+            <End Role="NgpLogsPayment" EntitySet="NgpLogsPayments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NgpLogsPayment_NgpUser" Association="NgpdbmsModel.FK_NgpLogsPayment_NgpUser">
+            <End Role="NgpUser" EntitySet="NgpUsers" />
+            <End Role="NgpLogsPayment" EntitySet="NgpLogsPayments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NgpLogsProject_NgpRole" Association="NgpdbmsModel.FK_NgpLogsProject_NgpRole">
+            <End Role="NgpRole" EntitySet="NgpRoles" />
+            <End Role="NgpLogsProject" EntitySet="NgpLogsProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NgpLogsProject_NgpUser" Association="NgpdbmsModel.FK_NgpLogsProject_NgpUser">
+            <End Role="NgpUser" EntitySet="NgpUsers" />
+            <End Role="NgpLogsProject" EntitySet="NgpLogsProjects" />
+          </AssociationSet>
           <AssociationSet Name="FK_NgpLogsUserAccount_NgpLogsUserAccount" Association="NgpdbmsModel.FK_NgpLogsUserAccount_NgpLogsUserAccount">
             <End Role="NgpLogsUserAccount" EntitySet="NgpLogsUserAccounts" />
             <End Role="NgpLogsUserAccount1" EntitySet="NgpLogsUserAccounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NgpLogsUserAccount_NgpRole" Association="NgpdbmsModel.FK_NgpLogsUserAccount_NgpRole">
+            <End Role="NgpRole" EntitySet="NgpRoles" />
+            <End Role="NgpLogsUserAccount" EntitySet="NgpLogsUserAccounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NgpLogsUserAccount_NgpUser" Association="NgpdbmsModel.FK_NgpLogsUserAccount_NgpUser">
+            <End Role="NgpUser" EntitySet="NgpUsers" />
+            <End Role="NgpLogsUserAccount" EntitySet="NgpLogsUserAccounts" />
           </AssociationSet>
           <AssociationSet Name="FK_NgpUser_NgpRole" Association="NgpdbmsModel.FK_NgpUser_NgpRole">
             <End Role="NgpRole" EntitySet="NgpRoles" />
@@ -1220,7 +1420,9 @@
           <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="LogMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="UserId" Type="Int32" />
-          <Property Name="RoleId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="RoleId" Type="Int32" />
+          <NavigationProperty Name="NgpRole" Relationship="NgpdbmsModel.FK_NgpLogsContract_NgpRole" FromRole="NgpLogsContract" ToRole="NgpRole" />
+          <NavigationProperty Name="NgpUser" Relationship="NgpdbmsModel.FK_NgpLogsContract_NgpUser" FromRole="NgpLogsContract" ToRole="NgpUser" />
         </EntityType>
         <EntityType Name="NgpLogsContractor">
           <Key>
@@ -1232,7 +1434,9 @@
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="LogMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="UserId" Type="Int32" />
-          <Property Name="RoleId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="RoleId" Type="Int32" />
+          <NavigationProperty Name="NgpRole" Relationship="NgpdbmsModel.FK_NgpLogsContractor_NgpRole" FromRole="NgpLogsContractor" ToRole="NgpRole" />
+          <NavigationProperty Name="NgpUser" Relationship="NgpdbmsModel.FK_NgpLogsContractor_NgpUser" FromRole="NgpLogsContractor" ToRole="NgpUser" />
         </EntityType>
         <EntityType Name="NgpLogsPayment">
           <Key>
@@ -1244,7 +1448,9 @@
           <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="LogMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="UserId" Type="Int32" />
-          <Property Name="RoleId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="RoleId" Type="Int32" />
+          <NavigationProperty Name="NgpRole" Relationship="NgpdbmsModel.FK_NgpLogsPayment_NgpRole" FromRole="NgpLogsPayment" ToRole="NgpRole" />
+          <NavigationProperty Name="NgpUser" Relationship="NgpdbmsModel.FK_NgpLogsPayment_NgpUser" FromRole="NgpLogsPayment" ToRole="NgpUser" />
         </EntityType>
         <EntityType Name="NgpLogsProject">
           <Key>
@@ -1256,7 +1462,9 @@
           <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="LogMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="UserId" Type="Int32" />
-          <Property Name="RoleId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="RoleId" Type="Int32" />
+          <NavigationProperty Name="NgpRole" Relationship="NgpdbmsModel.FK_NgpLogsProject_NgpRole" FromRole="NgpLogsProject" ToRole="NgpRole" />
+          <NavigationProperty Name="NgpUser" Relationship="NgpdbmsModel.FK_NgpLogsProject_NgpUser" FromRole="NgpLogsProject" ToRole="NgpUser" />
         </EntityType>
         <EntityType Name="NgpLogsSched">
           <Key>
@@ -1280,9 +1488,11 @@
           <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="LogMessage" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="UserId" Type="Int32" />
-          <Property Name="RoleId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="RoleId" Type="Int32" />
           <NavigationProperty Name="NgpLogsUserAccount1" Relationship="NgpdbmsModel.FK_NgpLogsUserAccount_NgpLogsUserAccount" FromRole="NgpLogsUserAccount" ToRole="NgpLogsUserAccount1" />
           <NavigationProperty Name="NgpLogsUserAccount2" Relationship="NgpdbmsModel.FK_NgpLogsUserAccount_NgpLogsUserAccount" FromRole="NgpLogsUserAccount1" ToRole="NgpLogsUserAccount" />
+          <NavigationProperty Name="NgpRole" Relationship="NgpdbmsModel.FK_NgpLogsUserAccount_NgpRole" FromRole="NgpLogsUserAccount" ToRole="NgpRole" />
+          <NavigationProperty Name="NgpUser" Relationship="NgpdbmsModel.FK_NgpLogsUserAccount_NgpUser" FromRole="NgpLogsUserAccount" ToRole="NgpUser" />
         </EntityType>
         <EntityType Name="NgpMaintenanceMode">
           <Key>
@@ -1313,6 +1523,11 @@
           <NavigationProperty Name="ngp_contractor" Relationship="NgpdbmsModel.FK_ngp_contractor_NgpRole" FromRole="NgpRole" ToRole="ngp_contractor" />
           <NavigationProperty Name="ngp_payment" Relationship="NgpdbmsModel.FK_ngp_payment_NgpRole" FromRole="NgpRole" ToRole="ngp_payment" />
           <NavigationProperty Name="ngp_projects" Relationship="NgpdbmsModel.FK_ngp_projects_NgpRole" FromRole="NgpRole" ToRole="ngp_projects" />
+          <NavigationProperty Name="NgpLogsContracts" Relationship="NgpdbmsModel.FK_NgpLogsContract_NgpRole" FromRole="NgpRole" ToRole="NgpLogsContract" />
+          <NavigationProperty Name="NgpLogsContractors" Relationship="NgpdbmsModel.FK_NgpLogsContractor_NgpRole" FromRole="NgpRole" ToRole="NgpLogsContractor" />
+          <NavigationProperty Name="NgpLogsPayments" Relationship="NgpdbmsModel.FK_NgpLogsPayment_NgpRole" FromRole="NgpRole" ToRole="NgpLogsPayment" />
+          <NavigationProperty Name="NgpLogsProjects" Relationship="NgpdbmsModel.FK_NgpLogsProject_NgpRole" FromRole="NgpRole" ToRole="NgpLogsProject" />
+          <NavigationProperty Name="NgpLogsUserAccounts" Relationship="NgpdbmsModel.FK_NgpLogsUserAccount_NgpRole" FromRole="NgpRole" ToRole="NgpLogsUserAccount" />
           <NavigationProperty Name="NgpUsers" Relationship="NgpdbmsModel.FK_NgpUser_NgpRole" FromRole="NgpRole" ToRole="NgpUser" />
         </EntityType>
         <EntityType Name="NgpUpload">
@@ -1338,6 +1553,11 @@
           <NavigationProperty Name="ngp_contractor" Relationship="NgpdbmsModel.FK_ngp_contractor_NgpUser" FromRole="NgpUser" ToRole="ngp_contractor" />
           <NavigationProperty Name="ngp_payment" Relationship="NgpdbmsModel.FK_ngp_payment_NgpUser" FromRole="NgpUser" ToRole="ngp_payment" />
           <NavigationProperty Name="ngp_projects" Relationship="NgpdbmsModel.FK_ngp_projects_NgpUser" FromRole="NgpUser" ToRole="ngp_projects" />
+          <NavigationProperty Name="NgpLogsContracts" Relationship="NgpdbmsModel.FK_NgpLogsContract_NgpUser" FromRole="NgpUser" ToRole="NgpLogsContract" />
+          <NavigationProperty Name="NgpLogsContractors" Relationship="NgpdbmsModel.FK_NgpLogsContractor_NgpUser" FromRole="NgpUser" ToRole="NgpLogsContractor" />
+          <NavigationProperty Name="NgpLogsPayments" Relationship="NgpdbmsModel.FK_NgpLogsPayment_NgpUser" FromRole="NgpUser" ToRole="NgpLogsPayment" />
+          <NavigationProperty Name="NgpLogsProjects" Relationship="NgpdbmsModel.FK_NgpLogsProject_NgpUser" FromRole="NgpUser" ToRole="NgpLogsProject" />
+          <NavigationProperty Name="NgpLogsUserAccounts" Relationship="NgpdbmsModel.FK_NgpLogsUserAccount_NgpUser" FromRole="NgpUser" ToRole="NgpLogsUserAccount" />
           <NavigationProperty Name="NgpRole" Relationship="NgpdbmsModel.FK_NgpUser_NgpRole" FromRole="NgpUser" ToRole="NgpRole" />
         </EntityType>
         <EntityType Name="NgpYear">
@@ -1649,6 +1869,102 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_NgpLogsContract_NgpRole">
+          <End Type="NgpdbmsModel.NgpRole" Role="NgpRole" Multiplicity="0..1" />
+          <End Type="NgpdbmsModel.NgpLogsContract" Role="NgpLogsContract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NgpRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NgpLogsContract">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NgpLogsContract_NgpUser">
+          <End Type="NgpdbmsModel.NgpUser" Role="NgpUser" Multiplicity="0..1" />
+          <End Type="NgpdbmsModel.NgpLogsContract" Role="NgpLogsContract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NgpUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NgpLogsContract">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NgpLogsContractor_NgpRole">
+          <End Type="NgpdbmsModel.NgpRole" Role="NgpRole" Multiplicity="0..1" />
+          <End Type="NgpdbmsModel.NgpLogsContractor" Role="NgpLogsContractor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NgpRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NgpLogsContractor">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NgpLogsContractor_NgpUser">
+          <End Type="NgpdbmsModel.NgpUser" Role="NgpUser" Multiplicity="0..1" />
+          <End Type="NgpdbmsModel.NgpLogsContractor" Role="NgpLogsContractor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NgpUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NgpLogsContractor">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NgpLogsPayment_NgpRole">
+          <End Type="NgpdbmsModel.NgpRole" Role="NgpRole" Multiplicity="0..1" />
+          <End Type="NgpdbmsModel.NgpLogsPayment" Role="NgpLogsPayment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NgpRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NgpLogsPayment">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NgpLogsPayment_NgpUser">
+          <End Type="NgpdbmsModel.NgpUser" Role="NgpUser" Multiplicity="0..1" />
+          <End Type="NgpdbmsModel.NgpLogsPayment" Role="NgpLogsPayment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NgpUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NgpLogsPayment">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NgpLogsProject_NgpRole">
+          <End Type="NgpdbmsModel.NgpRole" Role="NgpRole" Multiplicity="0..1" />
+          <End Type="NgpdbmsModel.NgpLogsProject" Role="NgpLogsProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NgpRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NgpLogsProject">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NgpLogsProject_NgpUser">
+          <End Type="NgpdbmsModel.NgpUser" Role="NgpUser" Multiplicity="0..1" />
+          <End Type="NgpdbmsModel.NgpLogsProject" Role="NgpLogsProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NgpUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NgpLogsProject">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_NgpLogsUserAccount_NgpLogsUserAccount">
           <End Type="NgpdbmsModel.NgpLogsUserAccount" Role="NgpLogsUserAccount" Multiplicity="1" />
           <End Type="NgpdbmsModel.NgpLogsUserAccount" Role="NgpLogsUserAccount1" Multiplicity="0..1" />
@@ -1658,6 +1974,30 @@
             </Principal>
             <Dependent Role="NgpLogsUserAccount1">
               <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NgpLogsUserAccount_NgpRole">
+          <End Type="NgpdbmsModel.NgpRole" Role="NgpRole" Multiplicity="0..1" />
+          <End Type="NgpdbmsModel.NgpLogsUserAccount" Role="NgpLogsUserAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NgpRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NgpLogsUserAccount">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NgpLogsUserAccount_NgpUser">
+          <End Type="NgpdbmsModel.NgpUser" Role="NgpUser" Multiplicity="0..1" />
+          <End Type="NgpdbmsModel.NgpLogsUserAccount" Role="NgpLogsUserAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NgpUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NgpLogsUserAccount">
+              <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>

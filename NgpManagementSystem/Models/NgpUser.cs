@@ -21,6 +21,11 @@ namespace NgpManagementSystem.Models
             this.ngp_contractor = new HashSet<ngp_contractor>();
             this.ngp_payment = new HashSet<ngp_payment>();
             this.ngp_projects = new HashSet<ngp_projects>();
+            this.NgpLogsContracts = new HashSet<NgpLogsContract>();
+            this.NgpLogsContractors = new HashSet<NgpLogsContractor>();
+            this.NgpLogsPayments = new HashSet<NgpLogsPayment>();
+            this.NgpLogsProjects = new HashSet<NgpLogsProject>();
+            this.NgpLogsUserAccounts = new HashSet<NgpLogsUserAccount>();
         }
     
         public int Id { get; set; }
@@ -38,6 +43,16 @@ namespace NgpManagementSystem.Models
         public virtual ICollection<ngp_payment> ngp_payment { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ngp_projects> ngp_projects { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NgpLogsContract> NgpLogsContracts { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NgpLogsContractor> NgpLogsContractors { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NgpLogsPayment> NgpLogsPayments { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NgpLogsProject> NgpLogsProjects { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NgpLogsUserAccount> NgpLogsUserAccounts { get; set; }
         public virtual NgpRole NgpRole { get; set; }
     }
 }

@@ -20,9 +20,11 @@ namespace NgpManagementSystem.Models
         public string Name { get; set; }
         public string LogMessage { get; set; }
         public Nullable<int> UserId { get; set; }
-        public string RoleId { get; set; }
+        public Nullable<int> RoleId { get; set; }
     
         public virtual NgpLogsUserAccount NgpLogsUserAccount1 { get; set; }
         public virtual NgpLogsUserAccount NgpLogsUserAccount2 { get; set; }
+        public virtual NgpRole NgpRole { get; set; }
+        public virtual NgpUser NgpUser { get; set; }
     }
 }

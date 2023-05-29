@@ -1,4 +1,429 @@
-﻿
+﻿function AdminLActivitLogs() {
+
+    $("#contractlogsadmin").DataTable({
+        "ajax": {
+            "url": "/AdminActivityLogs/GetAdminContractLogs",
+            "type": "POST",
+            "datatype": "json", dataSrc: "data"
+        },
+
+        "processing": "true",
+        "serverSide": "true",
+        "serverSide": "true",
+        "order": [[1, "desc"]],
+
+        "columns": [
+            {
+                "data": "Id", "name": "Id", "className": "hideThis",
+            },
+            {
+                "data": "Date", "name": "Date",
+                "render": function (data, type, row, meta) {
+                    return `<span >${moment(data).format("MMMM DD YYYY, h:mm:ss a")}</span>`;
+                }
+
+            },
+
+            {
+                "data": "UserName", "name": "UserName",
+
+
+            },
+            {
+                "data": "LogMessage", "name": "LogMessage",
+
+            },
+
+            {
+                "data": "Name", "name": "Name",
+                "render": function (data, type, row) {
+
+                    return '<span class=" badge bg-info text-white" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+
+            },
+
+            {
+                "data": "RoleId", "name": "RoleId",
+                "render": function (data, type, row) {
+
+                    if (data == "NgpAdmin") {
+
+                        return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >NgpAdmin</span>'
+                    }
+
+                    return '<span class=" badge bg-secondary text-black" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+
+
+            },
+
+
+
+        ],
+
+
+        "processing": "true",
+        "language": {
+            "processing": "processing... please wait"
+        },
+
+        "fnInitComplete": function (oSettings, json) {
+
+            /*  SearchfilterContractor(json);*/
+        }
+
+
+    });
+
+
+
+
+
+
+    $("#paymentlogsadmin").DataTable({
+        "ajax": {
+            "url": "/AdminActivityLogs/GetAdminPaymentLogs",
+            "type": "POST",
+            "datatype": "json", dataSrc: "data"
+        },
+
+        "processing": "true",
+        "serverSide": "true",
+        "serverSide": "true",
+        "order": [[1, "desc"]],
+
+        "columns": [
+            {
+                "data": "Id", "name": "Id", "className": "hideThis",
+            },
+            {
+                "data": "Date", "name": "Date",
+                "render": function (data, type, row, meta) {
+                    return `<span >${moment(data).format("MMMM DD YYYY, h:mm:ss a")}</span>`;
+                }
+
+            },
+
+            {
+                "data": "UserName", "name": "UserName",
+
+
+            },
+            {
+                "data": "LogMessage", "name": "LogMessage",
+
+            },
+
+            {
+                "data": "Name", "name": "Name",
+                "render": function (data, type, row) {
+
+                    return '<span class=" badge bg-info text-white" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+
+            },
+
+            {
+                "data": "RoleId", "name": "RoleId",
+                "render": function (data, type, row) {
+
+                    if (data == "NgpAdmin") {
+
+                        return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >NgpAdmin</span>'
+                    }
+
+                    return '<span class=" badge bg-secondary text-black" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+
+
+            },
+
+
+
+        ],
+
+
+        "processing": "true",
+        "language": {
+            "processing": "processing... please wait"
+        },
+
+        "fnInitComplete": function (oSettings, json) {
+
+            /*  SearchfilterContractor(json);*/
+        }
+
+
+    });
+
+
+
+    $("#accountlogsadmin").DataTable({
+        "ajax": {
+            "url": "/AdminActivityLogs/GetAdminAccountLogs",
+            "type": "POST",
+            "datatype": "json", dataSrc: "data"
+        },
+
+        "processing": "true",
+        "serverSide": "true",
+        "serverSide": "true",
+        "order": [[1, "desc"]],
+
+        "columns": [
+            {
+                "data": "Id", "name": "Id", "className": "hideThis",
+            },
+            {
+                "data": "Date", "name": "Date",
+                "render": function (data, type, row, meta) {
+                    return `<span >${moment(data).format("MMMM DD YYYY, h:mm:ss a")}</span>`;
+                }
+
+            },
+
+            {
+                "data": "UserName", "name": "UserName",
+
+
+            },
+            {
+                "data": "LogMessage", "name": "LogMessage",
+
+            },
+
+            {
+                "data": "Name", "name": "Name",
+                "render": function (data, type, row) {
+
+                    return '<span class=" badge bg-info text-white" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+
+            },
+
+            {
+                "data": "RoleId", "name": "RoleId",
+                "render": function (data, type, row) {
+
+                    if (data == "NgpAdmin") {
+
+                        return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >NgpAdmin</span>'
+                    }
+
+                    return '<span class=" badge bg-secondary text-black" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+
+
+            },
+
+
+
+        ],
+
+
+        "processing": "true",
+        "language": {
+            "processing": "processing... please wait"
+        },
+
+        "fnInitComplete": function (oSettings, json) {
+
+            /*  SearchfilterContractor(json);*/
+        }
+
+
+    });
+
+
+
+    $("#contractorlogsadmin").DataTable({
+        "ajax": {
+            "url": "/AdminActivityLogs/GetAdminContractorlogs",
+            "type": "POST",
+            "datatype": "json", dataSrc: "data"
+        },
+
+        "processing": "true",
+        "serverSide": "true",
+        "serverSide": "true",
+        "order": [[1, "desc"]],
+
+        "columns": [
+            {
+                "data": "Id", "name": "Id", "className": "hideThis",
+            },
+            {
+                "data": "Date", "name": "Date",
+                "render": function (data, type, row, meta) {
+                    return `<span >${moment(data).format("MMMM DD YYYY, h:mm:ss a")}</span>`;
+                }
+
+            },
+
+            {
+                "data": "UserName", "name": "UserName",
+              
+
+            },
+            {
+                "data": "LogMessage", "name": "LogMessage",
+
+            },
+
+            {
+                "data": "Name", "name": "Name",
+                "render": function (data, type, row) {
+
+                    return '<span class=" badge bg-info text-white" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+              
+            },
+          
+            {
+                "data": "RoleId", "name": "RoleId",
+                "render": function (data, type, row) {
+
+                    if (data == "NgpAdmin") {
+
+                        return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >NgpAdmin</span>'
+                    }
+
+                    return '<span class=" badge bg-secondary text-black" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+
+
+            },
+        
+          
+
+        ],
+
+
+        "processing": "true",
+        "language": {
+            "processing": "processing... please wait"
+        },
+
+        "fnInitComplete": function (oSettings, json) {
+
+            /*  SearchfilterContractor(json);*/
+        }
+
+
+    });
+
+
+
+    $("#useraccountlogsadmin").DataTable({
+        "ajax": {
+            "url": "/AdminActivityLogs/GetAdminProjectlogs",
+            "type": "POST",
+            "datatype": "json", dataSrc: "data"
+        },
+
+        "processing": "true",
+        "serverSide": "true",
+        "serverSide": "true",
+        "order": [[1, "desc"]],
+
+        "columns": [
+            {
+                "data": "Id", "name": "Id", "className": "hideThis",
+            },
+            {
+                "data": "Date", "name": "Date",
+                "render": function (data, type, row, meta) {
+                    return `<span >${moment(data).format("MMMM DD YYYY, h:mm:ss a")}</span>`;
+                }
+
+            },
+
+            {
+                "data": "UserName", "name": "UserName",
+
+
+            },
+            {
+                "data": "LogMessage", "name": "LogMessage",
+
+            },
+
+            {
+                "data": "Name", "name": "Name",
+                "render": function (data, type, row) {
+
+                    return '<span class=" badge bg-info text-white" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+
+            },
+
+            {
+                "data": "RoleId", "name": "RoleId",
+                "render": function (data, type, row) {
+
+                    if (data == "NgpAdmin") {
+
+                        return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >NgpAdmin</span>'
+                    }
+
+                    return '<span class=" badge bg-secondary text-black" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+
+
+            },
+
+
+
+        ],
+
+
+        "processing": "true",
+        "language": {
+            "processing": "processing... please wait"
+        },
+
+        "fnInitComplete": function (oSettings, json) {
+
+            /*  SearchfilterContractor(json);*/
+        }
+
+
+    });
+
+
+
+}
 
 function AdminLogsDashboard() {
     $.ajax({
@@ -16,7 +441,16 @@ function AdminLogsDashboard() {
                     '<td>' + '<span class="badge badge-light text-black-50  " style="font-size: 10px;border-radius:40px;">' + moment(value.date).format('MMMM DD YYYY LT') + '</span>' + '</td>' +
                     '<td>' + '<span style="font-size: 15px;">' + value.logMessage + '</span>' + '</td>' +
                     '<td>' + '<span style="font-size: 15px;">' + value.name + '</span>' + '</td>' +
-                    '<td>' + '<span class="badge badge-info   " style="font-size: 12px;">' + value.roleId + '</span>' + '</td>' +
+                    '<td>' +
+                    (value.roleId == 1 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Ngp Admin' + '</span>' :
+                        value.roleId == 2 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-PuertoPrincesa' + '</span>' :
+                        value.roleId == 3 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Quezon' + '</span>' :
+                        value.roleId == 5 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-BrookesPoint' + '</span>' :
+                        value.roleId == 6 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Conron' + '</span>' :
+                        value.roleId == 7 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Taytay' + '</span>' :
+                        value.roleId == 8 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Roxas' + '</span>' : '') +
+
+                    '</td>' +
                     '</tr>'
                 );
             });
@@ -38,6 +472,18 @@ function AdminLogsDashboard() {
             "Authorization": "Bearer " + localStorage.getItem('access_token')
         },
         success: function (data) {
+            //$('#logsactivitycontractor tbody').html('');
+            //$.each(data, function (index, value) {
+            //    $('#logsactivitycontractor tbody').append(
+            //        '<tr>' +
+            //        /*          '<td>' + '<span style="font-size: 15px;">' + value.name + '</span>' + '</td>' +*/
+            //        '<td>' + '<span class="badge badge-light text-black-50  " style="font-size: 10px;border-radius:40px;">' + moment(value.date).format('MMMM DD YYYY LT') + '</span>' + '</td>' +
+            //        '<td>' + '<span style="font-size: 15px;">' + value.logMessage + '</span>' + '</td>' +
+            //        '<td>' + '<span style="font-size: 15px;">' + value.name + '</span>' + '</td>' +
+            //        '<td>' + '<span class="badge badge-info   " style="font-size: 12px;">' + value.roleId + '</span>' + '</td>' +
+            //        '</tr>'
+            //    );
+            //});
             $('#logsactivitycontractor tbody').html('');
             $.each(data, function (index, value) {
                 $('#logsactivitycontractor tbody').append(
@@ -46,7 +492,16 @@ function AdminLogsDashboard() {
                     '<td>' + '<span class="badge badge-light text-black-50  " style="font-size: 10px;border-radius:40px;">' + moment(value.date).format('MMMM DD YYYY LT') + '</span>' + '</td>' +
                     '<td>' + '<span style="font-size: 15px;">' + value.logMessage + '</span>' + '</td>' +
                     '<td>' + '<span style="font-size: 15px;">' + value.name + '</span>' + '</td>' +
-                    '<td>' + '<span class="badge badge-info   " style="font-size: 12px;">' + value.roleId + '</span>' + '</td>' +
+                    '<td>' +
+                    (value.roleId == 1 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Ngp Admin' + '</span>' :
+                    value.roleId == 2 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-PuertoPrincesa' + '</span>' :
+                    value.roleId == 3 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Quezon' + '</span>' :
+                     value.roleId == 5 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-BrookesPoint' + '</span>' :
+                    value.roleId == 6 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Conron' + '</span>' :
+                    value.roleId == 7 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Taytay' + '</span>' :
+                    value.roleId == 8 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Roxas' + '</span>' :    '')  + 
+
+                    '</td>' +
                     '</tr>'
                 );
             });
@@ -75,7 +530,16 @@ function AdminLogsDashboard() {
                     '<td>' + '<span class="badge badge-light text-black-50  " style="font-size: 10px;border-radius:40px;">' + moment(value.date).format('MMMM DD YYYY LT') + '</span>' + '</td>' +
                     '<td>' + '<span style="font-size: 15px;">' + value.logMessage + '</span>' + '</td>' +
                     '<td>' + '<span style="font-size: 15px;">' + value.name + '</span>' + '</td>' +
-                    '<td>' + '<span class="badge badge-info   " style="font-size: 12px;">' + value.roleId + '</span>' + '</td>' +
+                    '<td>' +
+                    (value.roleId == 1 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Ngp Admin' + '</span>' :
+                        value.roleId == 2 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-PuertoPrincesa' + '</span>' :
+                        value.roleId == 3 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Quezon' + '</span>' :
+                        value.roleId == 5 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-BrookesPoint' + '</span>' :
+                        value.roleId == 6 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Conron' + '</span>' :
+                        value.roleId == 7 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Taytay' + '</span>' :
+                        value.roleId == 8 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Roxas' + '</span>' : '') +
+
+                    '</td>' +
                     '</tr>'
                 );
             });
@@ -104,7 +568,16 @@ function AdminLogsDashboard() {
                     '<td>' + '<span class="badge badge-light text-black-50  " style="font-size: 10px;border-radius:40px;">' + moment(value.date).format('MMMM DD YYYY LT') + '</span>' + '</td>' +
                     '<td>' + '<span style="font-size: 15px;">' + value.logMessage + '</span>' + '</td>' +
                     '<td>' + '<span style="font-size: 15px;">' + value.name + '</span>' + '</td>' +
-                    '<td>' + '<span class="badge badge-info   " style="font-size: 12px;">' + value.roleId + '</span>' + '</td>' +
+                    '<td>' +
+                    (value.roleId == 1 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Ngp Admin' + '</span>' :
+                         value.roleId == 2 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-PuertoPrincesa' + '</span>' :
+                         value.roleId == 3 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Quezon' + '</span>' :
+                         value.roleId == 5 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-BrookesPoint' + '</span>' :
+                         value.roleId == 6 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Conron' + '</span>' :
+                         value.roleId == 7 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Taytay' + '</span>' :
+                         value.roleId == 8 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Roxas' + '</span>' : '') +
+
+                    '</td>' +
                     '</tr>'
                 );
             });
@@ -134,7 +607,16 @@ function AdminLogsDashboard() {
                     '<td>' + '<span class="badge badge-light text-black-50  " style="font-size: 10px;border-radius:40px;">' + moment(value.date).format('MMMM DD YYYY LT') + '</span>' + '</td>' +
                     '<td>' + '<span style="font-size: 15px;">' + value.logMessage + '</span>' + '</td>' +
                     '<td>' + '<span style="font-size: 15px;">' + value.name + '</span>' + '</td>' +
-                    '<td>' + '<span class="badge badge-info   " style="font-size: 12px;">' + value.roleId + '</span>' + '</td>' +
+                    '<td>' +
+                    (value.roleId == 1 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Ngp Admin' + '</span>' :
+                     value.roleId == 2 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-PuertoPrincesa' + '</span>' :
+                     value.roleId == 3 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Quezon' + '</span>' :
+                     value.roleId == 5 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-BrookesPoint' + '</span>' :
+                     value.roleId == 6 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Conron' + '</span>' :
+                     value.roleId == 7 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Taytay' + '</span>' :
+                     value.roleId == 8 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Roxas' + '</span>' : '') +
+
+                    '</td>' +
                     '</tr>'
                 );
             });
@@ -164,7 +646,16 @@ function AdminLogsDashboard() {
                     '<td>' + '<span class="badge badge-light text-black-50  " style="font-size: 10px;border-radius:40px;">' + moment(value.date).format('MMMM DD YYYY LT') + '</span>' + '</td>' +
                     '<td>' + '<span style="font-size: 15px;">' + value.logMessage + '</span>' + '</td>' +
                     '<td>' + '<span style="font-size: 15px;">' + value.name + '</span>' + '</td>' +
-                    '<td>' + '<span class="badge badge-info   " style="font-size: 12px;">' + value.roleId + '</span>' + '</td>' +
+                    '<td>' +
+                    (value.roleId == 1 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Ngp Admin' + '</span>' :
+                    value.roleId == 2 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-PuertoPrincesa' + '</span>' :
+                   value.roleId == 3 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Quezon' + '</span>' :
+                   value.roleId == 5 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-BrookesPoint' + '</span>' :
+                  value.roleId == 6 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Conron' + '</span>' :
+                   value.roleId == 7 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Taytay' + '</span>' :
+                    value.roleId == 8 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Roxas' + '</span>' : '') +
+
+                    '</td>' +
                     '</tr>'
                 );
             });

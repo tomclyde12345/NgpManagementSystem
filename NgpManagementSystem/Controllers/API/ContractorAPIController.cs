@@ -203,7 +203,7 @@ namespace NgpManagementSystem.Controllers.API
                 UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
                 LogMessage = "Added a Contractor " + "Name: " + contractorDTO.contractor_name,
                 UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
-                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.NgpRole.RoleName,
+                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
 
 
             });
@@ -216,7 +216,7 @@ namespace NgpManagementSystem.Controllers.API
                 UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
                 LogMessage = "Project " + "Year:" + contractorDTO.year_form + "Contractor Name:" + contractorDTO.contractor_name,
                 UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
-                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.NgpRole.RoleName,
+                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
 
 
             });
@@ -233,7 +233,7 @@ namespace NgpManagementSystem.Controllers.API
                 + "Year3:" + contractorDTO.moanumber_year3 + "OrsnoYear3" + contractorDTO.orsno_year3
                 + "Contractor Name:" + contractorDTO.contractor_name,
                 UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
-                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.NgpRole.RoleName,
+                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
 
 
             });
@@ -257,7 +257,7 @@ namespace NgpManagementSystem.Controllers.API
 
                 + contractorDTO.contractor_name,
                 UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
-                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.NgpRole.RoleName,
+                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
 
 
             });
@@ -485,7 +485,7 @@ namespace NgpManagementSystem.Controllers.API
                 UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
                 LogMessage = "Delete a Contractor " + "Name: " + contractorinDb.contractor_name,
                 UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
-                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.NgpRole.RoleName,
+                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
 
 
             });

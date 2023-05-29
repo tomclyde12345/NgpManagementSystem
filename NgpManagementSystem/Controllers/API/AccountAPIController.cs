@@ -92,7 +92,7 @@ namespace NgpManagementSystem.Controllers.API
                         UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
                         LogMessage = "Added a  User Account  " + "Name of user: " + res.Name,
                         UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
-                        RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.NgpRole.RoleName,
+                        RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
 
 
                     });
@@ -252,7 +252,7 @@ namespace NgpManagementSystem.Controllers.API
                 UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
                 LogMessage = "Edit a  User Account  " + "Name of user: " + accountdt.Name+ "Name of Editor:"+ accountdt.UserName + "Role:" + accountdt.NgpRole.RoleName,
                 UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
-                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.NgpRole.RoleName,
+                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
             });
 
             }
@@ -324,7 +324,7 @@ namespace NgpManagementSystem.Controllers.API
                     UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
                     LogMessage = "Reset a Password " + "Name of user: " + accountdt.Name + "UserName:" + accountdt.UserName + " Role:" + accountdt.NgpRole.RoleName,
                     UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
-                    RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.NgpRole.RoleName,
+                    RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
                 });
 
             }

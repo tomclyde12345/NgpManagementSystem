@@ -177,6 +177,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminActivityLogsController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\API\AccountAPIController.cs" />
     <Compile Include="Controllers\API\AdminLogsAPiController.cs" />
@@ -301,9 +302,14 @@
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\AccountLogs.cs" />
+    <Compile Include="ViewModel\ContractLogs.cs" />
+    <Compile Include="ViewModel\ContractorLogs.cs" />
     <Compile Include="ViewModel\ContractorVM.cs" />
     <Compile Include="ViewModel\ContractVM.cs" />
+    <Compile Include="ViewModel\PaymentLogs.cs" />
     <Compile Include="ViewModel\PaymentVM.cs" />
+    <Compile Include="ViewModel\ProjectLogs.cs" />
     <Compile Include="ViewModel\ProjectVM.cs" />
     <Compile Include="ViewModel\SchedVM.cs" />
     <Compile Include="ViewModel\UserListVM.cs" />
@@ -6917,6 +6923,11 @@
     <Content Include="Views\Payment\Create.cshtml" />
     <Content Include="Views\Sched\Create.cshtml" />
     <Content Include="Views\Shared\_LayoutUser.cshtml" />
+    <Content Include="Views\AdminActivityLogs\ContractorLogs.cshtml" />
+    <Content Include="Views\AdminActivityLogs\ProjectLogs.cshtml" />
+    <Content Include="Views\AdminActivityLogs\AccountLogs.cshtml" />
+    <Content Include="Views\AdminActivityLogs\PaymentLogs.cshtml" />
+    <Content Include="Views\AdminActivityLogs\ContractLogs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

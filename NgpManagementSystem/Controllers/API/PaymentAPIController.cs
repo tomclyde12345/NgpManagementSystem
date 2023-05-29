@@ -73,7 +73,7 @@ namespace NgpManagementSystem.Controllers.API
                     UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
                     LogMessage = "Added a Payment " + "Contractor Name: " + payment.contractorName,
                     UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
-                    RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.NgpRole.RoleName,
+                    RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
 
                 });
 

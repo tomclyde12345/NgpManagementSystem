@@ -16,7 +16,7 @@ namespace NgpManagementSystem
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "NgpManagement", action = "Login", id = UrlParameter.Optional }
+                defaults: new { controller = "NgpManagement", action = "L ogin", id = UrlParameter.Optional }
             );
         }
     }
