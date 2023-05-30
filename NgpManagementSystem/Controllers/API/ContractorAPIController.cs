@@ -80,9 +80,7 @@ namespace NgpManagementSystem.Controllers.API
                 contractor.num_seedlings_survive_endofyear_1_year3 = contractorDTO.num_seedlings_survive_endofyear_1_year3;
                 contractor.survivalrate_year3 = contractorDTO.survivalrate_year3;
                 contractor.num_seedlings_replanted_year3 = contractorDTO.num_seedlings_replanted_year3;
-
                 //for payments 
-
 
                 //year1 1st release
                 contractor.grossammount_year1_1st = contractorDTO.grossammount_year1_1st;
@@ -91,7 +89,7 @@ namespace NgpManagementSystem.Controllers.API
 
                 //year1 2nd release
                 contractor.grossammount_year1_2nd = contractorDTO.grossammount_year1_2nd;
-                contractor.retention_fee_year1_2nd = contractorDTO.retention_fee_year1_2nd;
+                contractor.retentionfee_year1_2nd = contractorDTO.retentionfee_year1_2nd;
                 contractor.mobilization_fund_year1_2nd = contractorDTO.mobilization_fund_year1_2nd;
                 contractor.amountless_rf_mf_year1_2nd = contractorDTO.amountless_rf_mf_year1_2nd;
                 contractor.bir_year1_2nd = contractorDTO.bir_year1_2nd;
@@ -102,7 +100,7 @@ namespace NgpManagementSystem.Controllers.API
 
                 //year1 3rd release
                 contractor.grossammount_year1_3rd = contractorDTO.grossammount_year1_3rd;
-                contractor.retention_fee_year1_3rd = contractorDTO.retention_fee_year1_3rd;
+                contractor.retentionfee_year1_3rd = contractorDTO.retentionfee_year1_3rd;
                 contractor.mobilization_fund_year1_3rd = contractorDTO.mobilization_fund_year1_3rd;
                 contractor.amountless_rf_mf_year1_3rd = contractorDTO.amountless_rf_mf_year1_3rd;
                 contractor.bir_year1_3rd = contractorDTO.bir_year1_2nd;
@@ -113,7 +111,7 @@ namespace NgpManagementSystem.Controllers.API
 
                 //year1 4rd release
                 contractor.grossammount_year1_4th = contractorDTO.grossammount_year1_4th;
-                contractor.retention_fee_year1_4th = contractorDTO.retention_fee_year1_4th;
+                contractor.retentionfee_year1_4th = contractorDTO.retentionfee_year1_4th;
                 contractor.mobilization_fund_year1_4th = contractorDTO.mobilization_fund_year1_4th;
                 contractor.amountless_rf_mf_year1_4th = contractorDTO.amountless_rf_mf_year1_4th;
                 contractor.bir_year1_4th = contractorDTO.bir_year1_2nd;
@@ -123,7 +121,7 @@ namespace NgpManagementSystem.Controllers.API
 
                 //year1 5th release
                 contractor.grossammount_year1_5th = contractorDTO.grossammount_year1_5th;
-                contractor.retention_fee_year1_5th = contractorDTO.retention_fee_year1_5th;
+                contractor.retentionfee_year1_5th = contractorDTO.retentionfee_year1_5th;
                 contractor.mobilization_fund_year1_5th = contractorDTO.mobilization_fund_year1_5th;
                 contractor.amountless_rf_mf_year1_5th = contractorDTO.amountless_rf_mf_year1_5th;
                 contractor.bir_year1_5th = contractorDTO.bir_year1_2nd;
@@ -133,7 +131,7 @@ namespace NgpManagementSystem.Controllers.API
 
                 //year1 6th release
                 contractor.grossammount_year1_6th = contractorDTO.grossammount_year1_6th;
-                contractor.retention_fee_year1_6th = contractorDTO.retention_fee_year1_6th;
+                contractor.retentionfee_year1_6th = contractorDTO.retentionfee_year1_6th;
                 contractor.mobilization_fund_year1_6th = contractorDTO.mobilization_fund_year1_6th;
                 contractor.amountless_rf_mf_year1_6th = contractorDTO.amountless_rf_mf_year1_6th;
                 contractor.bir_year1_6th = contractorDTO.bir_year1_6th;
@@ -141,7 +139,7 @@ namespace NgpManagementSystem.Controllers.API
                 //year2 1st release
                 contractor.survivalrate_year2_1st = contractorDTO.survivalrate_year2_1st;
                 contractor.grossammount_year2_1st = contractorDTO.grossammount_year2_1st;
-                contractor.redentionfee_fee_year2_1st = contractorDTO.redentionfee_fee_year2_1st;
+                contractor.retentionfee_year2_1st = contractorDTO.retentionfee_year2_1st;
                 contractor.amountless_rf_year2_1st = contractorDTO.amountless_rf_year2_1st;
                 contractor.bir_year2_1st = contractorDTO.bir_year2_1st;
                 contractor.netamount_paid_year2_1st = contractorDTO.netamount_paid_year2_1st;
@@ -153,7 +151,7 @@ namespace NgpManagementSystem.Controllers.API
                 //year2 2nd release
                 contractor.survivalrate_year2_2nd = contractorDTO.survivalrate_year2_2nd;
                 contractor.grossammount_year2_2nd = contractorDTO.grossammount_year2_2nd;
-                contractor.redentionfee_fee_year2_2nd = contractorDTO.redentionfee_fee_year2_2nd;
+                contractor.retentionfee_year2_2nd = contractorDTO.retentionfee_year2_2nd;
                 contractor.amountless_rf_year2_2nd = contractorDTO.amountless_rf_year2_2nd;
                 contractor.bir_year2_2nd = contractorDTO.bir_year2_2nd;
                 contractor.netamount_paid_year2_2nd = contractorDTO.netamount_paid_year2_2nd;
@@ -165,7 +163,7 @@ namespace NgpManagementSystem.Controllers.API
                 //year2 3rd release
                 contractor.survivalrate_year2_3rd = contractorDTO.survivalrate_year2_3rd;
                 contractor.grossammount_year2_3rd = contractorDTO.grossammount_year2_3rd;
-                contractor.redentionfee_fee_year2_3rd = contractorDTO.redentionfee_fee_year2_3rd;
+                contractor.retentionfee_year2_3rd = contractorDTO.retentionfee_year2_3rd;
                 contractor.amountless_rf_year2_3rd = contractorDTO.amountless_rf_year2_3rd;
                 contractor.bir_year2_3rd = contractorDTO.bir_year2_3rd;
                 contractor.netamount_paid_year2_3rd = contractorDTO.netamount_paid_year2_3rd;
@@ -175,9 +173,9 @@ namespace NgpManagementSystem.Controllers.API
                 //year2 4th release
                 contractor.survivalrate_year2_4th = contractorDTO.survivalrate_year2_4th;
                 contractor.grossammount_year2_4th = contractorDTO.grossammount_year2_4th;
-                contractor.redentionfee_fee_year2_4th = contractorDTO.redentionfee_fee_year2_4th;
+                contractor.retentionfee_year2_4th = contractorDTO.retentionfee_year2_4th;
                 contractor.amountless_rf_year2_4th = contractorDTO.amountless_rf_year2_4th;
-                contractor.bir_year2_1st3 = contractorDTO.bir_year2_1st3;
+                contractor.bir_year2_4th = contractorDTO.bir_year2_4th;
                 contractor.netamount_paid_year2_4th = contractorDTO.netamount_paid_year2_4th;
                 contractor.lddapno_year2_4th = contractorDTO.lddapno_year2_4th;
                 contractor.date_lddap_year2_4th = contractorDTO.date_lddap_year2_4th;
@@ -364,7 +362,7 @@ namespace NgpManagementSystem.Controllers.API
 
             //year1 2nd release
             contractorinDb.grossammount_year1_2nd = contractorDTO.grossammount_year1_2nd;
-            contractorinDb.retention_fee_year1_2nd = contractorDTO.retention_fee_year1_2nd;
+            contractorinDb.retentionfee_year1_2nd = contractorDTO.retentionfee_year1_2nd;
             contractorinDb.mobilization_fund_year1_2nd = contractorDTO.mobilization_fund_year1_2nd;
             contractorinDb.amountless_rf_mf_year1_2nd = contractorDTO.amountless_rf_mf_year1_2nd;
             contractorinDb.bir_year1_2nd = contractorDTO.bir_year1_2nd;
@@ -375,7 +373,7 @@ namespace NgpManagementSystem.Controllers.API
 
             //year1 3rd release
             contractorinDb.grossammount_year1_3rd = contractorDTO.grossammount_year1_3rd;
-            contractorinDb.retention_fee_year1_3rd = contractorDTO.retention_fee_year1_3rd;
+            contractorinDb.retentionfee_year1_3rd = contractorDTO.retentionfee_year1_3rd;
             contractorinDb.mobilization_fund_year1_3rd = contractorDTO.mobilization_fund_year1_3rd;
             contractorinDb.amountless_rf_mf_year1_3rd = contractorDTO.amountless_rf_mf_year1_3rd;
             contractorinDb.bir_year1_3rd = contractorDTO.bir_year1_2nd;
@@ -386,7 +384,7 @@ namespace NgpManagementSystem.Controllers.API
 
             //year1 4rd release
             contractorinDb.grossammount_year1_4th = contractorDTO.grossammount_year1_4th;
-            contractorinDb.retention_fee_year1_4th = contractorDTO.retention_fee_year1_4th;
+            contractorinDb.retentionfee_year1_4th = contractorDTO.retentionfee_year1_4th;
             contractorinDb.mobilization_fund_year1_4th = contractorDTO.mobilization_fund_year1_4th;
             contractorinDb.amountless_rf_mf_year1_4th = contractorDTO.amountless_rf_mf_year1_4th;
             contractorinDb.bir_year1_4th = contractorDTO.bir_year1_2nd;
@@ -396,7 +394,7 @@ namespace NgpManagementSystem.Controllers.API
 
             //year1 5th release
             contractorinDb.grossammount_year1_5th = contractorDTO.grossammount_year1_5th;
-            contractorinDb.retention_fee_year1_5th = contractorDTO.retention_fee_year1_5th;
+            contractorinDb.retentionfee_year1_5th = contractorDTO.retentionfee_year1_5th;
             contractorinDb.mobilization_fund_year1_5th = contractorDTO.mobilization_fund_year1_5th;
             contractorinDb.amountless_rf_mf_year1_5th = contractorDTO.amountless_rf_mf_year1_5th;
             contractorinDb.bir_year1_5th = contractorDTO.bir_year1_2nd;
@@ -406,7 +404,7 @@ namespace NgpManagementSystem.Controllers.API
 
             //year1 6th release
             contractorinDb.grossammount_year1_6th = contractorDTO.grossammount_year1_6th;
-            contractorinDb.retention_fee_year1_6th = contractorDTO.retention_fee_year1_6th;
+            contractorinDb.retentionfee_year1_6th = contractorDTO.retentionfee_year1_6th;
             contractorinDb.mobilization_fund_year1_6th = contractorDTO.mobilization_fund_year1_6th;
             contractorinDb.amountless_rf_mf_year1_6th = contractorDTO.amountless_rf_mf_year1_6th;
             contractorinDb.bir_year1_6th = contractorDTO.bir_year1_6th;
@@ -414,7 +412,7 @@ namespace NgpManagementSystem.Controllers.API
             //year2 1st release
             contractorinDb.survivalrate_year2_1st = contractorDTO.survivalrate_year2_1st;
             contractorinDb.grossammount_year2_1st = contractorDTO.grossammount_year2_1st;
-            contractorinDb.redentionfee_fee_year2_1st = contractorDTO.redentionfee_fee_year2_1st;
+            contractorinDb.retentionfee_year2_1st = contractorDTO.retentionfee_year2_1st;
             contractorinDb.amountless_rf_year2_1st = contractorDTO.amountless_rf_year2_1st;
             contractorinDb.bir_year2_1st = contractorDTO.bir_year2_1st;
             contractorinDb.netamount_paid_year2_1st = contractorDTO.netamount_paid_year2_1st;
@@ -426,7 +424,7 @@ namespace NgpManagementSystem.Controllers.API
             //year2 2nd release
             contractorinDb.survivalrate_year2_2nd = contractorDTO.survivalrate_year2_2nd;
             contractorinDb.grossammount_year2_2nd = contractorDTO.grossammount_year2_2nd;
-            contractorinDb.redentionfee_fee_year2_2nd = contractorDTO.redentionfee_fee_year2_2nd;
+            contractorinDb.retentionfee_year2_3rd = contractorDTO.retentionfee_year2_3rd;
             contractorinDb.amountless_rf_year2_2nd = contractorDTO.amountless_rf_year2_2nd;
             contractorinDb.bir_year2_2nd = contractorDTO.bir_year2_2nd;
             contractorinDb.netamount_paid_year2_2nd = contractorDTO.netamount_paid_year2_2nd;
@@ -438,7 +436,7 @@ namespace NgpManagementSystem.Controllers.API
             //year2 3rd release
             contractorinDb.survivalrate_year2_3rd = contractorDTO.survivalrate_year2_3rd;
             contractorinDb.grossammount_year2_3rd = contractorDTO.grossammount_year2_3rd;
-            contractorinDb.redentionfee_fee_year2_3rd = contractorDTO.redentionfee_fee_year2_3rd;
+            contractorinDb.retentionfee_year2_3rd = contractorDTO.retentionfee_year2_3rd;
             contractorinDb.amountless_rf_year2_3rd = contractorDTO.amountless_rf_year2_3rd;
             contractorinDb.bir_year2_3rd = contractorDTO.bir_year2_3rd;
             contractorinDb.netamount_paid_year2_3rd = contractorDTO.netamount_paid_year2_3rd;
@@ -448,13 +446,13 @@ namespace NgpManagementSystem.Controllers.API
             //year2 4th release
             contractorinDb.survivalrate_year2_4th = contractorDTO.survivalrate_year2_4th;
             contractorinDb.grossammount_year2_4th = contractorDTO.grossammount_year2_4th;
-            contractorinDb.redentionfee_fee_year2_4th = contractorDTO.redentionfee_fee_year2_4th;
+            contractorinDb.retentionfee_year2_4th = contractorDTO.retentionfee_year2_4th;
             contractorinDb.amountless_rf_year2_4th = contractorDTO.amountless_rf_year2_4th;
-            contractorinDb.bir_year2_1st3 = contractorDTO.bir_year2_1st3;
+            contractorinDb.bir_year2_4th = contractorDTO.bir_year2_4th;
             contractorinDb.netamount_paid_year2_4th = contractorDTO.netamount_paid_year2_4th;
             contractorinDb.lddapno_year2_4th = contractorDTO.lddapno_year2_4th;
             contractorinDb.date_lddap_year2_4th = contractorDTO.date_lddap_year2_4th;
-
+            contractorinDb.DateAdded  = DateTime.Now;
 
 
 
