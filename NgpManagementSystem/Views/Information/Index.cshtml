@@ -12,7 +12,7 @@
             <div class="card-body">
                 <ul class="nav nav-pills" id="myTab3" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="home-tab3" data-toggle="tab" href="#home3" role="tab" aria-controls="forContractor" aria-selected="true" > Contractor</a>
+                        <a class="nav-link active" id="home-tab3" data-toggle="tab" href="#home3" role="tab" aria-controls="forContractor" aria-selected="true"> Contractor</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="profile-tab3" data-toggle="tab" href="#profile3" role="tab" aria-controls="forProject" aria-selected="false">Project </a>
@@ -23,7 +23,7 @@
                     <li class="nav-item">
                         <a class="nav-link" id="profile-tab5" data-toggle="tab" href="#profile5" role="tab" aria-controls="forPayments" aria-selected="false">Payment </a>
                     </li>
-                  
+
 
                 </ul>
                 <div class="tab-content" id="myTabContent2">
@@ -44,12 +44,12 @@
                                     <!--<div style="padding:2px 2.5%">-->
                                     @*<button type="button" class="btn btn-info btn-md " style="border-radius:20px;" onclick="location.href ='/Contractor/Create'">Create Contractor <i class="fa fa-plus-circle"></i> </button>*@
                                     <!--<div class="col-md-8" style="float:right">
-            <div id="FilterSearchRole"></div>
-    <div id="FilterSearchContractor"></div>
-    </div>
-        <br />
-        <br />
-    </div>-->
+                                            <div id="FilterSearchRole"></div>
+                                    <div id="FilterSearchContractor"></div>
+                                    </div>
+                                        <br />
+                                        <br />
+                                    </div>-->
                                     <br />
                                     <br />
                                     <div class="card-body p-0">
@@ -176,11 +176,11 @@
 
                                             <th style="display:none;">contractID</th>
                                             <th>CONTRACTOR NAME :</th>
-                                            <th > YEAR :</th>
-                                            <th > DATE ADDED :</th>
+                                            <th> YEAR :</th>
+                                            <th> DATE ADDED :</th>
                                             <th>ROLE : </th>
                                             <th>CREATE BY: </th>
-                                            <th >ACTION : </th>
+                                            <th>ACTION : </th>
 
 
 
@@ -1452,7 +1452,7 @@
 
 
 
-                
+
 
             </div>
             <div class="modal-footer">
@@ -2907,6 +2907,523 @@
 
 
 
+
+
+@*YEAR 3 PAYMENTS SHOW IN MODAL(READONLY)*@
+<div id="year3paymentModal" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="min-width: 1200px">
+
+
+
+        <div class="modal-content">
+            <div class="modal-header bg-green">
+                <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">Year 3 PAYMENTS </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="showdatayear3paymentform">
+                    <input type="hidden" class="form-control" id="contractorID" name="contractorID" />
+                    @*need id*@
+
+
+
+
+                    @*YEAR 3  FOR PAYMENTS*@
+
+                    <div class="row">
+                        <div class="col-md-6">
+
+
+                            <div class="row mt-5">
+                                <div class="col-md-12">
+
+                                    <h5>1st Release</h5>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">grossammount_year3_1st</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="grossammount_year3_1st" readonly
+                                                   name="grossammount_year3_1st" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">survivalrate_year3_1st</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="survivalrate_year3_1st" readonly
+                                                   name="survivalrate_year3_1st" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">bir_year3_1st</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="bir_year3_1st" readonly
+                                                   name="bir_year3_1st" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">netamount_paid_year3_1st</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="netamount_paid_year3_1st" readonly
+                                                   name="netamount_paid_year3_1st" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">lddapno_year3_1st</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="lddapno_year3_1st" readonly
+                                                   name="lddapno_year3_1st" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">retentionfee_year3_1st</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="retentionfee_year3_1st" readonly
+                                                   name="retentionfee_year3_1st" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">amountless_rf_year3_1st</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="amountless_rf_year3_1st" readonly
+                                                   name="amountless_rf_year3_1st" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">date_lddap_year3_1st</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="date_lddap_year3_1st" readonly
+                                                   name="date_lddap_year3_1st" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+
+                            @*YEAR 3 FOR PAYMENTS*@
+                            <div class="row mt-5">
+                                <div class="col-md-12">
+
+                                    <h5>2nd Release</h5>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">survivalrate_year3_2nd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="survivalrate_year3_2nd" readonly
+                                                   name="survivalrate_year3_2nd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">grossammount_year3_2nd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="grossammount_year2_2nd" readonly
+                                                   name="grossammount_year3_2nd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">retentionfee_year3_2nd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="retentionfee_year3_2nd" readonly
+                                                   name="retentionfee_year3_2nd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">amountless_rf_year3_2nd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="amountless_rf_year3_2nd" readonly
+                                                   name="amountless_rf_year3_2nd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">bir_year3_2nd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="bir_year3_2nd" readonly
+                                                   name="bir_year3_2nd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">netamount_paid_year3_2nd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="netamount_paid_year3_2nd" readonly
+                                                   name="netamount_paid_year3_2nd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">lddapno_year3_2nd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="lddapno_year3_2nd" readonly
+                                                   name="lddapno_year3_2nd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">date_lddap_year3_2nd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="date_lddap_year3_2nd" readonly
+                                                   name="date_lddap_year3_2nd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            @*YEAR 3 FOR PAYMENTS*@
+                            <div class="row mt-5">
+                                <div class="col-md-12">
+
+                                    <h5>3rd Release</h5>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">survivalrate_year3_3rd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="survivalrate_year3_3rd" readonly
+                                                   name="survivalrate_year3_3rd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">grossammount_year3_3rd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="grossammount_year3_3rd" readonly
+                                                   name="grossammount_year3_3rd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">retentionfee_year3_3rd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="retentionfee_year3_3rd" readonly
+                                                   name="retentionfee_year3_3rd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">amountless_rf_year3_3rd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="amountless_rf_year3_3rd" readonly
+                                                   name="amountless_rf_year3_3rd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">bir_year3_3rd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="bir_year3_3rd" readonly
+                                                   name="bir_year3_3rd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">netamount_paid_year3_3rd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="netamount_paid_year2_3rd" readonly
+                                                   name="netamount_paid_year3_3rd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">lddapno_year3_3rd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="lddapno_year3_3rd" readonly
+                                                   name="lddapno_year3_3rd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">date_lddap_year3_3rd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="date_lddap_year3_3rd" readonly
+                                                   name="date_lddap_year3_3rd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+
+                            <div class="row mt-5">
+                                <div class="col-md-12">
+                                    @*YEAR 3 FOR PAYMENTS*@
+                                    <h5>4th Release</h5>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">survivalrate_year3_4th</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="survivalrate_year3_4th" readonly
+                                                   name="survivalrate_year3_4th" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">grossammount_year3_4th</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="grossammount_year3_4th" readonly
+                                                   name="grossammount_year3_4th" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">retentionfee_year3_4th</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="retentionfee_year3_4th" readonly
+                                                   name="retentionfee_year3_4th" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">amountless_rf_year3_4th</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="amountless_rf_year3_4th" readonly
+                                                   name="amountless_rf_year3_4th" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">bir_year3_4th</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="bir_year3_4th" readonly
+                                                   name="bir_year3_4th" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">netamount_paid_year3_4th</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="netamount_paid_year3_4th" readonly
+                                                   name="netamount_paid_year3_4th" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">lddapno_year3_4th</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="lddapno_year3_4th" readonly
+                                                   name="lddapno_year3_4th" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">date_lddap_year3_4th</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="date_lddap_year3_4th" readonly
+                                                   name="date_lddap_year3_4th" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                </form>
+
+
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
 @*YEAR1 PAYMENTS SHOW IN MODAL(EDIT YEAR 1)*@
 <div id="edityear1paymentModal" class="modal fade" role="dialog">
     <div class="modal-dialog" style="min-width: 1200px">
@@ -3660,6 +4177,710 @@
 
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+@*YEAR 3PAYMENTS SHOW IN MODAL(EDIT YEAR 3)*@
+<div id="edityear3paymentModal" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="min-width: 1200px">
+
+
+
+        <div class="modal-content">
+            <div class="modal-header bg-green">
+                <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;"> EDIT YEAR 3 PAYMENTS </h4>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="edityear3paymentform">
+                    <input type="hidden" class="form-control" id="contractorID" name="contractorID" />
+                    @*need id*@
+
+
+
+                    @*YEAR 3  FOR PAYMENTS*@
+
+                    <div class="row">
+                        <div class="col-md-6">
+
+
+                            <div class="row mt-5">
+                                <div class="col-md-12">
+
+                                    <h5>1st Release</h5>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">grossammount_year3_1st</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="grossammount_year3_1st"
+                                                   name="grossammount_year3_1st" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">survivalrate_year3_1st</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="survivalrate_year3_1st"
+                                                   name="survivalrate_year3_1st" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">bir_year3_1st</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="bir_year3_1st"
+                                                   name="bir_year3_1st" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">netamount_paid_year3_1st</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="netamount_paid_year3_1st"
+                                                   name="netamount_paid_year3_1st" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">lddapno_year3_1st</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="lddapno_year3_1st"
+                                                   name="lddapno_year3_1st" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">retentionfee_year3_1st</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="retentionfee_year3_1st"
+                                                   name="retentionfee_year3_1st" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">amountless_rf_year3_1st</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="amountless_rf_year3_1st"
+                                                   name="amountless_rf_year3_1st" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">date_lddap_year3_1st</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="date_lddap_year3_1st"
+                                                   name="date_lddap_year3_1st" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+
+                            @*YEAR 3 FOR PAYMENTS*@
+                            <div class="row mt-5">
+                                <div class="col-md-12">
+
+                                    <h5>2nd Release</h5>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">survivalrate_year3_2nd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="survivalrate_year3_2nd"
+                                                   name="survivalrate_year3_2nd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">grossammount_year3_2nd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="grossammount_year2_2nd"
+                                                   name="grossammount_year3_2nd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">retentionfee_year3_2nd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="retentionfee_year3_2nd"
+                                                   name="retentionfee_year3_2nd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">amountless_rf_year3_2nd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="amountless_rf_year3_2nd"
+                                                   name="amountless_rf_year3_2nd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">bir_year3_2nd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="bir_year3_2nd"
+                                                   name="bir_year3_2nd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">netamount_paid_year3_2nd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="netamount_paid_year3_2nd"
+                                                   name="netamount_paid_year3_2nd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">lddapno_year3_2nd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="lddapno_year3_2nd"
+                                                   name="lddapno_year3_2nd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">date_lddap_year3_2nd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="date_lddap_year3_2nd"
+                                                   name="date_lddap_year3_2nd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            @*YEAR 3 FOR PAYMENTS*@
+                            <div class="row mt-5">
+                                <div class="col-md-12">
+
+                                    <h5>3rd Release</h5>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">survivalrate_year3_3rd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="survivalrate_year3_3rd"
+                                                   name="survivalrate_year3_3rd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">grossammount_year3_3rd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="grossammount_year3_3rd"
+                                                   name="grossammount_year3_3rd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">retentionfee_year3_3rd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="retentionfee_year3_3rd"
+                                                   name="retentionfee_year3_3rd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">amountless_rf_year3_3rd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="amountless_rf_year3_3rd"
+                                                   name="amountless_rf_year3_3rd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">bir_year3_3rd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="bir_year3_3rd"
+                                                   name="bir_year3_3rd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">netamount_paid_year3_3rd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="netamount_paid_year2_3rd"
+                                                   name="netamount_paid_year3_3rd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">lddapno_year3_3rd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="lddapno_year3_3rd"
+                                                   name="lddapno_year3_3rd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">date_lddap_year3_3rd</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="date_lddap_year3_3rd"
+                                                   name="date_lddap_year3_3rd" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+
+                            <div class="row mt-5">
+                                <div class="col-md-12">
+                                    @*YEAR 3 FOR PAYMENTS*@
+                                    <h5>4th Release</h5>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">survivalrate_year3_4th</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="survivalrate_year3_4th"
+                                                   name="survivalrate_year3_4th" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">grossammount_year3_4th</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="grossammount_year3_4th"
+                                                   name="grossammount_year3_4th" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">retentionfee_year3_4th</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="retentionfee_year3_4th"
+                                                   name="retentionfee_year3_4th" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">amountless_rf_year3_4th</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="amountless_rf_year3_4th"
+                                                   name="amountless_rf_year3_4th" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">bir_year3_4th</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="bir_year3_4th"
+                                                   name="bir_year3_4th" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">netamount_paid_year3_4th</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="netamount_paid_year3_4th"
+                                                   name="netamount_paid_year3_4th" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">lddapno_year3_4th</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="lddapno_year3_4th"
+                                                   name="lddapno_year3_4th" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label style="color: black;">date_lddap_year3_4th</label>
+                                        </div>
+                                        <div class="col-md-10">
+
+                                            <input type="text" class="form-control" id="date_lddap_year3_4th"
+                                                   name="date_lddap_year3_4th" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="text-center">
+                        <div class="text-center">
+                            <button type="button" value=" submit" class="btn bg-green text-white " id="UpdateYear3Payment">Save</button>
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="contractor_name" id="contractor_name" />
+
+                    <input type="hidden" name="roleId" id="roleId" />
+                    <input type="hidden" name="name" id="name" />
+                    <input type="hidden" name="userId" id="userId" />
+                    <input type="hidden" name="userName" id="userName" />
+
+                    <input type="hidden" name="address_municipality" id="address_municipality" />
+                    <input type="hidden" name="address_barangay" id="address_barangay" />
+                    <input type="hidden" name="contractor_type" id="contractor_type" />
+                    <input type="hidden" name="location_municipality" id="location_municipality" />
+                    <input type="hidden" name="location_barangay" id="location_barangay" />
+                    <input type="hidden" name="year_form" id="year_form" />
+                    <input type="hidden" name="penro" id="penro" />
+                    <input type="hidden" name="cenro" id="cenro" />
+                    <input type="hidden" name="region" id="region" />
+                    <input type="hidden" name="area" id="area" />
+                    <input type="hidden" name="moanumber_year1" id="moanumber_year1" />
+                    <input type="hidden" name="datemoasigned_year1" id="datemoasigned_year1" />
+                    <input type="hidden" name="contractcost_year1" id="contractcost_year1" />
+                    <input type="hidden" name="dateobligated_year1" id="dateobligated_year1" />
+                    <input type="hidden" name="orsno_year1" id="orsno_year1" />
+                    <input type="hidden" name="num_seedlings_produced_year1" id="num_seedlings_produced_year1" />
+                    <input type="hidden" name="commodity_year1" id="commodity_year1" />
+                    <input type="hidden" name="num_seedlings_planted_year1" id="num_seedlings_planted_year1" />
+                    <input type="hidden" name="survivalrate_year1" id="survivalrate_year1" />
+                    <input type="hidden" name="moanumber_year2" id="moanumber_year2" />
+                    <input type="hidden" name="datemoasigned_year2" id="datemoasigned_year2" />
+                    <input type="hidden" name="unitcost_year2" id="unitcost_year2" />
+                    <input type="hidden" name="contractcost_year2" id="contractcost_year2" />
+                    <input type="hidden" name="dateobligated_year2" id="dateobligated_year2" />
+                    <input type="hidden" name="orsno_year2" id="orsno_year2" />
+                    <input type="hidden" name="num_seedlings_planted_year2" id="num_seedlings_planted_year2" />
+                    <input type="hidden" name="num_seedlings_survive_endofyear_1_year2" id="num_seedlings_survive_endofyear_1_year2" />
+
+                    <input type="hidden" name="survivalrate_year2" id="survivalrate_year2" />
+
+
+                    <input type="hidden" name="num_seedlings_replanted_year2" id="num_seedlings_replanted_year2" />
+                    <input type="hidden" name="moanumber_year3" id="moanumber_year3" />
+                    <input type="hidden" name="datemoasigned_year3" id="datemoasigned_year3" />
+                    <input type="hidden" name="unitcost_year3" id="unitcost_year3" />
+                    <input type="hidden" name="contractcost_year3" id="contractcost_year3" />
+                    <input type="hidden" name="dateobligated_year3" id="dateobligated_year3" />
+                    <input type="hidden" name="orsno_year3" id="orsno_year3" />
+                    <input type="hidden" name="num_seedlings_planted_year3" id="num_seedlings_planted_year3" />
+                    <input type="hidden" name="num_seedlings_survive_endofyear_1_year3" id="num_seedlings_survive_endofyear_1_year3" />
+                    <input type="hidden" name="survivalrate_year3" id="survivalrate_year3" />
+                    <input type="hidden" name="num_seedlings_replanted_year3" id="num_seedlings_replanted_year3" />
+                    <input type="hidden" name="grossammount_year1_1st" id="grossammount_year1_1st" />
+                    <input type="hidden" name="lddap_no_year1_1st" id="lddap_no_year1_1st" />
+                    <input type="hidden" name="date_lddap_year1_1st" id="date_lddap_year1_1st" />
+                    <input type="hidden" name="grossammount_year1_2nd" id="grossammount_year1_2nd" />
+                    <input type="hidden" name="retentionfee_year1_2nd" id="retentionfee_year1_2nd" />
+                    <input type="hidden" name="mobilization_fund_year1_2nd" id="mobilization_fund_year1_2nd" />
+                    <input type="hidden" name="amountless_rf_mf_year1_2nd" id="amountless_rf_mf_year1_2nd" />
+                    <input type="hidden" name="bir_year1_2nd" id="bir_year1_2nd" />
+                    <input type="hidden" name="netammountpaid_year1_2nd" id="netammountpaid_year1_2nd" />
+                    <input type="hidden" name="lddapno_year1_2nd" id="lddapno_year1_2nd" />
+                    <input type="hidden" name="date_lddap_year1_2nd" id="date_lddap_year1_2nd" />
+                    <input type="hidden" name="grossammount_year1_3rd" id="grossammount_year1_3rd" />
+                    <input type="hidden" name="retentionfee_year1_3rd" id="retentionfee_year1_3rd" />
+                    <input type="hidden" name="mobilization_fund_year1_3rd" id="mobilization_fund_year1_3rd" />
+                    <input type="hidden" name="amountless_rf_mf_year1_3rd" id="amountless_rf_mf_year1_3rd" />
+                    <input type="hidden" name="bir_year1_3rd" id="bir_year1_3rd" />
+                    <input type="hidden" name="netammountpaid_year1_3rd" id="netammountpaid_year1_3rd" />
+                    <input type="hidden" name="lddapno_year1_3rd" id="lddapno_year1_3rd" />
+                    <input type="hidden" name="date_lddap_year1_3rd" id="date_lddap_year1_3rd" />
+                    <input type="hidden" name="grossammount_year1_4th" id="grossammount_year1_4th" />
+                    <input type="hidden" name="retentionfee_year1_4th" id="retentionfee_year1_4th" />
+                    <input type="hidden" name="mobilization_fund_year1_4th" id="mobilization_fund_year1_4th" />
+                    <input type="hidden" name="amountless_rf_mf_year1_4th" id="amountless_rf_mf_year1_4th" />
+                    <input type="hidden" name="bir_year1_4th" id="bir_year1_4th" />
+                    <input type="hidden" name="netammountpaid_year1_4th" id="netammountpaid_year1_4th" />
+                    <input type="hidden" name="lddapno_year1_4th" id="lddapno_year1_4th" />
+                    <input type="hidden" name="date_lddap_year1_4th" id="date_lddap_year1_4th" />
+                    <input type="hidden" name="grossammount_year1_5th" id="grossammount_year1_5th" />
+                    <input type="hidden" name="retentionfee_year1_5th" id="retentionfee_year1_5th" />
+                    <input type="hidden" name="mobilization_fund_year1_5th" id="mobilization_fund_year1_5th" />
+                    <input type="hidden" name="amountless_rf_mf_year1_5th" id="amountless_rf_mf_year1_5th" />
+                    <input type="hidden" name="bir_year1_5th" id="bir_year1_5th" />
+                    <input type="hidden" name="netammountpaid_year1_5th" id="netammountpaid_year1_5th" />
+                    <input type="hidden" name="lddapno_year1_5th" id="lddapno_year1_5th" />
+                    <input type="hidden" name="date_lddap_year1_5th" id="date_lddap_year1_5th" />
+                    <input type="hidden" name="grossammount_year1_6th" id="grossammount_year1_6th" />
+                    <input type="hidden" name="retentionfee_year1_6th" id="retentionfee_year1_6th" />
+                    <input type="hidden" name="mobilization_fund_year1_6th" id="mobilization_fund_year1_6th" />
+                    <input type="hidden" name="amountless_rf_mf_year1_6th" id="amountless_rf_mf_year1_6th" />
+                    <input type="hidden" name="bir_year1_6th" id="bir_year1_6th" />
+                    <input type="hidden" name="survivalrate_year2_1st" id="survivalrate_year2_1st" />
+                    <input type="hidden" name="grossammount_year2_1st" id="grossammount_year2_1st" />
+                    <input type="hidden" name="retentionfee_year2_1st" id="retentionfee_year2_1st" />
+                    <input type="hidden" name="amountless_rf_year2_1st" id="amountless_rf_year2_1st" />
+                    <input type="hidden" name="bir_year2_1st" id="bir_year2_1st" />
+                    <input type="hidden" name="netamount_paid_year2_1st" id="netamount_paid_year2_1st" />
+                    <input type="hidden" name="lddapno_year2_1st" id="lddapno_year2_1st" />
+                    <input type="hidden" name="date_lddap_year2_1st" id="date_lddap_year2_1st" />
+                    <input type="hidden" name="survivalrate_year2_2nd" id="survivalrate_year2_2nd" />
+                    <input type="hidden" name="grossammount_year2_2nd" id="grossammount_year2_2nd" />
+                    <input type="hidden" name="retentionfee_year2_2nd" id="retentionfee_year2_2nd" />
+                    <input type="hidden" name="amountless_rf_year2_2nd" id="amountless_rf_year2_2nd" />
+                    <input type="hidden" name="bir_year2_2nd" id="bir_year2_2nd" />
+                    <input type="hidden" name="netamount_paid_year2_2nd" id="netamount_paid_year2_2nd" />
+                    <input type="hidden" name="lddapno_year2_2nd" id="lddapno_year2_2nd" />
+                    <input type="hidden" name="date_lddap_year2_2nd" id="date_lddap_year2_2nd" />
+                    <input type="hidden" name="survivalrate_year2_3rd" id="survivalrate_year2_3rd" />
+                    <input type="hidden" name="grossammount_year2_3rd" id="grossammount_year2_3rd" />
+                    <input type="hidden" name="retentionfee_year2_3rd" id="retentionfee_year2_3rd" />
+                    <input type="hidden" name="amountless_rf_year2_3rd" id="amountless_rf_year2_3rd" />
+                    <input type="hidden" name="bir_year2_3rd" id="bir_year2_3rd" />
+                    <input type="hidden" name="netamount_paid_year2_3rd" id="netamount_paid_year2_3rd" />
+                    <input type="hidden" name="lddapno_year2_3rd" id="lddapno_year2_3rd" />
+                    <input type="hidden" name="date_lddap_year2_3rd" id="date_lddap_year2_3rd" />
+                    <input type="hidden" name="survivalrate_year2_4th" id="survivalrate_year2_4th" />
+                    <input type="hidden" name="grossammount_year2_4th" id="grossammount_year2_4th" />
+                    <input type="hidden" name="retentionfee_year2_4th" id="retentionfee_year2_4th" />
+                    <input type="hidden" name="amountless_rf_year2_4th" id="amountless_rf_year2_4th" />
+                    <input type="hidden" name="bir_year2_4th" id="bir_year2_4th" />
+                    <input type="hidden" name="netamount_paid_year2_4th" id="netamount_paid_year2_4th" />
+                    <input type="hidden" name="lddapno_year2_4th" id="lddapno_year2_4th" />
+                    <input type="hidden" name="date_lddap_year2_4th" id="date_lddap_year2_4th" />
+                    <input type="hidden" name="num_seedlings_survive_year1" id="num_seedlings_survive_year1" />
+
+                    @*paymentsyear3 edit*@
+                    <input type="hidden" name="survivalrate_year3_1st" id="survivalrate_year3_1st" />
+                    <input type="hidden" name="grossammount_year3_1st" id="grossammount_year3_1st" />
+                    <input type="hidden" name="retentionfee_year3_1st" id="retentionfee_year3_1st" />
+                    <input type="hidden" name="amountless_rf_year3_1st" id="amountless_rf_year3_1st" />
+                    <input type="hidden" name="bir_year3_1st" id="bir_year3_1st" />
+                    <input type="hidden" name="netamount_paid_year3_1st" id="netamount_paid_year3_1st" />
+                    <input type="hidden" name="lddapno_year3_1st" id="lddapno_year3_1st" />
+                    <input type="hidden" name="date_lddap_year3_1st" id="date_lddap_year3_1st" />
+                    <input type="hidden" name="survivalrate_year3_2nd" id="survivalrate_year3_2nd" />
+                    <input type="hidden" name="grossammount_year3_2nd" id="grossammount_year3_2nd" />
+                    <input type="hidden" name="retentionfee_year3_2nd" id="retentionfee_year3_2nd" />
+                    <input type="hidden" name="amountless_rf_year3_2nd" id="amountless_rf_year3_2nd" />
+                    <input type="hidden" name="bir_year3_2nd" id="bir_year3_2nd" />
+                    <input type="hidden" name="netamount_paid_year3_2nd" id="netamount_paid_year3_2nd" />
+                    <input type="hidden" name="lddapno_year3_2nd" id="lddapno_year3_2nd" />
+                    <input type="hidden" name="date_lddap_year3_2nd" id="date_lddap_year3_2nd" />
+                    <input type="hidden" name="survivalrate_year3_3rd" id="survivalrate_year3_3rd" />
+                    <input type="hidden" name="grossammount_year3_3rd" id="grossammount_year3_3rd" />
+                    <input type="hidden" name="retentionfee_year3_3rd" id="retentionfee_year3_3rd" />
+                    <input type="hidden" name="amountless_rf_year3_3rd" id="amountless_rf_year3_3rd" />
+                    <input type="hidden" name="bir_year3_3rd" id="bir_year3_3rd" />
+                    <input type="hidden" name="netamount_paid_year3_3rd" id="netamount_paid_year3_3rd" />
+                    <input type="hidden" name="lddapno_year3_3rd" id="lddapno_year3_3rd" />
+                    <input type="hidden" name="date_lddap_year3_3rd" id="date_lddap_year3_3rd" />
+                    <input type="hidden" name="survivalrate_year3_4th" id="survivalrate_year3_4th" />
+                    <input type="hidden" name="grossammount_year3_4th" id="grossammount_year3_4th" />
+                    <input type="hidden" name="retentionfee_year3_4th" id="retentionfee_year3_4th" />
+                    <input type="hidden" name="amountless_rf_year3_4th" id="amountless_rf_year3_4th" />
+                    <input type="hidden" name="bir_year3_4th" id="bir_year3_4th" />
+                    <input type="hidden" name="netamount_paid_year3_4th" id="netamount_paid_year3_4th" />
+                    <input type="hidden" name="lddapno_year3_4th" id="lddapno_year3_4th" />
+                    <input type="hidden" name="date_lddap_year3_4th" id="date_lddap_year3_4th" />
+
+
+
+
+
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

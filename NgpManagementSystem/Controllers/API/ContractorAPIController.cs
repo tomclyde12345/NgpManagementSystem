@@ -452,6 +452,56 @@ namespace NgpManagementSystem.Controllers.API
             contractorinDb.netamount_paid_year2_4th = contractorDTO.netamount_paid_year2_4th;
             contractorinDb.lddapno_year2_4th = contractorDTO.lddapno_year2_4th;
             contractorinDb.date_lddap_year2_4th = contractorDTO.date_lddap_year2_4th;
+
+            //
+
+            //year3 1st release
+            contractorinDb.grossammount_year3_1st = contractorDTO.grossammount_year3_1st;
+            contractorinDb.survivalrate_year3_1st = contractorDTO.survivalrate_year3_1st;
+            contractorinDb.bir_year3_1st = contractorDTO.bir_year3_1st;
+            contractorinDb.netamount_paid_year3_1st = contractorDTO.netamount_paid_year3_1st;
+            contractorinDb.lddapno_year3_1st = contractorDTO.lddapno_year3_1st;
+            contractorinDb.retentionfee_year3_1st = contractorDTO.retentionfee_year3_1st;
+            contractorinDb.amountless_rf_year3_1st = contractorDTO.amountless_rf_year3_1st;
+            contractorinDb.date_lddap_year3_1st = contractorDTO.date_lddap_year3_1st;
+        
+
+
+
+            //year3 2nd release
+            contractorinDb.survivalrate_year3_2nd = contractorDTO.survivalrate_year3_2nd;
+            contractorinDb.grossammount_year3_2nd = contractorDTO.grossammount_year3_2nd;
+            contractorinDb.retentionfee_year3_2nd = contractorDTO.retentionfee_year3_2nd;
+            contractorinDb.amountless_rf_year3_2nd = contractorDTO.amountless_rf_year3_2nd;
+            contractorinDb.bir_year3_2nd = contractorDTO.bir_year3_2nd;
+            contractorinDb.netamount_paid_year3_2nd = contractorDTO.netamount_paid_year3_2nd;
+            contractorinDb.lddapno_year3_2nd = contractorDTO.lddapno_year3_2nd;
+            contractorinDb.date_lddap_year3_2nd = contractorDTO.date_lddap_year3_2nd;
+
+
+
+            //year3 3rd release
+            contractorinDb.survivalrate_year3_3rd = contractorDTO.survivalrate_year3_3rd;
+            contractorinDb.grossammount_year3_3rd = contractorDTO.grossammount_year3_3rd;
+            contractorinDb.retentionfee_year3_3rd = contractorDTO.retentionfee_year3_3rd;
+            contractorinDb.amountless_rf_year3_3rd = contractorDTO.amountless_rf_year3_3rd;
+            contractorinDb.bir_year3_3rd = contractorDTO.bir_year3_3rd;
+            contractorinDb.netamount_paid_year3_3rd = contractorDTO.netamount_paid_year3_3rd;
+            contractorinDb.lddapno_year3_3rd = contractorDTO.lddapno_year3_3rd;
+            contractorinDb.date_lddap_year3_3rd = contractorDTO.date_lddap_year3_3rd;
+
+            //year2 4th release
+            contractorinDb.survivalrate_year3_4th = contractorDTO.survivalrate_year3_4th;
+            contractorinDb.grossammount_year3_4th = contractorDTO.grossammount_year3_4th;
+            contractorinDb.retentionfee_year3_4th = contractorDTO.retentionfee_year3_4th;
+            contractorinDb.amountless_rf_year3_4th = contractorDTO.amountless_rf_year3_4th;
+            contractorinDb.bir_year3_4th = contractorDTO.bir_year3_4th;
+            contractorinDb.netamount_paid_year3_4th = contractorDTO.netamount_paid_year3_4th;
+            contractorinDb.lddapno_year3_4th = contractorDTO.lddapno_year3_4th;
+            contractorinDb.date_lddap_year3_4th = contractorDTO.date_lddap_year3_4th;
+
+
+
             contractorinDb.DateAdded  = DateTime.Now;
 
 

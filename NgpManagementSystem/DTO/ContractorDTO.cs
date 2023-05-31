@@ -7,7 +7,6 @@ namespace NgpManagementSystem.DTO
 {
     public class ContractorDTO
     {
-
         public int contractorID { get; set; }
         public string contractor_name { get; set; }
         public Nullable<int> address_municipality { get; set; }
@@ -127,10 +126,13 @@ namespace NgpManagementSystem.DTO
         public string netamount_paid_year2_4th { get; set; }
         public string lddapno_year2_4th { get; set; }
         public string date_lddap_year2_4th { get; set; }
+        public string grossammount_year3_1st { get; set; }
         public string survivalrate_year3_1st { get; set; }
         public string bir_year3_1st { get; set; }
         public string netamount_paid_year3_1st { get; set; }
         public string lddapno_year3_1st { get; set; }
+        public string retentionfee_year3_1st { get; set; }
+        public string amountless_rf_year3_1st { get; set; }
         public string date_lddap_year3_1st { get; set; }
         public string survivalrate_year3_2nd { get; set; }
         public string grossammount_year3_2nd { get; set; }
