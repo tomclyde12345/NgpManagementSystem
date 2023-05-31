@@ -1913,6 +1913,65 @@ function ContractorAnimation() {
                 $('#editprojectform').find('input[name="date_lddap_year2_4th"]').val(data.date_lddap_year2_4th);
 
 
+
+
+                /*  for payments year 3 1st release*/
+
+                $('#editprojectform').find('input[name="survivalrate_year3_1st"]').val(data.survivalrate_year3_1st);
+                $('#editprojectform').find('input[name="grossammount_year3_1st"]').val(data.grossammount_year3_1st);
+                $('#editprojectform').find('input[name="retentionfee_year3_1st"]').val(data.retentionfee_year3_1st);
+                $('#editprojectform').find('input[name="amountless_rf_year3_1st"]').val(data.amountless_rf_year3_1st);
+                $('#editprojectform').find('input[name="bir_year3_1st"]').val(data.bir_year3_1st);
+                $('#editprojectform').find('input[name="netamount_paid_year3_1st"]').val(data.netamount_paid_year3_1st);
+                $('#editprojectform').find('input[name="lddapno_year3_1st"]').val(data.lddapno_year3_1st);
+                $('#editprojectform').find('input[name="date_lddap_year3_1st"]').val(data.date_lddap_year3_1st);
+
+
+
+
+                //for payments year 3 2nd release
+                $('#editprojectform').find('input[name="survivalrate_year3_2nd"]').val(data.survivalrate_year3_2nd);
+                $('#editprojectform').find('input[name="grossammount_year3_2nd"]').val(data.grossammount_year3_2nd);
+                $('#editprojectform').find('input[name="retentionfee_year3_2nd"]').val(data.retentionfee_year3_2nd);
+                $('#editprojectform').find('input[name="amountless_rf_year3_2nd"]').val(data.amountless_rf_year3_2nd);
+                $('#editprojectform').find('input[name="bir_year3_2nd"]').val(data.bir_year3_2nd);
+                $('#editprojectform').find('input[name="netamount_paid_year3_2nd"]').val(data.netamount_paid_year3_2nd);
+                $('#editprojectform').find('input[name="lddapno_year3_2nd"]').val(data.lddapno_year3_2nd);
+                $('#editprojectform').find('input[name="date_lddap_year3_2nd"]').val(data.date_lddap_year3_2nd);
+
+
+
+                //for payments year 3 3rd release
+                $('#editprojectform').find('input[name="survivalrate_year3_3rd"]').val(data.survivalrate_year3_3rd);
+                $('#editprojectform').find('input[name="grossammount_year3_3rd"]').val(data.grossammount_year3_3rd);
+                $('#editprojectform').find('input[name="retentionfee_year3_3rd"]').val(data.retentionfee_year3_3rd);
+                $('#editprojectform').find('input[name="amountless_rf_year3_3rd"]').val(data.amountless_rf_year3_3rd);
+                $('#editprojectform').find('input[name="bir_year3_3rd"]').val(data.bir_year3_3rd);
+                $('#editprojectform').find('input[name="netamount_paid_year3_3rd"]').val(data.netamount_paid_year3_3rd);
+                $('#editprojectform').find('input[name="lddapno_year3_3rd"]').val(data.lddapno_year3_3rd);
+                $('#editprojectform').find('input[name="date_lddap_year3_3rd"]').val(data.date_lddap_year3_3rd);
+
+
+
+                //for payments year 3 4th release
+                $('#editprojectform').find('input[name="survivalrate_year3_4th"]').val(data.survivalrate_year3_4th);
+                $('#editprojectform').find('input[name="grossammount_year3_4th"]').val(data.grossammount_year3_4th);
+                $('#editprojectform').find('input[name="retentionfee_year3_4th"]').val(data.retentionfee_year3_4th);
+                $('#editprojectform').find('input[name="amountless_rf_year3_4th"]').val(data.amountless_rf_year3_4th);
+                $('#editprojectform').find('input[name="bir_year3_4th"]').val(data.bir_year3_4th);
+                $('#editprojectform').find('input[name="netamount_paid_year3_4th"]').val(data.netamount_paid_year3_4th);
+                $('#editprojectform').find('input[name="lddapno_year3_4th"]').val(data.lddapno_year3_4th);
+                $('#editprojectform').find('input[name="date_lddap_year3_4th"]').val(data.date_lddap_year3_4th);
+
+
+
+
+
+
+
+
+
+
             },
             //if failed
             error: function (data) {
@@ -2113,6 +2172,54 @@ function ContractorAnimation() {
             netamount_paid_year2_4th: $('#editprojectform').find('input[name=netamount_paid_year2_4th]').val(),
             lddapno_year2_4th: $('#editprojectform').find('input[name=lddapno_year2_4th]').val(),
             date_lddap_year2_4th: $('#editprojectform').find('input[name=date_lddap_year2_4th]').val(),
+
+
+            //year3 1st release
+
+            survivalrate_year3_1st: $('#editprojectform').find('input[name=survivalrate_year3_1st]').val(),
+            grossammount_year3_1st: $('#editprojectform').find('input[name=grossammount_year3_1st]').val(),
+            retentionfee_year3_1st: $('#editprojectform').find('input[name=retentionfee_year3_1st]').val(),
+            amountless_rf_year3_1st: $('#editprojectform').find('input[name=amountless_rf_year3_1st]').val(),
+            bir_year3_1st: $('#editprojectform').find('input[name=bir_year3_1st]').val(),
+            netamount_paid_year3_1st: $('#editprojectform').find('input[name=netamount_paid_year3_1st]').val(),
+            lddapno_year3_1st: $('#editprojectform').find('input[name=lddapno_year3_1st]').val(),
+            date_lddap_year3_1st: $('#editprojectform').find('input[name=date_lddap_year3_1st]').val(),
+
+
+            //year3 2nd release
+
+            survivalrate_year3_2nd: $('#editprojectform').find('input[name=survivalrate_year3_2nd]').val(),
+            grossammount_year3_2nd: $('#editprojectform').find('input[name=grossammount_year3_2nd]').val(),
+            retentionfee_year3_2nd: $('#editprojectform').find('input[name=retentionfee_year3_2nd]').val(),
+            amountless_rf_year3_2nd: $('#editprojectform').find('input[name=amountless_rf_year3_2nd]').val(),
+            bir_year3_2nd: $('#editprojectform').find('input[name=bir_year3_2nd]').val(),
+            netamount_paid_year3_2nd: $('#editprojectform').find('input[name=netamount_paid_year3_2nd]').val(),
+            lddapno_year3_2nd: $('#editprojectform').find('input[name=lddapno_year3_2nd]').val(),
+            date_lddap_year3_2nd: $('#editprojectform').find('input[name=date_lddap_year3_2nd]').val(),
+
+
+            //year3 3rd release
+
+            survivalrate_year3_3rd: $('#editprojectform').find('input[name=survivalrate_year3_3rd]').val(),
+            grossammount_year3_3rd: $('#editprojectform').find('input[name=grossammount_year3_3rd]').val(),
+            retentionfee_year3_3rd: $('#editprojectform').find('input[name=retentionfee_year3_3rd]').val(),
+            amountless_rf_year3_3rd: $('#editprojectform').find('input[name=amountless_rf_year3_3rd]').val(),
+            bir_year3_3rd: $('#editprojectform').find('input[name=bir_year3_3rd]').val(),
+            netamount_paid_year3_3rd: $('#editprojectform').find('input[name=netamount_paid_year3_3rd]').val(),
+            lddapno_year3_3rd: $('#editprojectform').find('input[name=lddapno_year3_3rd]').val(),
+            date_lddap_year3_3rd: $('#editprojectform').find('input[name=date_lddap_year3_3rd]').val(),
+
+
+            //year3 4th release
+
+            survivalrate_year3_4th: $('#editprojectform').find('input[name=survivalrate_year3_4th]').val(),
+            grossammount_year3_4th: $('#editprojectform').find('input[name=grossammount_year3_4th]').val(),
+            retentionfee_year3_4th: $('#editprojectform').find('input[name=retentionfee_year3_4th]').val(),
+            amountless_rf_year3_4th: $('#editprojectform').find('input[name=amountless_rf_year3_4th]').val(),
+            bir_year3_4th: $('#editprojectform').find('input[name=bir_year3_4th]').val(),
+            netamount_paid_year3_4th: $('#editprojectform').find('input[name=netamount_paid_year3_4th]').val(),
+            lddapno_year3_4th: $('#editprojectform').find('input[name=lddapno_year3_4th]').val(),
+            date_lddap_year3_4th: $('#editprojectform').find('input[name=date_lddap_year3_4th]').val(),
 
 
 
@@ -4159,6 +4266,59 @@ function ContractorAnimation() {
                 $('#edityear1contractform').find('input[name="date_lddap_year2_4th"]').val(data.date_lddap_year2_4th);
 
 
+                /*  for payments year 3 1st release*/
+
+                $('#edityear1contractform').find('input[name="survivalrate_year3_1st"]').val(data.survivalrate_year3_1st);
+                $('#edityear1contractform').find('input[name="grossammount_year3_1st"]').val(data.grossammount_year3_1st);
+                $('#edityear1contractform').find('input[name="retentionfee_year3_1st"]').val(data.retentionfee_year3_1st);
+                $('#edityear1contractform').find('input[name="amountless_rf_year3_1st"]').val(data.amountless_rf_year3_1st);
+                $('#edityear1contractform').find('input[name="bir_year3_1st"]').val(data.bir_year3_1st);
+                $('#edityear1contractform').find('input[name="netamount_paid_year3_1st"]').val(data.netamount_paid_year3_1st);
+                $('#edityear1contractform').find('input[name="lddapno_year3_1st"]').val(data.lddapno_year3_1st);
+                $('#edityear1contractform').find('input[name="date_lddap_year3_1st"]').val(data.date_lddap_year3_1st);
+
+
+
+
+                //for payments year 3 2nd release
+                $('#edityear1contractform').find('input[name="survivalrate_year3_2nd"]').val(data.survivalrate_year3_2nd);
+                $('#edityear1contractform').find('input[name="grossammount_year3_2nd"]').val(data.grossammount_year3_2nd);
+                $('#edityear1contractform').find('input[name="retentionfee_year3_2nd"]').val(data.retentionfee_year3_2nd);
+                $('#edityear1contractform').find('input[name="amountless_rf_year3_2nd"]').val(data.amountless_rf_year3_2nd);
+                $('#edityear1contractform').find('input[name="bir_year3_2nd"]').val(data.bir_year3_2nd);
+                $('#edityear1contractform').find('input[name="netamount_paid_year3_2nd"]').val(data.netamount_paid_year3_2nd);
+                $('#edityear1contractform').find('input[name="lddapno_year3_2nd"]').val(data.lddapno_year3_2nd);
+                $('#edityear1contractform').find('input[name="date_lddap_year3_2nd"]').val(data.date_lddap_year3_2nd);
+
+
+
+                //for payments year 3 3rd release
+                $('#edityear1contractform').find('input[name="survivalrate_year3_3rd"]').val(data.survivalrate_year3_3rd);
+                $('#edityear1contractform').find('input[name="grossammount_year3_3rd"]').val(data.grossammount_year3_3rd);
+                $('#edityear1contractform').find('input[name="retentionfee_year3_3rd"]').val(data.retentionfee_year3_3rd);
+                $('#edityear1contractform').find('input[name="amountless_rf_year3_3rd"]').val(data.amountless_rf_year3_3rd);
+                $('#edityear1contractform').find('input[name="bir_year3_3rd"]').val(data.bir_year3_3rd);
+                $('#edityear1contractform').find('input[name="netamount_paid_year3_3rd"]').val(data.netamount_paid_year3_3rd);
+                $('#edityear1contractform').find('input[name="lddapno_year3_3rd"]').val(data.lddapno_year3_3rd);
+                $('#edityear1contractform').find('input[name="date_lddap_year3_3rd"]').val(data.date_lddap_year3_3rd);
+
+
+
+                //for payments year 3 4th release
+                $('#edityear1contractform').find('input[name="survivalrate_year3_4th"]').val(data.survivalrate_year3_4th);
+                $('#edityear1contractform').find('input[name="grossammount_year3_4th"]').val(data.grossammount_year3_4th);
+                $('#edityear1contractform').find('input[name="retentionfee_year3_4th"]').val(data.retentionfee_year3_4th);
+                $('#edityear1contractform').find('input[name="amountless_rf_year3_4th"]').val(data.amountless_rf_year3_4th);
+                $('#edityear1contractform').find('input[name="bir_year3_4th"]').val(data.bir_year3_4th);
+                $('#edityear1contractform').find('input[name="netamount_paid_year3_4th"]').val(data.netamount_paid_year3_4th);
+                $('#edityear1contractform').find('input[name="lddapno_year3_4th"]').val(data.lddapno_year3_4th);
+                $('#edityear1contractform').find('input[name="date_lddap_year3_4th"]').val(data.date_lddap_year3_4th);
+
+
+
+
+
+
 
             },
             //if failed
@@ -4359,6 +4519,53 @@ function ContractorAnimation() {
             lddapno_year2_4th: $('#edityear1contractform').find('input[name=lddapno_year2_4th]').val(),
             date_lddap_year2_4th: $('#edityear1contractform').find('input[name=date_lddap_year2_4th]').val(),
 
+
+            //year3 1st release
+
+            survivalrate_year3_1st: $('#edityear1contractform').find('input[name=survivalrate_year3_1st]').val(),
+            grossammount_year3_1st: $('#edityear1contractform').find('input[name=grossammount_year3_1st]').val(),
+            retentionfee_year3_1st: $('#edityear1contractform').find('input[name=retentionfee_year3_1st]').val(),
+            amountless_rf_year3_1st: $('#edityear1contractform').find('input[name=amountless_rf_year3_1st]').val(),
+            bir_year3_1st: $('#edityear1contractform').find('input[name=bir_year3_1st]').val(),
+            netamount_paid_year3_1st: $('#edityear1contractform').find('input[name=netamount_paid_year3_1st]').val(),
+            lddapno_year3_1st: $('#edityear1contractform').find('input[name=lddapno_year3_1st]').val(),
+            date_lddap_year3_1st: $('#edityear1contractform').find('input[name=date_lddap_year3_1st]').val(),
+
+
+            //year3 2nd release
+
+            survivalrate_year3_2nd: $('#edityear1contractform').find('input[name=survivalrate_year3_2nd]').val(),
+            grossammount_year3_2nd: $('#edityear1contractform').find('input[name=grossammount_year3_2nd]').val(),
+            retentionfee_year3_2nd: $('#edityear1contractform').find('input[name=retentionfee_year3_2nd]').val(),
+            amountless_rf_year3_2nd: $('#edityear1contractform').find('input[name=amountless_rf_year3_2nd]').val(),
+            bir_year3_2nd: $('#edityear1contractform').find('input[name=bir_year3_2nd]').val(),
+            netamount_paid_year3_2nd: $('#edityear1contractform').find('input[name=netamount_paid_year3_2nd]').val(),
+            lddapno_year3_2nd: $('#edityear1contractform').find('input[name=lddapno_year3_2nd]').val(),
+            date_lddap_year3_2nd: $('#edityear1contractform').find('input[name=date_lddap_year3_2nd]').val(),
+
+
+            //year3 3rd release
+
+            survivalrate_year3_3rd: $('#edityear1contractform').find('input[name=survivalrate_year3_3rd]').val(),
+            grossammount_year3_3rd: $('#edityear1contractform').find('input[name=grossammount_year3_3rd]').val(),
+            retentionfee_year3_3rd: $('#edityear1contractform').find('input[name=retentionfee_year3_3rd]').val(),
+            amountless_rf_year3_3rd: $('#edityear1contractform').find('input[name=amountless_rf_year3_3rd]').val(),
+            bir_year3_3rd: $('#edityear1contractform').find('input[name=bir_year3_3rd]').val(),
+            netamount_paid_year3_3rd: $('#edityear1contractform').find('input[name=netamount_paid_year3_3rd]').val(),
+            lddapno_year3_3rd: $('#edityear1contractform').find('input[name=lddapno_year3_3rd]').val(),
+            date_lddap_year3_3rd: $('#edityear1contractform').find('input[name=date_lddap_year3_3rd]').val(),
+
+
+            //year3 4th release
+
+            survivalrate_year3_4th: $('#edityear1contractform').find('input[name=survivalrate_year3_4th]').val(),
+            grossammount_year3_4th: $('#edityear1contractform').find('input[name=grossammount_year3_4th]').val(),
+            retentionfee_year3_4th: $('#edityear1contractform').find('input[name=retentionfee_year3_4th]').val(),
+            amountless_rf_year3_4th: $('#edityear1contractform').find('input[name=amountless_rf_year3_4th]').val(),
+            bir_year3_4th: $('#edityear1contractform').find('input[name=bir_year3_4th]').val(),
+            netamount_paid_year3_4th: $('#edityear1contractform').find('input[name=netamount_paid_year3_4th]').val(),
+            lddapno_year3_4th: $('#edityear1contractform').find('input[name=lddapno_year3_4th]').val(),
+            date_lddap_year3_4th: $('#edityear1contractform').find('input[name=date_lddap_year3_4th]').val(),
 
 
 
@@ -4592,6 +4799,56 @@ function ContractorAnimation() {
 
 
 
+                /*  for payments year 3 1st release*/
+
+                $('#edityear2contractform').find('input[name="survivalrate_year3_1st"]').val(data.survivalrate_year3_1st);
+                $('#edityear2contractform').find('input[name="grossammount_year3_1st"]').val(data.grossammount_year3_1st);
+                $('#edityear2contractform').find('input[name="retentionfee_year3_1st"]').val(data.retentionfee_year3_1st);
+                $('#edityear2contractform').find('input[name="amountless_rf_year3_1st"]').val(data.amountless_rf_year3_1st);
+                $('#edityear2contractform').find('input[name="bir_year3_1st"]').val(data.bir_year3_1st);
+                $('#edityear2contractform').find('input[name="netamount_paid_year3_1st"]').val(data.netamount_paid_year3_1st);
+                $('#edityear2contractform').find('input[name="lddapno_year3_1st"]').val(data.lddapno_year3_1st);
+                $('#edityear2contractform').find('input[name="date_lddap_year3_1st"]').val(data.date_lddap_year3_1st);
+
+
+
+
+                //for payments year 3 2nd release
+                $('#edityear2contractform').find('input[name="survivalrate_year3_2nd"]').val(data.survivalrate_year3_2nd);
+                $('#edityear2contractform').find('input[name="grossammount_year3_2nd"]').val(data.grossammount_year3_2nd);
+                $('#edityear2contractform').find('input[name="retentionfee_year3_2nd"]').val(data.retentionfee_year3_2nd);
+                $('#edityear2contractform').find('input[name="amountless_rf_year3_2nd"]').val(data.amountless_rf_year3_2nd);
+                $('#edityear2contractform').find('input[name="bir_year3_2nd"]').val(data.bir_year3_2nd);
+                $('#edityear2contractform').find('input[name="netamount_paid_year3_2nd"]').val(data.netamount_paid_year3_2nd);
+                $('#edityear2contractform').find('input[name="lddapno_year3_2nd"]').val(data.lddapno_year3_2nd);
+                $('#edityear2contractform').find('input[name="date_lddap_year3_2nd"]').val(data.date_lddap_year3_2nd);
+
+
+
+                //for payments year 3 3rd release
+                $('#edityear2contractform').find('input[name="survivalrate_year3_3rd"]').val(data.survivalrate_year3_3rd);
+                $('#edityear2contractform').find('input[name="grossammount_year3_3rd"]').val(data.grossammount_year3_3rd);
+                $('#edityear2contractform').find('input[name="retentionfee_year3_3rd"]').val(data.retentionfee_year3_3rd);
+                $('#edityear2contractform').find('input[name="amountless_rf_year3_3rd"]').val(data.amountless_rf_year3_3rd);
+                $('#edityear2contractform').find('input[name="bir_year3_3rd"]').val(data.bir_year3_3rd);
+                $('#edityear2contractform').find('input[name="netamount_paid_year3_3rd"]').val(data.netamount_paid_year3_3rd);
+                $('#edityear2contractform').find('input[name="lddapno_year3_3rd"]').val(data.lddapno_year3_3rd);
+                $('#edityear2contractform').find('input[name="date_lddap_year3_3rd"]').val(data.date_lddap_year3_3rd);
+
+
+
+                //for payments year 3 4th release
+                $('#edityear2contractform').find('input[name="survivalrate_year3_4th"]').val(data.survivalrate_year3_4th);
+                $('#edityear2contractform').find('input[name="grossammount_year3_4th"]').val(data.grossammount_year3_4th);
+                $('#edityear2contractform').find('input[name="retentionfee_year3_4th"]').val(data.retentionfee_year3_4th);
+                $('#edityear2contractform').find('input[name="amountless_rf_year3_4th"]').val(data.amountless_rf_year3_4th);
+                $('#edityear2contractform').find('input[name="bir_year3_4th"]').val(data.bir_year3_4th);
+                $('#edityear2contractform').find('input[name="netamount_paid_year3_4th"]').val(data.netamount_paid_year3_4th);
+                $('#edityear2contractform').find('input[name="lddapno_year3_4th"]').val(data.lddapno_year3_4th);
+                $('#edityear2contractform').find('input[name="date_lddap_year3_4th"]').val(data.date_lddap_year3_4th);
+
+
+
             },
             //if failed
             error: function (data) {
@@ -4792,6 +5049,55 @@ function ContractorAnimation() {
             netamount_paid_year2_4th: $('#edityear2contractform').find('input[name=netamount_paid_year2_4th]').val(),
             lddapno_year2_4th: $('#edityear2contractform').find('input[name=lddapno_year2_4th]').val(),
             date_lddap_year2_4th: $('#edityear2contractform').find('input[name=date_lddap_year2_4th]').val(),
+
+
+                //year3 1st release
+
+            survivalrate_year3_1st: $('#edityear2contractform').find('input[name=survivalrate_year3_1st]').val(),
+            grossammount_year3_1st: $('#edityear2contractform').find('input[name=grossammount_year3_1st]').val(),
+            retentionfee_year3_1st: $('#edityear2contractform').find('input[name=retentionfee_year3_1st]').val(),
+            amountless_rf_year3_1st: $('#edityear2contractform').find('input[name=amountless_rf_year3_1st]').val(),
+            bir_year3_1st: $('#edityear2contractform').find('input[name=bir_year3_1st]').val(),
+            netamount_paid_year3_1st: $('#edityear2contractform').find('input[name=netamount_paid_year3_1st]').val(),
+            lddapno_year3_1st: $('#edityear2contractform').find('input[name=lddapno_year3_1st]').val(),
+            date_lddap_year3_1st: $('#edityear2contractform').find('input[name=date_lddap_year3_1st]').val(),
+
+
+            //year3 2nd release
+
+            survivalrate_year3_2nd: $('#edityear2contractform').find('input[name=survivalrate_year3_2nd]').val(),
+            grossammount_year3_2nd: $('#edityear2contractform').find('input[name=grossammount_year3_2nd]').val(),
+            retentionfee_year3_2nd: $('#edityear2contractform').find('input[name=retentionfee_year3_2nd]').val(),
+            amountless_rf_year3_2nd: $('#edityear2contractform').find('input[name=amountless_rf_year3_2nd]').val(),
+            bir_year3_2nd: $('#edityear2contractform').find('input[name=bir_year3_2nd]').val(),
+            netamount_paid_year3_2nd: $('#edityear2contractform').find('input[name=netamount_paid_year3_2nd]').val(),
+            lddapno_year3_2nd: $('#edityear2contractform').find('input[name=lddapno_year3_2nd]').val(),
+            date_lddap_year3_2nd: $('#edityear2contractform').find('input[name=date_lddap_year3_2nd]').val(),
+
+
+            //year3 3rd release
+
+            survivalrate_year3_3rd: $('#edityear2contractform').find('input[name=survivalrate_year3_3rd]').val(),
+            grossammount_year3_3rd: $('#edityear2contractform').find('input[name=grossammount_year3_3rd]').val(),
+            retentionfee_year3_3rd: $('#edityear2contractform').find('input[name=retentionfee_year3_3rd]').val(),
+            amountless_rf_year3_3rd: $('#edityear2contractform').find('input[name=amountless_rf_year3_3rd]').val(),
+            bir_year3_3rd: $('#edityear2contractform').find('input[name=bir_year3_3rd]').val(),
+            netamount_paid_year3_3rd: $('#edityear2contractform').find('input[name=netamount_paid_year3_3rd]').val(),
+            lddapno_year3_3rd: $('#edityear2contractform').find('input[name=lddapno_year3_3rd]').val(),
+            date_lddap_year3_3rd: $('#edityear2contractform').find('input[name=date_lddap_year3_3rd]').val(),
+
+
+            //year3 4th release
+
+            survivalrate_year3_4th: $('#edityear2contractform').find('input[name=survivalrate_year3_4th]').val(),
+            grossammount_year3_4th: $('#edityear2contractform').find('input[name=grossammount_year3_4th]').val(),
+            retentionfee_year3_4th: $('#edityear2contractform').find('input[name=retentionfee_year3_4th]').val(),
+            amountless_rf_year3_4th: $('#edityear2contractform').find('input[name=amountless_rf_year3_4th]').val(),
+            bir_year3_4th: $('#edityear2contractform').find('input[name=bir_year3_4th]').val(),
+            netamount_paid_year3_4th: $('#edityear2contractform').find('input[name=netamount_paid_year3_4th]').val(),
+            lddapno_year3_4th: $('#edityear2contractform').find('input[name=lddapno_year3_4th]').val(),
+            date_lddap_year3_4th: $('#edityear2contractform').find('input[name=date_lddap_year3_4th]').val(),
+
 
 
 
@@ -5023,6 +5329,56 @@ function ContractorAnimation() {
                 $('#edityear3contractform').find('input[name="date_lddap_year2_4th"]').val(data.date_lddap_year2_4th);
 
 
+                /*  for payments year 3 1st release*/
+
+                $('#edityear3contractform').find('input[name="survivalrate_year3_1st"]').val(data.survivalrate_year3_1st);
+                $('#edityear3contractform').find('input[name="grossammount_year3_1st"]').val(data.grossammount_year3_1st);
+                $('#edityear3contractform').find('input[name="retentionfee_year3_1st"]').val(data.retentionfee_year3_1st);
+                $('#edityear3contractform').find('input[name="amountless_rf_year3_1st"]').val(data.amountless_rf_year3_1st);
+                $('#edityear3contractform').find('input[name="bir_year3_1st"]').val(data.bir_year3_1st);
+                $('#edityear3contractform').find('input[name="netamount_paid_year3_1st"]').val(data.netamount_paid_year3_1st);
+                $('#edityear3contractform').find('input[name="lddapno_year3_1st"]').val(data.lddapno_year3_1st);
+                $('#edityear3contractform').find('input[name="date_lddap_year3_1st"]').val(data.date_lddap_year3_1st);
+
+
+
+
+                //for payments year 3 2nd release
+                $('#edityear3contractform').find('input[name="survivalrate_year3_2nd"]').val(data.survivalrate_year3_2nd);
+                $('#edityear3contractform').find('input[name="grossammount_year3_2nd"]').val(data.grossammount_year3_2nd);
+                $('#edityear3contractform').find('input[name="retentionfee_year3_2nd"]').val(data.retentionfee_year3_2nd);
+                $('#edityear3contractform').find('input[name="amountless_rf_year3_2nd"]').val(data.amountless_rf_year3_2nd);
+                $('#edityear3contractform').find('input[name="bir_year3_2nd"]').val(data.bir_year3_2nd);
+                $('#edityear3contractform').find('input[name="netamount_paid_year3_2nd"]').val(data.netamount_paid_year3_2nd);
+                $('#edityear3contractform').find('input[name="lddapno_year3_2nd"]').val(data.lddapno_year3_2nd);
+                $('#edityear3contractform').find('input[name="date_lddap_year3_2nd"]').val(data.date_lddap_year3_2nd);
+
+
+
+                //for payments year 3 3rd release
+                $('#edityear3contractform').find('input[name="survivalrate_year3_3rd"]').val(data.survivalrate_year3_3rd);
+                $('#edityear3contractform').find('input[name="grossammount_year3_3rd"]').val(data.grossammount_year3_3rd);
+                $('#edityear3contractform').find('input[name="retentionfee_year3_3rd"]').val(data.retentionfee_year3_3rd);
+                $('#edityear3contractform').find('input[name="amountless_rf_year3_3rd"]').val(data.amountless_rf_year3_3rd);
+                $('#edityear3contractform').find('input[name="bir_year3_3rd"]').val(data.bir_year3_3rd);
+                $('#edityear3contractform').find('input[name="netamount_paid_year3_3rd"]').val(data.netamount_paid_year3_3rd);
+                $('#edityear3contractform').find('input[name="lddapno_year3_3rd"]').val(data.lddapno_year3_3rd);
+                $('#edityear3contractform').find('input[name="date_lddap_year3_3rd"]').val(data.date_lddap_year3_3rd);
+
+
+
+                //for payments year 3 4th release
+                $('#edityear3contractform').find('input[name="survivalrate_year3_4th"]').val(data.survivalrate_year3_4th);
+                $('#edityear3contractform').find('input[name="grossammount_year3_4th"]').val(data.grossammount_year3_4th);
+                $('#edityear3contractform').find('input[name="retentionfee_year3_4th"]').val(data.retentionfee_year3_4th);
+                $('#edityear3contractform').find('input[name="amountless_rf_year3_4th"]').val(data.amountless_rf_year3_4th);
+                $('#edityear3contractform').find('input[name="bir_year3_4th"]').val(data.bir_year3_4th);
+                $('#edityear3contractform').find('input[name="netamount_paid_year3_4th"]').val(data.netamount_paid_year3_4th);
+                $('#edityear3contractform').find('input[name="lddapno_year3_4th"]').val(data.lddapno_year3_4th);
+                $('#edityear3contractform').find('input[name="date_lddap_year3_4th"]').val(data.date_lddap_year3_4th);
+
+
+
 
             },
             //if failed
@@ -5224,6 +5580,59 @@ function ContractorAnimation() {
             netamount_paid_year2_4th: $('#edityear3contractform').find('input[name=netamount_paid_year2_4th]').val(),
             lddapno_year2_4th: $('#edityear3contractform').find('input[name=lddapno_year2_4th]').val(),
             date_lddap_year2_4th: $('#edityear3contractform').find('input[name=date_lddap_year2_4th]').val(),
+
+
+            //year3 1st release
+
+            survivalrate_year3_1st: $('#edityear3contractform').find('input[name=survivalrate_year3_1st]').val(),
+            grossammount_year3_1st: $('#edityear3contractform').find('input[name=grossammount_year3_1st]').val(),
+            retentionfee_year3_1st: $('#edityear3contractform').find('input[name=retentionfee_year3_1st]').val(),
+            amountless_rf_year3_1st: $('#edityear3contractform').find('input[name=amountless_rf_year3_1st]').val(),
+            bir_year3_1st: $('#edityear3contractform').find('input[name=bir_year3_1st]').val(),
+            netamount_paid_year3_1st: $('#edityear3contractform').find('input[name=netamount_paid_year3_1st]').val(),
+            lddapno_year3_1st: $('#edityear3contractform').find('input[name=lddapno_year3_1st]').val(),
+            date_lddap_year3_1st: $('#edityear3contractform').find('input[name=date_lddap_year3_1st]').val(),
+
+
+            //year3 2nd release
+
+            survivalrate_year3_2nd: $('#edityear3contractform').find('input[name=survivalrate_year3_2nd]').val(),
+            grossammount_year3_2nd: $('#edityear3contractform').find('input[name=grossammount_year3_2nd]').val(),
+            retentionfee_year3_2nd: $('#edityear3contractform').find('input[name=retentionfee_year3_2nd]').val(),
+            amountless_rf_year3_2nd: $('#edityear3contractform').find('input[name=amountless_rf_year3_2nd]').val(),
+            bir_year3_2nd: $('#edityear3contractform').find('input[name=bir_year3_2nd]').val(),
+            netamount_paid_year3_2nd: $('#edityear3contractform').find('input[name=netamount_paid_year3_2nd]').val(),
+            lddapno_year3_2nd: $('#edityear3contractform').find('input[name=lddapno_year3_2nd]').val(),
+            date_lddap_year3_2nd: $('#edityear3contractform').find('input[name=date_lddap_year3_2nd]').val(),
+
+
+            //year3 3rd release
+
+            survivalrate_year3_3rd: $('#edityear3contractform').find('input[name=survivalrate_year3_3rd]').val(),
+            grossammount_year3_3rd: $('#edityear3contractform').find('input[name=grossammount_year3_3rd]').val(),
+            retentionfee_year3_3rd: $('#edityear3contractform').find('input[name=retentionfee_year3_3rd]').val(),
+            amountless_rf_year3_3rd: $('#edityear3contractform').find('input[name=amountless_rf_year3_3rd]').val(),
+            bir_year3_3rd: $('#edityear3contractform').find('input[name=bir_year3_3rd]').val(),
+            netamount_paid_year3_3rd: $('#edityear3contractform').find('input[name=netamount_paid_year3_3rd]').val(),
+            lddapno_year3_3rd: $('#edityear3contractform').find('input[name=lddapno_year3_3rd]').val(),
+            date_lddap_year3_3rd: $('#edityear3contractform').find('input[name=date_lddap_year3_3rd]').val(),
+
+
+            //year3 4th release
+
+            survivalrate_year3_4th: $('#edityear3contractform').find('input[name=survivalrate_year3_4th]').val(),
+            grossammount_year3_4th: $('#edityear3contractform').find('input[name=grossammount_year3_4th]').val(),
+            retentionfee_year3_4th: $('#edityear3contractform').find('input[name=retentionfee_year3_4th]').val(),
+            amountless_rf_year3_4th: $('#edityear3contractform').find('input[name=amountless_rf_year3_4th]').val(),
+            bir_year3_4th: $('#edityear3contractform').find('input[name=bir_year3_4th]').val(),
+            netamount_paid_year3_4th: $('#edityear3contractform').find('input[name=netamount_paid_year3_4th]').val(),
+            lddapno_year3_4th: $('#edityear3contractform').find('input[name=lddapno_year3_4th]').val(),
+            date_lddap_year3_4th: $('#edityear3contractform').find('input[name=date_lddap_year3_4th]').val(),
+
+
+
+
+
 
         };
 
