@@ -198,6 +198,7 @@
     <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Controllers\SchedController.cs" />
+    <Compile Include="Controllers\UserActivityLogsController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
@@ -6928,6 +6929,11 @@
     <Content Include="Views\AdminActivityLogs\AccountLogs.cshtml" />
     <Content Include="Views\AdminActivityLogs\PaymentLogs.cshtml" />
     <Content Include="Views\AdminActivityLogs\ContractLogs.cshtml" />
+    <Content Include="Views\UserActivityLogs\UserContractorLogs.cshtml" />
+    <Content Include="Views\UserActivityLogs\UserProjectLogs.cshtml" />
+    <Content Include="Views\UserActivityLogs\UserContractLogs.cshtml" />
+    <Content Include="Views\UserActivityLogs\UserPaymentLogs.cshtml" />
+    <Content Include="Views\UserActivityLogs\UserAccountLogs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

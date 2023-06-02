@@ -5,7 +5,7 @@ using System.Web;
 
 namespace NgpManagementSystem.ViewModel
 {
-    public class ProjectLogs
+    public class ProjectLogs    
     {
         public int Id { get; set; }
         public Nullable<System.DateTime> Date { get; set; }

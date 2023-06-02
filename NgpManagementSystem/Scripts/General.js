@@ -1,4 +1,441 @@
-﻿function AdminLActivitLogs() {
+﻿function UserLActivityLogs() {
+
+    $("#accountlogsuser").DataTable({
+        "ajax": {
+            "url": "/UserActivityLogs/GetUserAccountLogs",
+            "type": "POST",
+            "datatype": "json", dataSrc: "data"
+        },
+
+        "processing": "true",
+        "serverSide": "true",
+        "serverSide": "true",
+        "order": [[1, "desc"]],
+
+        "columns": [
+            {
+                "data": "Id", "name": "Id", "className": "hideThis",
+            },
+            {
+                "data": "Date", "name": "Date",
+                "render": function (data, type, row, meta) {
+                    return `<span >${moment(data).format("MMMM DD YYYY, h:mm:ss a")}</span>`;
+                }
+
+            },
+
+            {
+                "data": "UserName", "name": "UserName",
+
+
+            },
+            {
+                "data": "LogMessage", "name": "LogMessage",
+
+            },
+
+            {
+                "data": "Name", "name": "Name",
+                "render": function (data, type, row) {
+
+                    return '<span class=" badge bg-info text-white" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+
+            },
+
+            {
+                "data": "RoleId", "name": "RoleId",
+                "render": function (data, type, row) {
+
+                    if (data == "NgpAdmin") {
+
+                        return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >NgpAdmin</span>'
+                    }
+
+                    return '<span class=" badge bg-secondary text-black" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+
+
+            },
+
+
+
+        ],
+
+
+        "processing": "true",
+        "language": {
+            "processing": "processing... please wait"
+        },
+
+        "fnInitComplete": function (oSettings, json) {
+
+            /*  SearchfilterContractor(json);*/
+        }
+
+
+    });
+
+
+
+
+
+
+
+    $("#paymentlogsuser").DataTable({
+        "ajax": {
+            "url": "/UserActivityLogs/GetUserPaymentsLogs",
+            "type": "POST",
+            "datatype": "json", dataSrc: "data"
+        },
+
+        "processing": "true",
+        "serverSide": "true",
+        "serverSide": "true",
+        "order": [[1, "desc"]],
+
+        "columns": [
+            {
+                "data": "Id", "name": "Id", "className": "hideThis",
+            },
+            {
+                "data": "Date", "name": "Date",
+                "render": function (data, type, row, meta) {
+                    return `<span >${moment(data).format("MMMM DD YYYY, h:mm:ss a")}</span>`;
+                }
+
+            },
+
+            {
+                "data": "UserName", "name": "UserName",
+
+
+            },
+            {
+                "data": "LogMessage", "name": "LogMessage",
+
+            },
+
+            {
+                "data": "Name", "name": "Name",
+                "render": function (data, type, row) {
+
+                    return '<span class=" badge bg-info text-white" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+
+            },
+
+            {
+                "data": "RoleId", "name": "RoleId",
+                "render": function (data, type, row) {
+
+                    if (data == "NgpAdmin") {
+
+                        return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >NgpAdmin</span>'
+                    }
+
+                    return '<span class=" badge bg-secondary text-black" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+
+
+            },
+
+
+
+        ],
+
+
+        "processing": "true",
+        "language": {
+            "processing": "processing... please wait"
+        },
+
+        "fnInitComplete": function (oSettings, json) {
+
+            /*  SearchfilterContractor(json);*/
+        }
+
+
+    });
+
+
+
+
+    $("#contractlogsuser").DataTable({
+        "ajax": {
+            "url": "/UserActivityLogs/GetUserContractLogs",
+            "type": "POST",
+            "datatype": "json", dataSrc: "data"
+        },
+
+        "processing": "true",
+        "serverSide": "true",
+        "serverSide": "true",
+        "order": [[1, "desc"]],
+
+        "columns": [
+            {
+                "data": "Id", "name": "Id", "className": "hideThis",
+            },
+            {
+                "data": "Date", "name": "Date",
+                "render": function (data, type, row, meta) {
+                    return `<span >${moment(data).format("MMMM DD YYYY, h:mm:ss a")}</span>`;
+                }
+
+            },
+
+            {
+                "data": "UserName", "name": "UserName",
+
+
+            },
+            {
+                "data": "LogMessage", "name": "LogMessage",
+
+            },
+
+            {
+                "data": "Name", "name": "Name",
+                "render": function (data, type, row) {
+
+                    return '<span class=" badge bg-info text-white" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+
+            },
+
+            {
+                "data": "RoleId", "name": "RoleId",
+                "render": function (data, type, row) {
+
+                    if (data == "NgpAdmin") {
+
+                        return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >NgpAdmin</span>'
+                    }
+
+                    return '<span class=" badge bg-secondary text-black" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+
+
+            },
+
+
+
+        ],
+
+
+        "processing": "true",
+        "language": {
+            "processing": "processing... please wait"
+        },
+
+        "fnInitComplete": function (oSettings, json) {
+
+            /*  SearchfilterContractor(json);*/
+        }
+
+
+    });
+
+
+
+    $("#projectlogsuser").DataTable({
+        "ajax": {
+            "url": "/UserActivityLogs/GetUserProjectLogs",
+            "type": "POST",
+            "datatype": "json", dataSrc: "data"
+        },
+
+        "processing": "true",
+        "serverSide": "true",
+        "serverSide": "true",
+        "order": [[1, "desc"]],
+
+        "columns": [
+            {
+                "data": "Id", "name": "Id", "className": "hideThis",
+            },
+            {
+                "data": "Date", "name": "Date",
+                "render": function (data, type, row, meta) {
+                    return `<span >${moment(data).format("MMMM DD YYYY, h:mm:ss a")}</span>`;
+                }
+
+            },
+
+            {
+                "data": "UserName", "name": "UserName",
+
+
+            },
+            {
+                "data": "LogMessage", "name": "LogMessage",
+
+            },
+
+            {
+                "data": "Name", "name": "Name",
+                "render": function (data, type, row) {
+
+                    return '<span class=" badge bg-info text-white" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+
+            },
+
+            {
+                "data": "RoleId", "name": "RoleId",
+                "render": function (data, type, row) {
+
+                    if (data == "NgpAdmin") {
+
+                        return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >NgpAdmin</span>'
+                    }
+
+                    return '<span class=" badge bg-secondary text-black" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+
+
+            },
+
+
+
+        ],
+
+
+        "processing": "true",
+        "language": {
+            "processing": "processing... please wait"
+        },
+
+        "fnInitComplete": function (oSettings, json) {
+
+            /*  SearchfilterContractor(json);*/
+        }
+
+
+    });
+
+
+
+
+    $("#contractorlogsuser").DataTable({
+        "ajax": {
+            "url": "/UserActivityLogs/GetUserContractorLogs",
+            "type": "POST",
+            "datatype": "json", dataSrc: "data"
+        },
+
+        "processing": "true",
+        "serverSide": "true",
+        "serverSide": "true",
+        "order": [[1, "desc"]],
+
+        "columns": [
+            {
+                "data": "Id", "name": "Id", "className": "hideThis",
+            },
+            {
+                "data": "Date", "name": "Date",
+                "render": function (data, type, row, meta) {
+                    return `<span >${moment(data).format("MMMM DD YYYY, h:mm:ss a")}</span>`;
+                }
+
+            },
+
+            {
+                "data": "UserName", "name": "UserName",
+
+
+            },
+            {
+                "data": "LogMessage", "name": "LogMessage",
+
+            },
+
+            {
+                "data": "Name", "name": "Name",
+                "render": function (data, type, row) {
+
+                    return '<span class=" badge bg-info text-white" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+
+            },
+
+            {
+                "data": "RoleId", "name": "RoleId",
+                "render": function (data, type, row) {
+
+                    if (data == "NgpAdmin") {
+
+                        return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >NgpAdmin</span>'
+                    }
+
+                    return '<span class=" badge bg-secondary text-black" style="font-size:12px;" >' + data + '</span>'
+
+
+
+                },
+
+
+            },
+
+
+
+        ],
+
+
+        "processing": "true",
+        "language": {
+            "processing": "processing... please wait"
+        },
+
+        "fnInitComplete": function (oSettings, json) {
+
+            /*  SearchfilterContractor(json);*/
+        }
+
+
+    });
+
+
+
+
+
+
+
+}
+
+
+
+
+function AdminLActivitLogs() {
 
     $("#contractlogsadmin").DataTable({
         "ajax": {
