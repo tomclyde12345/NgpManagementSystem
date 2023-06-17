@@ -23,390 +23,675 @@
 
                 }
             }
+            @{ if ((int)Session["Role_Id"] == 1)
 
-            <div class="card-body p-0">
-                <div class="table-responsive">
-                    <table class="table table-striped" id="usertable" width="100%">
-                        <thead>
-                            <tr>
+                {
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="usertable" width="100%">
+                                <thead>
+                                    <tr>
 
-                                <th class="bg-green  text-white">Id</th>
-                                <th class="bg-green    text-white">Name</th>
-                                <th class="bg-green   text-white">Email</th>
-                                <th class="bg-green  text-white">UserName</th>
-                                <th class="bg-green  text-white">Goverment Agency</th>
-                                <th class="bg-green   text-white"> Action</th>
-                                <th class="bg-green   text-white"> Change</th>
-                                <th class="bg-green   text-white">Role</th>
+                                        <th class="bg-green  text-white">Id</th>
+                                        <th class="bg-green    text-white">Name</th>
+                                        <th class="bg-green   text-white">Email</th>
+                                        <th class="bg-green  text-white">UserName</th>
+                                        <th class="bg-green  text-white">Goverment Agency</th>
+                                        <th class="bg-green   text-white"> Action</th>
+                                        <th class="bg-green   text-white"> Change</th>
+                                        <th class="bg-green   text-white">Role</th>
 
-                            </tr>
-                        </thead>
+                                    </tr>
+                                </thead>
 
-                    </table>
-                </div>
-            </div>
+                            </table>
+                        </div>
+                    </div>
+
+                }
+                else
+                {
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="usertableforroleuser" width="100%">
+                                <thead>
+                                    <tr>
+
+                                        <th class="bg-green  text-white">Id</th>
+                                        <th class="bg-green    text-white">Name</th>
+                                        <th class="bg-green   text-white">Email</th>
+                                        <th class="bg-green  text-white">UserName</th>
+                                        <th class="bg-green  text-white">Goverment Agency</th>
+                                        <th class="bg-green   text-white"> Action</th>
+                                        <th class="bg-green   text-white"> Change</th>
+                                        <th class="bg-green   text-white">Role</th>
+
+                                    </tr>
+                                </thead>
+
+                            </table>
+                        </div>
+                    </div>
+                }
+            }
+
+
+
         </div>
     </div>
 </div>
 
+@{ if ((int)Session["Role_Id"] == 1)
 
-@*CREATE ROLE IN MODAL *@
-<div id="createroleModal" class="modal fade" role="dialog">
-    <div class="modal-dialog modal-md">
+    {
+        @*CREATE ROLE IN MODAL *@
+        <div id="createroleModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-md">
 
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header bg-green">
-                <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;"> Create Role</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id="createrole">
-
-                    <div class="row">
-                        <div class="col-sm-12">
-
-                            <div class="form-group">
-                                <label for="name">Role Name</label>
-
-                                <input type="text" class="form-control" name="RoleName" id="RoleName" value="" />
-                            </div>
-
-                        </div>
-
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header bg-green">
+                        <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;"> Create Role</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                    <div class="text-center">
+                    <div class="modal-body">
+                        <form id="createrole">
 
-                        <button class="btn bg-green btn-sm  text-white" id="btnsubmit" type="submit">Save</button>
+                            <div class="row">
+                                <div class="col-sm-12">
+
+                                    <div class="form-group">
+                                        <label for="name">Role Name</label>
+
+                                        <input type="text" class="form-control" name="RoleName" id="RoleName" value="" />
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="text-center">
+
+                                <button class="btn bg-green btn-sm  text-white" id="btnsubmit" type="submit">Save</button>
+                            </div>
+
+
+                        </form>
                     </div>
-
-
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-
-<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog modal-notify modal-danger modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header bg-green card-header2">
-                <h5 class="heading" style="color:white;">CREATE ACCOUNT</h5>
-            </div>
-            <div class="modal-body">
-                <form id="createaccount" enctype="multipart/form-data">
-                    @*<div class="text-center">
-                    <img id="imgs" style=" position: relative; height: 190px; width: 32%; overflow: hidden;" src="~/Images/try.png" />
-                </div>*@
-                    <br />
-                    <div class="form-group" style="display:none;">
-                        <label for="name">Id</label>
-                        <input type="text" class="form-control" name="id" id="id" value="" />
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control" name="Name" id="Name" value="" />
-                            </div>
-                            <div class="form-group">
-                                <label for="name">UserName</label>
-                                <input type="text" class="form-control" name="UserName" id="UserName" value="" required>
-                                <p id="Status" />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="name">Image</label>
-                                <input type="file" class="form-control" id="FilePath" name="FilePath" accept="image/*" />
-                                <input type="hidden" class="form-control" name="FileName" id="FileName">
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label for="name">Email</label>
-                                <input type="email" class="form-control" name="Email" id="Email" value="" />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="name">Password</label>
-                                <input type="password" name="Password" class="form-control" required="" id="Password">
-
-
-
-                            </div>
-
-
-                            <div class="form-group">
-                                <label for="RoleID">Role</label>
-                                <select class="form-control" style="width:100%" name="roleId" id="roleId">
-                                    <option value="">Please Select a Role</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-center">
-
-                        <button class="btn bg-green btn-sm  text-white" id="btnsubmit" type="submit">Save</button>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-@*EDIT ACCOUNT IN MODAL*@
-<div id="editAccountModal" class="modal fade" role="dialog" >
-    <div class="modal-dialog">
-
-
-
-        <div class="modal-content">
-            <div class="modal-header bg-green">
-                <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">Edit Account</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-
-                @*UPLOAD PICTURE *@
-                <div class="text-center">
-
-                    <div id="pic-holder">
-
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
                 </div>
-                <br />
 
-                <form id="editaccount">
-                    <div class=" row">
-                        <div class="col-sm-6">
-                            <div class="input-group" style="display:none;">
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog modal-notify modal-danger modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-green card-header2">
+                        <h5 class="heading" style="color:white;">CREATE ACCOUNT</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form id="createaccount" enctype="multipart/form-data">
+                            @*<div class="text-center">
+                                    <img id="imgs" style=" position: relative; height: 190px; width: 32%; overflow: hidden;" src="~/Images/try.png" />
+                                </div>*@
+                            <br />
+                            <div class="form-group" style="display:none;">
                                 <label for="name">Id</label>
                                 <input type="text" class="form-control" name="id" id="id" value="" />
                             </div>
-                            <label for="name">Name</label>
-                            <div class="input-group">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="name">Name</label>
+                                        <input type="text" class="form-control" name="Name" id="Name" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name">UserName</label>
+                                        <input type="text" class="form-control" name="UserName" id="UserName" value="" required>
+                                        <p id="Status" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="name">Image</label>
+                                        <input type="file" class="form-control" id="FilePath" name="FilePath" accept="image/*" />
+                                        <input type="hidden" class="form-control" name="FileName" id="FileName">
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="name">Email</label>
+                                        <input type="email" class="form-control" name="Email" id="Email" value="" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="name">Password</label>
+                                        <input type="password" name="Password" class="form-control" required="" id="Password">
 
 
-                                <input type="text" class="form-control" name="name" id="name" value="" />
+
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="RoleID">Role</label>
+                                        <select class="form-control" style="width:100%" name="roleId" id="roleId">
+                                            <option value="">Please Select a Role</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="text-center">
 
-
-                            <label for="RoleID">Role</label>
-
-                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                            <select class="form-control" style="width:100%" name="roleID" id="roleID">
-                                <option value="">Please Select a Role</option>
-                            </select>
-
-
-
-                        </div>
-                        <div class="col-sm-6">
-                            <label for="name">Email</label>
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="ti-email"></i></span>
-                                <input type="email" class="form-control" name="email" id="email" value="" />
+                                <button class="btn bg-green btn-sm  text-white" id="btnsubmit" type="submit">Save</button>
                             </div>
-
-                            <label for="name">UserName</label>
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="ti-user"></i></span>
-                                <input type="text" class="form-control" name="userName" id="userName" value="" />
-                            </div>
-                        </div>
-
+                        </form>
                     </div>
-                    <br />
-                    <div class="text-center">
-
-                        <button class="btn bg-green btn-md  text-white btn-grd-*" id="btnsubmit" type="submit">SAVE CHANGES</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
 
-    </div>
-</div>
 
 
 
-
-@*DELETE ACCOUNT IN MODAL *@
-<div class="modal fade" id="deleteAccountModal" role="dialog">
-    <div class="modal-dialog modal-m modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header bg-green">
-                <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">Delete Account</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-
-            <form id="deleteaccount">
-                <div class="modal-body">
-                    <br />
-                    <h5 class="card-subtitle ">Are you sure you want to Delete This Account ?</h5>
-                </div>
-                <div class="modal-footer coolTZ">
-                    <input type="hidden" name="DeleteAccountId" id="DeleteAccountId" />
-
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">CLOSE</button>
-                    <a href="#" class="btn bg-green text-white" id="btnAccounteDelete">CONFIRM</a>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+        @*EDIT ACCOUNT IN MODAL*@
+        <div id="editAccountModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
 
 
-@*CHANGE PHOTO MODAL *@
-<div class="modal fade" id="changePhotoModal" >
-    <div class="modal-dialog modal-m modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header card-header2">
-                <h4 class="card-title d-flex justify-content-between modal-title" style="padding:0;color:white;">Change Image</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div>
-                    <div class="text-center">
-                        <div id="imageshow" style=" position: relative; height: 196px; width: 100%; overflow: hidden;">
 
-                        </div>
+                <div class="modal-content">
+                    <div class="modal-header bg-green">
+                        <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">Edit Account</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
+                    <div class="modal-body">
 
-                </div>
+                        @*UPLOAD PICTURE *@
+                        <div class="text-center">
 
-                <br />
-                <form id="changephoto" enctype="multipart/form-data">
+                            <div id="pic-holder">
 
-                    <input type="hidden" class="form-control" id="AccountId" name="AccountId" />
-                    <input type="hidden" class="form-control" id="Id" name="Id" />
-                    <input type="hidden" class="form-control" name="userId" id="userId">
-                    <input type="hidden" class="form-control" name="userName" id="userName">
-                    <input type="hidden" class="form-control" name="namelang" id="namelang">
-
-                    <div class="text-center">
-
-                        <input type="text" class="form-control text-center" id="name" name="name" readonly />
-
+                            </div>
+                        </div>
                         <br />
-                        <div class="alert alert-primary">
-                            Please Choose an Image File to Change a Photo
 
-                        </div>
-                        <input type="file" class="form-control" id="FilePath" name="FilePath" accept="image/*" required />
-                        <br />
+                        <form id="editaccount">
+                            <div class=" row">
+                                <div class="col-sm-6">
+                                    <div class="input-group" style="display:none;">
+                                        <label for="name">Id</label>
+                                        <input type="hidden" class="form-control" name="id" id="id" value="" />
+                                        <input type="hidden" class="form-control" name="password" id="password" value="" />
+                                    </div>
+                                    <label for="name">Name</label>
+                                    <div class="input-group">
+
+
+                                        <input type="text" class="form-control" name="name" id="name" value="" />
+                                    </div>
+
+
+                                    <label for="RoleID">Role</label>
+
+                                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                    <select class="form-control" style="width:100%" name="roleID" id="roleID">
+                                        <option value="">Please Select a Role</option>
+                                    </select>
+
+
+
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="name">Email</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="ti-email"></i></span>
+                                        <input type="email" class="form-control" name="email" id="email" value="" />
+                                    </div>
+
+                                    <label for="name">UserName</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="ti-user"></i></span>
+                                        <input type="text" class="form-control" name="userName" id="userName" value="" />
+                                    </div>
+                                </div>
+
+                            </div>
+                            <br />
+                            <div class="text-center">
+
+                                <button class="btn bg-green btn-md  text-white btn-grd-*" id="UpdateAccount" type="submit">SAVE CHANGES</button>
+                            </div>
+                        </form>
                     </div>
-
-                    <div class="text-center">
-                        <button class="btn btn-primary " id="btnsubmit" type="submit">SAVE</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
+                </div>
 
-
-                </form>
-            </div>
-            <div class="modal-footer">
-
-                <button type="button" class="btn btn-danger" data-dismiss="modal">CLOSE</button>
             </div>
         </div>
-    </div>
-</div>
 
 
-<div class="card-body">
-    <div class="card">
-        @*RESET PASSWORD IN MODAL*@
-        <div class="modal fade" id="resetpassModal">
+
+
+        @*DELETE ACCOUNT IN MODAL *@
+        <div class="modal fade" id="deleteAccountModal" role="dialog">
             <div class="modal-dialog modal-m modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header bg-green">
-                        <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">RESET  PASSWORD</h4>
+                        <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">Delete Account</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
 
-                    <form id="resetpassword">
+                    <form id="deleteaccount">
                         <div class="modal-body">
-
-
-                            <div class="form-group">
-
-                                <input type="hidden" class="form-control" name="id" id="id" value="" />
-                                <input type="hidden" class="form-control" name="name" id="name" value="" />
-                                <input type="hidden" class="form-control" name="email" id="email" value="" />
-                                <input type="hidden" class="form-control" name="roleID" id="roleID" value="" />
-                            </div>
-
-                            <div class="row">
-                                <div class="col-sm-6">
-
-
-                                    <div class="form-group">
-                                        <label for="userName">UserName</label>
-                                        <input type="text" class="form-control" name="userName" id="userName" value="" readonly />
-                                    </div>
-
-                                </div>
-
-                                <div class="col-sm-6">
-
-                                    <div class="form-group">
-                                        <label for="password">Password</label>
-
-                                        <input type="password" placeholder="Enter a New Password" class="form-control" name="password" id="password" value="" />
-                                    </div>
-
-                                </div>
-                            </div>
-
-
+                            <br />
+                            <h5 class="card-subtitle ">Are you sure you want to Delete This Account ?</h5>
                         </div>
-                        <div class="text-center">
-
-                            <button class="btn bg-green btn-sm text-white  btn-grd-* " id="btnsave" type="submit">SAVE</button>
-                        </div>
-                        <div class="modal-footer ">
-
+                        <div class="modal-footer coolTZ">
+                            <input type="hidden" name="DeleteAccountId" id="DeleteAccountId" />
 
                             <button type="button" class="btn btn-danger" data-dismiss="modal">CLOSE</button>
-
+                            <a href="#" class="btn bg-green text-white" id="btnAccounteDelete">CONFIRM</a>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
 
-    </div>
-</div>
+
+        @*CHANGE PHOTO MODAL *@
+        <div class="modal fade" id="changePhotoModal">
+            <div class="modal-dialog modal-m modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header card-header2">
+                        <h4 class="card-title d-flex justify-content-between modal-title" style="padding:0;color:white;">Change Image</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <div class="text-center">
+                                <div id="imageshow" style=" position: relative; height: 196px; width: 100%; overflow: hidden;">
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <br />
+                        <form id="changephoto" enctype="multipart/form-data">
+
+                            <input type="hidden" class="form-control" id="AccountId" name="AccountId" />
+                            <input type="hidden" class="form-control" id="Id" name="Id" />
+                            <input type="hidden" class="form-control" name="userId" id="userId">
+                            <input type="hidden" class="form-control" name="userName" id="userName">
+                            <input type="hidden" class="form-control" name="namelang" id="namelang">
+
+                            <div class="text-center">
+
+                                <input type="text" class="form-control text-center" id="name" name="name" readonly />
+
+                                <br />
+                                <div class="alert alert-primary">
+                                    Please Choose an Image File to Change a Photo
+
+                                </div>
+                                <input type="file" class="form-control" id="FilePath" name="FilePath" accept="image/*" required />
+                                <br />
+                            </div>
+
+                            <div class="text-center">
+                                <button class="btn btn-primary " id="btnsubmit" type="submit">SAVE</button>
+                            </div>
 
 
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">CLOSE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card-body">
+            <div class="card">
+                @*RESET PASSWORD IN MODAL*@
+                <div class="modal fade" id="resetpassModal">
+                    <div class="modal-dialog modal-m modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header bg-green">
+                                <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">RESET  PASSWORD</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                            <form id="resetpassword">
+                                <div class="modal-body">
+
+
+                                    <div class="form-group">
+
+                                        <input type="hidden" class="form-control" name="id" id="id" value="" />
+                                        <input type="hidden" class="form-control" name="name" id="name" value="" />
+                                        <input type="hidden" class="form-control" name="email" id="email" value="" />
+                                        <input type="hidden" class="form-control" name="roleID" id="roleID" value="" />
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+
+
+                                            <div class="form-group">
+                                                <label for="userName">UserName</label>
+                                                <input type="text" class="form-control" name="userName" id="userName" value="" readonly />
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-sm-6">
+
+                                            <div class="form-group">
+                                                <label for="password">Password</label>
+
+                                                <input type="password" placeholder="Enter a New Password" class="form-control" name="password" id="password" value="" />
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="text-center">
+
+                                    <button class="btn bg-green btn-sm text-white  btn-grd-* " id="btnsave" type="submit">SAVE</button>
+                                </div>
+                                <div class="modal-footer ">
+
+
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">CLOSE</button>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    }
+
+
+
+
+
+
+    //foruseracclutviarole
+
+    else
+    {
+        @*EDIT ACCOUNT IN MODAL*@
+        <div id="editAccountforUserroleModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+
+
+                <div class="modal-content">
+                    <div class="modal-header bg-green">
+                        <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">Edit Account</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        @*UPLOAD PICTURE *@
+                        <div class="text-center">
+
+                            <div id="pic-holder">
+
+                            </div>
+                        </div>
+                        <br />
+
+                        <form id="editaccountforuserrole">
+                            <div class=" row">
+                                <div class="col-sm-6">
+                                    <div class="input-group" style="display:none;">
+                                        <label for="name">Id</label>
+                                        <input type="hidden" class="form-control" name="id" id="id" value="" />
+                                        <input type="hidden" class="form-control" name="password" id="password" value="" />
+                                    </div>
+                                    <label for="name">Name</label>
+                                    <div class="input-group">
+
+
+                                        <input type="text" class="form-control" name="name" id="name" value="" />
+                                    </div>
+
+
+                                    <div style="display:none">
+                                        <label for="RoleID">Role</label>
+
+                                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                        <select class="form-control" style="width:100%" name="roleID" id="roleID">
+                                            <option value="">Please Select a Role</option>
+                                        </select>
+                                    </div>
+                                  
+
+
+
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="name">Email</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="ti-email"></i></span>
+                                        <input type="email" class="form-control" name="email" id="email" value="" />
+                                    </div>
+
+                                    <label for="name">UserName</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="ti-user"></i></span>
+                                        <input type="text" class="form-control" name="userName" id="userName" value="" />
+                                    </div>
+                                </div>
+
+                            </div>
+                            <br />
+                            <div class="text-center">
+
+                                <button class="btn bg-green btn-md  text-white btn-grd-*" id="UpdateAccountforUserRole" type="submit">SAVE CHANGES</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+        @*DELETE ACCOUNT IN MODAL *@
+        <div class="modal fade" id="deleteAccountModal" role="dialog">
+            <div class="modal-dialog modal-m modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-green">
+                        <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">Delete Account</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <form id="deleteaccount">
+                        <div class="modal-body">
+                            <br />
+                            <h5 class="card-subtitle ">Are you sure you want to Delete This Account ?</h5>
+                        </div>
+                        <div class="modal-footer coolTZ">
+                            <input type="hidden" name="DeleteAccountId" id="DeleteAccountId" />
+
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">CLOSE</button>
+                            <a href="#" class="btn bg-green text-white" id="btnAccounteDelete">CONFIRM</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        @*CHANGE PHOTO MODAL *@
+        <div class="modal fade" id="changePhotoModal">
+            <div class="modal-dialog modal-m modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header card-header2">
+                        <h4 class="card-title d-flex justify-content-between modal-title" style="padding:0;color:white;">Change Image</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <div class="text-center">
+                                <div id="imageshow" style=" position: relative; height: 196px; width: 100%; overflow: hidden;">
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <br />
+                        <form id="changephoto" enctype="multipart/form-data">
+
+                            <input type="hidden" class="form-control" id="AccountId" name="AccountId" />
+                            <input type="hidden" class="form-control" id="Id" name="Id" />
+                            <input type="hidden" class="form-control" name="userId" id="userId">
+                            <input type="hidden" class="form-control" name="userName" id="userName">
+                            <input type="hidden" class="form-control" name="namelang" id="namelang">
+
+                            <div class="text-center">
+
+                                <input type="text" class="form-control text-center" id="name" name="name" readonly />
+
+                                <br />
+                                <div class="alert alert-primary">
+                                    Please Choose an Image File to Change a Photo
+
+                                </div>
+                                <input type="file" class="form-control" id="FilePath" name="FilePath" accept="image/*" required />
+                                <br />
+                            </div>
+
+                            <div class="text-center">
+                                <button class="btn btn-primary " id="btnsubmit" type="submit">SAVE</button>
+                            </div>
+
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">CLOSE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card-body">
+            <div class="card">
+                @*RESET PASSWORD IN MODAL*@
+                <div class="modal fade" id="resetpassModal">
+                    <div class="modal-dialog modal-m modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header bg-green">
+                                <h4 class="card-title d-flex justify-content-between modal-title text-white" style="padding:0;">RESET  PASSWORD</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                            <form id="resetpassword">
+                                <div class="modal-body">
+
+
+                                    <div class="form-group">
+
+                                        <input type="hidden" class="form-control" name="id" id="id" value="" />
+                                        <input type="hidden" class="form-control" name="name" id="name" value="" />
+                                        <input type="hidden" class="form-control" name="email" id="email" value="" />
+                                        <input type="hidden" class="form-control" name="roleID" id="roleID" value="" />
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+
+
+                                            <div class="form-group">
+                                                <label for="userName">UserName</label>
+                                                <input type="text" class="form-control" name="userName" id="userName" value="" readonly />
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-sm-6">
+
+                                            <div class="form-group">
+                                                <label for="password">Password</label>
+
+                                                <input type="password" placeholder="Enter a New Password" class="form-control" name="password" id="password" value="" />
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="text-center">
+
+                                    <button class="btn bg-green btn-sm text-white  btn-grd-* " id="btnsave" type="submit">SAVE</button>
+                                </div>
+                                <div class="modal-footer ">
+
+
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">CLOSE</button>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    }
+}
 
 
 <script>

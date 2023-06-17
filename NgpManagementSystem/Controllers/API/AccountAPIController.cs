@@ -228,40 +228,47 @@ namespace NgpManagementSystem.Controllers.API
 
         //EDIT METHOD FOR  SAVING  EDIT ACCOUNT
 
-        [HttpPost]
-        [Route("api/savingeditaccount/post/{id}")]
-        public IHttpActionResult EditAccount(AccountDTO editaccountDTO)
+
+        //Put
+        [HttpPut]
+        [Route("api/accountput/updateaccount/{id}")]
+        public IHttpActionResult UpdateAccount(int id, AccountDTO accountDTO)
         {
+          
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
             var sess_id = (int)HttpContext.Current.Session["LoginID"];
-            if (ModelState.IsValid)
+            var accountuserindb = Db.NgpUsers.SingleOrDefault(d => d.Id == id);
+            if (accountuserindb == null)
             {
-                var accountdt = Db.NgpUsers.Single(c => c.Id == editaccountDTO.Id);
-
-                accountdt.Id = editaccountDTO.Id;
-                accountdt.Name = editaccountDTO.Name;
-                accountdt.UserName = editaccountDTO.UserName;
-                accountdt.Email = editaccountDTO.Email;
-                accountdt.RoleID = editaccountDTO.RoleID;
-
-            Db.NgpLogsUserAccounts.Add(new NgpLogsUserAccount()
-            {
-
-                Date = DateTime.Now,
-                Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name,
-                UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
-                LogMessage = "Edit a  User Account  " + "Name of user: " + accountdt.Name+ "Name of Editor:"+ accountdt.UserName + "Role:" + accountdt.NgpRole.RoleName,
-                UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
-                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
-            });
-
+                return NotFound();
             }
+            ScryptEncoder encoder = new ScryptEncoder();
+            Mapper.Map(accountDTO, accountuserindb);
+            accountuserindb.Id = id;
+
+            accountuserindb.Name = accountDTO.Name;
+            accountuserindb.Email = accountDTO.Email;
+            accountuserindb.UserName = accountDTO.UserName;
+            accountuserindb.Password = accountDTO.Password;
+            accountuserindb.RoleID = accountDTO.RoleID;
+
+
+
+
+
+
+
             Db.SaveChanges();
-
-
             return Ok();
-
         }
+
+
+
+
+
+
 
         //DELETE METHOD FOR  DELETE ACCOUNT
 

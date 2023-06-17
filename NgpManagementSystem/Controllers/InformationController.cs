@@ -17,5 +17,6 @@ namespace NgpManagementSystem.Controllers
             }
             return View();
         }
+       
     }
 }

@@ -884,8 +884,10 @@ function AdminLogsDashboard() {
                         value.roleId == 3 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Quezon' + '</span>' :
                         value.roleId == 5 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-BrookesPoint' + '</span>' :
                         value.roleId == 6 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Conron' + '</span>' :
-                        value.roleId == 7 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Taytay' + '</span>' :
+                         value.roleId == 7 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Taytay' + '</span>' :    
+                       value.roleId == 12 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'CenroPuertoPrincesa-Editor' + '</span>' :
                         value.roleId == 8 ? '<span class="badge badge-info   " style="font-size: 12px;">' + 'Cenro-Roxas' + '</span>' : '') +
+
 
                     '</td>' +
                     '</tr>'
@@ -6647,6 +6649,91 @@ function ContractorAnimation() {
 
 
 function Account() {
+
+
+
+    //SERVER SIDE DATATABLE SHOW DATA FOR USER ROLE
+    $("#usertableforroleuser").DataTable({
+        "ajax": {
+            "url": "/Account/GetUserDatatable",
+            "type": "POST",
+            "datatype": "json", dataSrc: "data"
+        },
+
+        "processing": "true",
+        "serverSide": "true",
+        "serverSide": "true",
+        "order": [[1, "desc"]],
+
+        "columns": [
+            {
+                "data": "Id", "name": "Id", "className": "hideThis",
+            },
+            {
+                "data": "Name", "name": "Name",
+            },
+            {
+                "data": "Email", "name": "Email",
+            },
+            {
+                "data": "UserName", "name": "UserName",
+            },
+            {
+                "data": "RoleID", "name": "RoleID",
+            },
+            {
+                "data": null,
+                'render': function (data, type, full, meta) {
+                    return '<button  class=\'btn btn-success btn-sm d-block  edit \' data-id = ' + data.Id + ' > Edit <span class="fa fa-edit f-20" >  </span></button>'
+                       
+
+
+                }
+            },
+            {
+                "data": null,
+                'render': function (data, type, full, meta) {
+                    return '<button  class=\'btn btn-info  changephoto d-block btn-sm\' data-id = ' + data.Id + ' > Change Profile <span class="fa fa-image f-20" >  </span></button>' + '<button  class=\'btn btn-primary btn-sm  resetpass \' data-id = ' + data.Id + ' > Reset Password <span class="fa fa-key f-20" >  </span></button>'
+
+                }
+            },
+            {
+                "data": "RoleID", "name": "RoleID",
+                "render": function (data, type, row) {
+                    if (data == "NgpAdmin") {
+
+                        return '<span  class=" badge bg-secondary text-black" stByle="font-size:12px;" >Admin</span>'
+                    }
+
+                    return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >User</span>'
+
+                },
+            },
+
+
+
+
+        ],
+
+
+        "processing": "true",
+        "language": {
+            "processing": "processing... please wait"
+        },
+
+        "fnInitComplete": function (oSettings, json) {
+
+        }
+
+
+    });
+
+
+
+
+
+
+
     //SERVER SIDE DATATABLE SHOW DATA FOR USER
     $("#usertable").DataTable({
         "ajax": {
@@ -6747,7 +6834,129 @@ function Account() {
         }
     });
 
-    //GET DATA ONLY FOR EDIT ACCOUNT GET METHOD 
+
+
+    $("#UpdateAccount").click(function (e) {
+        e.preventDefault();
+        var data = {
+
+            name: $('#editaccount').find('input[name=name]').val(),
+            roleID: $('#editaccount').find('select[name=roleID]').val(),
+            email: $('#editaccount').find('input[name=email]').val(),
+            userName: $('#editaccount').find('input[name=userName]').val(),
+            password: $('#editaccount').find('input[name=password]').val(),
+        };
+
+
+        var id = $('#editaccount').find('input[name="id"]').val();
+        $.ajax({
+            type: 'PUT',
+            url: '/api/accountput/updateaccount/' + id,
+            data: data,
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('access_token')
+            },
+            success: function (data) {
+
+
+                $('#editAccountModal').modal('hide');
+                //show please wait modal
+                /*  $('#pleasewait').modal('show');*/
+                //show toastr after 3
+                setTimeout(function () {
+                    toastr.success("Account Successfully Updated!");
+                    // hide please wait modal
+                }, 2000);
+                setTimeout(function () {
+                    window.location.reload();
+                }, 3000);
+            },
+            //if failed
+            error: function (data) {
+                toastr.error("Error Saving")
+            }
+        });
+    });
+
+
+    //FOR SAVING UPDATE FOR EDIT  HIDE ROLE FOR USER
+    $("#UpdateAccountforUserRole").click(function (e) {
+        e.preventDefault();
+        var data = {
+
+            name: $('#editaccountforuserrole').find('input[name=name]').val(),
+            roleID: $('#editaccountforuserrole').find('select[name=roleID]').val(),
+            email: $('#editaccountforuserrole').find('input[name=email]').val(),
+            userName: $('#editaccountforuserrole').find('input[name=userName]').val(),
+            password: $('#editaccountforuserrole').find('input[name=password]').val(),
+        };
+
+
+        var id = $('#editaccountforuserrole').find('input[name="id"]').val();
+        $.ajax({
+            type: 'PUT',
+            url: '/api/accountput/updateaccount/' + id,
+            data: data,
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('access_token')
+            },
+            success: function (data) {
+
+
+                $('#editAccountforUserroleModal').modal('hide');
+                //show please wait modal
+                /*  $('#pleasewait').modal('show');*/
+                //show toastr after 3
+                setTimeout(function () {
+                    toastr.success("Account Successfully Updated!");
+                    // hide please wait modal
+                }, 2000);
+                setTimeout(function () {
+                    window.location.reload();
+                }, 3000);
+            },
+            //if failed
+            error: function (data) {
+                toastr.error("Error Saving")
+            }
+        });
+    });
+
+
+
+    //GET DATA ONLY FOR EDIT ACCOUNT GET METHOD  VIA USER ROLE
+    $('#usertableforroleuser').on('click', '.edit', function () {
+        var id = $(this).attr('data-id');
+        var url = '/api/editaccount/geteditaccount/' + id;
+        /*    toastr.success(id);*/
+
+
+        $.ajax({
+            type: 'GET',
+            url: url,
+            success: function (data) {
+                $('#editAccountforUserroleModal').modal('show');
+                $('#editaccountforuserrole').find('input[name="id"]').val(data.id);
+                $('#editaccountforuserrole').find('input[name="name"]').val(data.name);
+                $('#editaccountforuserrole').find('input[name="userName"]').val(data.userName);
+                $('#editaccountforuserrole').find('input[name="email"]').val(data.email);
+                $('#editaccountforuserrole').find('select[name="roleID"]').val(data.roleID);
+                $('#editaccountforuserrole').find('input[name="password"]').val(data.password);
+
+            }
+        })
+
+
+    });
+
+
+
+
+
+
+
+
+    //GET DATA ONLY FOR EDIT ACCOUNT GET METHOD  ADMIN
     $('#usertable').on('click', '.edit', function () {
         var id = $(this).attr('data-id');
         var url = '/api/editaccount/geteditaccount/' + id;
@@ -6764,6 +6973,7 @@ function Account() {
                 $('#editaccount').find('input[name="userName"]').val(data.userName);
                 $('#editaccount').find('input[name="email"]').val(data.email);
                 $('#editaccount').find('select[name="roleID"]').val(data.roleID);
+                $('#editaccount').find('input[name="password"]').val(data.password);
 
             }
         })
@@ -6772,8 +6982,39 @@ function Account() {
     });
 
 
-    //GET DATA CHANGE IMAGE
+    //GET DATA CHANGE IMAGE ADMIN
     $('#usertable').on('click', '.changephoto', function () {
+        var id = $(this).attr('data-id');
+        var url = '/api/editaccount/geteditaccount/' + id;
+
+        $.ajax({
+            type: 'GET',
+            url: url,
+            success: function (data) {
+                $("#changePhotoModal").modal('show');
+                $('#changephoto').find('input[name="AccountId"]').val(data.id);
+                $('#changephoto').find('input[name="name"]').val(data.name);
+                console.log(data.id)
+
+            }
+        });
+
+        var url2 = '/api/account/getpics/' + id;
+
+        $.ajax({
+            type: 'GET',
+            url: url2,
+            success: function (data) {
+                $('#changephoto').find('input[name="id"]').val(data.id);
+                $("#imageshow").empty();
+                $("#imageshow").append("<img style='width:155px;height:155px; border-radius: 92px; overflow:hidden' src='" + data.filePath + "' />");
+            }
+        });
+    });
+
+
+    //GET DATA CHANGE IMAGE USERROLE
+    $('#usertableforroleuser').on('click', '.changephoto', function () {
         var id = $(this).attr('data-id');
         var url = '/api/editaccount/geteditaccount/' + id;
 
@@ -6817,7 +7058,29 @@ function Account() {
 
     });
 
-    //  //GET DATA ONLY FOR  RESET PASSWORD
+    //  //GET DATA ONLY FOR  RESET PASSWORD FOR USER ROLE
+    $('#usertableforroleuser').on('click', '.resetpass', function () {
+        var id = $(this).attr('data-id');
+        var url = '/api/editaccount/geteditaccount/' + id;
+        /*    toastr.success(id);*/
+        $.ajax({
+            type: 'GET',
+            url: url,
+            success: function (data) {
+                $('#resetpassModal').modal('show');
+                $('#resetpassword').find('input[name="id"]').val(data.id);
+                $('#resetpassword').find('input[name="userName"]').val(data.userName);
+                $('#resetpassword').find('input[name="password"]').val('');
+                $('#resetpassword').find('input[name="name"]').val(data.name);
+                $('#resetpassword').find('input[name="email"]').val(data.email);
+                $('#resetpassword').find('input[name="roleID"]').val(data.roleID);
+
+            }
+        })
+    });
+
+
+    //  //GET DATA ONLY FOR  RESET PASSWORD ADMIN
     $('#usertable').on('click', '.resetpass', function () {
         var id = $(this).attr('data-id');
         var url = '/api/editaccount/geteditaccount/' + id;
@@ -6921,60 +7184,6 @@ function Account() {
     })
 
 
-
-    /* SAVING EDIT ACCOUNT POST METHOD*/
-    $("#editaccount").validate({
-        rules: {
-            name: {
-                required: true,
-            },
-            userName: {
-                required: true,
-            },
-            email: {
-                required: true,
-            },
-            roleID: {
-                required: true,
-            },
-
-        },
-        errorClass: "tomerror",
-        messages: {
-            name: {
-                required: "Please Enter Your Name",
-            },
-            userName: {
-                required: "Please Enter Your Username",
-            },
-            email: {
-                required: "Please Enter Your Email",
-            },
-            roleID: {
-                required: "Please Select Your RoleID",
-            },
-
-        },
-        submitHandler: function () {
-            if ($("#editaccount").valid()) {
-                var valdata = $("#editaccount").serialize();
-                $('#editAccountModal').modal('hide');
-                $.ajax({
-                    url: '/api/savingeditaccount/post/' + id,
-                    type: "POST",
-                    dataType: 'json',
-                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-                    data: valdata,
-                });
-                setTimeout(function () {
-                    toastr.success('EDIT SUCCESSFULLY');
-                    setTimeout(function () {
-                        location.reload();
-                    }, 2000)
-                }, 1500);
-            }
-        }
-    });
 
 
     /*  DELETE ACCOUNT POST  DELETE DATA AFTER CLICK*/

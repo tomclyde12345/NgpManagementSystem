@@ -6721,6 +6721,8 @@
     <Content Include="bin\roslyn\vbc.exe.config" />
     <Content Include="bin\roslyn\vbc.rsp" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="Images\confirmcheck.jpg" />
+    <Content Include="Images\loadingto.gif" />
     <Content Include="Images\picturepleasewait.gif" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
